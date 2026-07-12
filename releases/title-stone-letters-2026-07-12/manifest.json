@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "tag": "title-stone-letters-2026-07-12",
+  "source": {
+    "repository": "ael-dev3/Warpkeep",
+    "pullRequest": 19,
+    "head": "4d16e66ca973aa82e320b9e4850c5e92ff936718"
+  },
+  "license": {
+    "spdx": "CC-BY-4.0",
+    "effectiveBoundary": "Warpkeep v0.3.0 and later",
+    "scope": "Named stone-letter title set only; copyright and related rights controlled by Warpkeep."
+  },
+  "attachments": [
+    {
+      "name": "warpkeep-stone-letter-sources-v1.zip",
+      "bytes": 264904102,
+      "sha256": "f0584d72e573fe90f5da94e12eb003df4bf99f78cc09dde54a28bb9dee59bdf1",
+      "mediaType": "application/zip",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/title-stone-letters-2026-07-12/warpkeep-stone-letter-sources-v1.zip",
+      "entries": [
+        {
+          "path": "warpkeep-stone-letter-sources-v1/ATTRIBUTION.md",
+          "bytes": 1701,
+          "sha256": "7cf153480076ed190dadf011e5d5cc6be0d8dbff572df3fe44c6e561cd40e605"
+        },
+        {
+          "path": "warpkeep-stone-letter-sources-v1/Meshy_AI_Warpkeep_A_Stone_Lett_0712102720_image-to-3d-texture.glb",
+          "bytes": 40650392,
+          "sha256": "498031fb8b94520e6e3cf58e8451dce7791f59acd31fcd3e6eb86dbe3090eb6e"
+        },
+        {
+          "path": "warpkeep-stone-letter-sources-v1/Meshy_AI_Warpkeep_E_Stone_Lett_0712105549_image-to-3d-texture.glb",
+          "bytes": 38881292,
+          "sha256": "2038848ba8f2de6c328f6e53106adf6bd172197db716c457b02489bddee2de36"
+        },
+        {
+          "path": "warpkeep-stone-letter-sources-v1/Meshy_AI_Warpkeep_K_Stone_Lett_0712104959_image-to-3d-texture.glb",
+          "bytes": 43528656,
+          "sha256": "15f1471a96f7050b9cf373550abac8b5af918806da047a832927fabba7ab6ae4"
+        },
+        {
+          "path": "warpkeep-stone-letter-sources-v1/Meshy_AI_Warpkeep_P_Stone_Lett_0712104246_image-to-3d-texture.glb",
+          "bytes": 38240900,
+          "sha256": "0a1dae8ec89c26bfdda3fed489955bcd621206b5e3df40d03cca507b690df2fd"
+        },
+        {
+          "path": "warpkeep-stone-letter-sources-v1/Meshy_AI_Warpkeep_R_Stone_Lett_0712103530_image-to-3d-texture.glb",
+          "bytes": 50589156,
+          "sha256": "8bb7ad7410cec4404765723a2dafd9e617a8454e39714a2391671941c51c4556"
+        },
+        {
+          "path": "warpkeep-stone-letter-sources-v1/Meshy_AI_Warpkeep_W_Stone_Lett_0712102109_image-to-3d-texture.glb",
+          "bytes": 52968424,
+          "sha256": "61b887ddcc2e025b3d9b0b4e67fc51b30e0d6a4b11d474758c412d08b2330814"
+        },
+        {
+          "path": "warpkeep-stone-letter-sources-v1/SHA256SUMS.txt",
+          "bytes": 969,
+          "sha256": "a671f3a7b3d61d49473692cf44ef007653842528555d0905817ff242669d0214"
+        },
+        {
+          "path": "warpkeep-stone-letter-sources-v1/manifest.json",
+          "bytes": 40450,
+          "sha256": "bdf45466115e5ee5a2aef2cfa2abc42b8339e6e7f32dd6023a820482c72d0ad1"
+        }
+      ]
+    },
+    {
+      "name": "warpkeep-title-assemblies-v1.zip",
+      "bytes": 5994957,
+      "sha256": "492af33d4b0ff5ab80f2e726b68c2f8d497cd75bbcc036f57f2388e0b4089177",
+      "mediaType": "application/zip",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/title-stone-letters-2026-07-12/warpkeep-title-assemblies-v1.zip",
+      "entries": [
+        {
+          "path": "warpkeep-title-assemblies-v1/README.md",
+          "bytes": 4434,
+          "sha256": "f940221e5ce2838240fa80bf06ffdc09fee483a3a21ef8480857c0b594393a41"
+        },
+        {
+          "path": "warpkeep-title-assemblies-v1/SHA256SUMS.bundle.txt",
+          "bytes": 1268,
+          "sha256": "e9de30617ec8b0dc2323c8f88596309308421e8ebb45b638db5474fceda6e1d0"
+        },
+        {
+          "path": "warpkeep-title-assemblies-v1/SHA256SUMS.txt",
+          "bytes": 183,
+          "sha256": "3a3a6892609fe1d3b735a8a3e21278bfde81d9000825cc278132b8957bd6d4ac"
+        },
+        {
+          "path": "warpkeep-title-assemblies-v1/WARPKEEP_TITLE_ASSET_README.txt",
+          "bytes": 2987,
+          "sha256": "35af4ecf99bfbc86777653d39446e38739deb182cbd201114cae4e083fa3e270"
+        },
+        {
+          "path": "warpkeep-title-assemblies-v1/compact-letters-front-sheet.jpg",
+          "bytes": 270212,
+          "sha256": "93ad7ef521d459d86060716019080bdb40781b6059a15b8cee4724ccc8996a83"
+        },
+        {
+          "path": "warpkeep-title-assemblies-v1/high-letters-front-sheet.jpg",
+          "bytes": 282269,
+          "sha256": "c46008e5a7b661d5d5c1c56d4eb9101032f44b8857286fa27331b136f65b1778"
+        },
+        {
+          "path": "warpkeep-title-assemblies-v1/source-letters-front-sheet.jpg",
+          "bytes": 285433,
+          "sha256": "7b4ee96210c0166d57be3214ed8a49e27e5df2371f4b43921a5edd8bef54595b"
+        },
+        {
+          "path": "warpkeep-title-assemblies-v1/warpkeep-title-compact-layout.json",
+          "bytes": 2392,
+          "sha256": "d252a8c0615902be8b27d109bd83dd950e1e471be33f7ce4b12c4cefbc42caa3"
+        },
+        {
+          "path": "warpkeep-title-assemblies-v1/warpkeep-title-compact-preview-front.jpg",
+          "bytes": 123453,
+          "sha256": "459585822b3cc27963526e292f133e662690ed58fcef3c2ffa38bde1c5866e93"
+        },
+        {
+          "path": "warpkeep-title-assemblies-v1/warpkeep-title-compact.glb",
+          "bytes": 1714060,
+          "sha256": "d29435dfa3a5fbf5103a825cc00bb3ffcef7694167a7fb7303fa89af242d7af8"
+        },
+        {
+          "path": "warpkeep-title-assemblies-v1/warpkeep-title-high-layout.json",
+          "bytes": 2386,
+          "sha256": "b76c739affb96ff1dcb8225c0d3bc3919ce810829d2ca428be467f8fbbc1bb23"
+        },
+        {
+          "path": "warpkeep-title-assemblies-v1/warpkeep-title-high-preview-angle.jpg",
+          "bytes": 136115,
+          "sha256": "a0898204f22cd31fe80e44221cc6ea9b71a5d255404ff62668a50ba3834ddd0e"
+        },
+        {
+          "path": "warpkeep-title-assemblies-v1/warpkeep-title-high-preview-front.jpg",
+          "bytes": 124412,
+          "sha256": "f93e2d618d703c19b9db15d73efc1647429e125a0bf2477361cbe6dadf2d35e5"
+        },
+        {
+          "path": "warpkeep-title-assemblies-v1/warpkeep-title-high.glb",
+          "bytes": 3844364,
+          "sha256": "2354a57d88be80e5568afb5754102c20c9ea0fe9a83aa5ac49c0d8dd67ae9ff5"
+        }
+      ]
+    }
+  ],
+  "runtimeModels": [
+    {
+      "profile": "high",
+      "filename": "warpkeep-title-high.glb",
+      "bytes": 3844364,
+      "sha256": "2354a57d88be80e5568afb5754102c20c9ea0fe9a83aa5ac49c0d8dd67ae9ff5",
+      "uniqueTriangles": 288328,
+      "renderedTriangles": 345078,
+      "positionVertices": 186285,
+      "textureDimensions": "20 x 1024x1024 WebP"
+    },
+    {
+      "profile": "compact",
+      "filename": "warpkeep-title-compact.glb",
+      "bytes": 1714060,
+      "sha256": "d29435dfa3a5fbf5103a825cc00bb3ffcef7694167a7fb7303fa89af242d7af8",
+      "uniqueTriangles": 132136,
+      "renderedTriangles": 158146,
+      "positionVertices": 95073,
+      "textureDimensions": "20 x 512x512 WebP"
+    }
+  ]
+}
