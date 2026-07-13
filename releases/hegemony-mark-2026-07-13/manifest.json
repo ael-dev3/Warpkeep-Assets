@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "tag": "hegemony-mark-2026-07-13",
+  "source": {
+    "suppliedBy": "Ael",
+    "authorization": "Ael explicitly authorized this public deposit in Warpkeep-Assets.",
+    "privateWorkflowMetadata": "intentionally omitted from the public archive"
+  },
+  "designation": {
+    "name": "Mark",
+    "faction": "Hegemony",
+    "role": "main in-game currency",
+    "note": "A Mark — the Hegemony’s main in-game currency."
+  },
+  "license": {
+    "spdx": "CC-BY-4.0",
+    "status": "licensed",
+    "effectiveFrom": "Warpkeep v0.3.0",
+    "attributionParty": "Warpkeep project",
+    "licenseText": "LICENSES/CC-BY-4.0.txt",
+    "scope": "This grant covers both named source PNGs and both Git-tracked previews to the extent copyright and related rights are controlled by the Warpkeep project. It does not license OpenAI services, names, trademarks, third-party rights, or Warpkeep trademarks and canonical identity."
+  },
+  "attachments": [
+    {
+      "name": "hegemony-mark-main-currency.png",
+      "variant": "presentation-background",
+      "bytes": 1847255,
+      "sha256": "1065cf06409af4bc18274ffb0a98f9fc71c908dac28382e6a4eae60f98354953",
+      "mediaType": "image/png",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-mark-2026-07-13/hegemony-mark-main-currency.png",
+      "image": {
+        "width": 1024,
+        "height": 1024,
+        "bitDepth": 8,
+        "colorType": "RGB",
+        "alpha": false,
+        "interlaced": false
+      },
+      "embeddedContentCredentials": {
+        "containerChunk": "caBX",
+        "bytes": 29087,
+        "claimGenerator": "OpenAI Media Service API",
+        "softwareAgent": {
+          "name": "gpt-image",
+          "version": "2.0"
+        },
+        "digitalSourceType": "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+        "assertedCreated": "2026-07-13T00:00:00Z",
+        "signatureStatus": "not independently verified"
+      }
+    },
+    {
+      "name": "hegemony-mark-main-currency-transparent.png",
+      "variant": "transparent-background",
+      "bytes": 407560,
+      "sha256": "059a61fb40d9e04fdaf27327a921ed5a3174ec48c1549512a71fbbb71aeb2b86",
+      "mediaType": "image/png",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-mark-2026-07-13/hegemony-mark-main-currency-transparent.png",
+      "image": {
+        "width": 500,
+        "height": 500,
+        "bitDepth": 8,
+        "colorType": "RGBA",
+        "alpha": true,
+        "interlaced": false
+      },
+      "transparency": {
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "fullyTransparentPixels": 102633,
+        "partiallyTransparentPixels": 3333,
+        "fullyOpaquePixels": 144034
+      },
+      "embeddedContentCredentials": null
+    }
+  ],
+  "previews": [
+    {
+      "path": "previews/hegemony-mark-2026-07-13/hegemony-mark-main-currency-preview.jpg",
+      "bytes": 109481,
+      "sha256": "4f659358122b44908339a186d19dbc1bcc400d4420fb43ecf37ddeff925efaa9",
+      "mediaType": "image/jpeg",
+      "width": 512,
+      "height": 512,
+      "derivedFromAttachment": "hegemony-mark-main-currency.png"
+    },
+    {
+      "path": "previews/hegemony-mark-2026-07-13/hegemony-mark-main-currency-transparent-preview.png",
+      "bytes": 103702,
+      "sha256": "32c0eff58f9a8018dfc7ba0fdb1ec9d06a8058ab09ba44fce01e92908214ed49",
+      "mediaType": "image/png",
+      "width": 256,
+      "height": 256,
+      "derivedFromAttachment": "hegemony-mark-main-currency-transparent.png"
+    }
+  ]
+}
