@@ -7,8 +7,9 @@ Large masters do not live in normal Git history. They are published as immutable
 ## Asset releases
 
 - [`title-stone-letters-2026-07-12`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/title-stone-letters-2026-07-12) — six source stone-letter GLBs and the optimized high/compact WARPKEEP title assemblies
+- [`hegemony-mark-2026-07-13`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-mark-2026-07-13) — **A Mark — the Hegemony’s main in-game currency.** Includes presentation and transparent source PNGs, Git-tracked previews, checksums, [public provenance](provenance/hegemony-mark-2026-07-13.md), and CC BY 4.0 licensing effective from Warpkeep v0.3.0.
 
-The release catalog is in [`releases/`](releases/), detailed model metadata is in [`manifests/`](manifests/), and public provenance is in [`provenance/`](provenance/).
+The release catalog is in [`releases/`](releases/), detailed source metadata is in [`manifests/`](manifests/), and public provenance is in [`provenance/`](provenance/).
 
 ## Verification
 
@@ -20,7 +21,7 @@ python3 scripts/verify_release.py \
   --asset-dir /path/to/downloads
 ```
 
-The verifier rejects wrong bytes, unexpected or missing ZIP entries, absolute/traversal paths, symlinks, duplicate paths, and malformed GLB headers. Full glTF semantic validation is recorded in the manifest and should be rerun with pinned `@gltf-transform/cli@4.4.1` before deriving new runtime assets.
+The verifier rejects unsupported attachment media types, wrong bytes, malformed PNG signatures or IHDR metadata, unexpected or missing ZIP entries, absolute/traversal paths, symlinks, duplicate paths, and malformed GLB headers. Full glTF semantic validation is recorded in the manifest and should be rerun with pinned `@gltf-transform/cli@4.4.1` before deriving new runtime assets.
 
 ## Boundaries
 

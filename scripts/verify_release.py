@@ -47,11 +47,43 @@ def verify_glb(stream, expected_size: int, label: str) -> None:
         raise ValueError(f"invalid GLB header: {label}")
 
 
-def verify_archive(path: Path, expected: dict) -> None:
+def verify_file(path: Path, expected: dict) -> None:
     if path.stat().st_size != expected["bytes"]:
         raise ValueError(f"byte-count mismatch: {path.name}")
     if sha256_path(path) != expected["sha256"]:
         raise ValueError(f"SHA-256 mismatch: {path.name}")
+
+
+def verify_png(path: Path, expected: dict) -> None:
+    verify_file(path, expected)
+    with path.open("rb") as stream:
+        header = stream.read(33)
+    if len(header) != 33 or header[:8] != b"\x89PNG\r\n\x1a\n":
+        raise ValueError(f"invalid PNG signature: {path.name}")
+    chunk_length, chunk_type = struct.unpack(">I4s", header[8:16])
+    if chunk_length != 13 or chunk_type != b"IHDR":
+        raise ValueError(f"invalid PNG IHDR: {path.name}")
+    width, height, bit_depth, color_type, compression, filtering, interlace = struct.unpack(
+        ">IIBBBBB", header[16:29]
+    )
+    if compression != 0 or filtering != 0 or interlace not in (0, 1):
+        raise ValueError(f"unsupported PNG encoding: {path.name}")
+    color_types = {0: "grayscale", 2: "RGB", 3: "indexed", 4: "grayscale-alpha", 6: "RGBA"}
+    actual = {
+        "width": width,
+        "height": height,
+        "bitDepth": bit_depth,
+        "colorType": color_types.get(color_type, f"unknown-{color_type}"),
+        "alpha": color_type in (4, 6),
+        "interlaced": interlace == 1,
+    }
+    expected_image = expected.get("image")
+    if expected_image is None or actual != expected_image:
+        raise ValueError(f"PNG metadata mismatch: {path.name}")
+
+
+def verify_archive(path: Path, expected: dict) -> None:
+    verify_file(path, expected)
 
     expected_entries = {entry["path"]: entry for entry in expected["entries"]}
     actual_names: list[str] = []
@@ -89,7 +121,14 @@ def main() -> None:
     args = parser.parse_args()
     manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
     for attachment in manifest["attachments"]:
-        verify_archive(args.asset_dir / attachment["name"], attachment)
+        path = args.asset_dir / attachment["name"]
+        media_type = attachment["mediaType"]
+        if media_type == "application/zip":
+            verify_archive(path, attachment)
+        elif media_type == "image/png":
+            verify_png(path, attachment)
+        else:
+            raise ValueError(f"unsupported media type: {media_type}")
     print(f"Verified {len(manifest['attachments'])} release attachments for {manifest['tag']}.")
 
 
