@@ -220,7 +220,7 @@ def verify_archive(path: Path, expected: dict) -> None:
             with archive.open(info) as stream:
                 if info.filename.endswith(".glb"):
                     verify_glb(stream, info.file_size, info.filename)
-                elif info.filename.endswith(".blend"):
+                elif info.filename.endswith((".blend", ".blend1")):
                     verify_blend(stream, record, info.filename)
                 stream.seek(0)
                 if sha256_stream(stream) != record["sha256"]:

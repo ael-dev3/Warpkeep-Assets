@@ -1,0 +1,128 @@
+{
+  "archive_purpose": "Public, checksum-addressed Hegemony Frontier Keep and Main Castle 3D source/runtime-reference deposit.",
+  "reference_only": true,
+  "runtime_usage": null,
+  "archive_date": "2026-07-14",
+  "designation": {
+    "name": "Hegemony Frontier Keep and Main Castle",
+    "status": "descriptive archive label; no stricter canonical game name asserted",
+    "role": "castle/keep environment source and runtime-reference models"
+  },
+  "source": {
+    "supplied_by": "Ael",
+    "provenance": "Ael supplied the named Blend, .blend1 backup, Frontier Keep GLB, and Main Castle GLB and explicitly authorized public deposit in Warpkeep-Assets.",
+    "private_workflow_metadata": "intentionally omitted from the public archive"
+  },
+  "license_policy": {
+    "spdx_identifier": null,
+    "status": "public-archive-authorized-no-separate-open-license",
+    "covered_files": "The named public package and archive metadata may be published and distributed as part of this repository and release.",
+    "scope_note": "No additional open-license grant is asserted. Repository or release presence does not license third-party tools, names, trademarks, canonical identity, or other Warpkeep material."
+  },
+  "input_files": [
+    {
+      "supplied_name": "Warpkeep_Hegemony_Frontier_Keep_High.blend",
+      "bytes": 4024081,
+      "sha256": "b1cb7e9b8cce4446d90c2c449e1bf0b95d4b52b333c312e1989bbd628030127c",
+      "public_name": "Warpkeep_Hegemony_Frontier_Keep_High.blend",
+      "public_bytes": 4023909,
+      "public_sha256": "b4649d8a04cced7c3f640372dc8058a7671db7459dc93fc6ae69e0d865135fae",
+      "publication": "sanitized derivative; original retained privately"
+    },
+    {
+      "supplied_name": "Warpkeep_Hegemony_Frontier_Keep_High.blend1",
+      "bytes": 4015798,
+      "sha256": "ee3dee4600625965d0aecfb628e4ca47a08ad0a11ae45744371cbd0213e7a59f",
+      "public_name": "Warpkeep_Hegemony_Frontier_Keep_High.blend1",
+      "public_bytes": 4015757,
+      "public_sha256": "f1ffaa132f5f9d6fec7207c25c14fcd3c585dda02298ff4b5dda42d41da25fb6",
+      "publication": "sanitized derivative of supplied backup; original retained privately"
+    },
+    {
+      "supplied_name": "Warpkeep_Hegemony_Frontier_Keep_High.glb",
+      "bytes": 2256092,
+      "sha256": "ed2593a2e427c496c2eaa582f56c20290816d272c5d5b8800cdf554ecc8a296c",
+      "public_name": "Warpkeep_Hegemony_Frontier_Keep_High.glb",
+      "public_bytes": 2256092,
+      "public_sha256": "ed2593a2e427c496c2eaa582f56c20290816d272c5d5b8800cdf554ecc8a296c",
+      "publication": "byte-exact supplied GLB"
+    },
+    {
+      "supplied_name": "HegemonyMainCastle.glb",
+      "bytes": 2233564,
+      "sha256": "b33755f14bbed0855cf738ba8fb2dbdde9cf56e976b7f108a2259dd478a9b580",
+      "public_name": "HegemonyMainCastle.glb",
+      "public_bytes": 2233564,
+      "public_sha256": "b33755f14bbed0855cf738ba8fb2dbdde9cf56e976b7f108a2259dd478a9b580",
+      "publication": "byte-exact supplied GLB"
+    }
+  ],
+  "inspection": {
+    "blender": "Official Blender 5.2.0 LTS with --background --factory-startup --disable-autoexec.",
+    "frontier_blend": {
+      "scenes": 1,
+      "objects": 1,
+      "meshes": 1,
+      "vertices": 55704,
+      "triangles": 56466,
+      "materials": 1,
+      "packed_images": 4,
+      "libraries": 0,
+      "drivers": 0,
+      "text_blocks": 0,
+      "missing_external_dependencies": 0,
+      "bounds": {
+        "min": [
+          -0.9496769905090332,
+          -0.662895917892456,
+          -0.6792715787887573
+        ],
+        "max": [
+          0.9475560188293457,
+          0.6652308702468872,
+          0.674331545829773
+        ]
+      }
+    },
+    "blend_backup_semantically_equal": true,
+    "frontier_glb": {
+      "meshes": 1,
+      "vertices": 55704,
+      "triangles": 56466,
+      "embedded_images": 4,
+      "animations": 0,
+      "extensions_required": [
+        "EXT_meshopt_compression",
+        "EXT_texture_webp",
+        "KHR_mesh_quantization"
+      ]
+    },
+    "main_castle_glb": {
+      "meshes": 1,
+      "vertices": 173299,
+      "triangles": 73070,
+      "embedded_images": 2,
+      "animations": 0,
+      "extensions_required": [
+        "EXT_meshopt_compression",
+        "EXT_texture_webp",
+        "KHR_mesh_quantization"
+      ]
+    },
+    "visual_qa": "Frontier Keep Blend and GLB rendered as the same coherent textured keep. Main Castle rendered as a distinct larger coherent textured castle; one initial generic-rig render was underlit and a scale-adjusted bright rig confirmed visible materials and geometry."
+  },
+  "sanitization": {
+    "observed_private_marker": "Serialized Blender Shading screen file-browser directory was absolute; its value is intentionally omitted from public metadata.",
+    "replacement": "//source-history/",
+    "changed_scope": "One Blender UI file-browser directory only.",
+    "decompressed_public_private_path_hits": 0,
+    "semantic_preservation": "Source/public inspection records match for counts, bounds, objects, meshes, materials, images, armatures, actions, modifiers, text blocks, drivers, and missing-dependency records."
+  },
+  "release": {
+    "tag": "hegemony-frontier-keep-3d-2026-07-14",
+    "attachment": "hegemony-frontier-keep-3d-sources-v1.zip",
+    "sha256": "c029a636ee0a791ca54072d5f32fcf68263677951fd59c338dfe242264335d5f",
+    "bytes": 10672929,
+    "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-frontier-keep-3d-2026-07-14/hegemony-frontier-keep-3d-sources-v1.zip"
+  }
+}

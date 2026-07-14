@@ -1,0 +1,2 @@
+c1ef704b8ab8086531357e0eb1987da2d964b6ba6e4ae91a8d2bb35a3d5af68b  manifest.json
+c029a636ee0a791ca54072d5f32fcf68263677951fd59c338dfe242264335d5f  hegemony-frontier-keep-3d-sources-v1.zip

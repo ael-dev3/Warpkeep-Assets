@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "tag": "hegemony-frontier-keep-3d-2026-07-14",
+  "source": {
+    "suppliedBy": "Ael",
+    "authorization": "Ael explicitly authorized this public deposit in Warpkeep-Assets.",
+    "privateWorkflowMetadata": "intentionally omitted from the public archive"
+  },
+  "designation": {
+    "name": "Hegemony Frontier Keep and Main Castle 3D source set",
+    "status": "descriptive archive label; no stricter canonical game name asserted",
+    "role": "supplemental editable and runtime-reference castle/keep models",
+    "runtimeIntegration": null
+  },
+  "license": {
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license",
+    "scope": "Publication and distribution of this named 3D package and archive metadata are authorized as part of Warpkeep-Assets. No additional open-license, trademark, or canonical-identity right is asserted."
+  },
+  "sanitization": {
+    "blend": "The main Blend and supplied .blend1 backup were published as Blender 5.2 path-sanitized derivatives because serialized Blender UI state contained an absolute local file-browser path.",
+    "scope": "Only the stored UI file-browser directory was rewritten to //source-history/. Scene, object, topology, materials, packed images, bounds, and render identity were preserved.",
+    "originals": "Supplied originals are retained privately and were not uploaded byte-for-byte.",
+    "publicRawMarkerScan": "Decompressed public derivatives contain zero user-home paths, Hermes cache markers, Discord, Telegram, or CDN markers."
+  },
+  "validation": {
+    "gltfTransformCli": {
+      "version": "4.4.1",
+      "errors": 0,
+      "warnings": 0
+    },
+    "khronosGltfValidator": {
+      "version": "2.0.0-dev.3.10",
+      "errors": 0,
+      "warnings": 0,
+      "infos": 1,
+      "infoCode": "UNSUPPORTED_EXTENSION: EXT_meshopt_compression"
+    },
+    "blender": {
+      "version": "5.2.0 LTS",
+      "flags": "--background --factory-startup --disable-autoexec",
+      "libraries": 0,
+      "drivers": 0,
+      "scriptTextBlocks": 0,
+      "missingExternalDependencies": 0
+    },
+    "visualQa": "Front/side local renders showed coherent textured Frontier Keep and Main Castle models without gross clipping, missing core geometry, or corruption."
+  },
+  "correspondence": {
+    "frontierKeepBlendGlb": "Same one-mesh structure, 55,704 vertices, 56,466 triangles, four packed/embedded images, and matching bounds.",
+    "blendBackup": "The .blend1 backup is byte-distinct but matches the main Blend on scene, object, mesh, material, packed-image, bounds, and topology records.",
+    "mainCastle": "Separate larger one-mesh model with 173,299 vertices, 73,070 triangles, and two embedded WebP atlases; node metadata identifies the Hegemony hero castle asset."
+  },
+  "attachments": [
+    {
+      "name": "hegemony-frontier-keep-3d-sources-v1.zip",
+      "bytes": 10672929,
+      "sha256": "c029a636ee0a791ca54072d5f32fcf68263677951fd59c338dfe242264335d5f",
+      "mediaType": "application/zip",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-frontier-keep-3d-2026-07-14/hegemony-frontier-keep-3d-sources-v1.zip",
+      "packageRoot": "hegemony-frontier-keep-3d-sources-v1",
+      "entries": [
+        {
+          "path": "hegemony-frontier-keep-3d-sources-v1/HegemonyMainCastle.glb",
+          "bytes": 2233564,
+          "compressedBytes": 1009798,
+          "sha256": "b33755f14bbed0855cf738ba8fb2dbdde9cf56e976b7f108a2259dd478a9b580",
+          "mediaType": "model/gltf-binary"
+        },
+        {
+          "path": "hegemony-frontier-keep-3d-sources-v1/README.md",
+          "bytes": 2401,
+          "compressedBytes": 1173,
+          "sha256": "a366aa5adc3dae1a7c00160318767fe80ce6a6e629f153d3d3dd4355e1f7b09c",
+          "mediaType": "text/markdown"
+        },
+        {
+          "path": "hegemony-frontier-keep-3d-sources-v1/SHA256SUMS.txt",
+          "bytes": 571,
+          "compressedBytes": 341,
+          "sha256": "ac2ccc19e52806a04d976ecf40e21567a08cde3271f52dea1ca494e4bda33e00",
+          "mediaType": "text/plain"
+        },
+        {
+          "path": "hegemony-frontier-keep-3d-sources-v1/Warpkeep_Hegemony_Frontier_Keep_High.blend",
+          "bytes": 4023909,
+          "compressedBytes": 3763959,
+          "sha256": "b4649d8a04cced7c3f640372dc8058a7671db7459dc93fc6ae69e0d865135fae",
+          "mediaType": "application/x-blender",
+          "container": {
+            "type": "Blender",
+            "compression": "zstd",
+            "uncompressedBytes": 7700107,
+            "uncompressedHeader": "BLENDER17-01v0502",
+            "blenderVersion": "5.2.0 LTS"
+          }
+        },
+        {
+          "path": "hegemony-frontier-keep-3d-sources-v1/Warpkeep_Hegemony_Frontier_Keep_High.blend1",
+          "bytes": 4015757,
+          "compressedBytes": 3754981,
+          "sha256": "f1ffaa132f5f9d6fec7207c25c14fcd3c585dda02298ff4b5dda42d41da25fb6",
+          "mediaType": "application/x-blender",
+          "container": {
+            "type": "Blender",
+            "compression": "zstd",
+            "uncompressedBytes": 7724131,
+            "uncompressedHeader": "BLENDER17-01v0502",
+            "blenderVersion": "5.2.0 LTS"
+          }
+        },
+        {
+          "path": "hegemony-frontier-keep-3d-sources-v1/Warpkeep_Hegemony_Frontier_Keep_High.glb",
+          "bytes": 2256092,
+          "compressedBytes": 2139106,
+          "sha256": "ed2593a2e427c496c2eaa582f56c20290816d272c5d5b8800cdf554ecc8a296c",
+          "mediaType": "model/gltf-binary"
+        },
+        {
+          "path": "hegemony-frontier-keep-3d-sources-v1/manifest.json",
+          "bytes": 6010,
+          "compressedBytes": 2133,
+          "sha256": "fc5dfcc84ad04603e8a5fc435da0c0c7c8cd0f239ed583d4ae1ee031725edc33",
+          "mediaType": "application/json"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "releaseSidecar": "SHA256SUMS.txt includes the attachment and correctly hashed manifest.json.",
+    "repositoryVerifier": "scripts/verify_release.py validates .blend and .blend1 Zstandard containers with exact compressed/decompressed sizes and actual Blender headers."
+  }
+}

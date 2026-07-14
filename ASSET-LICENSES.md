@@ -74,6 +74,26 @@ This authorization covers publication and distribution of the named worker 3D pa
 
 This authorization covers publication and distribution of the named report and its archive metadata as part of this repository. It does not license third-party names, services, trademarks, source code, excluded evidence artifacts, or other Warpkeep material by implication.
 
+## Hegemony Frontier Keep and Main Castle 3D source set
+
+- **Set:** supplied Frontier Keep GLB, Main Castle GLB, Frontier Keep Blender source, and supplied Blender backup derivative
+- **Release:** `hegemony-frontier-keep-3d-2026-07-14`
+- **Designation:** descriptive castle/keep source and runtime-reference archive; no stricter canonical game name or runtime integration asserted
+- **Deposit authority:** Ael explicitly authorized public archival in Warpkeep-Assets.
+- **License status:** public archival and repository/release distribution authorized; no separate open-license grant asserted
+
+This authorization covers publication and distribution of the named 3D package and archive metadata. The supplied Blend and `.blend1` originals are retained privately because serialized Blender UI state contained an absolute local file-browser path; the public copies preserve model semantics while normalizing that path only. This does not license third-party tools or services, trademarks, third-party rights, Warpkeep trademarks and canonical identity, or other Warpkeep material by implication.
+
+## Hegemony emblem reference
+
+- **Set:** supplied opaque RGB pixel-art emblem PNG
+- **Release:** `hegemony-emblem-2026-07-14`
+- **Designation:** descriptive Hegemony emblem reference; no stricter canonical game designation asserted
+- **Deposit authority:** Ael explicitly authorized public archival in Warpkeep-Assets.
+- **License status:** public archival and repository/release distribution authorized; no separate open-license grant asserted
+
+This authorization covers publication and distribution of the named PNG and archive metadata. No separate open-license grant, trademark right, or canonical-identity right is asserted.
+
 ## Excluded and unresolved material
 
-The Hegemony Frontier Keep source/model family and other Warpkeep media are not part of the stone-letter release or its license grant. Their source rights remain unresolved unless a separate provenance record says otherwise. This repository does not relicense them by implication.
+Other Hegemony source/model families and other Warpkeep media are not part of the stone-letter release or its license grant. Their source rights remain unresolved unless a separate provenance record says otherwise. This repository does not relicense them by implication.

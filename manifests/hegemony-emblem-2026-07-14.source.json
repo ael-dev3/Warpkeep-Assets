@@ -1,0 +1,57 @@
+{
+  "archive_purpose": "Public, checksum-addressed pixel-art Hegemony emblem reference.",
+  "reference_only": true,
+  "runtime_usage": null,
+  "archive_date": "2026-07-14",
+  "designation": {
+    "name": "Hegemony emblem",
+    "status": "descriptive archive label; no stricter canonical game designation asserted",
+    "role": "pixel-art heraldic emblem reference"
+  },
+  "source": {
+    "supplied_by": "Ael",
+    "provenance": "Ael supplied the image attachment and explicitly authorized its public deposit in Warpkeep-Assets. No source basename was supplied in the message; Hegemony_Emblem.png is a descriptive public deposit name.",
+    "private_workflow_metadata": "intentionally omitted from the public archive"
+  },
+  "license_policy": {
+    "spdx_identifier": null,
+    "status": "public-archive-authorized-no-separate-open-license",
+    "covered_files": "The named source PNG and archive metadata may be published and distributed as part of this repository and release.",
+    "scope_note": "No additional open-license grant is asserted. Repository or release presence does not license third-party tools, names, trademarks, canonical identity, or other Warpkeep material."
+  },
+  "file": {
+    "release_attachment": "Hegemony_Emblem.png",
+    "bytes": 1403426,
+    "sha256": "75eeb0a1ffd126171ff6d29d21733a6b1b8f9b8b7897bc376fba3f72a63bcf1e",
+    "media_type": "image/png",
+    "width": 1254,
+    "height": 1254,
+    "bit_depth": 8,
+    "color_type": "RGB",
+    "alpha": false,
+    "interlaced": false
+  },
+  "visual_summary": {
+    "description": "Opaque pixel-art heraldic emblem on a dark purple background, with a central gold sword-like vertical form, gold crest/wing-like arcs, purple concentric center rings, and small gold star-like ornaments.",
+    "readable_text": false,
+    "third_party_logo_observed": false,
+    "people_or_personal_identifiers_observed": false
+  },
+  "metadata_observed": {
+    "png_chunks": [
+      "IHDR",
+      "sRGB",
+      "IDAT",
+      "IEND"
+    ],
+    "ancillary_text_or_credentials": false,
+    "crc_checks": "all observed PNG chunk CRCs passed"
+  },
+  "release": {
+    "tag": "hegemony-emblem-2026-07-14",
+    "attachment": "Hegemony_Emblem.png",
+    "sha256": "75eeb0a1ffd126171ff6d29d21733a6b1b8f9b8b7897bc376fba3f72a63bcf1e",
+    "bytes": 1403426,
+    "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-emblem-2026-07-14/Hegemony_Emblem.png"
+  }
+}
