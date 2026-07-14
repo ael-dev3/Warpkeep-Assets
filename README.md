@@ -30,7 +30,7 @@ python3 scripts/verify_release.py \
   --asset-dir /path/to/downloads
 ```
 
-The verifier rejects unsupported attachment media types, wrong bytes, malformed PNG signatures or IHDR metadata, unexpected or missing ZIP entries, absolute/traversal paths, symlinks, duplicate paths, and malformed GLB headers. Full glTF semantic validation is recorded in the manifest and should be rerun with pinned `@gltf-transform/cli@4.4.1` before deriving new runtime assets.
+The verifier rejects unsupported attachment media types, wrong bytes, malformed PNG signatures or IHDR metadata, unexpected or missing ZIP entries, absolute/traversal paths, symlinks, duplicate paths, malformed GLB headers, and malformed Blender containers. Verification of Zstandard-compressed `.blend` entries requires the `zstd` CLI; compressed input and decompressed output are exact-size bounded and the actual decompressed Blender header is checked, with verification failing closed if the tool is unavailable. Full glTF semantic validation is recorded in the manifest and should be rerun with pinned `@gltf-transform/cli@4.4.1` before deriving new runtime assets.
 
 ## Boundaries
 

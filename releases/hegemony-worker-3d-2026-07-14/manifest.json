@@ -70,6 +70,7 @@
           "container": {
             "type": "Blender",
             "compression": "zstd",
+            "uncompressedBytes": 6201424,
             "uncompressedHeader": "BLENDER17-01v0502",
             "blenderVersion": "5.2.0 LTS"
           }
