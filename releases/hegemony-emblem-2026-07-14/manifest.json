@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "tag": "hegemony-emblem-2026-07-14",
+  "source": {
+    "suppliedBy": "Ael",
+    "authorization": "Ael explicitly authorized this public deposit in Warpkeep-Assets.",
+    "privateWorkflowMetadata": "intentionally omitted from the public archive"
+  },
+  "designation": {
+    "name": "Hegemony emblem",
+    "status": "descriptive archive label based on supplied context and visible design; no stricter canonical game designation asserted",
+    "role": "pixel-art heraldic emblem reference"
+  },
+  "license": {
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license",
+    "scope": "Publication and distribution of this named PNG and archive metadata are authorized as part of Warpkeep-Assets. No additional open-license, trademark, or canonical-identity right is asserted."
+  },
+  "attachments": [
+    {
+      "name": "Hegemony_Emblem.png",
+      "bytes": 1403426,
+      "sha256": "75eeb0a1ffd126171ff6d29d21733a6b1b8f9b8b7897bc376fba3f72a63bcf1e",
+      "mediaType": "image/png",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-emblem-2026-07-14/Hegemony_Emblem.png",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "bitDepth": 8,
+        "colorType": "RGB",
+        "alpha": false,
+        "interlaced": false
+      }
+    }
+  ],
+  "validation": {
+    "png": "Valid PNG signature, IHDR, CRCs, sRGB chunk, opaque RGB 1254x1254 8-bit non-interlaced image.",
+    "metadata": "No ancillary text, EXIF, Content Credentials, or readable text chunks observed."
+  }
+}

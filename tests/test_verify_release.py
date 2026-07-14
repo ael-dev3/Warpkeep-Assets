@@ -146,6 +146,7 @@ class BlendVerificationTests(unittest.TestCase):
             with ZipFile(archive_path, "w") as archive:
                 archive.writestr("package/model.glb", glb)
                 archive.writestr("package/model.blend", blend)
+                archive.writestr("package/model.blend1", blend)
             archive_bytes = archive_path.read_bytes()
             expected = {
                 "bytes": len(archive_bytes),
@@ -158,6 +159,16 @@ class BlendVerificationTests(unittest.TestCase):
                     },
                     {
                         "path": "package/model.blend",
+                        "bytes": len(blend),
+                        "sha256": sha256(blend),
+                        "container": {
+                            "compression": "zstd",
+                            "uncompressedHeader": "BLENDER17-01v0502",
+                            "uncompressedBytes": len(VALID_BLEND),
+                        },
+                    },
+                    {
+                        "path": "package/model.blend1",
                         "bytes": len(blend),
                         "sha256": sha256(blend),
                         "container": {

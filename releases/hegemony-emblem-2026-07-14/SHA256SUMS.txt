@@ -1,0 +1,2 @@
+27a7c663d25c8752c2d43cb61cf08cac5a86474f5eff907792bdcb85c3ee5a2d  manifest.json
+75eeb0a1ffd126171ff6d29d21733a6b1b8f9b8b7897bc376fba3f72a63bcf1e  Hegemony_Emblem.png
