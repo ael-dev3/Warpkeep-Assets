@@ -1,0 +1,395 @@
+{
+  "archive_purpose": "Public, checksum-addressed supplemental 3D source/runtime-reference package for the descriptively labeled Hegemony supply wagon, including polished and no-telescope runtime variants.",
+  "reference_only": true,
+  "runtime_usage": null,
+  "archive_date": "2026-07-14",
+  "release_tag": "hegemony-supply-wagon-3d-2026-07-14",
+  "release_attachment": {
+    "name": "hegemony-supply-wagon-3d-sources-v1.zip",
+    "media_type": "application/zip",
+    "bytes": 6068830,
+    "sha256": "7abc2ed243286a970c9e2cc1fb589bf4e2c275e94b5ddcb4d51e9a5645e118e5"
+  },
+  "designation": {
+    "name": "Hegemony supply wagon 3D source set",
+    "status": "descriptive archive label; no stricter canonical game name asserted",
+    "role": "supplemental editable, polished runtime-reference, and no-telescope runtime-reference models for the horse-drawn field supply wagon",
+    "related_visual_reference": "hegemony-supply-wagon-2026-07-14"
+  },
+  "source": {
+    "supplied_by": "Ael",
+    "authorization": "Ael explicitly authorized this public deposit in Warpkeep-Assets.",
+    "private_workflow_metadata": "intentionally omitted from the public archive"
+  },
+  "license_policy": {
+    "spdx_identifier": null,
+    "status": "public-archive-authorized-no-separate-open-license",
+    "scope_note": "Publication and distribution of this named 3D package and its archive metadata are authorized as part of Warpkeep-Assets. No additional open-license grant, trademark right, canonical-identity right, or rights in third-party tools and services are asserted."
+  },
+  "files": [
+    {
+      "filename": "Warpkeep_Hegemony_Draft_Wagon_Optimized_High_Polished_Final.glb",
+      "role": "optimized animated runtime-reference GLB",
+      "media_type": "model/gltf-binary",
+      "bytes": 1647672,
+      "sha256": "5f902dc57da969a1a16067f2500d8d0f4e718c2b563795404d4fa7dc4495181a",
+      "byte_exact_to_supplied_source": true,
+      "gltf": {
+        "container": "GLB",
+        "container_version": 2,
+        "asset_version": "2.0",
+        "generator": "glTF-Transform v4.4.1",
+        "copyright": "Copyright Ael / Warpkeep; project-authored runtime derivative",
+        "declared_length": 1647672,
+        "chunks": [
+          {
+            "type": "JSON",
+            "bytes": 91740
+          },
+          {
+            "type": "BIN",
+            "bytes": 1555904
+          }
+        ],
+        "scene": "WK_Hegemony_Draft_Wagon",
+        "bounds": {
+          "min": [
+            -0.49199,
+            -0.62984,
+            -1.0
+          ],
+          "max": [
+            0.49199,
+            0.62984,
+            1.0
+          ]
+        },
+        "nodes": 64,
+        "meshes": 17,
+        "primitives": 18,
+        "materials": 2,
+        "textures": 3,
+        "texture_details": [
+          {
+            "name": "WK_Wagon_Normal_2048",
+            "mime_type": "image/webp",
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "bytes": 148628
+          },
+          {
+            "name": "WK_Wagon_ORM_1024",
+            "mime_type": "image/webp",
+            "dimensions": [
+              1024,
+              1024
+            ],
+            "bytes": 449726
+          },
+          {
+            "name": "WK_Wagon_BaseColor_2048",
+            "mime_type": "image/webp",
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "bytes": 285816
+          }
+        ],
+        "skins": 1,
+        "triangles": 41334,
+        "upload_vertices": 52570,
+        "render_vertices": 124002,
+        "animations": [
+          {
+            "name": "Idle",
+            "duration_seconds": 2.0
+          },
+          {
+            "name": "Start",
+            "duration_seconds": 0.8
+          },
+          {
+            "name": "Stop",
+            "duration_seconds": 0.8
+          },
+          {
+            "name": "Turn_Left",
+            "duration_seconds": 1.0
+          },
+          {
+            "name": "Turn_Right",
+            "duration_seconds": 1.0
+          },
+          {
+            "name": "Walk",
+            "duration_seconds": 1.0
+          }
+        ],
+        "extensions_used": [
+          "EXT_meshopt_compression",
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ],
+        "extensions_required": [
+          "EXT_meshopt_compression",
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ],
+        "external_uris": []
+      },
+      "validation": {
+        "tool": "@gltf-transform/cli",
+        "version": "4.4.1",
+        "errors": 0,
+        "warnings": 0,
+        "information": 19,
+        "information_codes": {
+          "UNSUPPORTED_EXTENSION": 1,
+          "UNUSED_MESH_TANGENT": 1,
+          "UNUSED_OBJECT": 17
+        }
+      }
+    },
+    {
+      "filename": "Warpkeep_Wagon_NoTelescope_GameReady.glb",
+      "role": "byte-exact no-telescope game-ready runtime-reference GLB",
+      "media_type": "model/gltf-binary",
+      "bytes": 1637452,
+      "sha256": "4a0f762b9dadeaddd8b2d528a7e165eaa98a8dd4134eb924604922524e7bbc5d",
+      "byte_exact_to_supplied_source": true,
+      "gltf": {
+        "container": "GLB",
+        "container_version": 2,
+        "asset_version": "2.0",
+        "generator": "glTF-Transform v4.4.1",
+        "copyright": "Copyright Ael / Warpkeep; project-authored runtime derivative",
+        "declared_length": 1637452,
+        "chunks": [
+          {
+            "type": "JSON",
+            "bytes": 91740
+          },
+          {
+            "type": "BIN",
+            "bytes": 1545684
+          }
+        ],
+        "scene": "WK_Hegemony_Draft_Wagon",
+        "bounds": {
+          "min": [
+            -0.49199,
+            -0.62984,
+            -1.0
+          ],
+          "max": [
+            0.49199,
+            0.62984,
+            1.0
+          ]
+        },
+        "nodes": 64,
+        "meshes": 17,
+        "primitives": 18,
+        "materials": 2,
+        "textures": 3,
+        "texture_details": [
+          {
+            "name": "WK_Wagon_Normal_2048",
+            "mime_type": "image/webp",
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "bytes": 148628
+          },
+          {
+            "name": "WK_Wagon_ORM_1024",
+            "mime_type": "image/webp",
+            "dimensions": [
+              1024,
+              1024
+            ],
+            "bytes": 449726
+          },
+          {
+            "name": "WK_Wagon_BaseColor_2048",
+            "mime_type": "image/webp",
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "bytes": 285816
+          }
+        ],
+        "skins": 1,
+        "triangles": 40650,
+        "upload_vertices": 51726,
+        "render_vertices": 121950,
+        "animations": [
+          {
+            "name": "Idle",
+            "duration_seconds": 2.0
+          },
+          {
+            "name": "Start",
+            "duration_seconds": 0.8
+          },
+          {
+            "name": "Stop",
+            "duration_seconds": 0.8
+          },
+          {
+            "name": "Turn_Left",
+            "duration_seconds": 1.0
+          },
+          {
+            "name": "Turn_Right",
+            "duration_seconds": 1.0
+          },
+          {
+            "name": "Walk",
+            "duration_seconds": 1.0
+          }
+        ],
+        "extensions_used": [
+          "EXT_meshopt_compression",
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ],
+        "extensions_required": [
+          "EXT_meshopt_compression",
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ],
+        "external_uris": []
+      },
+      "validation": {
+        "tool": "@gltf-transform/cli",
+        "version": "4.4.1",
+        "errors": 0,
+        "warnings": 0,
+        "information": 19,
+        "information_codes": {
+          "UNSUPPORTED_EXTENSION": 1,
+          "UNUSED_MESH_TANGENT": 1,
+          "UNUSED_OBJECT": 17
+        }
+      },
+      "variant": "no-telescope"
+    },
+    {
+      "filename": "Warpkeep_Hegemony_Draft_Wagon_Optimized_High_Polished_NoTelescope.glb",
+      "role": "byte-exact supplied no-telescope alias",
+      "media_type": "model/gltf-binary",
+      "bytes": 1637452,
+      "sha256": "4a0f762b9dadeaddd8b2d528a7e165eaa98a8dd4134eb924604922524e7bbc5d",
+      "byte_exact_to_supplied_source": true,
+      "variant": "no-telescope",
+      "identical_to": "Warpkeep_Wagon_NoTelescope_GameReady.glb",
+      "gltf_metadata_reference": "Warpkeep_Wagon_NoTelescope_GameReady.glb"
+    },
+    {
+      "filename": "Warpkeep_Hegemony_Draft_Wagon_Optimized_High_Polished_Final.blend",
+      "role": "editable rigged Blender source",
+      "media_type": "application/x-blender",
+      "bytes": 2282489,
+      "sha256": "90ca7a9511e3deda2d32dd94bc15b16281f8d8a1c8fa742b8c545fb18d915128",
+      "byte_exact_to_supplied_source": false,
+      "supplied_original": {
+        "bytes": 2282660,
+        "sha256": "d527c7dfe7318348ffd06e44d12a89216c3808e40d65ba18d15983b7004c0d85",
+        "publication_status": "privately retained; not uploaded because the container embedded absolute local production paths"
+      },
+      "public_copy_sanitization": {
+        "tool": "Blender 5.2.0 LTS",
+        "scope": "path metadata only; semantic model data verified unchanged",
+        "library_weak_references_normalized": 17,
+        "packed_image_paths_normalized": 3,
+        "render_paths_normalized": 1,
+        "documentation_path_mentions_normalized": 4,
+        "decompressed_private_path_hits_after_sanitization": 0
+      },
+      "blender": {
+        "file_format_header": "BLENDER17-01v0502",
+        "container_compression": "Zstandard",
+        "version": "5.2.0 LTS",
+        "scenes": 1,
+        "collections": 23,
+        "objects": 18,
+        "object_types": {
+          "ARMATURE": 1,
+          "MESH": 17
+        },
+        "meshes": 17,
+        "vertices": 21275,
+        "polygons": 41334,
+        "triangles": 41334,
+        "materials": 2,
+        "packed_images": 3,
+        "armatures": 1,
+        "bones": 47,
+        "actions": 0,
+        "libraries": 0,
+        "drivers": 0,
+        "documentation_text_blocks": 9,
+        "script_text_blocks": 0,
+        "packed_resources": true,
+        "missing_external_dependencies": 0,
+        "bounds": {
+          "min": [
+            -0.9429999589920044,
+            -1.8927454948425293,
+            -0.09437831491231918
+          ],
+          "max": [
+            0.9429999589920044,
+            1.9402217864990234,
+            2.3199996948242188
+          ],
+          "dimensions": [
+            1.8859999179840088,
+            3.8329672813415527,
+            2.414378009736538
+          ]
+        }
+      }
+    }
+  ],
+  "correspondence": {
+    "same_mesh_names": true,
+    "same_material_names": true,
+    "same_triangle_count": true,
+    "difference": "The GLB is normalized and export-split for runtime delivery and includes six animation clips. The editable Blend contains the matching 47-bone rig and static model data but no stored actions.",
+    "local_only_visual_qa": "Both models rendered as the same horse-drawn wagon assembly with no missing textures, clipping, broken geometry, or obvious rig corruption. Review renders were not committed.",
+    "no_telescope_aliases_byte_identical": true,
+    "no_telescope_changed_mesh": "RET_HI_Cargo_Cluster_Mesh",
+    "no_telescope_upload_vertices_removed": 844,
+    "no_telescope_triangles_removed": 684,
+    "no_telescope_embedded_textures_byte_identical": true,
+    "no_telescope_local_only_visual_qa": "Front and side renders confirmed that the telescope is absent while the horse, wagon, wheels, banner, cargo, lantern, rig, materials, and textures remain intact."
+  },
+  "privacy_and_security": {
+    "glb_external_uris": 0,
+    "glb_private_path_or_identifier_hits": 0,
+    "blend_script_text_blocks": 0,
+    "blend_drivers": 0,
+    "blend_linked_libraries": 0,
+    "blend_missing_external_dependencies": 0,
+    "public_blend_decompressed_private_path_hits": 0,
+    "unique_glb_payloads_validated": 2,
+    "no_telescope_aliases_archived": 2,
+    "all_glb_external_uris": 0,
+    "all_glb_private_path_or_identifier_hits": 0
+  },
+  "content_aliases": {
+    "sha256": "4a0f762b9dadeaddd8b2d528a7e165eaa98a8dd4134eb924604922524e7bbc5d",
+    "bytes": 1637452,
+    "filenames": [
+      "Warpkeep_Wagon_NoTelescope_GameReady.glb",
+      "Warpkeep_Hegemony_Draft_Wagon_Optimized_High_Polished_NoTelescope.glb"
+    ]
+  }
+}

@@ -43,6 +43,28 @@ The grant applies only to copyright and related rights controlled by the Warpkee
 
 This authorization covers publication and distribution of the named source PNG, its preview, and archive metadata as part of this public repository and release. It does not license OpenAI services, names, trademarks, third-party rights, Warpkeep trademarks and canonical identity, or other Warpkeep material by implication.
 
+## Hegemony supply wagon 3D source set
+
+- **Set:** byte-exact polished animated GLB, two byte-identical supplied no-telescope GLB aliases, plus a Blender 5.2 public copy sanitized only to remove absolute local production paths
+- **Release:** `hegemony-supply-wagon-3d-2026-07-14`
+- **Related visual release:** `hegemony-supply-wagon-2026-07-14`
+- **Designation:** supplemental 3D source/runtime-reference set for the same descriptively labeled Hegemony supply wagon; no stricter canonical game name or runtime integration asserted
+- **Deposit authority:** Ael explicitly authorized public archival in Warpkeep-Assets.
+- **License status:** public archival and repository/release distribution authorized; no separate open-license grant asserted
+
+This authorization covers publication and distribution of the named 3D package and its archive metadata as part of this public repository and release. It does not license third-party tools or services, trademarks, third-party rights, Warpkeep trademarks and canonical identity, or other Warpkeep material by implication. The supplied original Blend is retained privately because it embedded absolute local production paths; the public copy preserves the semantic model while normalizing path metadata only.
+
+## Hegemony worker 3D source set
+
+- **Set:** exact `WorkerHegemony.glb` runtime model plus a Blender 5.2 public copy of `Hegemony_Worker_1.blend` sanitized only to remove absolute local production paths
+- **Release:** `hegemony-worker-3d-2026-07-14`
+- **Related 3D release:** `hegemony-supply-wagon-3d-2026-07-14`
+- **Designation:** retains the supplied game-unit filename; internal scene metadata identifies a no-telescope horse-drawn wagon-family unit rather than a humanoid worker
+- **Deposit authority:** Ael explicitly authorized public archival in Warpkeep-Assets and requested retention of the `WorkerHegemony.glb` basename.
+- **License status:** public archival and repository/release distribution authorized; no separate open-license grant asserted
+
+This authorization covers publication and distribution of the named worker 3D package and its archive metadata as part of this public repository and release. It does not license third-party tools or services, trademarks, third-party rights, Warpkeep trademarks and canonical identity, or other Warpkeep material by implication. The exact supplied Blend is retained privately because it embedded absolute local production paths; the public copy preserves the semantic model while normalizing path metadata only.
+
 ## Warpkeep security and quality-of-life audit report
 
 - **Artifact:** `reports/warpkeep-security-qol-audit-2026-07-14/REPORT.md`, its manifest, checksum record, and public provenance
