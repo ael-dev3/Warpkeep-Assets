@@ -10,6 +10,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 from zipfile import ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,18 +24,56 @@ def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+VALID_BLEND = b"BLENDER17-01v0502" + b"\x00" * 16
+VALID_ZSTD_BLEND = bytes.fromhex(
+    "28b52ffd0458c5000090424c454e44455231372d303176303530320001003a1006b6038fcb"
+)
+
+
 class BlendVerificationTests(unittest.TestCase):
-    def test_zstd_blend_signature(self) -> None:
+    def test_zstd_blend_frame_and_header(self) -> None:
         verify_release.verify_blend(
-            BytesIO(b"\x28\xb5\x2f\xfd" + b"\x00" * 32),
+            BytesIO(VALID_ZSTD_BLEND),
             {
+                "bytes": len(VALID_ZSTD_BLEND),
                 "container": {
                     "compression": "zstd",
                     "uncompressedHeader": "BLENDER17-01v0502",
+                    "uncompressedBytes": len(VALID_BLEND),
                 }
             },
             "model.blend",
         )
+
+    def test_zstd_blend_rejects_truncated_frame(self) -> None:
+        with self.assertRaisesRegex(ValueError, "invalid Zstandard Blend frame"):
+            verify_release.verify_blend(
+                BytesIO(b"\x28\xb5\x2f\xfd" + b"X" * 28),
+                {
+                    "bytes": 32,
+                    "container": {
+                        "compression": "zstd",
+                        "uncompressedHeader": "BLENDER17-01v0502",
+                        "uncompressedBytes": len(VALID_BLEND),
+                    }
+                },
+                "model.blend",
+            )
+
+    def test_zstd_blend_rejects_compressed_size_overflow(self) -> None:
+        with self.assertRaisesRegex(ValueError, "compressed Blend byte-count mismatch"):
+            verify_release.verify_blend(
+                BytesIO(VALID_ZSTD_BLEND + b"untrusted trailing bytes"),
+                {
+                    "bytes": len(VALID_ZSTD_BLEND),
+                    "container": {
+                        "compression": "zstd",
+                        "uncompressedHeader": "BLENDER17-01v0502",
+                        "uncompressedBytes": len(VALID_BLEND),
+                    },
+                },
+                "model.blend",
+            )
 
     def test_zstd_blend_rejects_wrong_signature(self) -> None:
         with self.assertRaisesRegex(ValueError, "Zstandard Blend signature"):
@@ -49,13 +88,59 @@ class BlendVerificationTests(unittest.TestCase):
                 "model.blend",
             )
 
+    def test_zstd_blend_rejects_actual_header_mismatch(self) -> None:
+        with self.assertRaisesRegex(ValueError, "decompressed Blend header mismatch"):
+            verify_release.verify_blend(
+                BytesIO(VALID_ZSTD_BLEND),
+                {
+                    "bytes": len(VALID_ZSTD_BLEND),
+                    "container": {
+                        "compression": "zstd",
+                        "uncompressedHeader": "BLENDER17-01v0503",
+                        "uncompressedBytes": len(VALID_BLEND),
+                    }
+                },
+                "model.blend",
+            )
+
+    def test_zstd_blend_rejects_uncompressed_size_mismatch(self) -> None:
+        with self.assertRaisesRegex(ValueError, "decompressed Blend byte-count mismatch"):
+            verify_release.verify_blend(
+                BytesIO(VALID_ZSTD_BLEND),
+                {
+                    "bytes": len(VALID_ZSTD_BLEND),
+                    "container": {
+                        "compression": "zstd",
+                        "uncompressedHeader": "BLENDER17-01v0502",
+                        "uncompressedBytes": len(VALID_BLEND) - 1,
+                    }
+                },
+                "model.blend",
+            )
+
+    def test_zstd_blend_fails_closed_without_verifier(self) -> None:
+        with patch.object(verify_release.shutil, "which", return_value=None):
+            with self.assertRaisesRegex(ValueError, "Zstandard verifier unavailable"):
+                verify_release.verify_blend(
+                    BytesIO(VALID_ZSTD_BLEND),
+                    {
+                        "bytes": len(VALID_ZSTD_BLEND),
+                        "container": {
+                            "compression": "zstd",
+                            "uncompressedHeader": "BLENDER17-01v0502",
+                            "uncompressedBytes": len(VALID_BLEND),
+                        }
+                    },
+                    "model.blend",
+                )
+
     def test_uncompressed_legacy_and_variable_headers(self) -> None:
         verify_release.verify_blend(BytesIO(b"BLENDER-v502" + b"\x00" * 8), {}, "legacy.blend")
         verify_release.verify_blend(BytesIO(b"BLENDER17-01v0502" + b"\x00"), {}, "variable.blend")
 
     def test_archive_with_glb_and_blend(self) -> None:
         glb = struct.pack("<4sII", b"glTF", 2, 12)
-        blend = b"\x28\xb5\x2f\xfd" + b"\x00" * 28
+        blend = VALID_ZSTD_BLEND
         with tempfile.TemporaryDirectory() as directory:
             archive_path = Path(directory) / "models.zip"
             with ZipFile(archive_path, "w") as archive:
@@ -78,6 +163,7 @@ class BlendVerificationTests(unittest.TestCase):
                         "container": {
                             "compression": "zstd",
                             "uncompressedHeader": "BLENDER17-01v0502",
+                            "uncompressedBytes": len(VALID_BLEND),
                         },
                     },
                 ],

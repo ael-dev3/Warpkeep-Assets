@@ -7,8 +7,11 @@ import argparse
 import hashlib
 import json
 from pathlib import Path, PurePosixPath
+import shutil
 import stat
 import struct
+import subprocess
+import tempfile
 from zipfile import ZipFile
 
 
@@ -47,19 +50,7 @@ def verify_glb(stream, expected_size: int, label: str) -> None:
         raise ValueError(f"invalid GLB header: {label}")
 
 
-def verify_blend(stream, expected: dict, label: str) -> None:
-    header = stream.read(18)
-    container = expected.get("container", {})
-    compression = container.get("compression")
-    if compression == "zstd":
-        if header[:4] != b"\x28\xb5\x2f\xfd":
-            raise ValueError(f"invalid Zstandard Blend signature: {label}")
-        declared_header = container.get("uncompressedHeader", "")
-        if not declared_header.startswith("BLENDER"):
-            raise ValueError(f"invalid declared Blend header: {label}")
-        return
-    if compression is not None:
-        raise ValueError(f"unsupported Blend compression: {label}")
+def valid_blend_header(header: bytes) -> bool:
     legacy = (
         len(header) >= 12
         and header[:7] == b"BLENDER"
@@ -76,7 +67,98 @@ def verify_blend(stream, expected: dict, label: str) -> None:
         and header[12:13] == b"v"
         and header[13:17].isdigit()
     )
-    if not (legacy or variable):
+    return legacy or variable
+
+
+def verify_zstd_blend(stream, expected_compressed_bytes: object, container: dict, label: str) -> None:
+    executable = shutil.which("zstd")
+    if executable is None:
+        raise ValueError(f"Zstandard verifier unavailable: {label}")
+
+    if (
+        not isinstance(expected_compressed_bytes, int)
+        or isinstance(expected_compressed_bytes, bool)
+        or expected_compressed_bytes <= 0
+    ):
+        raise ValueError(f"invalid declared compressed Blend byte count: {label}")
+    expected_bytes = container.get("uncompressedBytes")
+    if not isinstance(expected_bytes, int) or isinstance(expected_bytes, bool) or expected_bytes <= 0:
+        raise ValueError(f"invalid declared Blend byte count: {label}")
+    declared_header = container.get("uncompressedHeader", "")
+    if not isinstance(declared_header, str):
+        raise ValueError(f"invalid declared Blend header: {label}")
+    declared_header_bytes = declared_header.encode("ascii", errors="strict")
+    if not valid_blend_header(declared_header_bytes):
+        raise ValueError(f"invalid declared Blend header: {label}")
+
+    with tempfile.TemporaryDirectory(prefix="warpkeep-zstd-") as directory:
+        compressed_path = Path(directory) / "source.blend.zst"
+        with compressed_path.open("wb") as compressed:
+            copied = 0
+            while True:
+                chunk = stream.read(min(1024 * 1024, expected_compressed_bytes - copied + 1))
+                if not chunk:
+                    break
+                if copied + len(chunk) > expected_compressed_bytes:
+                    raise ValueError(f"compressed Blend byte-count mismatch: {label}")
+                compressed.write(chunk)
+                copied += len(chunk)
+            if copied != expected_compressed_bytes:
+                raise ValueError(f"compressed Blend byte-count mismatch: {label}")
+
+        try:
+            process = subprocess.Popen(
+                [executable, "--quiet", "--decompress", "--stdout", str(compressed_path)],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.DEVNULL,
+            )
+        except OSError as exc:
+            raise ValueError(f"Zstandard verifier unavailable: {label}") from exc
+
+        total = 0
+        actual_header = bytearray()
+        try:
+            assert process.stdout is not None
+            while True:
+                chunk = process.stdout.read(1024 * 1024)
+                if not chunk:
+                    break
+                if len(actual_header) < 18:
+                    actual_header.extend(chunk[: 18 - len(actual_header)])
+                total += len(chunk)
+                if total > expected_bytes:
+                    process.kill()
+                    process.wait()
+                    raise ValueError(f"decompressed Blend byte-count mismatch: {label}")
+            return_code = process.wait()
+        finally:
+            if process.poll() is None:
+                process.kill()
+                process.wait()
+            if process.stdout is not None:
+                process.stdout.close()
+
+    if return_code != 0:
+        raise ValueError(f"invalid Zstandard Blend frame: {label}")
+    if total != expected_bytes:
+        raise ValueError(f"decompressed Blend byte-count mismatch: {label}")
+    if not bytes(actual_header).startswith(declared_header_bytes) or not valid_blend_header(bytes(actual_header)):
+        raise ValueError(f"decompressed Blend header mismatch: {label}")
+
+
+def verify_blend(stream, expected: dict, label: str) -> None:
+    header = stream.read(18)
+    container = expected.get("container", {})
+    compression = container.get("compression")
+    if compression == "zstd":
+        if header[:4] != b"\x28\xb5\x2f\xfd":
+            raise ValueError(f"invalid Zstandard Blend signature: {label}")
+        stream.seek(0)
+        verify_zstd_blend(stream, expected.get("bytes"), container, label)
+        return
+    if compression is not None:
+        raise ValueError(f"unsupported Blend compression: {label}")
+    if not valid_blend_header(header):
         raise ValueError(f"invalid uncompressed Blend header: {label}")
 
 
