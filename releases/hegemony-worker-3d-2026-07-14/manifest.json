@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "tag": "hegemony-worker-3d-2026-07-14",
+  "source": {
+    "suppliedBy": "Ael",
+    "authorization": "Ael explicitly authorized this public deposit in Warpkeep-Assets and requested that WorkerHegemony.glb retain its basename.",
+    "privateWorkflowMetadata": "intentionally omitted from the public archive"
+  },
+  "designation": {
+    "name": "Hegemony worker 3D source set",
+    "status": "retains supplied game-unit filenames; internal scene identifies a horse-drawn wagon-family unit rather than a humanoid worker",
+    "role": "supplemental editable and runtime-reference models",
+    "runtimeIntegration": null
+  },
+  "relatedSupplyWagon3dRelease": "https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-supply-wagon-3d-2026-07-14",
+  "license": {
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license",
+    "scope": "Publication and distribution of this named 3D package and its archive metadata are authorized as part of Warpkeep-Assets. No additional open-license grant, trademark right, or canonical-identity right is asserted."
+  },
+  "sanitization": {
+    "glb": "byte-exact supplied source; no local paths, external URIs, emails, communication-platform markers, or long identifiers observed",
+    "blend": "public Blender 5.2 copy; path metadata only was normalized because the supplied container embedded absolute local production paths",
+    "blendSemanticComparison": "scenes, objects, meshes, topology, materials, packed images, armature, actions, modifiers, and bounds match the privately retained original exactly",
+    "decompressedBytesScanned": 6201424,
+    "decompressedPrivatePathHitsAfterSanitization": 0
+  },
+  "validation": {
+    "gltfTransformCli": {
+      "version": "4.4.1",
+      "errors": 0,
+      "warnings": 0,
+      "information": 19
+    },
+    "blender": {
+      "version": "5.2.0 LTS",
+      "autoExecutionDisabled": true,
+      "missingExternalDependencies": 0,
+      "scriptTextBlocks": 0,
+      "drivers": 0
+    },
+    "correspondence": {
+      "sharedMeshNames": 13,
+      "sharedMeshTriangleCountsMatch": true,
+      "glbAdditionalMeshes": 4
+    },
+    "localOnlyVisualQa": "GLB and Blend rendered as coherent no-telescope variants of the same horse-drawn wagon-family unit with intact materials and no clipping, corruption, or missing core geometry"
+  },
+  "knownContentEquivalence": {
+    "sha256": "4a0f762b9dadeaddd8b2d528a7e165eaa98a8dd4134eb924604922524e7bbc5d",
+    "relationship": "WorkerHegemony.glb is byte-identical to two no-telescope aliases in the related supply-wagon 3D package; retention of this exact supplied basename is intentional."
+  },
+  "attachments": [
+    {
+      "name": "hegemony-worker-3d-sources-v1.zip",
+      "bytes": 3382725,
+      "sha256": "c11909b92934868bf18a70462dfa76fae2f33010a5bfe91d4ca3ed47c1d53c91",
+      "mediaType": "application/zip",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-worker-3d-2026-07-14/hegemony-worker-3d-sources-v1.zip",
+      "packageRoot": "hegemony-worker-3d-sources-v1",
+      "entries": [
+        {
+          "path": "hegemony-worker-3d-sources-v1/Hegemony_Worker_1.blend",
+          "bytes": 2145454,
+          "sha256": "936b4a0f420d8b6af069fd9040597b8cf328893e6ff2b382ed6c31cf0c4e6482",
+          "mediaType": "application/x-blender",
+          "byteExactToSuppliedSource": false,
+          "publicCopySanitized": true,
+          "container": {
+            "type": "Blender",
+            "compression": "zstd",
+            "uncompressedHeader": "BLENDER17-01v0502",
+            "blenderVersion": "5.2.0 LTS"
+          }
+        },
+        {
+          "path": "hegemony-worker-3d-sources-v1/README.md",
+          "bytes": 3124,
+          "sha256": "c3979422dfa1e3cc0491742797e1e107a91bc2863b2aca0174bb66c6bf044b37",
+          "mediaType": "text/markdown"
+        },
+        {
+          "path": "hegemony-worker-3d-sources-v1/SHA256SUMS.txt",
+          "bytes": 331,
+          "sha256": "e1fe3cab0db94dd8218f8e3bc1faa653a0d8bca6adeab1250d668cf5ed8a686b",
+          "mediaType": "text/plain"
+        },
+        {
+          "path": "hegemony-worker-3d-sources-v1/WorkerHegemony.glb",
+          "bytes": 1637452,
+          "sha256": "4a0f762b9dadeaddd8b2d528a7e165eaa98a8dd4134eb924604922524e7bbc5d",
+          "mediaType": "model/gltf-binary",
+          "byteExactToSuppliedSource": true,
+          "container": {
+            "type": "GLB",
+            "version": 2,
+            "assetVersion": "2.0"
+          }
+        },
+        {
+          "path": "hegemony-worker-3d-sources-v1/manifest.json",
+          "bytes": 8044,
+          "sha256": "fdd9fb7158145f1520a9341c72f67a8d4793ca656c0f7c3289416ea960db7908",
+          "mediaType": "application/json"
+        }
+      ]
+    }
+  ]
+}

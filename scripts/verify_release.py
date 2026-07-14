@@ -47,6 +47,39 @@ def verify_glb(stream, expected_size: int, label: str) -> None:
         raise ValueError(f"invalid GLB header: {label}")
 
 
+def verify_blend(stream, expected: dict, label: str) -> None:
+    header = stream.read(18)
+    container = expected.get("container", {})
+    compression = container.get("compression")
+    if compression == "zstd":
+        if header[:4] != b"\x28\xb5\x2f\xfd":
+            raise ValueError(f"invalid Zstandard Blend signature: {label}")
+        declared_header = container.get("uncompressedHeader", "")
+        if not declared_header.startswith("BLENDER"):
+            raise ValueError(f"invalid declared Blend header: {label}")
+        return
+    if compression is not None:
+        raise ValueError(f"unsupported Blend compression: {label}")
+    legacy = (
+        len(header) >= 12
+        and header[:7] == b"BLENDER"
+        and header[7:8] in (b"_", b"-")
+        and header[8:9] in (b"v", b"V")
+        and header[9:12].isdigit()
+    )
+    variable = (
+        len(header) >= 17
+        and header[:7] == b"BLENDER"
+        and header[7:9].isdigit()
+        and header[9:10] == b"-"
+        and header[10:12].isdigit()
+        and header[12:13] == b"v"
+        and header[13:17].isdigit()
+    )
+    if not (legacy or variable):
+        raise ValueError(f"invalid uncompressed Blend header: {label}")
+
+
 def verify_file(path: Path, expected: dict) -> None:
     if path.stat().st_size != expected["bytes"]:
         raise ValueError(f"byte-count mismatch: {path.name}")
@@ -105,6 +138,8 @@ def verify_archive(path: Path, expected: dict) -> None:
             with archive.open(info) as stream:
                 if info.filename.endswith(".glb"):
                     verify_glb(stream, info.file_size, info.filename)
+                elif info.filename.endswith(".blend"):
+                    verify_blend(stream, record, info.filename)
                 stream.seek(0)
                 if sha256_stream(stream) != record["sha256"]:
                     raise ValueError(f"entry SHA-256 mismatch: {info.filename}")
@@ -112,6 +147,39 @@ def verify_archive(path: Path, expected: dict) -> None:
     if set(actual_names) != set(expected_entries):
         missing = sorted(set(expected_entries) - set(actual_names))
         raise ValueError(f"missing ZIP entries: {missing}")
+
+
+def verify_checksum_sidecar(manifest_path: Path, attachments: list[dict]) -> None:
+    sidecar = manifest_path.with_name("SHA256SUMS.txt")
+    if not sidecar.exists():
+        return
+
+    expected = {attachment["name"]: attachment["sha256"] for attachment in attachments}
+    if len(expected) != len(attachments):
+        raise ValueError("duplicate release attachment name")
+    actual: dict[str, str] = {}
+    for line_number, line in enumerate(sidecar.read_text(encoding="utf-8").splitlines(), 1):
+        parts = line.split("  ", 1)
+        if len(parts) != 2:
+            raise ValueError(f"invalid release checksum line {line_number}: {sidecar.name}")
+        digest, name = parts
+        if (
+            len(digest) != 64
+            or any(character not in "0123456789abcdef" for character in digest)
+            or not safe_entry(name)
+            or PurePosixPath(name).name != name
+        ):
+            raise ValueError(f"invalid release checksum line {line_number}: {sidecar.name}")
+        if name in actual:
+            raise ValueError(f"duplicate release checksum name: {name}")
+        actual[name] = digest
+
+    expected_with_optional_manifest = dict(expected)
+    if "manifest.json" in actual:
+        expected_with_optional_manifest["manifest.json"] = sha256_path(manifest_path)
+
+    if actual != expected_with_optional_manifest:
+        raise ValueError(f"release checksum sidecar mismatch: {sidecar.name}")
 
 
 def main() -> None:
@@ -129,6 +197,7 @@ def main() -> None:
             verify_png(path, attachment)
         else:
             raise ValueError(f"unsupported media type: {media_type}")
+    verify_checksum_sidecar(args.manifest, manifest["attachments"])
     print(f"Verified {len(manifest['attachments'])} release attachments for {manifest['tag']}.")
 
 

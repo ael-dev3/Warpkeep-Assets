@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "tag": "hegemony-supply-wagon-3d-2026-07-14",
+  "source": {
+    "suppliedBy": "Ael",
+    "authorization": "Ael explicitly authorized this public deposit in Warpkeep-Assets.",
+    "privateWorkflowMetadata": "intentionally omitted from the public archive"
+  },
+  "designation": {
+    "name": "Hegemony supply wagon 3D source set",
+    "status": "descriptive archive label; no stricter canonical game name asserted",
+    "role": "supplemental editable, polished runtime-reference, and no-telescope runtime-reference models for the horse-drawn field supply wagon",
+    "runtimeIntegration": null
+  },
+  "relatedVisualReference": {
+    "release": "https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-supply-wagon-2026-07-14",
+    "previewPath": "previews/hegemony-supply-wagon-2026-07-14/hegemony-supply-wagon-preview.jpg",
+    "relationship": "same descriptive wagon design; the existing image preview is a related visual reference, not a derivative render of this package"
+  },
+  "license": {
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license",
+    "scope": "Publication and distribution of this named 3D package and its archive metadata are authorized as part of Warpkeep-Assets. No additional open-license grant, trademark right, or canonical-identity right is asserted."
+  },
+  "sanitization": {
+    "glbs": "three byte-exact supplied filenames representing two unique payloads; no local paths, external URIs, emails, communication-platform markers, or long identifiers observed",
+    "blend": "public Blender 5.2 copy; path metadata only was normalized because the supplied container embedded absolute local production paths",
+    "blendSemanticComparison": "objects, mesh records, triangle count, materials, packed images, armature, actions, modifiers, and bounds match the privately retained original exactly",
+    "decompressedPrivatePathHitsAfterSanitization": 0
+  },
+  "validation": {
+    "gltfTransformCli": {
+      "version": "4.4.1",
+      "uniquePayloads": 2,
+      "errors": 0,
+      "warnings": 0,
+      "informationPerPayload": 19
+    },
+    "blender": {
+      "version": "5.2.0 LTS",
+      "autoExecutionDisabled": true,
+      "missingExternalDependencies": 0,
+      "scriptTextBlocks": 0,
+      "drivers": 0
+    },
+    "localOnlyVisualQa": "polished and no-telescope payloads rendered as complete horse-drawn wagons with intact textures and no clipping, broken geometry, or obvious rig corruption; the no-telescope payload visibly omits only the telescope from its changed cargo mesh"
+  },
+  "contentAliases": {
+    "sha256": "4a0f762b9dadeaddd8b2d528a7e165eaa98a8dd4134eb924604922524e7bbc5d",
+    "bytes": 1637452,
+    "filenames": [
+      "Warpkeep_Wagon_NoTelescope_GameReady.glb",
+      "Warpkeep_Hegemony_Draft_Wagon_Optimized_High_Polished_NoTelescope.glb"
+    ]
+  },
+  "attachments": [
+    {
+      "name": "hegemony-supply-wagon-3d-sources-v1.zip",
+      "bytes": 6068830,
+      "sha256": "7abc2ed243286a970c9e2cc1fb589bf4e2c275e94b5ddcb4d51e9a5645e118e5",
+      "mediaType": "application/zip",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-supply-wagon-3d-2026-07-14/hegemony-supply-wagon-3d-sources-v1.zip",
+      "packageRoot": "hegemony-supply-wagon-3d-sources-v1",
+      "entries": [
+        {
+          "path": "hegemony-supply-wagon-3d-sources-v1/README.md",
+          "bytes": 3348,
+          "sha256": "97c0a378e457feeb4d3593f5a588947295529c1dd3d481c7beecb73c9b801a0d",
+          "mediaType": "text/markdown"
+        },
+        {
+          "path": "hegemony-supply-wagon-3d-sources-v1/SHA256SUMS.txt",
+          "bytes": 661,
+          "sha256": "33500203f737c0ce1dabfdc8eaefa0cfb26be4f936a89997b4d3007af80276d2",
+          "mediaType": "text/plain"
+        },
+        {
+          "path": "hegemony-supply-wagon-3d-sources-v1/Warpkeep_Hegemony_Draft_Wagon_Optimized_High_Polished_Final.blend",
+          "bytes": 2282489,
+          "sha256": "90ca7a9511e3deda2d32dd94bc15b16281f8d8a1c8fa742b8c545fb18d915128",
+          "mediaType": "application/x-blender",
+          "byteExactToSuppliedSource": false,
+          "publicCopySanitized": true,
+          "container": {
+            "type": "Blender",
+            "compression": "zstd",
+            "uncompressedHeader": "BLENDER17-01v0502",
+            "blenderVersion": "5.2.0 LTS"
+          }
+        },
+        {
+          "path": "hegemony-supply-wagon-3d-sources-v1/Warpkeep_Hegemony_Draft_Wagon_Optimized_High_Polished_Final.glb",
+          "bytes": 1647672,
+          "sha256": "5f902dc57da969a1a16067f2500d8d0f4e718c2b563795404d4fa7dc4495181a",
+          "mediaType": "model/gltf-binary",
+          "byteExactToSuppliedSource": true,
+          "container": {
+            "type": "GLB",
+            "version": 2,
+            "assetVersion": "2.0"
+          }
+        },
+        {
+          "path": "hegemony-supply-wagon-3d-sources-v1/Warpkeep_Hegemony_Draft_Wagon_Optimized_High_Polished_NoTelescope.glb",
+          "bytes": 1637452,
+          "sha256": "4a0f762b9dadeaddd8b2d528a7e165eaa98a8dd4134eb924604922524e7bbc5d",
+          "mediaType": "model/gltf-binary",
+          "byteExactToSuppliedSource": true,
+          "container": {
+            "type": "GLB",
+            "version": 2,
+            "assetVersion": "2.0"
+          }
+        },
+        {
+          "path": "hegemony-supply-wagon-3d-sources-v1/Warpkeep_Wagon_NoTelescope_GameReady.glb",
+          "bytes": 1637452,
+          "sha256": "4a0f762b9dadeaddd8b2d528a7e165eaa98a8dd4134eb924604922524e7bbc5d",
+          "mediaType": "model/gltf-binary",
+          "byteExactToSuppliedSource": true,
+          "container": {
+            "type": "GLB",
+            "version": 2,
+            "assetVersion": "2.0"
+          }
+        },
+        {
+          "path": "hegemony-supply-wagon-3d-sources-v1/manifest.json",
+          "bytes": 11806,
+          "sha256": "9bd8fa4ead3636c86f0a7ad16e153da891339adaf394bbd7f30344f9a6d14719",
+          "mediaType": "application/json"
+        }
+      ]
+    }
+  ]
+}

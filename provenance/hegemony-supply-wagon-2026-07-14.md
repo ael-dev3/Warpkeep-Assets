@@ -42,3 +42,7 @@ A heavy dapple-gray draft horse in ornate black metal and leather harness pulls 
 - Composition: full source framing preserved without cropping or distortion
 - Bytes: 89,418
 - SHA-256: `3f800270b1058aac71198e1916b6b2e711ec7fc2d4b158b7e73b66f192458709`
+
+## Related 3D source set
+
+The supplemental editable/runtime-reference package is archived separately as [`hegemony-supply-wagon-3d-2026-07-14`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-supply-wagon-3d-2026-07-14). It uses the same descriptive wagon label and does not change this visual reference's canonical or license status.
