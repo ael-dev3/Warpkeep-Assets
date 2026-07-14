@@ -32,6 +32,17 @@ Suggested credit:
 
 The grant applies only to copyright and related rights controlled by the Warpkeep project in the two named source PNGs and their two Git-tracked previews. It does not license OpenAI services, names, trademarks, third-party rights, or Warpkeep trademarks and canonical identity.
 
+## Hegemony supply wagon visual reference
+
+- **Set:** white-background source PNG and its Git-tracked JPEG preview
+- **Release:** `hegemony-supply-wagon-2026-07-14`
+- **Designation:** descriptive archive label for a Hegemony-themed horse-drawn field supply wagon; no stricter canonical game name asserted
+- **Deposit authority:** Ael explicitly authorized public archival in Warpkeep-Assets.
+- **Generation service:** OpenAI Media Service API / `gpt-image` 2.0, as identified by the source PNG's embedded Content Credentials
+- **License status:** public archival and repository/release distribution authorized; no separate open-license grant asserted
+
+This authorization covers publication and distribution of the named source PNG, its preview, and archive metadata as part of this public repository and release. It does not license OpenAI services, names, trademarks, third-party rights, Warpkeep trademarks and canonical identity, or other Warpkeep material by implication.
+
 ## Warpkeep security and quality-of-life audit report
 
 - **Artifact:** `reports/warpkeep-security-qol-audit-2026-07-14/REPORT.md`, its manifest, checksum record, and public provenance

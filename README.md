@@ -8,6 +8,7 @@ Large masters do not live in normal Git history. They are published as immutable
 
 - [`title-stone-letters-2026-07-12`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/title-stone-letters-2026-07-12) — six source stone-letter GLBs and the optimized high/compact WARPKEEP title assemblies
 - [`hegemony-mark-2026-07-13`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-mark-2026-07-13) — **A Mark — the Hegemony’s main in-game currency.** Includes presentation and transparent source PNGs, Git-tracked previews, checksums, [public provenance](provenance/hegemony-mark-2026-07-13.md), and CC BY 4.0 licensing effective from Warpkeep v0.3.0.
+- [`hegemony-supply-wagon-2026-07-14`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-supply-wagon-2026-07-14) — descriptively labeled Hegemony horse-drawn field supply wagon reference. Includes the source PNG, Git-tracked preview, checksums, [public provenance](provenance/hegemony-supply-wagon-2026-07-14.md), and explicit public-archive authorization without a separate open-license grant.
 
 The release catalog is in [`releases/`](releases/), detailed source metadata is in [`manifests/`](manifests/), and public provenance is in [`provenance/`](provenance/).
 
