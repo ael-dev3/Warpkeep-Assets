@@ -1,0 +1,18 @@
+title = "Warpkeep Assets secret scanning"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Public Worker version and source coordinates in the dated Warpkeep audit artifact"
+condition = "AND"
+paths = [
+  '''^reports/warpkeep-security-qol-audit-2026-07-14/(?:REPORT\.md|manifest\.json)$''',
+]
+regexTarget = "match"
+regexes = [
+  '''authWorkerVersion\": \"[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}\"''',
+  '''authWorkerSourceCommit\": \"[0-9a-f]{40}\"''',
+  '''Auth Worker v21: `[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}`''',
+  '''Auth Worker source SHA: `[0-9a-f]{40}`''',
+]
