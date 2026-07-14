@@ -1,0 +1,71 @@
+{
+  "archive_purpose": "Public, checksum-addressed visual reference for a Hegemony-themed horse-drawn supply wagon.",
+  "reference_only": true,
+  "runtime_usage": null,
+  "archive_date": "2026-07-14",
+  "designation": {
+    "name": "Hegemony supply wagon",
+    "status": "descriptive archive label; no stricter canonical game name asserted",
+    "role": "horse-drawn field logistics and survey transport reference"
+  },
+  "source": {
+    "supplied_by": "Ael",
+    "provenance": "Ael supplied the image and explicitly authorized its public deposit in Warpkeep-Assets.",
+    "private_workflow_metadata": "intentionally omitted from the public archive"
+  },
+  "license_policy": {
+    "spdx_identifier": null,
+    "status": "public-archive-authorized-no-separate-open-license",
+    "covered_files": "The named source PNG and its Git-tracked preview may be published and distributed as part of this public repository and release.",
+    "scope_note": "No additional open-license grant is asserted. Repository or release presence does not license OpenAI services, names, trademarks, third-party rights, Warpkeep trademarks and canonical identity, or other Warpkeep material."
+  },
+  "visual_summary": {
+    "description": "A heavy dapple-gray draft horse in ornate black metal and leather harness pulls a rugged two-wheeled wooden field wagon loaded with dark crates, purple bedrolls, a brass telescope, bundled wooden stakes, a lantern, and a purple-and-gold banner. Repeating purple-and-gold heraldic motifs visually associate the reference with the Hegemony. The subject is isolated on a clean white presentation background with a soft ground shadow.",
+    "readable_text": false,
+    "third_party_logo_observed": false,
+    "people_or_personal_identifiers_observed": false
+  },
+  "files": [
+    {
+      "release_attachment": "hegemony-supply-wagon.png",
+      "variant": "white-presentation-background",
+      "media_type": "image/png",
+      "bytes": 1537793,
+      "width": 1024,
+      "height": 1024,
+      "bit_depth": 8,
+      "color_type": "RGB",
+      "alpha": false,
+      "interlaced": false,
+      "sha256": "1fb83e10c477acaf5c5f63aaba3df5b2891eb4dded34f94155e718824d8c925f",
+      "embedded_content_credentials": {
+        "container_chunk": "caBX",
+        "bytes": 24918,
+        "claim_generator": "OpenAI Media Service API",
+        "software_agent": {
+          "name": "gpt-image",
+          "version": "2.0"
+        },
+        "digital_source_type": "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+        "asserted_created": "2026-07-14T00:00:00Z",
+        "signature_status": "not independently verified",
+        "readable_prompt_observed": false,
+        "structural_uuid_count": 3,
+        "structural_uuid_values": "intentionally omitted from public metadata"
+      }
+    }
+  ],
+  "previews": [
+    {
+      "path": "previews/hegemony-supply-wagon-2026-07-14/hegemony-supply-wagon-preview.jpg",
+      "media_type": "image/jpeg",
+      "bytes": 89418,
+      "width": 512,
+      "height": 512,
+      "sha256": "3f800270b1058aac71198e1916b6b2e711ec7fc2d4b158b7e73b66f192458709",
+      "derived_from": "hegemony-supply-wagon.png",
+      "visual_fidelity": "full composition preserved without cropping or distortion",
+      "private_metadata_observed": false
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "tag": "hegemony-supply-wagon-2026-07-14",
+  "source": {
+    "suppliedBy": "Ael",
+    "authorization": "Ael explicitly authorized this public deposit in Warpkeep-Assets.",
+    "privateWorkflowMetadata": "intentionally omitted from the public archive"
+  },
+  "designation": {
+    "name": "Hegemony supply wagon",
+    "status": "descriptive archive label; no stricter canonical game name asserted",
+    "role": "horse-drawn field logistics and survey transport reference"
+  },
+  "license": {
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license",
+    "scope": "Publication and distribution of the named source PNG, preview, and archive metadata are authorized as part of this public repository and release. No additional open-license grant is asserted. This does not license OpenAI services, names, trademarks, third-party rights, Warpkeep trademarks and canonical identity, or other Warpkeep material."
+  },
+  "attachments": [
+    {
+      "name": "hegemony-supply-wagon.png",
+      "variant": "white-presentation-background",
+      "bytes": 1537793,
+      "sha256": "1fb83e10c477acaf5c5f63aaba3df5b2891eb4dded34f94155e718824d8c925f",
+      "mediaType": "image/png",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-supply-wagon-2026-07-14/hegemony-supply-wagon.png",
+      "image": {
+        "width": 1024,
+        "height": 1024,
+        "bitDepth": 8,
+        "colorType": "RGB",
+        "alpha": false,
+        "interlaced": false
+      },
+      "embeddedContentCredentials": {
+        "containerChunk": "caBX",
+        "bytes": 24918,
+        "claimGenerator": "OpenAI Media Service API",
+        "softwareAgent": {
+          "name": "gpt-image",
+          "version": "2.0"
+        },
+        "digitalSourceType": "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+        "assertedCreated": "2026-07-14T00:00:00Z",
+        "signatureStatus": "not independently verified",
+        "readablePromptObserved": false,
+        "structuralUuidCount": 3,
+        "structuralUuidValues": "intentionally omitted from public metadata"
+      }
+    }
+  ],
+  "previews": [
+    {
+      "path": "previews/hegemony-supply-wagon-2026-07-14/hegemony-supply-wagon-preview.jpg",
+      "bytes": 89418,
+      "sha256": "3f800270b1058aac71198e1916b6b2e711ec7fc2d4b158b7e73b66f192458709",
+      "mediaType": "image/jpeg",
+      "width": 512,
+      "height": 512,
+      "derivedFromAttachment": "hegemony-supply-wagon.png",
+      "visualFidelity": "full composition preserved without cropping or distortion",
+      "privateMetadataObserved": false
+    }
+  ]
+}

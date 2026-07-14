@@ -1,0 +1,2 @@
+64ffc23c8a886f3729dcfd6392b865e09af4710de0e06e6cd198e05b0a6704fd  manifest.json
+1fb83e10c477acaf5c5f63aaba3df5b2891eb4dded34f94155e718824d8c925f  hegemony-supply-wagon.png
