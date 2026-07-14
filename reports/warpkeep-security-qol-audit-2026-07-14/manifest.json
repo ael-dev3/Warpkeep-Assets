@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "artifactId": "warpkeep-security-qol-audit-2026-07-14",
+  "artifactType": "security-and-quality-of-life-audit-report",
+  "archiveDate": "2026-07-14",
+  "source": {
+    "commissionedBy": "Ael",
+    "producedBy": "Hermes Agent",
+    "authorization": "Ael explicitly authorized this public deposit in Warpkeep-Assets.",
+    "privateWorkflowMetadata": "intentionally omitted from the public archive"
+  },
+  "audit": {
+    "mode": "read-only and non-destructive",
+    "frontendUrl": "https://warpkeep.com",
+    "runtimeRepository": "ael-dev3/Warpkeep",
+    "runtimeCommit": "f3fb6ed031a84c6a1703bd438d9553bd00bacd33",
+    "assetRepositoryCommitAtAudit": "23795ce671fa2c7c98e188887b7a444a194a8a1e",
+    "authWorkerVersion": "856862c0-6700-4310-bb98-61567ebc69ef",
+    "authWorkerSourceCommit": "e56d74768da3e47a3d56cbfb5e0f2e2ed51032cf",
+    "backendProtocol": 2,
+    "scopeLimitation": "The authenticated Farcaster exchange and admitted-player realm were not exercised because that would create or consume production authentication or player state."
+  },
+  "license": {
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license",
+    "scope": "Ael authorized publication and distribution of the named report as part of this public repository. No additional open-license grant is asserted for the report. Repository presence does not license third-party names, services, trademarks, source code, evidence artifacts, or other Warpkeep material."
+  },
+  "files": [
+    {
+      "path": "REPORT.md",
+      "mediaType": "text/markdown; charset=utf-8",
+      "bytes": 12654,
+      "sha256": "00f05260578c90050912e55813a3304849dc54033395bc77b2e3fb9c90a6bda2",
+      "sourceBytesPreserved": true
+    }
+  ],
+  "excludedArtifacts": [
+    "raw browser traces and screenshots",
+    "private production and database evidence",
+    "local audit tooling and dependency directories",
+    "communication-platform identifiers and attachment metadata"
+  ]
+}

@@ -11,6 +11,12 @@ Large masters do not live in normal Git history. They are published as immutable
 
 The release catalog is in [`releases/`](releases/), detailed source metadata is in [`manifests/`](manifests/), and public provenance is in [`provenance/`](provenance/).
 
+## Audit artifacts
+
+- [`warpkeep-security-qol-audit-2026-07-14`](reports/warpkeep-security-qol-audit-2026-07-14/REPORT.md) — dated, read-only security and quality-of-life audit of Warpkeep's frontend, auth bridge, SpacetimeDB boundary, repositories, deployment and public assets; includes a checksum-addressed report, [manifest](reports/warpkeep-security-qol-audit-2026-07-14/manifest.json), and [sanitized provenance](provenance/warpkeep-security-qol-audit-2026-07-14.md).
+
+Audit reports are Git-tracked technical snapshots rather than runtime assets or Release attachments. Raw private evidence and communication-platform metadata are not part of the public archive.
+
 ## Verification
 
 Download all attachments for a release into one directory, then run:
