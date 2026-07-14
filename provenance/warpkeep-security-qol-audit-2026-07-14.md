@@ -12,7 +12,7 @@
 
 Ael commissioned the read-only Warpkeep security and quality-of-life audit and explicitly authorized this public deposit in Warpkeep-Assets. Hermes Agent produced the report from live and repository checks frozen to the coordinates recorded in the report and manifest.
 
-Private communication identifiers and attachment metadata are intentionally omitted.
+Private communication-platform identifiers and private attachment metadata are intentionally omitted. Public repository commits, Worker version/source coordinates, the frontend URL and the protocol number are intentionally retained for reproducibility.
 
 ## Integrity
 
@@ -25,7 +25,7 @@ The report is a dated technical snapshot. Its findings and deployment coordinate
 
 ## Evidence boundary
 
-Only the report, manifest and checksum record are deposited. Raw screenshots, browser traces, private production/database evidence, local audit tooling and communication-platform metadata remain outside this public archive. The report's evidence index records the original retained evidence names; those files are intentionally not published here.
+Only the report, manifest and checksum record are deposited. Raw screenshots, browser traces, private production/database evidence, local audit tooling, private communication-platform identifiers and private attachment metadata remain outside this public archive. Public deployment and repository coordinates in the report and manifest are intentionally retained for reproducibility. The report's evidence index records the original retained evidence names; those files are intentionally not published here.
 
 ## License boundary
 

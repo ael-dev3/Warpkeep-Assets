@@ -15,11 +15,17 @@
     "frontendUrl": "https://warpkeep.com",
     "runtimeRepository": "ael-dev3/Warpkeep",
     "runtimeCommit": "f3fb6ed031a84c6a1703bd438d9553bd00bacd33",
-    "assetRepositoryCommitAtAudit": "23795ce671fa2c7c98e188887b7a444a194a8a1e",
+    "assetRepositoryBaseCommitAtAudit": "23795ce671fa2c7c98e188887b7a444a194a8a1e",
     "authWorkerVersion": "856862c0-6700-4310-bb98-61567ebc69ef",
     "authWorkerSourceCommit": "e56d74768da3e47a3d56cbfb5e0f2e2ed51032cf",
     "backendProtocol": 2,
-    "scopeLimitation": "The authenticated Farcaster exchange and admitted-player realm were not exercised because that would create or consume production authentication or player state."
+    "scopeLimitation": "The authenticated Farcaster exchange and admitted-player realm were not exercised because that would create or consume production authentication or player state.",
+    "retainedPublicCoordinates": [
+      "frontend URL",
+      "runtime and asset-repository commits",
+      "auth Worker version and source commit",
+      "backend protocol"
+    ]
   },
   "license": {
     "spdx": null,
@@ -39,6 +45,6 @@
     "raw browser traces and screenshots",
     "private production and database evidence",
     "local audit tooling and dependency directories",
-    "communication-platform identifiers and attachment metadata"
+    "private communication-platform identifiers and private attachment metadata"
   ]
 }
