@@ -94,6 +94,16 @@ This authorization covers publication and distribution of the named 3D package a
 
 This authorization covers publication and distribution of the named PNG and archive metadata. No separate open-license grant, trademark right, or canonical-identity right is asserted.
 
+## Hegemony Main Castle LOD source set for Alpha 0.3.5
+
+- **Set:** supplied high, balanced, and compact Hegemony Main Castle GLBs
+- **Release:** `hegemony-main-castle-lods-0.3.5-2026-07-15`
+- **Designation:** freshest modeled variants supplied for evaluation against the Alpha 0.3.5 patch; runtime integration is not asserted by this deposit
+- **Deposit authority:** Ael explicitly authorized public archival in Warpkeep-Assets.
+- **License status:** public archival and repository/release distribution authorized; no separate open-license grant asserted
+
+This authorization covers publication and distribution of the named LOD package and its archive metadata. It does not license third-party tools or services, trademarks, third-party rights, Warpkeep trademarks or canonical identity, or unrelated Warpkeep material by implication.
+
 ## Excluded and unresolved material
 
 Other Hegemony source/model families and other Warpkeep media are not part of the stone-letter release or its license grant. Their source rights remain unresolved unless a separate provenance record says otherwise. This repository does not relicense them by implication.
