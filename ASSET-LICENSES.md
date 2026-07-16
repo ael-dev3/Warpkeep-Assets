@@ -104,6 +104,16 @@ This authorization covers publication and distribution of the named PNG and arch
 
 This authorization covers publication and distribution of the named LOD package and its archive metadata. It does not license third-party tools or services, trademarks, third-party rights, Warpkeep trademarks or canonical identity, or unrelated Warpkeep material by implication.
 
+## Hegemony Main Castle image references
+
+- **Set:** supplied transparent, presentation, and in-game UI reference PNGs
+- **Release:** `hegemony-main-castle-image-references-2026-07-16`
+- **Designation:** descriptive visual/reference archive; not runtime source or a canonical UI contract
+- **Deposit authority:** Ael explicitly authorized public archival in Warpkeep-Assets.
+- **License status:** public archival and repository/release distribution authorized; no separate open-license grant asserted
+
+This authorization covers publication and distribution of the named image-reference package and archive metadata. It does not license third-party tools or services, trademarks, third-party rights, Warpkeep trademarks or canonical identity, or unrelated Warpkeep material by implication.
+
 ## Excluded and unresolved material
 
 Other Hegemony source/model families and other Warpkeep media are not part of the stone-letter release or its license grant. Their source rights remain unresolved unless a separate provenance record says otherwise. This repository does not relicense them by implication.

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "tag": "hegemony-main-castle-image-references-2026-07-16",
+  "source": {
+    "suppliedBy": "Ael",
+    "authorization": "Ael explicitly authorized this public deposit.",
+    "privateWorkflowMetadata": "intentionally omitted"
+  },
+  "designation": {
+    "name": "Hegemony Main Castle image references",
+    "status": "descriptive visual/reference archive; not runtime source"
+  },
+  "license": {
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license",
+    "scope": "Public archival/release distribution authorized for this named reference package; no separate open-license grant asserted."
+  },
+  "attachments": [
+    {
+      "name": "hegemony-main-castle-image-references-2026-07-16-v1.zip",
+      "bytes": 4176355,
+      "sha256": "a713284f3be593267aa0eca1e76d7324ee19c209fb8de5c4921d2c5ff76afc9a",
+      "mediaType": "application/zip",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-main-castle-image-references-2026-07-16/hegemony-main-castle-image-references-2026-07-16-v1.zip",
+      "packageRoot": "hegemony-main-castle-image-references-2026-07-16-v1",
+      "entries": [
+        {
+          "path": "hegemony-main-castle-image-references-2026-07-16-v1/README.md",
+          "bytes": 835,
+          "compressedBytes": 437,
+          "sha256": "7216819386799d4828e4438d4c902a2cb3db55f9ea267499764ed78adb9f4943",
+          "mediaType": "text/markdown"
+        },
+        {
+          "path": "hegemony-main-castle-image-references-2026-07-16-v1/SHA256SUMS.txt",
+          "bytes": 487,
+          "compressedBytes": 295,
+          "sha256": "b354e8c6984ed0b57e32fb1b084bb7122c0d49171b78be5c4bc731a5d5bf77ef",
+          "mediaType": "text/plain"
+        },
+        {
+          "path": "hegemony-main-castle-image-references-2026-07-16-v1/hegemony-main-castle-presentation-reference.png",
+          "bytes": 1593147,
+          "compressedBytes": 1579154,
+          "sha256": "0d166621f0174bce5cc0a9ddf1673f12eaaebab50adddd8a3e2ea2181459db83",
+          "mediaType": "image/png"
+        },
+        {
+          "path": "hegemony-main-castle-image-references-2026-07-16-v1/hegemony-main-castle-transparent-reference.png",
+          "bytes": 306449,
+          "compressedBytes": 306071,
+          "sha256": "d085150db7a400627edac43e0078881224dbf9960428e8ddbd5a7177da73b63e",
+          "mediaType": "image/png"
+        },
+        {
+          "path": "hegemony-main-castle-image-references-2026-07-16-v1/hegemony-main-castle-ui-reference.png",
+          "bytes": 2302043,
+          "compressedBytes": 2288090,
+          "sha256": "32507b2a20487513b39ea26259062fc0b216aab1b5f7e7da64db957036f37c82",
+          "mediaType": "image/png"
+        },
+        {
+          "path": "hegemony-main-castle-image-references-2026-07-16-v1/manifest.json",
+          "bytes": 5087,
+          "compressedBytes": 874,
+          "sha256": "b116bad1e8b529d9d547809afa1ff0099a785bfdb02979500f9f460e0212ab91",
+          "mediaType": "application/json"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "png": "Valid PNG signature/IHDR/CRC checks; all three files preserved byte-for-byte.",
+    "privacy": "No private path, cache identifier, credential, or communication ID included in public metadata.",
+    "c2pa": "C2PA/Content Credentials chunks in two supplied PNGs preserved exactly."
+  }
+}
