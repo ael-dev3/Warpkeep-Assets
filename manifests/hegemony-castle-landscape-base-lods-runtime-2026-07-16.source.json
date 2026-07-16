@@ -1,0 +1,188 @@
+{
+  "archive_purpose": "Public Warpkeep Castle LandscapeBase runtime LOD source/reference deposit.",
+  "archive_date": "2026-07-16",
+  "designation": {
+    "name": "Warpkeep Castle LandscapeBase runtime LOD family",
+    "status": "runtime-designated source/reference archive; intended shared base beneath each castle; integration not asserted"
+  },
+  "source": {
+    "suppliedBy": "Ael",
+    "authorization": "Ael explicitly authorized public archival in Warpkeep-Assets.",
+    "naming": "Supplied basenames preserved exactly.",
+    "privateWorkflowMetadata": "intentionally omitted"
+  },
+  "license_policy": {
+    "spdx_identifier": null,
+    "status": "public-archive-authorized-no-separate-open-license",
+    "scope_note": "Named reference/package publication and distribution authorized; no separate open-license, trademark, or canonical-identity grant inferred."
+  },
+  "input_files": [
+    {
+      "name": "Warpkeep_Castle_LandscapeBase_LOD0_High_Runtime.glb",
+      "lod": "LOD0 High",
+      "bytes": 214372,
+      "sha256": "be79476bee4e1f34fa7c4a5c55d7015a8722d88e6ede0208fb0207da7ac3639c",
+      "mediaType": "model/gltf-binary",
+      "publication": "byte-exact supplied GLB",
+      "runtimeDesignation": true,
+      "intendedRole": "shared landscape base beneath each castle",
+      "header": {
+        "version": 2,
+        "declaredLength": 214372
+      },
+      "chunks": [
+        {
+          "type": "JSON",
+          "bytes": 3684
+        },
+        {
+          "type": "BIN\u0000",
+          "bytes": 210660
+        }
+      ],
+      "scenes": 1,
+      "nodes": 1,
+      "meshes": 1,
+      "materials": 1,
+      "images": 2,
+      "textures": 2,
+      "animations": 0,
+      "skins": 0,
+      "vertices": 10681,
+      "triangles": 3954,
+      "extensionsUsed": [
+        "EXT_meshopt_compression",
+        "EXT_texture_webp",
+        "KHR_materials_specular",
+        "KHR_mesh_quantization"
+      ],
+      "extensionsRequired": [
+        "EXT_meshopt_compression",
+        "EXT_texture_webp",
+        "KHR_mesh_quantization"
+      ],
+      "externalUris": 0,
+      "privateMarkers": 0,
+      "khronosValidation": {
+        "errors": 0,
+        "warnings": 0
+      }
+    },
+    {
+      "name": "Warpkeep_Castle_LandscapeBase_LOD1_Balanced_Runtime.glb",
+      "lod": "LOD1 Balanced",
+      "bytes": 92792,
+      "sha256": "5f4e3c52336c78414b5370b63a5e4b924a773297092430eb6f4773bc094eb5cf",
+      "mediaType": "model/gltf-binary",
+      "publication": "byte-exact supplied GLB",
+      "runtimeDesignation": true,
+      "intendedRole": "shared landscape base beneath each castle",
+      "header": {
+        "version": 2,
+        "declaredLength": 92792
+      },
+      "chunks": [
+        {
+          "type": "JSON",
+          "bytes": 3676
+        },
+        {
+          "type": "BIN\u0000",
+          "bytes": 89088
+        }
+      ],
+      "scenes": 1,
+      "nodes": 1,
+      "meshes": 1,
+      "materials": 1,
+      "images": 2,
+      "textures": 2,
+      "animations": 0,
+      "skins": 0,
+      "vertices": 5611,
+      "triangles": 2138,
+      "extensionsUsed": [
+        "EXT_meshopt_compression",
+        "EXT_texture_webp",
+        "KHR_materials_specular",
+        "KHR_mesh_quantization"
+      ],
+      "extensionsRequired": [
+        "EXT_meshopt_compression",
+        "EXT_texture_webp",
+        "KHR_mesh_quantization"
+      ],
+      "externalUris": 0,
+      "privateMarkers": 0,
+      "khronosValidation": {
+        "errors": 0,
+        "warnings": 0
+      }
+    },
+    {
+      "name": "Warpkeep_Castle_LandscapeBase_LOD2_Compact_Runtime.glb",
+      "lod": "LOD2 Compact",
+      "bytes": 27336,
+      "sha256": "ebaf6c6cef216b92de86aa49ea2d612d63227210858b7427fa0c7e97a81323dc",
+      "mediaType": "model/gltf-binary",
+      "publication": "byte-exact supplied GLB",
+      "runtimeDesignation": true,
+      "intendedRole": "shared landscape base beneath each castle",
+      "header": {
+        "version": 2,
+        "declaredLength": 27336
+      },
+      "chunks": [
+        {
+          "type": "JSON",
+          "bytes": 3656
+        },
+        {
+          "type": "BIN\u0000",
+          "bytes": 23652
+        }
+      ],
+      "scenes": 1,
+      "nodes": 1,
+      "meshes": 1,
+      "materials": 1,
+      "images": 2,
+      "textures": 2,
+      "animations": 0,
+      "skins": 0,
+      "vertices": 1780,
+      "triangles": 714,
+      "extensionsUsed": [
+        "EXT_meshopt_compression",
+        "EXT_texture_webp",
+        "KHR_materials_specular",
+        "KHR_mesh_quantization"
+      ],
+      "extensionsRequired": [
+        "EXT_meshopt_compression",
+        "EXT_texture_webp",
+        "KHR_mesh_quantization"
+      ],
+      "externalUris": 0,
+      "privateMarkers": 0,
+      "khronosValidation": {
+        "errors": 0,
+        "warnings": 0
+      }
+    }
+  ],
+  "inspection": {
+    "containers": "All three GLB v2 headers, declared lengths, JSON/BIN chunks, and embedded resources validated.",
+    "gltf": "Pinned Khronos validation returned zero errors and zero warnings for all three variants.",
+    "externalUris": "None found.",
+    "visualQA": "Bright Blender 5.2 factory-startup/autoexec-disabled front/side QA renders completed; the family presents as a coherent terrain/landscape base with intended LOD detail reduction.",
+    "intendedUse": "The supplied Runtime designation and this note state intended use as the shared base beneath each castle; they do not assert that the current game runtime already integrates the files."
+  },
+  "release": {
+    "tag": "hegemony-castle-landscape-base-lods-runtime-2026-07-16",
+    "attachment": "hegemony-castle-landscape-base-lods-runtime-2026-07-16-v1.zip",
+    "sha256": "c44b6a69f236a2803ccd743b865981a8bdd4a5f3b91cedc8bf453836527b150b",
+    "bytes": 274001,
+    "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-castle-landscape-base-lods-runtime-2026-07-16/hegemony-castle-landscape-base-lods-runtime-2026-07-16-v1.zip"
+  }
+}
