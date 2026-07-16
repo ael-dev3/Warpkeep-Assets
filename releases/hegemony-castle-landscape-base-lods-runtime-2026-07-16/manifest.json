@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "tag": "hegemony-castle-landscape-base-lods-runtime-2026-07-16",
+  "source": {
+    "suppliedBy": "Ael",
+    "authorization": "Ael explicitly authorized this public deposit.",
+    "privateWorkflowMetadata": "intentionally omitted"
+  },
+  "designation": {
+    "name": "Warpkeep Castle LandscapeBase runtime LOD family",
+    "status": "runtime-designated source/reference archive; intended shared base beneath each castle; integration not asserted"
+  },
+  "license": {
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license",
+    "scope": "Public archival/release distribution authorized for this named runtime-base package; no separate open-license grant asserted."
+  },
+  "attachments": [
+    {
+      "name": "hegemony-castle-landscape-base-lods-runtime-2026-07-16-v1.zip",
+      "bytes": 274001,
+      "sha256": "c44b6a69f236a2803ccd743b865981a8bdd4a5f3b91cedc8bf453836527b150b",
+      "mediaType": "application/zip",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-castle-landscape-base-lods-runtime-2026-07-16/hegemony-castle-landscape-base-lods-runtime-2026-07-16-v1.zip",
+      "packageRoot": "hegemony-castle-landscape-base-lods-runtime-2026-07-16-v1",
+      "entries": [
+        {
+          "path": "hegemony-castle-landscape-base-lods-runtime-2026-07-16-v1/README.md",
+          "bytes": 751,
+          "compressedBytes": 379,
+          "sha256": "9fdeef9b2f952fef336bb7cb25a41f364eae55b8de6485602615db34b78e64c4",
+          "mediaType": "text/markdown"
+        },
+        {
+          "path": "hegemony-castle-landscape-base-lods-runtime-2026-07-16-v1/SHA256SUMS.txt",
+          "bytes": 517,
+          "compressedBytes": 306,
+          "sha256": "a99293478f3fab47b208fc4a7f724e6cce442eacbbe10b2b444ec71f1d77ed69",
+          "mediaType": "text/plain"
+        },
+        {
+          "path": "hegemony-castle-landscape-base-lods-runtime-2026-07-16-v1/Warpkeep_Castle_LandscapeBase_LOD0_High_Runtime.glb",
+          "bytes": 214372,
+          "compressedBytes": 176117,
+          "sha256": "be79476bee4e1f34fa7c4a5c55d7015a8722d88e6ede0208fb0207da7ac3639c",
+          "mediaType": "model/gltf-binary"
+        },
+        {
+          "path": "hegemony-castle-landscape-base-lods-runtime-2026-07-16-v1/Warpkeep_Castle_LandscapeBase_LOD1_Balanced_Runtime.glb",
+          "bytes": 92792,
+          "compressedBytes": 73843,
+          "sha256": "5f4e3c52336c78414b5370b63a5e4b924a773297092430eb6f4773bc094eb5cf",
+          "mediaType": "model/gltf-binary"
+        },
+        {
+          "path": "hegemony-castle-landscape-base-lods-runtime-2026-07-16-v1/Warpkeep_Castle_LandscapeBase_LOD2_Compact_Runtime.glb",
+          "bytes": 27336,
+          "compressedBytes": 20736,
+          "sha256": "ebaf6c6cef216b92de86aa49ea2d612d63227210858b7427fa0c7e97a81323dc",
+          "mediaType": "model/gltf-binary"
+        },
+        {
+          "path": "hegemony-castle-landscape-base-lods-runtime-2026-07-16-v1/manifest.json",
+          "bytes": 4586,
+          "compressedBytes": 1054,
+          "sha256": "75df38344c76e141cb3e6c839629fd324cffbf4365e6b92b366cd1e26693653f",
+          "mediaType": "application/json"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "glb": "GLB v2 structure and pinned Khronos validation passed for all three variants.",
+    "privacy": "No private paths, cache identifiers, credentials, or communication IDs included in public metadata.",
+    "runtimeBoundary": "Intended shared base beneath each castle; current runtime integration is not asserted by the deposit."
+  }
+}

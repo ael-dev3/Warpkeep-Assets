@@ -114,6 +114,16 @@ This authorization covers publication and distribution of the named LOD package 
 
 This authorization covers publication and distribution of the named image-reference package and archive metadata. It does not license third-party tools or services, trademarks, third-party rights, Warpkeep trademarks or canonical identity, or unrelated Warpkeep material by implication.
 
+## Warpkeep Castle LandscapeBase runtime LODs
+
+- **Set:** supplied High/Balanced/Compact runtime-designated landscape-base GLBs
+- **Release:** `hegemony-castle-landscape-base-lods-runtime-2026-07-16`
+- **Intended use:** shared landscape/base layer beneath each castle; current runtime integration not asserted by the deposit
+- **Deposit authority:** Ael explicitly authorized public archival in Warpkeep-Assets.
+- **License status:** public archival and repository/release distribution authorized; no separate open-license grant asserted
+
+This authorization covers publication and distribution of the named runtime-base package and archive metadata. It does not license third-party tools or services, trademarks, canonical identity, or unrelated Warpkeep material by implication.
+
 ## Excluded and unresolved material
 
 Other Hegemony source/model families and other Warpkeep media are not part of the stone-letter release or its license grant. Their source rights remain unresolved unless a separate provenance record says otherwise. This repository does not relicense them by implication.
