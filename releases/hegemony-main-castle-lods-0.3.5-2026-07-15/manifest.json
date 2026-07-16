@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "tag": "hegemony-main-castle-lods-0.3.5-2026-07-15",
+  "source": {
+    "suppliedBy": "Ael",
+    "authorization": "Ael explicitly authorized this public deposit.",
+    "privateWorkflowMetadata": "intentionally omitted"
+  },
+  "designation": {
+    "name": "Hegemony Main Castle high/balanced/compact LOD source set",
+    "status": "freshest modeled variants aimed at the Warpkeep Alpha 0.3.5 patch",
+    "runtimeIntegration": null
+  },
+  "license": {
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license",
+    "scope": "Public archival/release distribution of this named package is authorized; no separate open-license grant is asserted."
+  },
+  "attachments": [
+    {
+      "name": "hegemony-main-castle-lods-0.3.5-sources-v1.zip",
+      "bytes": 1730563,
+      "sha256": "aa3da7ef1eeba0bb0531a27a6d77ab6dac7a9decbb196c59384423c17d46a069",
+      "mediaType": "application/zip",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-main-castle-lods-0.3.5-2026-07-15/hegemony-main-castle-lods-0.3.5-sources-v1.zip",
+      "packageRoot": "hegemony-main-castle-lods-0.3.5-sources-v1",
+      "entries": [
+        {
+          "path": "hegemony-main-castle-lods-0.3.5-sources-v1/README.md",
+          "bytes": 1057,
+          "compressedBytes": 576,
+          "sha256": "7c57e975b6fa8b4f2bfe737528baf561704f6da439b7d322e9dcb80fef4393fc",
+          "mediaType": "text/markdown"
+        },
+        {
+          "path": "hegemony-main-castle-lods-0.3.5-sources-v1/SHA256SUMS.txt",
+          "bytes": 451,
+          "compressedBytes": 280,
+          "sha256": "152376c695a397bc773ed32ccc6369cc6929a0dde01063d23a2683e7702bf65f",
+          "mediaType": "text/plain"
+        },
+        {
+          "path": "hegemony-main-castle-lods-0.3.5-sources-v1/hegemony-main-castle-balanced.glb",
+          "bytes": 892796,
+          "compressedBytes": 489086,
+          "sha256": "a480439ac47be4ee419ce623de0d785c4f4ce73cd110dc093c6508faa6cfdbae",
+          "mediaType": "model/gltf-binary"
+        },
+        {
+          "path": "hegemony-main-castle-lods-0.3.5-sources-v1/hegemony-main-castle-compact.glb",
+          "bytes": 453632,
+          "compressedBytes": 235880,
+          "sha256": "5b0f6919585b10f51b42f004c32d1c96bf2addc2549af3b84b0eea7fcedffe5e",
+          "mediaType": "model/gltf-binary"
+        },
+        {
+          "path": "hegemony-main-castle-lods-0.3.5-sources-v1/hegemony-main-castle-high.glb",
+          "bytes": 2215972,
+          "compressedBytes": 1002641,
+          "sha256": "9fe06a26446387e007ea32acfccbf6657e7a6763d73e2cb3890f103fb590afe8",
+          "mediaType": "model/gltf-binary"
+        },
+        {
+          "path": "hegemony-main-castle-lods-0.3.5-sources-v1/manifest.json",
+          "bytes": 2614,
+          "compressedBytes": 846,
+          "sha256": "891727dc10b6ac63fa0e661707cb7f1df5537a8fe049b156082e7c95482cb418",
+          "mediaType": "application/json"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "zip": "Deterministic two-build byte comparison passed; safe relative regular-file entries and internal SHA256SUMS.txt verified.",
+    "glb": "All three GLBs pass GLB v2 structural checks and pinned Khronos validation with zero errors/warnings.",
+    "note": "These are the freshest supplied modeled variants intended for the Alpha 0.3.5 patch; this release does not claim runtime integration."
+  }
+}
