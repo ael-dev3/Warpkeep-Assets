@@ -3,7 +3,7 @@
 - **Deposit date:** 2026-07-16
 - **Repository:** `ael-dev3/Warpkeep-Assets`
 - **Release:** `hegemony-castle-landscape-base-lods-runtime-2026-07-16`
-- **Authorization:** Ael explicitly requested this deposit.
+- **Authorization**: Ael explicitly requested this deposit.
 - **Public package:** [`hegemony-castle-landscape-base-lods-runtime-2026-07-16-v1.zip`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-castle-landscape-base-lods-runtime-2026-07-16)
 
 ## Intended shared-base use
@@ -17,6 +17,8 @@ The supplied files are runtime-designated Castle LandscapeBase LOD variants. Thi
 - `Warpkeep_Castle_LandscapeBase_LOD2_Compact_Runtime.glb`: 27,336 bytes, 1,780 vertices, 714 triangles.
 
 All three supplied basenames and GLB payloads are preserved byte-for-byte. Each is a self-contained GLB v2 with one scene, one node, one mesh, one material, two embedded images, no animations, no external URIs, and required `EXT_meshopt_compression`, `EXT_texture_webp`, and `KHR_mesh_quantization` extensions. Pinned Khronos validation returned zero errors and zero warnings for every variant. Bright Blender 5.2 QA renders showed a coherent terrain island/base with grass, trees, rocks, flowers, and a path, with expected detail reduction across the LOD family.
+
+The inner `SHA256SUMS.txt` covers `README.md`, all three GLBs, and `manifest.json`, intentionally excluding itself. The repository release manifest and sidecar cover the outer ZIP attachment.
 
 ## Distribution boundary
 
