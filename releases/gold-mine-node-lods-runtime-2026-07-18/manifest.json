@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "tag": "gold-mine-node-lods-runtime-2026-07-18",
+  "source": {
+    "suppliedBy": "Ael",
+    "authorization": "Ael explicitly authorized this public deposit.",
+    "privateWorkflowMetadata": "intentionally omitted"
+  },
+  "designation": {
+    "name": "Gold Mine Gathering Node runtime LOD family",
+    "status": "runtime-designated GatheringNodes/Gold asset package; intended runtime use; current in-game integration not asserted"
+  },
+  "license": {
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license",
+    "scope": "Public archival/release distribution authorized for this named runtime package; no separate open-license grant asserted."
+  },
+  "attachments": [
+    {
+      "name": "gold-mine-node-lods-runtime-2026-07-18-v1.zip",
+      "bytes": 397285,
+      "sha256": "a5e2a642a229e78e07996ca1c04c757a75c9a894df120613d9bd654dd2bfb2b3",
+      "mediaType": "application/zip",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/gold-mine-node-lods-runtime-2026-07-18/gold-mine-node-lods-runtime-2026-07-18-v1.zip",
+      "packageRoot": "gold-mine-node-lods-runtime-2026-07-18-v1",
+      "entries": [
+        {
+          "path": "gold-mine-node-lods-runtime-2026-07-18-v1/README.md",
+          "bytes": 2080,
+          "compressedBytes": 1039,
+          "sha256": "d0eecb5749951add5c5c347b01b845d6557764469765ea9fc4546305d91f66f0",
+          "mediaType": "text/markdown"
+        },
+        {
+          "path": "gold-mine-node-lods-runtime-2026-07-18-v1/SHA256SUMS.txt",
+          "bytes": 569,
+          "compressedBytes": 349,
+          "sha256": "8752bfd9fbfd119cb53ffe35d7d188c079b7cd59609ecbef8228b1ab89721b82",
+          "mediaType": "text/plain"
+        },
+        {
+          "path": "gold-mine-node-lods-runtime-2026-07-18-v1/Warpkeep_GoldMine_LOD0_High_Runtime.glb",
+          "bytes": 263528,
+          "compressedBytes": 215182,
+          "sha256": "6c3731e0f3381014d661d539c25f67e4f79f894b721d1feac9e275b07b8a6ab3",
+          "mediaType": "model/gltf-binary"
+        },
+        {
+          "path": "gold-mine-node-lods-runtime-2026-07-18-v1/Warpkeep_GoldMine_LOD1_Balanced_Runtime.glb",
+          "bytes": 154388,
+          "compressedBytes": 114123,
+          "sha256": "42776e6a0a1196c43e872d9d6d08a8acbf398b5dbd26ba7ab20e0c0cfdd52008",
+          "mediaType": "model/gltf-binary"
+        },
+        {
+          "path": "gold-mine-node-lods-runtime-2026-07-18-v1/Warpkeep_GoldMine_LOD2_Compact_Runtime.glb",
+          "bytes": 95024,
+          "compressedBytes": 63483,
+          "sha256": "b39ad147954ba4200efe680975038416784f759918ca295282d95812710ca853",
+          "mediaType": "model/gltf-binary"
+        },
+        {
+          "path": "gold-mine-node-lods-runtime-2026-07-18-v1/manifest.json",
+          "bytes": 1422,
+          "compressedBytes": 626,
+          "sha256": "f971cbf33aa587bb729713bce363328ae954cbc31479ac8aa5be10026f03c7a1",
+          "mediaType": "application/json"
+        },
+        {
+          "path": "gold-mine-node-lods-runtime-2026-07-18-v1/runtime-manifest.json",
+          "bytes": 2191,
+          "compressedBytes": 979,
+          "sha256": "9bb0bcf28b3b2f073d8f4a9cdbe5c2ad1d41d921668f25172a2105f52fd82dd4",
+          "mediaType": "application/json"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "glb": "GLB v2 structure and pinned Khronos validation passed for all three variants.",
+    "privacy": "No private paths, cache identifiers, credentials, or communication IDs included in public metadata or supplied GLB JSON.",
+    "runtimeContract": "Supplied runtime manifest recorded one mesh object, one material, three embedded textures, +Y up, +Z front, zero ground plane, and footprint-center interaction pivot.",
+    "preservedFilesNote": "The supplied manifest declares a prompt file under preservedFiles; that prompt file was not included because it was not supplied in this deposit."
+  }
+}

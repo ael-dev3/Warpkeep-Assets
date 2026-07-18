@@ -1,0 +1,133 @@
+{
+  "archive_purpose": "Public Gold Mine Gathering Node runtime LOD deposit for Warpkeep.",
+  "archive_date": "2026-07-18",
+  "reference_only": false,
+  "designation": {
+    "name": "Gold Mine Gathering Node",
+    "asset_id": "warpkeep.gold-mine-node",
+    "category": "GatheringNodes/Gold",
+    "status": "runtime-designated gathering-node LOD family; intended runtime asset package; current in-game integration is not asserted"
+  },
+  "source": {
+    "supplied_by": "Ael",
+    "authorization": "Ael explicitly authorized public deposit in Warpkeep-Assets.",
+    "revision": "user-edited-2026-07-18",
+    "private_workflow_metadata": "intentionally omitted"
+  },
+  "license_policy": {
+    "spdx_identifier": null,
+    "status": "public-archive-authorized-no-separate-open-license",
+    "scope_note": "Named package publication/distribution authorized; no open-license, trademark, canonical-identity, or third-party-rights grant inferred."
+  },
+  "input_files": [
+    {
+      "supplied_name": "Warpkeep_GoldMine_LOD0_High_Runtime.glb",
+      "public_name": "Warpkeep_GoldMine_LOD0_High_Runtime.glb",
+      "bytes": 263528,
+      "sha256": "6c3731e0f3381014d661d539c25f67e4f79f894b721d1feac9e275b07b8a6ab3",
+      "public_bytes": 263528,
+      "public_sha256": "6c3731e0f3381014d661d539c25f67e4f79f894b721d1feac9e275b07b8a6ab3",
+      "publication": "byte-exact supplied GLB",
+      "tier": "LOD0_High",
+      "triangles": 4233,
+      "vertices": 11097,
+      "textureResolution": 1024
+    },
+    {
+      "supplied_name": "Warpkeep_GoldMine_LOD1_Balanced_Runtime.glb",
+      "public_name": "Warpkeep_GoldMine_LOD1_Balanced_Runtime.glb",
+      "bytes": 154388,
+      "sha256": "42776e6a0a1196c43e872d9d6d08a8acbf398b5dbd26ba7ab20e0c0cfdd52008",
+      "public_bytes": 154388,
+      "public_sha256": "42776e6a0a1196c43e872d9d6d08a8acbf398b5dbd26ba7ab20e0c0cfdd52008",
+      "publication": "byte-exact supplied GLB",
+      "tier": "LOD1_Balanced",
+      "triangles": 3553,
+      "vertices": 9297,
+      "textureResolution": 512
+    },
+    {
+      "supplied_name": "Warpkeep_GoldMine_LOD2_Compact_Runtime.glb",
+      "public_name": "Warpkeep_GoldMine_LOD2_Compact_Runtime.glb",
+      "bytes": 95024,
+      "sha256": "b39ad147954ba4200efe680975038416784f759918ca295282d95812710ca853",
+      "public_bytes": 95024,
+      "public_sha256": "b39ad147954ba4200efe680975038416784f759918ca295282d95812710ca853",
+      "publication": "byte-exact supplied GLB",
+      "tier": "LOD2_Compact",
+      "triangles": 2681,
+      "vertices": 7195,
+      "textureResolution": 256
+    }
+  ],
+  "lod_family": {
+    "high": "LOD0_High",
+    "balanced": "LOD1_Balanced",
+    "compact": "LOD2_Compact",
+    "identity": "All three are the same Gold Mine Gathering Node identity with decreasing measured geometry and texture resolution."
+  },
+  "runtime_contract": {
+    "meshObjects": 1,
+    "materials": 1,
+    "embeddedTextures": 3,
+    "meshCompression": "EXT_meshopt_compression",
+    "textureCompression": "WebP",
+    "gltfUp": "+Y",
+    "frontFacing": "+Z",
+    "groundPlane": 0.0,
+    "interactionPivot": "footprint-center",
+    "editableSourceObjects": 67,
+    "boundsBlender": {
+      "min": [
+        -6.259854,
+        -5.352,
+        0.0
+      ],
+      "max": [
+        6.384532,
+        4.680055,
+        7.935
+      ],
+      "size": [
+        12.644386,
+        10.032055,
+        7.935
+      ]
+    }
+  },
+  "runtime_preparation": {
+    "groundingCorrection": {
+      "objects": [
+        "GoldMine_OreCart_Wheel_-1_1",
+        "GoldMine_OreCart_Wheel_1_1"
+      ],
+      "zOffset": -0.002,
+      "reason": "Close a 0.001151-unit sleeper contact gap after the manual axle deletion."
+    }
+  },
+  "preserved_files": [
+    "Warpkeep_T1_Gold_Nodes_10000_Cell_Genesis001_Prompt.txt"
+  ],
+  "inspection": {
+    "glb_validation": {
+      "validator": "Khronos gltf-validator package API",
+      "each_errors": 0,
+      "each_warnings": 0,
+      "each_infos": 1
+    },
+    "external_uri_count": 0,
+    "private_marker_count": 0,
+    "unsupported_objects": 0,
+    "isolated_objects": 0,
+    "soft_contact_only_objects": 0,
+    "contact_audit_passed": true,
+    "bright_visual_qa": "All three variants rendered coherently as a gold mine gathering node with a mine entrance, ore vein, gold fragments, ore cart, timber supports, and base platform; no visible clipping, corruption, missing surfaces, or gross LOD artifacts."
+  },
+  "release": {
+    "tag": "gold-mine-node-lods-runtime-2026-07-18",
+    "attachment": "gold-mine-node-lods-runtime-2026-07-18-v1.zip",
+    "sha256": "a5e2a642a229e78e07996ca1c04c757a75c9a894df120613d9bd654dd2bfb2b3",
+    "bytes": 397285,
+    "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/gold-mine-node-lods-runtime-2026-07-18/gold-mine-node-lods-runtime-2026-07-18-v1.zip"
+  }
+}

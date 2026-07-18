@@ -127,3 +127,12 @@ This authorization covers publication and distribution of the named runtime-base
 ## Excluded and unresolved material
 
 Other Hegemony source/model families and other Warpkeep media are not part of the stone-letter release or its license grant. Their source rights remain unresolved unless a separate provenance record says otherwise. This repository does not relicense them by implication.
+## Gold Mine Gathering Node runtime LODs
+
+- **Set:** supplied High/Balanced/Compact Gold Mine Gathering Node runtime GLBs and `runtime-manifest.json`
+- **Release:** `gold-mine-node-lods-runtime-2026-07-18`
+- **Designation:** `warpkeep.gold-mine-node`, `GatheringNodes/Gold`; current in-game integration is not asserted by the deposit
+- **Deposit authority:** Ael explicitly authorized public archival in Warpkeep-Assets.
+- **License status:** public archival and repository/release distribution authorized; no separate open-license grant asserted
+
+This authorization covers publication and distribution of the named Gold Mine Gathering Node runtime package and its archive metadata. It does not license third-party tools or services, trademarks, canonical identity, or unrelated Warpkeep material by implication. The supplied manifest declares a prompt file under `preservedFiles`, but that prompt was not supplied and is not included in this deposit.
