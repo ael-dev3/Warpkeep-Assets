@@ -68,3 +68,10 @@ See [`ASSET-LICENSES.md`](ASSET-LICENSES.md) for the per-set license scope.
 - Identity: `warpkeep.wheat-farm-node` (`GatheringNodes/Food`)
 - Package: three supplied High/Balanced/Compact GLBs plus the exact supplied runtime manifest.
 - Status: runtime-designated deposit; intentional ground-embedded field rocks are documented by the supplied contract; current in-game integration not asserted.
+
+## Grand Stone Quarry Gathering Node runtime LODs
+
+- Release: `stone-quarry-node-lods-runtime-2026-07-18`
+- Identity: `warpkeep.stone-quarry-node` (`GatheringNodes/Stone`)
+- Package: three supplied High/Balanced/Compact GLBs plus the exact supplied runtime manifest.
+- Status: runtime-designated deposit; visual-clearance contract recorded as passed; current in-game integration not asserted.

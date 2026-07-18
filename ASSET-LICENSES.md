@@ -146,3 +146,6 @@ Public archival/release distribution of the named supplied Trees runtime handoff
 ## Royal Harvest Windmill Food Gathering Node runtime LODs
 
 Public archival/release distribution of the named supplied Wheat Farm runtime LOD package was authorized by Ael. The supplied manifest states `Project-owned; authored for Warpkeep`. No separate open-license grant is asserted.
+## Grand Stone Quarry Gathering Node runtime LODs
+
+Public archival/release distribution of the named supplied Stone Quarry runtime LOD package was authorized by Ael. The supplied manifest states `Project-owned; authored for Warpkeep`. No separate open-license grant is asserted.
