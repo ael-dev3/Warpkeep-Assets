@@ -1,0 +1,37 @@
+{
+  "bundleId": "warpkeep.trees.runtime.2026-07-18",
+  "contents": {
+    "assetCount": 22,
+    "authoringFilesIncluded": false,
+    "colorSource": "embedded vertex colors",
+    "coordinateSystem": {
+      "format": "glTF 2.0",
+      "forward": "+Z",
+      "handedness": "right",
+      "up": "+Y"
+    },
+    "externalTextures": false,
+    "glbCount": 66,
+    "lodsPerAsset": 3,
+    "runtimeManifestCount": 22
+  },
+  "licenseBoundary": "Six legacy per-asset manifests have no license field; 16 declare Project-owned; authored for Warpkeep. No blanket license inference or separate open-license grant is asserted.",
+  "name": "Warpkeep Trees Runtime Bundle",
+  "preservation": "The supplied archive is preserved byte-for-byte as a nested source entry in the deterministic outer package.",
+  "schema": "warpkeep.runtime-handoff-bundle.v1",
+  "suppliedArchive": {
+    "bytes": 1276509,
+    "file": "Warpkeep_Trees_Runtime_Bundle_2026-07-18.zip",
+    "sha256": "8ff19bb2a9b4c779db0836ea8ab59f8d67abfd282d5b4cce70d48e062874f9e2"
+  },
+  "validation": {
+    "glbV2Structure": "passed for 66/66",
+    "internalChecksumRows": 92,
+    "khronosErrors": 0,
+    "khronosWarnings": 0,
+    "privacyScan": "passed",
+    "safePaths": "passed",
+    "zipIntegrity": "passed"
+  },
+  "version": "1.0.0"
+}

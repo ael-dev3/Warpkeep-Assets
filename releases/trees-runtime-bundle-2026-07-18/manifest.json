@@ -1,0 +1,66 @@
+{
+  "attachments": [
+    {
+      "bytes": 1279207,
+      "entries": [
+        {
+          "bytes": 1027,
+          "compressedBytes": 1027,
+          "mediaType": "text/markdown",
+          "path": "trees-runtime-bundle-2026-07-18-v1/README.md",
+          "sha256": "6dc8b744f2458e12ca72911155ae8cba6e39c0c8e0a49ba205349b3250899d2a"
+        },
+        {
+          "bytes": 275,
+          "compressedBytes": 275,
+          "mediaType": "text/markdown",
+          "path": "trees-runtime-bundle-2026-07-18-v1/SHA256SUMS.txt",
+          "sha256": "fc41fe399c466bd5dcfef025ec1cbcb0343adf7889166ae318ad175e74a91811"
+        },
+        {
+          "bytes": 614,
+          "compressedBytes": 614,
+          "mediaType": "application/json",
+          "path": "trees-runtime-bundle-2026-07-18-v1/manifest.json",
+          "sha256": "2e8117ba200d2e4772068530692bbbfdf9bca93732f908164dcfdb8d2fe89ca7"
+        },
+        {
+          "bytes": 1276509,
+          "compressedBytes": 1276509,
+          "mediaType": "application/zip",
+          "path": "trees-runtime-bundle-2026-07-18-v1/sources/Warpkeep_Trees_Runtime_Bundle_2026-07-18.zip",
+          "sha256": "8ff19bb2a9b4c779db0836ea8ab59f8d67abfd282d5b4cce70d48e062874f9e2"
+        }
+      ],
+      "mediaType": "application/zip",
+      "name": "trees-runtime-bundle-2026-07-18-v1.zip",
+      "packageRoot": "trees-runtime-bundle-2026-07-18-v1",
+      "sha256": "0e0938f63d4e3210c9ebd577ef27b18c25a29a589d3f08b08051d605b9c486de",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/trees-runtime-bundle-2026-07-18/trees-runtime-bundle-2026-07-18-v1.zip"
+    }
+  ],
+  "designation": {
+    "name": "Warpkeep Trees runtime handoff bundle",
+    "status": "runtime-designated asset package; intended runtime use; current in-game integration not asserted"
+  },
+  "license": {
+    "scope": "Public archival/release distribution authorized for this named package; no separate open-license grant asserted.",
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license"
+  },
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "schemaVersion": 1,
+  "source": {
+    "authorization": "Ael explicitly authorized this public deposit.",
+    "privateWorkflowMetadata": "intentionally omitted",
+    "suppliedBy": "Ael"
+  },
+  "tag": "trees-runtime-bundle-2026-07-18",
+  "verification": {
+    "bundle": "Exact supplied Trees ZIP preserved as nested source; 22 assets, 66 GLBs, and 22 runtime manifests independently validated.",
+    "license": "Public archival/release distribution authorized for this named deposit; no separate open-license grant asserted.",
+    "package": "Deterministic outer package; inner manifest/checksum validation passed.",
+    "privacy": "No private paths, cache identifiers, credentials, or communication IDs in public metadata.",
+    "runtimeIntegration": "Current in-game integration not asserted."
+  }
+}

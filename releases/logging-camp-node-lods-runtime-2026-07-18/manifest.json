@@ -1,0 +1,88 @@
+{
+  "attachments": [
+    {
+      "bytes": 1393055,
+      "entries": [
+        {
+          "bytes": 1176,
+          "compressedBytes": 1176,
+          "mediaType": "text/markdown",
+          "path": "logging-camp-node-lods-runtime-2026-07-18-v1/README.md",
+          "sha256": "a5e077d05ea398a5fe895e81f614493516dd38f359ab23b761e905452f2ef929"
+        },
+        {
+          "bytes": 578,
+          "compressedBytes": 578,
+          "mediaType": "text/markdown",
+          "path": "logging-camp-node-lods-runtime-2026-07-18-v1/SHA256SUMS.txt",
+          "sha256": "8ec7be10497b7f00ed26b502c763bf7cab9c66d6e5c74fb1eed39effcb0b0c0a"
+        },
+        {
+          "bytes": 689328,
+          "compressedBytes": 689328,
+          "mediaType": "model/gltf-binary",
+          "path": "logging-camp-node-lods-runtime-2026-07-18-v1/Warpkeep_LoggingCamp_LOD0_High_Runtime.glb",
+          "sha256": "a68c133a4a50654bc611de2b66e6d0d42729aaf0b91b59b7d2b7749566826f70"
+        },
+        {
+          "bytes": 460656,
+          "compressedBytes": 460656,
+          "mediaType": "model/gltf-binary",
+          "path": "logging-camp-node-lods-runtime-2026-07-18-v1/Warpkeep_LoggingCamp_LOD1_Balanced_Runtime.glb",
+          "sha256": "227046f89c4150eec5b908cc75e162fa9ad489be123fc941714f9ad294b73593"
+        },
+        {
+          "bytes": 236252,
+          "compressedBytes": 236252,
+          "mediaType": "model/gltf-binary",
+          "path": "logging-camp-node-lods-runtime-2026-07-18-v1/Warpkeep_LoggingCamp_LOD2_Compact_Runtime.glb",
+          "sha256": "ecea536ae18ef3ef5c6dc5eda158fa33d8e5d3a1e7848478c248a32efac1eccf"
+        },
+        {
+          "bytes": 1255,
+          "compressedBytes": 1255,
+          "mediaType": "application/json",
+          "path": "logging-camp-node-lods-runtime-2026-07-18-v1/manifest.json",
+          "sha256": "d3610a86e974362f1dd71eaf3785882258d16f59585b1cd98a6d72f7ee34ad0f"
+        },
+        {
+          "bytes": 2246,
+          "compressedBytes": 2246,
+          "mediaType": "application/json",
+          "path": "logging-camp-node-lods-runtime-2026-07-18-v1/runtime-manifest.json",
+          "sha256": "0385c4e268445fe6529cb2d3285ee9bdd405f23f6ba8fecc8ccdf0d39a62cec2"
+        }
+      ],
+      "mediaType": "application/zip",
+      "name": "logging-camp-node-lods-runtime-2026-07-18-v1.zip",
+      "packageRoot": "logging-camp-node-lods-runtime-2026-07-18-v1",
+      "sha256": "4da9a897bb9a20150a894d847b2318873f98f0308c05fb32dc06e59cbadc0b8c",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/logging-camp-node-lods-runtime-2026-07-18/logging-camp-node-lods-runtime-2026-07-18-v1.zip"
+    }
+  ],
+  "designation": {
+    "name": "Logging Camp Wood Gathering Node runtime LOD family",
+    "status": "runtime-designated asset package; intended runtime use; current in-game integration not asserted"
+  },
+  "license": {
+    "scope": "Public archival/release distribution authorized for this named package; no separate open-license grant asserted.",
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license"
+  },
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "schemaVersion": 1,
+  "source": {
+    "authorization": "Ael explicitly authorized this public deposit.",
+    "privateWorkflowMetadata": "intentionally omitted",
+    "suppliedBy": "Ael"
+  },
+  "tag": "logging-camp-node-lods-runtime-2026-07-18",
+  "verification": {
+    "glb": "GLB v2 structure and pinned Khronos validation passed for all three variants.",
+    "license": "Public archival/release distribution authorized for this named deposit; no separate open-license grant asserted.",
+    "package": "Deterministic outer package; inner manifest/checksum validation passed.",
+    "privacy": "No private paths, cache identifiers, credentials, or communication IDs in public metadata.",
+    "runtimeContract": "Supplied manifest recorded one mesh object, one material, no external dependencies, embedded vertex colors, +Y up, +Z front, zero ground plane, and footprint-center interaction pivot.",
+    "runtimeIntegration": "Current in-game integration not asserted."
+  }
+}
