@@ -1,0 +1,81 @@
+{
+  "assetId": "warpkeep.stone-quarry-node",
+  "category": "GatheringNodes/Stone",
+  "name": "Grand Stone Quarry Gathering Node",
+  "preservation": "Supplied GLB and runtime-manifest bytes preserved exactly.",
+  "provenance": {
+    "generatedAt": "2026-07-18T16:52:01.575846+00:00",
+    "license": "Project-owned; authored for Warpkeep",
+    "sourceBlendSha256": "108b87a0411a8b36a5e8b8931f850d06d9c8d0fec8488970c985809b977c351c",
+    "sourcePackage": "Warpkeep_StoneQuarry_GameReady"
+  },
+  "revision": "manual-polish-final-2026-07-18",
+  "runtimeContract": {
+    "boundsBlender": {
+      "max": [
+        6.35,
+        5.175335,
+        5.625
+      ],
+      "min": [
+        -6.602338,
+        -5.168097,
+        0.0
+      ],
+      "size": [
+        12.952338,
+        10.343433,
+        5.625
+      ]
+    },
+    "compression": "none",
+    "editableSourceObjects": 126,
+    "embeddedTextures": 0,
+    "embeddedVertexColors": true,
+    "externalDependencies": 0,
+    "frontFacing": "+Z",
+    "gltfUp": "+Y",
+    "groundPlane": 0.0,
+    "interactionPivot": "footprint-center",
+    "materials": 1,
+    "meshObjects": 1,
+    "visualClearanceAuditPassed": true
+  },
+  "schema": "warpkeep.runtime-asset.v1",
+  "suppliedSourceFiles": [
+    {
+      "bytes": 558036,
+      "file": "Warpkeep_StoneQuarry_LOD0_High_Runtime.glb",
+      "sha256": "a4a3258f1f28a7d85658b32a0257d3ca5cb810b8f7a010fd5ebbf7cde12c7537",
+      "triangles": 5362,
+      "vertices": 11893
+    },
+    {
+      "bytes": 337788,
+      "file": "Warpkeep_StoneQuarry_LOD1_Balanced_Runtime.glb",
+      "sha256": "44573c53850a31ec0178f88918d18471309016a5b4edffdcf1d3e42670109925",
+      "triangles": 3346,
+      "vertices": 7162
+    },
+    {
+      "bytes": 166720,
+      "file": "Warpkeep_StoneQuarry_LOD2_Compact_Runtime.glb",
+      "sha256": "b4dbbc1c55a67c120df2f2b54852e30a2de980254216821b4a599a10e2e5030e",
+      "triangles": 1654,
+      "vertices": 3504
+    },
+    {
+      "bytes": 2415,
+      "file": "runtime-manifest.json",
+      "sha256": "3351ad854b4e3e173ed557bfb00684f9a7a1b02211822325cb117ff4fcdc9d85"
+    }
+  ],
+  "validation": {
+    "blenderBrightQa": "passed",
+    "glbV2Structure": "passed",
+    "khronosErrors": 0,
+    "khronosWarnings": 0,
+    "visualReview": "coherent stone-quarry identity; expected LOD detail reduction; visual-clearance contract recorded as passed; no visible corruption in inspected views"
+  },
+  "version": "1.1.1"
+}

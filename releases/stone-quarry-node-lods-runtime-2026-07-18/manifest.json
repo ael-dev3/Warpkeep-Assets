@@ -1,0 +1,87 @@
+{
+  "attachments": [
+    {
+      "bytes": 1069588,
+      "entries": [
+        {
+          "bytes": 1232,
+          "compressedBytes": 1232,
+          "mediaType": "text/markdown",
+          "path": "stone-quarry-node-lods-runtime-2026-07-18-v1/README.md",
+          "sha256": "62f922fbeb7ed017fe40c4afedcd1d00c8021eca336ae12b08cb4a7e1997283d"
+        },
+        {
+          "bytes": 578,
+          "compressedBytes": 578,
+          "mediaType": "application/octet-stream",
+          "path": "stone-quarry-node-lods-runtime-2026-07-18-v1/SHA256SUMS.txt",
+          "sha256": "1cebe779c1ecfdd03e505c7545f8304d116b0bf5769590c3d11cb10739ae9e90"
+        },
+        {
+          "bytes": 558036,
+          "compressedBytes": 558036,
+          "mediaType": "model/gltf-binary",
+          "path": "stone-quarry-node-lods-runtime-2026-07-18-v1/Warpkeep_StoneQuarry_LOD0_High_Runtime.glb",
+          "sha256": "a4a3258f1f28a7d85658b32a0257d3ca5cb810b8f7a010fd5ebbf7cde12c7537"
+        },
+        {
+          "bytes": 337788,
+          "compressedBytes": 337788,
+          "mediaType": "model/gltf-binary",
+          "path": "stone-quarry-node-lods-runtime-2026-07-18-v1/Warpkeep_StoneQuarry_LOD1_Balanced_Runtime.glb",
+          "sha256": "44573c53850a31ec0178f88918d18471309016a5b4edffdcf1d3e42670109925"
+        },
+        {
+          "bytes": 166720,
+          "compressedBytes": 166720,
+          "mediaType": "model/gltf-binary",
+          "path": "stone-quarry-node-lods-runtime-2026-07-18-v1/Warpkeep_StoneQuarry_LOD2_Compact_Runtime.glb",
+          "sha256": "b4dbbc1c55a67c120df2f2b54852e30a2de980254216821b4a599a10e2e5030e"
+        },
+        {
+          "bytes": 1255,
+          "compressedBytes": 1255,
+          "mediaType": "application/json",
+          "path": "stone-quarry-node-lods-runtime-2026-07-18-v1/manifest.json",
+          "sha256": "8c09d966c0294b696d412ab59fc54529b2839f89b6d7d238b4b38baaf9e394cf"
+        },
+        {
+          "bytes": 2415,
+          "compressedBytes": 2415,
+          "mediaType": "application/json",
+          "path": "stone-quarry-node-lods-runtime-2026-07-18-v1/runtime-manifest.json",
+          "sha256": "3351ad854b4e3e173ed557bfb00684f9a7a1b02211822325cb117ff4fcdc9d85"
+        }
+      ],
+      "mediaType": "application/zip",
+      "name": "stone-quarry-node-lods-runtime-2026-07-18-v1.zip",
+      "packageRoot": "stone-quarry-node-lods-runtime-2026-07-18-v1",
+      "sha256": "ee1e5ca39b802b52448130dba1147bc2922cf1ea82c7df9ba7ecc085bdb62ba9",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/stone-quarry-node-lods-runtime-2026-07-18/stone-quarry-node-lods-runtime-2026-07-18-v1.zip"
+    }
+  ],
+  "designation": {
+    "name": "Grand Stone Quarry Gathering Node runtime LOD family",
+    "status": "runtime-designated GatheringNodes/Stone asset package; intended runtime use; current in-game integration not asserted"
+  },
+  "license": {
+    "scope": "Public archival/release distribution authorized for this named package; no separate open-license grant asserted.",
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license"
+  },
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "schemaVersion": 1,
+  "source": {
+    "authorization": "Ael explicitly authorized this public deposit.",
+    "privateWorkflowMetadata": "intentionally omitted",
+    "suppliedBy": "Ael"
+  },
+  "tag": "stone-quarry-node-lods-runtime-2026-07-18",
+  "verification": {
+    "glb": "GLB v2 structure and pinned Khronos validation passed for all three variants.",
+    "preservedManifest": "The supplied runtime-manifest.json bytes are preserved exactly.",
+    "privacy": "No private paths, cache identifiers, credentials, or communication IDs included in public metadata or supplied GLB JSON.",
+    "runtimeContract": "Supplied manifest records one mesh object, one material, no external dependencies, +Y up, +Z front, zero ground plane, footprint-center pivot, and a passed visual-clearance audit.",
+    "runtimeIntegration": "Current in-game integration not asserted."
+  }
+}
