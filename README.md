@@ -47,3 +47,17 @@ The verifier rejects unsupported attachment media types, wrong bytes, malformed 
 - Preserve exact tag, attachment name, byte count, and SHA-256 in every downstream preparation script.
 
 See [`ASSET-LICENSES.md`](ASSET-LICENSES.md) for the per-set license scope.
+
+## Logging Camp Wood Gathering Node runtime LODs
+
+- Release: `logging-camp-node-lods-runtime-2026-07-18`
+- Identity: `warpkeep.logging-camp-node` (`GatheringNodes/Wood`)
+- Package: three supplied High/Balanced/Compact GLBs plus the exact supplied runtime manifest.
+- Status: runtime-designated deposit; current in-game integration not asserted.
+
+## Warpkeep Trees runtime bundle
+
+- Release: `trees-runtime-bundle-2026-07-18`
+- Package: verifier-compatible outer archive preserving the exact supplied `Warpkeep_Trees_Runtime_Bundle_2026-07-18.zip` as a nested source entry.
+- Contents: 22 tree assets, 66 GLBs, 22 runtime manifests, and three LODs per asset.
+- Status: runtime handoff deposit; current in-game integration not asserted.

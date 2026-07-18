@@ -136,3 +136,10 @@ Other Hegemony source/model families and other Warpkeep media are not part of th
 - **License status:** public archival and repository/release distribution authorized; no separate open-license grant asserted
 
 This authorization covers publication and distribution of the named Gold Mine Gathering Node runtime package and its archive metadata. It does not license third-party tools or services, trademarks, canonical identity, or unrelated Warpkeep material by implication. The supplied manifest declares a prompt file under `preservedFiles`, but that prompt was not supplied and is not included in this deposit.
+## Logging Camp Wood Gathering Node runtime LODs
+
+Public archival/release distribution of the named supplied Logging Camp runtime LOD package was authorized by Ael. The supplied manifest states `Project-owned; authored for Warpkeep`. No separate open-license grant is asserted.
+
+## Warpkeep Trees runtime bundle
+
+Public archival/release distribution of the named supplied Trees runtime handoff bundle was authorized by Ael. Six legacy per-asset manifests do not declare a license field; no blanket license inference is made, and no separate open-license grant is asserted.

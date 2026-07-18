@@ -1,0 +1,78 @@
+{
+  "assetId": "warpkeep.logging-camp-node",
+  "category": "GatheringNodes/Wood",
+  "name": "Logging Camp Wood Gathering Node",
+  "preservation": "Supplied GLB and runtime-manifest bytes preserved exactly.",
+  "provenance": {
+    "generatedAt": "2026-07-18T13:55:38.208802+00:00",
+    "license": "Project-owned; authored for Warpkeep",
+    "sourcePackage": "Warpkeep_LoggingCamp_GameReady"
+  },
+  "revision": "initial-editable-2026-07-18",
+  "runtimeContract": {
+    "boundsBlender": {
+      "max": [
+        6.1,
+        4.778124,
+        6.67
+      ],
+      "min": [
+        -6.362841,
+        -4.882012,
+        0.0
+      ],
+      "size": [
+        12.462841,
+        9.660136,
+        6.67
+      ]
+    },
+    "editableSourceObjects": 142,
+    "embeddedTextures": 0,
+    "embeddedVertexColors": true,
+    "externalDependencies": 0,
+    "frontFacing": "+Z",
+    "gltfUp": "+Y",
+    "groundPlane": 0.0,
+    "interactionPivot": "footprint-center",
+    "materials": 1,
+    "meshObjects": 1
+  },
+  "schema": "warpkeep.runtime-asset.v1",
+  "suppliedSourceFiles": [
+    {
+      "bytes": 689328,
+      "file": "Warpkeep_LoggingCamp_LOD0_High_Runtime.glb",
+      "sha256": "a68c133a4a50654bc611de2b66e6d0d42729aaf0b91b59b7d2b7749566826f70",
+      "triangles": 5030,
+      "vertices": 10952
+    },
+    {
+      "bytes": 460656,
+      "file": "Warpkeep_LoggingCamp_LOD1_Balanced_Runtime.glb",
+      "sha256": "227046f89c4150eec5b908cc75e162fa9ad489be123fc941714f9ad294b73593",
+      "triangles": 3318,
+      "vertices": 7312
+    },
+    {
+      "bytes": 236252,
+      "file": "Warpkeep_LoggingCamp_LOD2_Compact_Runtime.glb",
+      "sha256": "ecea536ae18ef3ef5c6dc5eda158fa33d8e5d3a1e7848478c248a32efac1eccf",
+      "triangles": 1698,
+      "vertices": 3734
+    },
+    {
+      "bytes": 2246,
+      "file": "runtime-manifest.json",
+      "sha256": "0385c4e268445fe6529cb2d3285ee9bdd405f23f6ba8fecc8ccdf0d39a62cec2"
+    }
+  ],
+  "validation": {
+    "blenderBrightQa": "passed",
+    "glbV2Structure": "passed",
+    "khronosErrors": 0,
+    "khronosWarnings": 0,
+    "visualReview": "coherent camp identity; expected detail reduction; no visible corruption in inspected views"
+  },
+  "version": "1.0.0"
+}
