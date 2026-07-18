@@ -1,0 +1,87 @@
+{
+  "attachments": [
+    {
+      "bytes": 3641599,
+      "entries": [
+        {
+          "bytes": 1317,
+          "compressedBytes": 1317,
+          "mediaType": "text/markdown",
+          "path": "wheat-farm-node-lods-runtime-2026-07-18-v1/README.md",
+          "sha256": "36479505fa0da48a5bc4d1b9be1a32cd7872d965e602d53422df27f49de9528c"
+        },
+        {
+          "bytes": 572,
+          "compressedBytes": 572,
+          "mediaType": "application/octet-stream",
+          "path": "wheat-farm-node-lods-runtime-2026-07-18-v1/SHA256SUMS.txt",
+          "sha256": "b4da98dbc7ea03ecb99a6cd26bcc96e7d6c9f0c0b0ead4ba90b588b221bf73a8"
+        },
+        {
+          "bytes": 1884180,
+          "compressedBytes": 1884180,
+          "mediaType": "model/gltf-binary",
+          "path": "wheat-farm-node-lods-runtime-2026-07-18-v1/Warpkeep_WheatFarm_LOD0_High_Runtime.glb",
+          "sha256": "d1437bc1cfe81eef20cc5106acf849df919e6d4008a3b28d380a3d7194ed4ac7"
+        },
+        {
+          "bytes": 1182004,
+          "compressedBytes": 1182004,
+          "mediaType": "model/gltf-binary",
+          "path": "wheat-farm-node-lods-runtime-2026-07-18-v1/Warpkeep_WheatFarm_LOD1_Balanced_Runtime.glb",
+          "sha256": "bab5cbb18b45b6a565e2070d4b3f6ed17916e81f70be72203f704eeb86260403"
+        },
+        {
+          "bytes": 567908,
+          "compressedBytes": 567908,
+          "mediaType": "model/gltf-binary",
+          "path": "wheat-farm-node-lods-runtime-2026-07-18-v1/Warpkeep_WheatFarm_LOD2_Compact_Runtime.glb",
+          "sha256": "a34bfdafd6b8923c7cf90071d3ad097858fd59ca8df5cd2e776f44b967e9e3e6"
+        },
+        {
+          "bytes": 1249,
+          "compressedBytes": 1249,
+          "mediaType": "application/json",
+          "path": "wheat-farm-node-lods-runtime-2026-07-18-v1/manifest.json",
+          "sha256": "fca0cad726ddc808dd448b8f3708749c1e2d47d7d1ea6d6dbb0faae05b321893"
+        },
+        {
+          "bytes": 2845,
+          "compressedBytes": 2845,
+          "mediaType": "application/json",
+          "path": "wheat-farm-node-lods-runtime-2026-07-18-v1/runtime-manifest.json",
+          "sha256": "04beb96110a84593ebab8e2cd1b8fff59421a1eb498806bed2527dd43607a923"
+        }
+      ],
+      "mediaType": "application/zip",
+      "name": "wheat-farm-node-lods-runtime-2026-07-18-v1.zip",
+      "packageRoot": "wheat-farm-node-lods-runtime-2026-07-18-v1",
+      "sha256": "668231682348f2fb325e14fbefffc73ccc91a3d70cdd7c4b7e9f83af1c4dfb99",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/wheat-farm-node-lods-runtime-2026-07-18/wheat-farm-node-lods-runtime-2026-07-18-v1.zip"
+    }
+  ],
+  "designation": {
+    "name": "Royal Harvest Windmill Food Gathering Node runtime LOD family",
+    "status": "runtime-designated GatheringNodes/Food asset package; intended runtime use; current in-game integration not asserted"
+  },
+  "license": {
+    "scope": "Public archival/release distribution authorized for this named package; no separate open-license grant asserted.",
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license"
+  },
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "schemaVersion": 1,
+  "source": {
+    "authorization": "Ael explicitly authorized this public deposit.",
+    "privateWorkflowMetadata": "intentionally omitted",
+    "suppliedBy": "Ael"
+  },
+  "tag": "wheat-farm-node-lods-runtime-2026-07-18",
+  "verification": {
+    "glb": "GLB v2 structure and pinned Khronos validation passed for all three variants.",
+    "preservedManifest": "The supplied runtime-manifest.json bytes are preserved exactly.",
+    "privacy": "No private paths, cache identifiers, credentials, or communication IDs included in public metadata or supplied GLB JSON.",
+    "runtimeContract": "Supplied manifest records the intentional ground-embedded rock exception within the declared ground-embed allowance.",
+    "runtimeIntegration": "Current in-game integration not asserted."
+  }
+}

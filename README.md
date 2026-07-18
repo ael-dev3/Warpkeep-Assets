@@ -61,3 +61,10 @@ See [`ASSET-LICENSES.md`](ASSET-LICENSES.md) for the per-set license scope.
 - Package: verifier-compatible outer archive preserving the exact supplied `Warpkeep_Trees_Runtime_Bundle_2026-07-18.zip` as a nested source entry.
 - Contents: 22 tree assets, 66 GLBs, 22 runtime manifests, and three LODs per asset.
 - Status: runtime handoff deposit; current in-game integration not asserted.
+
+## Royal Harvest Windmill Food Gathering Node runtime LODs
+
+- Release: `wheat-farm-node-lods-runtime-2026-07-18`
+- Identity: `warpkeep.wheat-farm-node` (`GatheringNodes/Food`)
+- Package: three supplied High/Balanced/Compact GLBs plus the exact supplied runtime manifest.
+- Status: runtime-designated deposit; intentional ground-embedded field rocks are documented by the supplied contract; current in-game integration not asserted.

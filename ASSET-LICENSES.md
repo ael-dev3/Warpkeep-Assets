@@ -143,3 +143,6 @@ Public archival/release distribution of the named supplied Logging Camp runtime 
 ## Warpkeep Trees runtime bundle
 
 Public archival/release distribution of the named supplied Trees runtime handoff bundle was authorized by Ael. Six legacy per-asset manifests do not declare a license field; no blanket license inference is made, and no separate open-license grant is asserted.
+## Royal Harvest Windmill Food Gathering Node runtime LODs
+
+Public archival/release distribution of the named supplied Wheat Farm runtime LOD package was authorized by Ael. The supplied manifest states `Project-owned; authored for Warpkeep`. No separate open-license grant is asserted.
