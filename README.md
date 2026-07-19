@@ -2,6 +2,12 @@
 
 Public, checksum-addressed source and archive material for [Warpkeep](https://warpkeep.com/).
 
+This archive traces Genesis 001 from solitary keeps toward a lived-in
+frontier: castle foundations, Hegemony Marks, caravans and supply lines, and
+the forests, farms, mines, and quarries that may one day sustain the Realm. A
+release here means preserved, provenance-tracked, and reviewable—not
+necessarily integrated or playable in Warpkeep.
+
 Large masters do not live in normal Git history. They are published as immutable, tag-specific GitHub Release attachments with exact byte counts, SHA-256 checksums, safe-path manifests, provenance, and license boundaries. Warpkeep commits the optimized files required at runtime; players never depend on GitHub Release downloads while using the game.
 
 ## Asset releases
