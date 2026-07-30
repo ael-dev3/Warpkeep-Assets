@@ -1,0 +1,68 @@
+{
+  "attachments": [
+    {
+      "bytes": 2717585,
+      "entries": [
+        {
+          "bytes": 2126,
+          "compressedBytes": 2126,
+          "mediaType": "text/markdown",
+          "path": "rabbit-runtime-ui-bundle-2026-07-30-v1/README.md",
+          "sha256": "3d6909181d31011dbb0b09935dee07d2e7d36147123ec30371f8b293c31643dd"
+        },
+        {
+          "bytes": 2710713,
+          "compressedBytes": 2710713,
+          "mediaType": "application/zip",
+          "path": "rabbit-runtime-ui-bundle-2026-07-30-v1/Warpkeep_Rabbit_Runtime_UI_Bundle_2026-07-30.zip",
+          "sha256": "1ab9a02a39e68a3ddadcec4ac1824aafaf252f9cb068511e6341d2377f256dc3"
+        },
+        {
+          "bytes": 3745,
+          "compressedBytes": 3745,
+          "mediaType": "application/json",
+          "path": "rabbit-runtime-ui-bundle-2026-07-30-v1/manifest.json",
+          "sha256": "2174b34ee5f0d025dc0a46e35cb981ce6074a500d7cdbe6f153753155f5b6772"
+        },
+        {
+          "bytes": 195,
+          "compressedBytes": 195,
+          "mediaType": "text/plain",
+          "path": "rabbit-runtime-ui-bundle-2026-07-30-v1/SHA256SUMS.txt",
+          "sha256": "a3d5f92a30549a12c50dba3e6ba81474e2bc46dddff5a78d8ab3062a06a3d387"
+        }
+      ],
+      "mediaType": "application/zip",
+      "name": "rabbit-runtime-ui-bundle-2026-07-30-v1.zip",
+      "packageRoot": "rabbit-runtime-ui-bundle-2026-07-30-v1",
+      "sha256": "cf40e6c7149635a8cf6439e618e951219770491a7f364e7776b8af128461a3a9",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/rabbit-runtime-ui-bundle-2026-07-30/rabbit-runtime-ui-bundle-2026-07-30-v1.zip"
+    }
+  ],
+  "designation": {
+    "name": "Lowlands Rabbit Runtime + UI Bundle",
+    "status": "visual-only Environment/Wildlife runtime/UI archive; current in-game integration not asserted"
+  },
+  "license": {
+    "scope": "Public archival/release distribution authorized for this named package; no separate open-license grant asserted.",
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license"
+  },
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "schemaVersion": 1,
+  "source": {
+    "authorization": "Ael explicitly authorized this public deposit.",
+    "privateWorkflowMetadata": "intentionally omitted",
+    "suppliedBy": "Ael"
+  },
+  "tag": "rabbit-runtime-ui-bundle-2026-07-30",
+  "verification": {
+    "blender": "Official Blender 5.2 factory-startup/disable-autoexec front/side renders passed.",
+    "glb": "All three GLBs are GLB v2 with zero Khronos errors and no external URIs; High/Balanced each carry documented NODE_SKINNED_MESH_NON_ROOT warning.",
+    "licenseBoundary": "Supplied project-owned provenance recorded without asserting a separate open-license grant.",
+    "nestedSource": "Supplied Rabbit ZIP was privacy-sanitized to remove seven embedded PNG tEXt metadata chunks; distributed nested copy is not byte-identical to the supplied source, while decoded pixels and intended runtime payload bytes are preserved.",
+    "privacy": "Passed after removing embedded private local path metadata.",
+    "runtimeIntegration": "Current in-game integration not asserted.",
+    "ui": "2048 RGBA PNG alpha audit independently matches supplied manifest counts; decoded pixels preserved through sanitization."
+  }
+}

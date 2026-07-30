@@ -1,0 +1,91 @@
+{
+  "assetId": "warpkeep.environment.wildlife.rabbit",
+  "category": "Environment/Wildlife",
+  "designation": {
+    "currentInGameIntegration": "not asserted",
+    "gameplayAuthority": false,
+    "visualOnly": true
+  },
+  "distributedSourceArchive": {
+    "bytes": 2710713,
+    "decodedPixelsPreserved": true,
+    "file": "Warpkeep_Rabbit_Runtime_UI_Bundle_2026-07-30.zip",
+    "privacySanitized": true,
+    "removedPngMetadataChunks": 7,
+    "sha256": "1ab9a02a39e68a3ddadcec4ac1824aafaf252f9cb068511e6341d2377f256dc3"
+  },
+  "lods": [
+    {
+      "animations": [
+        "Alert",
+        "Idle",
+        "Nibble",
+        "Walk"
+      ],
+      "bytes": 129388,
+      "file": "Warpkeep_Rabbit_LOD0_High_Rigged_Runtime.glb",
+      "rigged": true,
+      "sha256": "735f7d72457acfb20581cfcacbd8908eab3ef36d5640b63ecb134bbaa7a10b1d",
+      "triangles": 726,
+      "vertices": 1640
+    },
+    {
+      "animations": [
+        "Alert",
+        "Idle",
+        "Nibble",
+        "Walk"
+      ],
+      "bytes": 86340,
+      "file": "Warpkeep_Rabbit_LOD1_Balanced_Rigged_Runtime.glb",
+      "rigged": true,
+      "sha256": "daeb493a827ecbd605c6ad25d83b84050e6a0ad29e96619c9d86c57c37be1f6a",
+      "triangles": 350,
+      "vertices": 856
+    },
+    {
+      "animations": [],
+      "bytes": 14808,
+      "file": "Warpkeep_Rabbit_LOD2_Compact_Static_Runtime.glb",
+      "rigged": false,
+      "sha256": "2ecc7b1adf4c1d79b7ca2d5ea9a6727ed3f6d9072047466082bb912d34ea930c",
+      "triangles": 146,
+      "vertices": 384
+    }
+  ],
+  "name": "Lowlands Rabbit Runtime + UI Bundle",
+  "provenance": {
+    "license": "Project-owned; authored for Warpkeep",
+    "publicArchiveAuthorization": "authorized by Ael",
+    "separateOpenLicense": "not asserted",
+    "source": "Source/Warpkeep_Rabbit_Editable.blend"
+  },
+  "revision": "transparent-ui-2026-07-30",
+  "schema": "warpkeep.runtime-ui-bundle.v1",
+  "suppliedSourceArchive": {
+    "bytes": 2522361,
+    "entryCount": 13,
+    "file": "Warpkeep_Rabbit_Runtime_UI_Bundle_2026-07-30.zip",
+    "payloadEntryCount": 8,
+    "sha256": "88de4a3fd6c1601f3d50705ffcee5ee4297cace550ea9c0a8f9f5ef69d05d05a"
+  },
+  "ui": {
+    "bytes": 2468019,
+    "file": "Warpkeep_Rabbit_UI_Transparent_2048.png",
+    "height": 2048,
+    "opaquePixels": 856465,
+    "partialPixels": 248197,
+    "sha256": "572e67902dd6db561bcce494ac5049463baf939494f74af3a0b1f2459f3b2c3e",
+    "transparentPixels": 3089642,
+    "width": 2048
+  },
+  "validation": {
+    "khronosErrors": 0,
+    "khronosWarnings": 1,
+    "officialBlenderQa": "passed",
+    "pngAlphaAudit": "passed",
+    "privacy": "passed after removing seven embedded PNG tEXt chunks",
+    "warning": "NODE_SKINNED_MESH_NON_ROOT on High and Balanced rigged LODs at /nodes/13; source preserved exact."
+  },
+  "version": "1.0.0"
+}

@@ -149,3 +149,6 @@ Public archival/release distribution of the named supplied Wheat Farm runtime LO
 ## Grand Stone Quarry Gathering Node runtime LODs
 
 Public archival/release distribution of the named supplied Stone Quarry runtime LOD package was authorized by Ael. The supplied manifest states `Project-owned; authored for Warpkeep`. No separate open-license grant is asserted.
+## Lowlands Rabbit Runtime + UI Bundle
+
+Public archival/release distribution of the named supplied Rabbit runtime/UI bundle was authorized by Ael. The supplied provenance states `Project-owned; authored for Warpkeep`. No separate open-license grant is asserted. The nested source ZIP and its contained media remain preserved under their supplied provenance; current in-game integration is not asserted.
