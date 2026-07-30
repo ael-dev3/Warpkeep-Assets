@@ -2,7 +2,7 @@
 
 - Asset identity: `warpkeep.environment.wildlife.rabbit`
 - Release tag: `rabbit-runtime-ui-bundle-2026-07-30`
-- Supplied outer ZIP preserved byte-for-byte as a nested release source attachment.
+- Supplied outer ZIP was privacy-sanitized before public distribution to remove seven embedded PNG local-path metadata chunks; decoded pixels and intended runtime payload bytes were preserved.
 - Contents: three Rabbit LOD GLBs, four clips on High/Balanced, compact static LOD, and 2048 RGBA transparent UI PNG.
 - Khronos: zero errors; High/Balanced each retain `NODE_SKINNED_MESH_NON_ROOT` warning at `/nodes/13` from the supplied authoring hierarchy.
 - Official Blender QA: factory-startup/disable-autoexec front/side renders passed.
