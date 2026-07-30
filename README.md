@@ -97,3 +97,10 @@ See [`ASSET-LICENSES.md`](ASSET-LICENSES.md) for the per-set license scope.
 - Identity: `warpkeep.stone-quarry-node` (`GatheringNodes/Stone`)
 - Package: three supplied High/Balanced/Compact GLBs plus the exact supplied runtime manifest.
 - Status at publication: runtime-designated deposit; visual-clearance contract recorded as passed. The asset release did not itself assert in-game integration.
+
+## Lowlands Rabbit Runtime + UI Bundle
+
+- Release: `rabbit-runtime-ui-bundle-2026-07-30`
+- Identity: `warpkeep.environment.wildlife.rabbit` (`Environment/Wildlife`)
+- Package: privacy-sanitized distribution copy of the supplied Rabbit runtime/UI ZIP; seven embedded PNG local-path metadata chunks removed while decoded pixels and intended runtime payload bytes were preserved.
+- Status: visual-only archive; current in-game integration not asserted. High/Balanced rigged GLBs retain the documented non-root skinned-mesh validator warning.
