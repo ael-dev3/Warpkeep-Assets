@@ -152,3 +152,6 @@ Public archival/release distribution of the named supplied Stone Quarry runtime 
 ## Lowlands Rabbit Runtime + UI Bundle
 
 Public archival/release distribution of the named supplied Rabbit runtime/UI bundle was authorized by Ael. The supplied provenance states `Project-owned; authored for Warpkeep`. No separate open-license grant is asserted. The nested source ZIP and its contained media remain preserved under their supplied provenance; current in-game integration is not asserted.
+## Hegemony Empire admission request button sound
+
+Public archival/release distribution of the named supplied sound was authorized by Ael. No separate open-license grant was asserted or inferred.

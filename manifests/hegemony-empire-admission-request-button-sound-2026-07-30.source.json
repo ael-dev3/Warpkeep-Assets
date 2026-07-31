@@ -1,0 +1,45 @@
+{
+  "assetId": "warpkeep.ui.audio.hegemony-empire-admission.request",
+  "audio": {
+    "bitRate": 192000,
+    "channelLayout": "stereo",
+    "channels": 2,
+    "durationSeconds": 2.0,
+    "mediaType": "audio/mpeg",
+    "sampleRateHz": 48000
+  },
+  "designation": {
+    "currentInGameIntegration": "not asserted",
+    "gameplayAuthority": false,
+    "visualOnly": false
+  },
+  "name": "Hegemony Empire admission request button sound",
+  "provenance": {
+    "license": "not separately supplied",
+    "namingDecision": "Descriptive .mp3 public filename matches detected codec; cache-style input basename and misleading .ogg suffix not exposed.",
+    "publicArchiveAuthorization": "authorized by Ael",
+    "separateOpenLicense": "not asserted"
+  },
+  "publicFilename": "Hegemony_Empire_Admission_Request_Button.mp3",
+  "schema": "warpkeep.audio-asset.v1",
+  "sourceInput": {
+    "bytes": 49581,
+    "detectedFormat": "mp3",
+    "extensionMismatch": true,
+    "publicBytesPreservedExactly": true,
+    "publicFilenameChosenForDetectedFormat": true,
+    "sha256": "73465f59b6d0f9b1166b547608750ca6ec58bad7aac36e9899b3995ffb50d070",
+    "suppliedExtension": "ogg"
+  },
+  "ui": {
+    "label": "Sound for the button to request Hegemony Empire admission",
+    "role": "button sound",
+    "trigger": "hegemony-empire-admission.request"
+  },
+  "validation": {
+    "encoderTag": "Lavf59.27.100",
+    "ffmpegDecode": "passed",
+    "ffprobe": "passed",
+    "privateMetadataScan": "passed"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "attachments": [
+    {
+      "bytes": 53222,
+      "entries": [
+        {
+          "bytes": 746,
+          "compressedBytes": 746,
+          "mediaType": "text/markdown",
+          "path": "hegemony-empire-admission-request-button-sound-2026-07-30-v1/README.md",
+          "sha256": "c7e85836409a1de40de659aaf6fff837103fc8ea6857c26f72864b71d8dfa52a"
+        },
+        {
+          "bytes": 49581,
+          "compressedBytes": 49581,
+          "mediaType": "audio/mpeg",
+          "path": "hegemony-empire-admission-request-button-sound-2026-07-30-v1/Hegemony_Empire_Admission_Request_Button.mp3",
+          "sha256": "73465f59b6d0f9b1166b547608750ca6ec58bad7aac36e9899b3995ffb50d070"
+        },
+        {
+          "bytes": 1654,
+          "compressedBytes": 1654,
+          "mediaType": "application/json",
+          "path": "hegemony-empire-admission-request-button-sound-2026-07-30-v1/manifest.json",
+          "sha256": "b2acd5eb2c88af73cec15d653a7fde4fd25f741541a8a2093cd5ad3d7e81da63"
+        },
+        {
+          "bytes": 267,
+          "compressedBytes": 267,
+          "mediaType": "text/plain",
+          "path": "hegemony-empire-admission-request-button-sound-2026-07-30-v1/SHA256SUMS.txt",
+          "sha256": "c966454a4557c3ff3e0534c8b74587ac337feda958f7189a3d8687f1b8c025bf"
+        }
+      ],
+      "mediaType": "application/zip",
+      "name": "hegemony-empire-admission-request-button-sound-2026-07-30-v1.zip",
+      "packageRoot": "hegemony-empire-admission-request-button-sound-2026-07-30-v1",
+      "sha256": "a31cca839de568e461c646303328ec360aee90a160f7d08481d8b560f5dc16da",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-empire-admission-request-button-sound-2026-07-30/hegemony-empire-admission-request-button-sound-2026-07-30-v1.zip"
+    }
+  ],
+  "designation": {
+    "assetId": "warpkeep.ui.audio.hegemony-empire-admission.request",
+    "name": "Hegemony Empire admission request button sound",
+    "status": "UI sound asset; current in-game integration not asserted"
+  },
+  "license": {
+    "scope": "Public archival/release distribution authorized for this named package; no separate open-license grant asserted.",
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license"
+  },
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "schemaVersion": 1,
+  "source": {
+    "authorization": "Ael explicitly authorized this public deposit.",
+    "privateWorkflowMetadata": "intentionally omitted",
+    "suppliedBy": "Ael"
+  },
+  "tag": "hegemony-empire-admission-request-button-sound-2026-07-30",
+  "verification": {
+    "audio": "Supplied bytes decode successfully as MP3 despite the input .ogg suffix; public bytes are preserved under a descriptive .mp3 filename.",
+    "licenseBoundary": "Public archive authorization recorded without asserting a separate open-license grant.",
+    "privacy": "No private path, credential, or workflow metadata found.",
+    "role": "Labelled as the sound for the Hegemony Empire admission request button via trigger `hegemony-empire-admission.request`.",
+    "runtimeIntegration": "Current in-game integration not asserted."
+  }
+}
