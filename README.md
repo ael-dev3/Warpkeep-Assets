@@ -104,3 +104,10 @@ See [`ASSET-LICENSES.md`](ASSET-LICENSES.md) for the per-set license scope.
 - Identity: `warpkeep.environment.wildlife.rabbit` (`Environment/Wildlife`)
 - Package: privacy-sanitized distribution copy of the supplied Rabbit runtime/UI ZIP; seven embedded PNG local-path metadata chunks removed while decoded pixels and intended runtime payload bytes were preserved.
 - Status: visual-only archive; current in-game integration not asserted. High/Balanced rigged GLBs retain the documented non-root skinned-mesh validator warning.
+## Hegemony Empire admission request button sound
+
+- Release: `hegemony-empire-admission-request-button-sound-2026-07-30`
+- Asset: `Hegemony_Empire_Admission_Request_Button.mp3`
+- Role: sound for the button to request Hegemony Empire admission (`hegemony-empire-admission.request`)
+- Format: MP3, 48 kHz stereo, 192 kbps, 2.0 seconds; current in-game integration not asserted.
+- The supplied upload had an `.ogg` suffix but contained MP3 bytes; exact audio bytes are preserved under the correct public `.mp3` filename.
