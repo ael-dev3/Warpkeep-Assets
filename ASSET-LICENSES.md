@@ -195,3 +195,20 @@ Public archival/release distribution of the named supplied sound was authorized 
 - **License status:** public archival and GitHub Release distribution authorized; no separate open-license grant asserted
 
 This authorization covers publication and distribution of the named privacy-sanitized library package, its optimized Git-tracked previews, and its archive metadata. It does not license third-party tools or services, third-party rights, Warpkeep trademarks or canonical identity, or unrelated Warpkeep material by implication. Runtime designation and repository presence do not by themselves assert current live-game integration.
+
+## Warpkeep Hegemony Unit Corps
+
+- **Set:** twelve Hegemony infantry, ranged, and cavalry units; 48 four-LOD runtime GLBs; 15 editable Blender sources; official-crest textures; previews; manifests; QA; and checksums
+- **Release:** `hegemony-unit-corps-2026-08-03`
+- **Snapshot date:** 2026-08-03
+- **Deposit authority:** Ael explicitly authorized publishing all three unit packages to Warpkeep-Assets.
+- **Creation disclosure:** the assets were substantially authored, prepared, or refined with Codex under Ael's direction and review; supplied comparison sheets informed broad role and silhouette study only and are not part of the release
+- **License status:** public archival and GitHub Release distribution authorized; no separate open-license grant asserted
+
+This authorization covers publication and distribution of the named
+privacy-sanitized unit packages, their optimized Git-tracked previews, and
+their archive metadata. It does not license third-party tools or services,
+third-party reference material, Warpkeep or Hegemony trademarks and canonical
+identity, or unrelated Warpkeep material by implication. Runtime designation
+and repository presence do not by themselves assert current live-game
+integration.

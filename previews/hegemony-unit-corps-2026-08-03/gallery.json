@@ -1,0 +1,34 @@
+{
+  "images": [
+    {
+      "bytes": 157598,
+      "file": "00-corps-overview.jpg",
+      "sha256": "e80b1b75e48d1daa0bf09450523b58bc020eef537d655929393f6d586c11a790",
+      "source": "composite of the three package lineup renders",
+      "title": "Hegemony Unit Corps overview"
+    },
+    {
+      "bytes": 132982,
+      "file": "01-infantry-lineup.jpg",
+      "sha256": "6f8abba0f08c855a4a140bdfdf48b939bd2a46f3908c22e44e7455e1f72680d2",
+      "source": "Warpkeep_HegemonyInfantry_GameReady/Previews/Warpkeep_HegemonyInfantry_Lineup.png",
+      "title": "Hegemony Infantry \u2014 Shieldwall Cohort"
+    },
+    {
+      "bytes": 129246,
+      "file": "02-ranged-lineup.jpg",
+      "sha256": "68f93ddebfa81716336c08b54f2fda2a916d073d28d0df2c0c72f3193a000125",
+      "source": "Warpkeep_HegemonyRanged_GameReady/Previews/Warpkeep_HegemonyRanged_Lineup.png",
+      "title": "Hegemony Ranged \u2014 Astral Cohort"
+    },
+    {
+      "bytes": 131186,
+      "file": "03-cavalry-lineup.jpg",
+      "sha256": "3e3e184e107e44d96a2697eefedc6c0a93c06a6a857579be91bfe64269cdb562",
+      "source": "Warpkeep_HegemonyCavalry_GameReady/Previews/Warpkeep_HegemonyCavalry_Lineup.png",
+      "title": "Hegemony Astral Cavalry"
+    }
+  ],
+  "releaseTag": "hegemony-unit-corps-2026-08-03",
+  "schema": "warpkeep.preview-gallery.v1"
+}

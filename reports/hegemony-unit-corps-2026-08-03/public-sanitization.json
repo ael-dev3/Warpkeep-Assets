@@ -1,0 +1,287 @@
+{
+  "blendAudits": [
+    {
+      "changes": [
+        {
+          "after": "//../Previews/Warpkeep_HegemonyInfantry_Lineup_Transparent.png",
+          "before": "<private-path-redacted>/Warpkeep_HegemonyInfantry_Lineup_Transparent.png",
+          "owner": "Scene:WK_HegemonyInfantry_Lineup_Editable",
+          "property": "render.filepath"
+        }
+      ],
+      "path": "Warpkeep_HegemonyInfantry_GameReady/Source/Warpkeep_HegemonyInfantry_Lineup_Editable.blend",
+      "publicSha256": "cefb5c9c19bcece60ffda627647131e99ce9ab26f3b4f609b490dc62f8ced831",
+      "reopenedInBlender": true,
+      "semanticFingerprintSha256": "b202300e045e7317d3343d4b830cff934a92fffbeaa022bbe1d40d8bbd571d12",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceSha256": "bffd61680cb4d61b07bdef73c7b60407a1996a2e33372f74d5dbc72fdcf97a2f"
+    },
+    {
+      "changes": [
+        {
+          "after": "//../Previews/Mobile/Warpkeep_Hegemony_Bulwark_Map_256.png",
+          "before": "<private-path-redacted>/Warpkeep_Hegemony_Bulwark_Map_256.png",
+          "owner": "Scene:WK_Hegemony_Bulwark_Authoring",
+          "property": "render.filepath"
+        }
+      ],
+      "path": "Warpkeep_HegemonyInfantry_GameReady/Source/Warpkeep_Hegemony_Bulwark_Editable.blend",
+      "publicSha256": "31aa3f56e582408371c7f885ea91ef96c980be8bcbf00506ca8be77cab731465",
+      "reopenedInBlender": true,
+      "semanticFingerprintSha256": "1808f7cb8a1b3f7fb05af995a654bf46dd8d3690e91fb4b322d7765e127f2297",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceSha256": "98f91cd2ee3777389b53f972be161f5d0aab545ad90021412e566086d6c9cb4b"
+    },
+    {
+      "changes": [
+        {
+          "after": "//../Previews/Mobile/Warpkeep_Hegemony_HonorGuard_Map_256.png",
+          "before": "<private-path-redacted>/Warpkeep_Hegemony_HonorGuard_Map_256.png",
+          "owner": "Scene:WK_Hegemony_HonorGuard_Authoring",
+          "property": "render.filepath"
+        }
+      ],
+      "path": "Warpkeep_HegemonyInfantry_GameReady/Source/Warpkeep_Hegemony_HonorGuard_Editable.blend",
+      "publicSha256": "62f78b8a3d548fa3f4b13ef9ad1bbf08091eeb52ec263a2f632c8a03b7155a9a",
+      "reopenedInBlender": true,
+      "semanticFingerprintSha256": "b4c0c4f28cd54bcbe288cee96c5f8e1889008cf991666d44aaf3c305ea2c1740",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceSha256": "dccaf40909ba22fccceebf107502a1c514bb5c0244164ece91b5bac1340953e7"
+    },
+    {
+      "changes": [
+        {
+          "after": "//../Previews/Mobile/Warpkeep_Hegemony_Legionary_Map_256.png",
+          "before": "<private-path-redacted>/Warpkeep_Hegemony_Legionary_Map_256.png",
+          "owner": "Scene:WK_Hegemony_Legionary_Authoring",
+          "property": "render.filepath"
+        }
+      ],
+      "path": "Warpkeep_HegemonyInfantry_GameReady/Source/Warpkeep_Hegemony_Legionary_Editable.blend",
+      "publicSha256": "920c09770719744d8d300744ad9fd04a24bf77d6cca038d09d314895179d01c1",
+      "reopenedInBlender": true,
+      "semanticFingerprintSha256": "57c34826403e69d2da5bd617e446e88c9f88cf54b945d85250b608aac54ecb1b",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceSha256": "97a74c45bead6ad47f747a573e71a43cc614b53e43d272f19ae4b857e386ba74"
+    },
+    {
+      "changes": [
+        {
+          "after": "//../Previews/Mobile/Warpkeep_Hegemony_Vanguard_Map_256.png",
+          "before": "<private-path-redacted>/Warpkeep_Hegemony_Vanguard_Map_256.png",
+          "owner": "Scene:WK_Hegemony_Vanguard_Authoring",
+          "property": "render.filepath"
+        }
+      ],
+      "path": "Warpkeep_HegemonyInfantry_GameReady/Source/Warpkeep_Hegemony_Vanguard_Editable.blend",
+      "publicSha256": "88ade47163b69b137ec392c2efef63a0a290b94d0bada8e0f920dd1ee44518bc",
+      "reopenedInBlender": true,
+      "semanticFingerprintSha256": "c1bff96694a609119e00d3de0d687dbdd6dc280d1254b381015109ea325893e2",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceSha256": "deca273e63c1201a61d3499577eda17e168bcecccc2dbb5e1ac143614e572bce"
+    },
+    {
+      "changes": [
+        {
+          "after": "//../Previews/Warpkeep_HegemonyRanged_Lineup_Transparent.png",
+          "before": "<private-path-redacted>/Warpkeep_HegemonyRanged_Lineup_Transparent.png",
+          "owner": "Scene:WK_HegemonyRanged_Lineup_Editable",
+          "property": "render.filepath"
+        }
+      ],
+      "path": "Warpkeep_HegemonyRanged_GameReady/Source/Warpkeep_HegemonyRanged_Lineup_Editable.blend",
+      "publicSha256": "7425fcc59cc13be189247438b2336027748b4f048512e75a01e3d356b313e73e",
+      "reopenedInBlender": true,
+      "semanticFingerprintSha256": "3b275450c66d38e3fa7ea59976d27390e78ec57f8a5b843eace6f76b9b221081",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceSha256": "0da3ec4f84ec9a29f111e8b6a53be72ca53c6a9454b7f3271241f0699252881f"
+    },
+    {
+      "changes": [
+        {
+          "after": "//../Previews/Mobile/Warpkeep_Hegemony_AstralMagister_Map_256.png",
+          "before": "<private-path-redacted>/Warpkeep_Hegemony_AstralMagister_Map_256.png",
+          "owner": "Scene:WK_Hegemony_AstralMagister_Authoring",
+          "property": "render.filepath"
+        }
+      ],
+      "path": "Warpkeep_HegemonyRanged_GameReady/Source/Warpkeep_Hegemony_AstralMagister_Editable.blend",
+      "publicSha256": "2eab943fa7dfb7d801680c2bb7ca1e2d3233780e27f8bf953a96ae06de0244ae",
+      "reopenedInBlender": true,
+      "semanticFingerprintSha256": "9e74d8731f3292e79ddcd99298ccba719b56c8512715fdd533d0eebc5fe6cc09",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceSha256": "488dfcd1e3b6c7d4008fc48effb954f4cf462617ab974863778d374ba05b8806"
+    },
+    {
+      "changes": [
+        {
+          "after": "//../Previews/Mobile/Warpkeep_Hegemony_DuskRanger_Map_256.png",
+          "before": "<private-path-redacted>/Warpkeep_Hegemony_DuskRanger_Map_256.png",
+          "owner": "Scene:WK_Hegemony_DuskRanger_Authoring",
+          "property": "render.filepath"
+        }
+      ],
+      "path": "Warpkeep_HegemonyRanged_GameReady/Source/Warpkeep_Hegemony_DuskRanger_Editable.blend",
+      "publicSha256": "2d3032a41bc9c5ca03e9a25349020aac905ce8a64ffbf61cf16436c304a59a08",
+      "reopenedInBlender": true,
+      "semanticFingerprintSha256": "892799226f472e682225a755c0aeeea1f1773fccf6e1e24185f7f3337de683c6",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceSha256": "10888880bb1c306769b5c7446d837800b83b850b85c8a46dd786b488c0d78668"
+    },
+    {
+      "changes": [
+        {
+          "after": "//../Previews/Mobile/Warpkeep_Hegemony_LongbowWarden_Map_256.png",
+          "before": "<private-path-redacted>/Warpkeep_Hegemony_LongbowWarden_Map_256.png",
+          "owner": "Scene:WK_Hegemony_LongbowWarden_Authoring",
+          "property": "render.filepath"
+        }
+      ],
+      "path": "Warpkeep_HegemonyRanged_GameReady/Source/Warpkeep_Hegemony_LongbowWarden_Editable.blend",
+      "publicSha256": "2480eb0cff1275e49eb9f397a235a28676e854c6e06f36a9c6519cb4572fb842",
+      "reopenedInBlender": true,
+      "semanticFingerprintSha256": "30af3dba998ad7248ead3de44dca240bb89094ebb668227b884f067f691aae6a",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceSha256": "596fc7705556f87dd5c1845b4aff68bdab2eb14cde8eec59df83348955159a15"
+    },
+    {
+      "changes": [
+        {
+          "after": "//../Previews/Mobile/Warpkeep_Hegemony_RiftBattlemage_Map_256.png",
+          "before": "<private-path-redacted>/Warpkeep_Hegemony_RiftBattlemage_Map_256.png",
+          "owner": "Scene:WK_Hegemony_RiftBattlemage_Authoring",
+          "property": "render.filepath"
+        }
+      ],
+      "path": "Warpkeep_HegemonyRanged_GameReady/Source/Warpkeep_Hegemony_RiftBattlemage_Editable.blend",
+      "publicSha256": "c022e0f29bba08a55aa780943333b3b398ad014a7163214c765c8342cc8b9352",
+      "reopenedInBlender": true,
+      "semanticFingerprintSha256": "06e225a5ae786d38698c7ae7c856958bcb89fe65c02baa01206aec71cd29b833",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceSha256": "e6241c4b5ec38fb26cc1d84f938393c39c3c9114fde09c17d71dcd349f249a46"
+    },
+    {
+      "changes": [
+        {
+          "after": "//../Previews/Warpkeep_HegemonyCavalry_Lineup_Transparent.png",
+          "before": "<private-path-redacted>/Warpkeep_HegemonyCavalry_Lineup_Transparent.png",
+          "owner": "Scene:WK_HegemonyCavalry_Lineup_Editable",
+          "property": "render.filepath"
+        }
+      ],
+      "path": "Warpkeep_HegemonyCavalry_GameReady/Source/Warpkeep_HegemonyCavalry_Lineup_Editable.blend",
+      "publicSha256": "0b0c9fda825f6814ef7c2a24ad1bf139d9c48cf01122ff941f808fc8055527b3",
+      "reopenedInBlender": true,
+      "semanticFingerprintSha256": "2d623b87c77d84b9f4b375e0df93894a38ba85455b789bd5b60a2ccaaa0f1604",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceSha256": "9bc4e36e17819300bd9991673e26959dfc810439cbcfbf53190075ddee83110c"
+    },
+    {
+      "changes": [
+        {
+          "after": "//../Previews/Mobile/Warpkeep_Hegemony_AstralLancer_Map_256.png",
+          "before": "<private-path-redacted>/Warpkeep_Hegemony_AstralLancer_Map_256.png",
+          "owner": "Scene:WK_Hegemony_AstralLancer_Authoring",
+          "property": "render.filepath"
+        }
+      ],
+      "path": "Warpkeep_HegemonyCavalry_GameReady/Source/Warpkeep_Hegemony_AstralLancer_Editable.blend",
+      "publicSha256": "5e592a37a5d54349ee402bbe11b3ed26593c99182360df79617b27029bb840da",
+      "reopenedInBlender": true,
+      "semanticFingerprintSha256": "d6388592c9da33c323e0c56f4cdd1530f6726abcdbb02c3af266355a70c92d9c",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceSha256": "b764f501d5dcfce95be9631f4b1dad954cefc56b048db7607980ed8a6d45a8d7"
+    },
+    {
+      "changes": [
+        {
+          "after": "//../Previews/Mobile/Warpkeep_Hegemony_DuskOutrider_Map_256.png",
+          "before": "<private-path-redacted>/Warpkeep_Hegemony_DuskOutrider_Map_256.png",
+          "owner": "Scene:WK_Hegemony_DuskOutrider_Authoring",
+          "property": "render.filepath"
+        }
+      ],
+      "path": "Warpkeep_HegemonyCavalry_GameReady/Source/Warpkeep_Hegemony_DuskOutrider_Editable.blend",
+      "publicSha256": "405c8cf9ca6eeba8643bfe287b197554fffb8bf0da04f741f6c1af6a27e429eb",
+      "reopenedInBlender": true,
+      "semanticFingerprintSha256": "c70e337e3c9ead2cd2e0d2490bd41797bf122e3f1cf47d3b4e890b48336d5cc3",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceSha256": "ae8af89654621381d3dcaf85dfa7b742633733c7d9bb564aeb7331b6974f904e"
+    },
+    {
+      "changes": [
+        {
+          "after": "//../Previews/Mobile/Warpkeep_Hegemony_Horseguard_Map_256.png",
+          "before": "<private-path-redacted>/Warpkeep_Hegemony_Horseguard_Map_256.png",
+          "owner": "Scene:WK_Hegemony_Horseguard_Authoring",
+          "property": "render.filepath"
+        }
+      ],
+      "path": "Warpkeep_HegemonyCavalry_GameReady/Source/Warpkeep_Hegemony_Horseguard_Editable.blend",
+      "publicSha256": "e5192bdcaa2309ebc10329a83e32bb9c45c4d1a9478da914696ec3b86937b8c7",
+      "reopenedInBlender": true,
+      "semanticFingerprintSha256": "029afadfee8aa524907f6df51cf917c976970868a2215c2abf94f118b837d618",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceSha256": "99d60d152e2e4b6296ce113189e95dc2d5256a92a4a93bd0faebd5b9648022ac"
+    },
+    {
+      "changes": [
+        {
+          "after": "//../Previews/Mobile/Warpkeep_Hegemony_ImperialCataphract_Map_256.png",
+          "before": "<private-path-redacted>/Warpkeep_Hegemony_ImperialCataphract_Map_256.png",
+          "owner": "Scene:WK_Hegemony_ImperialCataphract_Authoring",
+          "property": "render.filepath"
+        }
+      ],
+      "path": "Warpkeep_HegemonyCavalry_GameReady/Source/Warpkeep_Hegemony_ImperialCataphract_Editable.blend",
+      "publicSha256": "aae2bbc36ff119a4bb1ec26ef4dcdcd25a74fcf61fe18fc92130bd43a5606d30",
+      "reopenedInBlender": true,
+      "semanticFingerprintSha256": "971e90a502d0945aed79e45f8daad64cf963951c9672adcdbf4065a258fd66ee",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceSha256": "dff40feb3433f9d87c9dc780d76102c49ac19a2402834c9e7bc2b0e07b0df858"
+    }
+  ],
+  "blendSemanticFingerprintsPreserved": true,
+  "blenderFilesReopened": 15,
+  "credentialHits": [],
+  "filesystemNormalization": {
+    "directoryMode": "0755",
+    "fileMode": "0644",
+    "normalizedDirectories": 45,
+    "normalizedFiles": 126,
+    "removedExtendedAttributes": 126
+  },
+  "inventory": {
+    "blends": 15,
+    "bytes": 61723309,
+    "files": 126,
+    "glbs": 48,
+    "json": 18,
+    "pngs": 39
+  },
+  "knownMetadataNotices": [
+    "The 16 ranged GLBs preserve their validated source bytes, including a harmless asset.copyright label that says infantry instead of ranged.",
+    "The 256px runtime crest PNG preserves inherited XMP dimensions from its 1254px source; decoded image dimensions are correctly 256x256.",
+    "Blender-rendered preview PNG timestamp and render-context metadata is retained because it contains no private paths or credentials."
+  ],
+  "packages": [
+    "Warpkeep_HegemonyInfantry_GameReady",
+    "Warpkeep_HegemonyRanged_GameReady",
+    "Warpkeep_HegemonyCavalry_GameReady"
+  ],
+  "passed": true,
+  "privatePathHits": [],
+  "refreshedChecksumSidecars": {
+    "Warpkeep_HegemonyCavalry_GameReady": 41,
+    "Warpkeep_HegemonyInfantry_GameReady": 41,
+    "Warpkeep_HegemonyRanged_GameReady": 41
+  },
+  "runtimeGLBsByteExact": true,
+  "schema": "warpkeep.public-unit-sanitization.v1",
+  "snapshotDate": "2026-08-03",
+  "verifiedChecksumEntries": {
+    "Warpkeep_HegemonyCavalry_GameReady": 41,
+    "Warpkeep_HegemonyInfantry_GameReady": 41,
+    "Warpkeep_HegemonyRanged_GameReady": 41
+  }
+}
