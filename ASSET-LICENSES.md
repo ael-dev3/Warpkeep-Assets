@@ -155,3 +155,13 @@ Public archival/release distribution of the named supplied Rabbit runtime/UI bun
 ## Hegemony Empire admission request button sound
 
 Public archival/release distribution of the named supplied sound was authorized by Ael. No separate open-license grant was asserted or inferred.
+
+## Warpkeep Inner-Keep 3D Asset Library
+
+- **Set:** 152 distinct buildings, trees, ruins, palisades, town props, Hegemony banner stands, runtime LODs, editable Blender sources, previews, tools, QA, and checksums
+- **Release:** `inner-keep-3d-asset-library-2026-08-02`
+- **Snapshot date:** 2026-08-02
+- **Deposit authority:** Ael explicitly authorized packaging and public upload to Warpkeep-Assets.
+- **License status:** public archival and GitHub Release distribution authorized; no separate open-license grant asserted
+
+This authorization covers publication and distribution of the named privacy-sanitized library package, its optimized Git-tracked previews, and its archive metadata. It does not license third-party tools or services, third-party rights, Warpkeep trademarks or canonical identity, or unrelated Warpkeep material by implication. Runtime designation and repository presence do not by themselves assert current live-game integration.

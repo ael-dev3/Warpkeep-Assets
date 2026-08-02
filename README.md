@@ -12,10 +12,50 @@ Integration notes below describe what each asset release itself authorized or
 asserted when it was published. See the [Warpkeep repository](https://github.com/ael-dev3/Warpkeep)
 for the current live runtime.
 
+[![Warpkeep 3D Asset Library](previews/inner-keep-3d-library-2026-08-02/00-library-overview.jpg)](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/inner-keep-3d-asset-library-2026-08-02)
+
+## Current 3D production library
+
+The 2026-08-02 inner-keep library gathers the current Blender and runtime work
+into one verified handoff: **152 distinct assets**, **604 production GLBs**, six
+inspection catalogues, **74 Blender containers**, 364 previews, four-level LOD
+families, and the exact-texture Hegemony banner collection.
+
+| Collection | Assets | Production GLBs |
+| --- | ---: | ---: |
+| Town items — flora, fixtures, banners, and hardscape | 52 | 208 |
+| Wooden palisade modules | 28 | 112 |
+| Stone ruins and monuments | 24 | 96 |
+| Inner-keep trees | 22 | 88 |
+| Fantasy tree expansion | 20 | 80 |
+| Buildings — cathedral, barracks, mill, goldworks, stoneworks, lumber camp | 6 | 20 |
+
+**[Download the complete verified library](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/inner-keep-3d-asset-library-2026-08-02)** · [manifest](releases/inner-keep-3d-asset-library-2026-08-02/manifest.json) · [provenance](provenance/inner-keep-3d-asset-library-2026-08-02.md) · [sanitization audit](reports/inner-keep-3d-asset-library-2026-08-02/public-sanitization.json)
+
+### Production gallery
+
+| | |
+| --- | --- |
+| ![Town items](previews/inner-keep-3d-library-2026-08-02/01-town-items-overview.jpg) **Town items — 52 props** | ![Hegemony banner stands](previews/inner-keep-3d-library-2026-08-02/02-hegemony-banner-stands.jpg) **Exact-crest Hegemony banner stands** |
+| ![Wooden palisades](previews/inner-keep-3d-library-2026-08-02/03-wooden-palisade-kit.jpg) **Wooden palisade kit — 28 modules** | ![Stone ruins and monuments](previews/inner-keep-3d-library-2026-08-02/04-stone-ruins-monuments.jpg) **Stone ruins and monuments — 24 assets** |
+| ![Inner-keep trees](previews/inner-keep-3d-library-2026-08-02/05-inner-keep-trees.jpg) **Inner-keep trees — 22 variants** | ![Fantasy trees](previews/inner-keep-3d-library-2026-08-02/06-fantasy-tree-expansion.jpg) **Fantasy tree expansion — 20 variants** |
+| ![Grand Covenant Cathedral](previews/inner-keep-3d-library-2026-08-02/07-grand-covenant-cathedral.jpg) **Grand Covenant Cathedral** | ![City barracks](previews/inner-keep-3d-library-2026-08-02/08-city-barracks.jpg) **City barracks** |
+| ![Lumber camp](previews/inner-keep-3d-library-2026-08-02/09-lumber-camp.jpg) **Lumber camp** | ![City mill](previews/inner-keep-3d-library-2026-08-02/10-city-mill.jpg) **City mill** |
+| ![City goldworks](previews/inner-keep-3d-library-2026-08-02/11-city-goldworks.jpg) **City goldworks** | ![City stoneworks](previews/inner-keep-3d-library-2026-08-02/12-city-stoneworks.jpg) **City stoneworks** |
+
+### Repository map
+
+- [`releases/`](releases/) — trusted attachment manifests and checksum sidecars
+- [`manifests/`](manifests/) — source inventories and preparation records
+- [`provenance/`](provenance/) — authorization, history, and license boundaries
+- [`previews/`](previews/) — lightweight Git-tracked visual catalogues
+- [`scripts/`](scripts/) and [`tests/`](tests/) — fail-closed release verification
+
 Large masters do not live in normal Git history. They are published as immutable, tag-specific GitHub Release attachments with exact byte counts, SHA-256 checksums, safe-path manifests, provenance, and license boundaries. Warpkeep commits the optimized files required at runtime; players never depend on GitHub Release downloads while using the game.
 
 ## Asset releases
 
+- [`inner-keep-3d-asset-library-2026-08-02`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/inner-keep-3d-asset-library-2026-08-02) — complete privacy-sanitized inner-keep production snapshot: 152 assets, 610 total GLBs, 74 Blender containers, 364 PNGs, checksums, [public provenance](provenance/inner-keep-3d-asset-library-2026-08-02.md), and a 12-image Git-tracked production gallery
 - [`title-stone-letters-2026-07-12`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/title-stone-letters-2026-07-12) — six source stone-letter GLBs and the optimized high/compact WARPKEEP title assemblies
 - [`hegemony-mark-2026-07-13`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-mark-2026-07-13) — **A Mark — the Hegemony’s main in-game currency.** Includes presentation and transparent source PNGs, Git-tracked previews, checksums, [public provenance](provenance/hegemony-mark-2026-07-13.md), and CC BY 4.0 licensing effective from Warpkeep v0.3.0.
 - [`hegemony-supply-wagon-2026-07-14`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-supply-wagon-2026-07-14) — descriptively labeled Hegemony horse-drawn field supply wagon reference. Includes the source PNG, Git-tracked preview, checksums, [public provenance](provenance/hegemony-supply-wagon-2026-07-14.md), and explicit public-archive authorization without a separate open-license grant.
