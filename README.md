@@ -51,6 +51,16 @@ families, and the exact-texture Hegemony banner collection.
 - [`previews/`](previews/) — lightweight Git-tracked visual catalogues
 - [`scripts/`](scripts/) and [`tests/`](tests/) — fail-closed release verification
 
+## Creation disclosure
+
+Most assets in this archive were substantially authored, prepared, or refined
+with Codex using OpenAI's GPT-5.6 Sol model at Ultra reasoning effort, under
+human direction and review. Some individual assets also use other tools or
+generation services; each set's dated provenance record remains the source of
+truth for its specific production history. This disclosure describes the
+creation process only. It does not change any license, ownership, attribution,
+or trademark boundary.
+
 ## License
 
 Warpkeep-Assets is a mixed-license archive. The repository's project-authored
