@@ -1,0 +1,127 @@
+{
+  "schema": "warpkeep.preview-gallery.v1",
+  "collection": "inner-keep-3d-library-2026-08-02",
+  "cover": "00-library-overview.jpg",
+  "images": [
+    {
+      "file": "01-town-items-overview.jpg",
+      "label": "Town items \u2014 52 props",
+      "source": "Warpkeep_TownItems_EnvironmentKit_GameReady/Previews/Warpkeep_TownItems_EnvironmentKit_BeautySheet_Transparent_4800x4480.png",
+      "dimensions": [
+        1286,
+        1200
+      ],
+      "bytes": 196287
+    },
+    {
+      "file": "02-hegemony-banner-stands.jpg",
+      "label": "Exact-crest Hegemony banner stands",
+      "source": "Warpkeep_TownItems_EnvironmentKit_GameReady/Previews/Collections/Banners/Warpkeep_HegemonyBannerStands_BeautySheet_Transparent_2600x1900.png",
+      "dimensions": [
+        1600,
+        1169
+      ],
+      "bytes": 106143
+    },
+    {
+      "file": "03-wooden-palisade-kit.jpg",
+      "label": "Wooden palisade kit \u2014 28 modules",
+      "source": "Warpkeep_InnerKeep_WoodenPalisadeKit_GameReady/Previews/Warpkeep_WoodenPalisadeKit_BeautySheet_Transparent_3500x2000.png",
+      "dimensions": [
+        1600,
+        914
+      ],
+      "bytes": 204483
+    },
+    {
+      "file": "04-stone-ruins-monuments.jpg",
+      "label": "Stone ruins and monuments \u2014 24 assets",
+      "source": "Warpkeep_InnerKeep_StoneRuinsMonuments_GameReady/Previews/Warpkeep_StoneRuinsMonuments_BeautySheet_Transparent_3000x2000.png",
+      "dimensions": [
+        1600,
+        1067
+      ],
+      "bytes": 192089
+    },
+    {
+      "file": "05-inner-keep-trees.jpg",
+      "label": "Inner-keep trees \u2014 22 variants",
+      "source": "Warpkeep_InnerKeepTrees_GameReady/Previews/Warpkeep_InnerKeepTrees_ContactSheet_Transparent_2400.png",
+      "dimensions": [
+        1200,
+        1200
+      ],
+      "bytes": 137597
+    },
+    {
+      "file": "06-fantasy-tree-expansion.jpg",
+      "label": "Fantasy tree expansion \u2014 20 variants",
+      "source": "Warpkeep_InnerKeepTrees_FantasyExpansion_GameReady/Previews/Warpkeep_FantasyExpansion_BeautyContactSheet_Transparent_3000x2400.png",
+      "dimensions": [
+        1500,
+        1200
+      ],
+      "bytes": 185583
+    },
+    {
+      "file": "07-grand-covenant-cathedral.jpg",
+      "label": "Grand Covenant Cathedral",
+      "source": "Warpkeep_GrandCovenantCathedral_GameReady/Previews/Warpkeep_GrandCovenantCathedral_HeroPreview_1600.png",
+      "dimensions": [
+        1200,
+        1200
+      ],
+      "bytes": 113131
+    },
+    {
+      "file": "08-city-barracks.jpg",
+      "label": "City barracks",
+      "source": "Warpkeep_CityBarracks_GameReady/Previews/Warpkeep_CityBarracks_HeroPreview_1600.png",
+      "dimensions": [
+        1200,
+        1200
+      ],
+      "bytes": 107285
+    },
+    {
+      "file": "09-lumber-camp.jpg",
+      "label": "Lumber camp",
+      "source": "Warpkeep_LumberCamp_GameReady/Previews/Warpkeep_LumberCamp_UserEdited_HighRes_2400.png",
+      "dimensions": [
+        1200,
+        1200
+      ],
+      "bytes": 100996
+    },
+    {
+      "file": "10-city-mill.jpg",
+      "label": "City mill",
+      "source": "Warpkeep_CityMill_GameReady/Previews/Warpkeep_CityMill_HeroPreview_1200.png",
+      "dimensions": [
+        1200,
+        1200
+      ],
+      "bytes": 104763
+    },
+    {
+      "file": "11-city-goldworks.jpg",
+      "label": "City goldworks",
+      "source": "Warpkeep_CityGoldworks_GameReady/Previews/Warpkeep_CityGoldworks_HeroPreview_1200.png",
+      "dimensions": [
+        1200,
+        1200
+      ],
+      "bytes": 99948
+    },
+    {
+      "file": "12-city-stoneworks.jpg",
+      "label": "City stoneworks",
+      "source": "Warpkeep_CityStoneworks_GameReady/Previews/Warpkeep_CityStoneworks_HeroPreview_1200.png",
+      "dimensions": [
+        1200,
+        1200
+      ],
+      "bytes": 101744
+    }
+  ]
+}

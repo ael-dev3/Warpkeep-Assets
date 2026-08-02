@@ -1,0 +1,99 @@
+{
+  "attachment": {
+    "bytes": 234962670,
+    "entryCount": 1347,
+    "mediaType": "application/zip",
+    "name": "inner-keep-3d-asset-library-2026-08-02-v1.zip",
+    "packageRoot": "inner-keep-3d-asset-library-2026-08-02-v1",
+    "sha256": "f13bc9e7b8e32a6767b1959307a202d894123f384e11fd19550d75e0dfe5f6c9",
+    "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/inner-keep-3d-asset-library-2026-08-02/inner-keep-3d-asset-library-2026-08-02-v1.zip"
+  },
+  "authorization": "Ael explicitly authorized public archival and release upload.",
+  "copiedVisibleAssetInventory": {
+    "bytes": 306122789,
+    "files": 1345
+  },
+  "desktopInventory": {
+    "bytes": 306130985,
+    "files": 1346
+  },
+  "excluded": [
+    {
+      "count": 3,
+      "pattern": ".DS_Store",
+      "reason": "macOS filesystem metadata; not a game asset"
+    }
+  ],
+  "packages": [
+    {
+      "assets": 1,
+      "name": "Warpkeep_CityBarracks_GameReady",
+      "productionGLBs": 4
+    },
+    {
+      "assets": 1,
+      "name": "Warpkeep_CityGoldworks_GameReady",
+      "productionGLBs": 3
+    },
+    {
+      "assets": 1,
+      "name": "Warpkeep_CityMill_GameReady",
+      "productionGLBs": 3
+    },
+    {
+      "assets": 1,
+      "name": "Warpkeep_CityStoneworks_GameReady",
+      "productionGLBs": 3
+    },
+    {
+      "assets": 1,
+      "name": "Warpkeep_GrandCovenantCathedral_GameReady",
+      "productionGLBs": 4
+    },
+    {
+      "assets": 20,
+      "name": "Warpkeep_InnerKeepTrees_FantasyExpansion_GameReady",
+      "productionGLBs": 80
+    },
+    {
+      "assets": 22,
+      "name": "Warpkeep_InnerKeepTrees_GameReady",
+      "productionGLBs": 88
+    },
+    {
+      "assets": 24,
+      "name": "Warpkeep_InnerKeep_StoneRuinsMonuments_GameReady",
+      "productionGLBs": 96
+    },
+    {
+      "assets": 28,
+      "name": "Warpkeep_InnerKeep_WoodenPalisadeKit_GameReady",
+      "productionGLBs": 112
+    },
+    {
+      "assets": 1,
+      "name": "Warpkeep_LumberCamp_GameReady",
+      "productionGLBs": 3
+    },
+    {
+      "assets": 52,
+      "name": "Warpkeep_TownItems_EnvironmentKit_GameReady",
+      "productionGLBs": 208
+    }
+  ],
+  "publicInventory": {
+    "bytes": 299216954,
+    "files": 1343
+  },
+  "sanitization": {
+    "credentialsFound": false,
+    "decodedPNGPixelsPreserved": true,
+    "localPathsRemoved": true,
+    "report": "reports/inner-keep-3d-asset-library-2026-08-02/public-sanitization.json",
+    "runtimeGLBsByteExact": true
+  },
+  "schemaVersion": 1,
+  "snapshotDate": "2026-08-02",
+  "source": "Ael's curated Warpkeep Desktop 3d production folder",
+  "tag": "inner-keep-3d-asset-library-2026-08-02"
+}
