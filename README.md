@@ -51,6 +51,22 @@ families, and the exact-texture Hegemony banner collection.
 - [`previews/`](previews/) — lightweight Git-tracked visual catalogues
 - [`scripts/`](scripts/) and [`tests/`](tests/) — fail-closed release verification
 
+## License
+
+Warpkeep-Assets is a mixed-license archive. The repository's project-authored
+verification software uses the same [Apache-2.0 software license](LICENSES/Apache-2.0.txt)
+as the main Warpkeep repository. Creative assets are not automatically covered
+by Apache-2.0: the stone-letter title set and Hegemony Mark artwork are
+expressly licensed under [CC BY 4.0](LICENSES/CC-BY-4.0.txt), while other
+deposits keep the archive-only, original, or unresolved terms recorded for
+their set.
+
+Read the root [`LICENSE`](LICENSE) for the plain-language map and
+[`ASSET-LICENSES.md`](ASSET-LICENSES.md) for exact per-release scope. The main
+project's [licensing policy](https://github.com/ael-dev3/Warpkeep/blob/main/LICENSING.md)
+and [runtime asset inventory](https://github.com/ael-dev3/Warpkeep/blob/main/ASSETS-LICENSE.md)
+explain how these materials are treated when integrated into Warpkeep.
+
 Large masters do not live in normal Git history. They are published as immutable, tag-specific GitHub Release attachments with exact byte counts, SHA-256 checksums, safe-path manifests, provenance, and license boundaries. Warpkeep commits the optimized files required at runtime; players never depend on GitHub Release downloads while using the game.
 
 ## Asset releases
@@ -108,7 +124,8 @@ before deriving new runtime assets.
 - Keep unresolved and externally governed material under its existing terms; do not sweep it into the title set's license.
 - Preserve exact tag, attachment name, byte count, and SHA-256 in every downstream preparation script.
 
-See [`ASSET-LICENSES.md`](ASSET-LICENSES.md) for the per-set license scope.
+See [`LICENSE`](LICENSE) for the repository-wide map and
+[`ASSET-LICENSES.md`](ASSET-LICENSES.md) for the per-set license scope.
 
 ## Logging Camp Wood Gathering Node runtime LODs
 

@@ -1,5 +1,35 @@
 # Asset Licenses
 
+This is the per-set license ledger for Warpkeep-Assets. Start with the root
+[`LICENSE`](LICENSE) for the repository-wide map, then use the most specific
+entry and provenance record here for the asset or release you want to reuse.
+
+## How to read the status labels
+
+| Status | What it means |
+| --- | --- |
+| **CC-BY-4.0** | An open-content grant for the expressly named material. Sharing and adaptation, including commercial use, require attribution, a license link, and an indication of changes. |
+| **Public archive authorized; no separate open-license grant** | Warpkeep may preserve and publish the named deposit. The entry does not give the public a general right to redistribute, adapt, sublicense, or reuse it outside the recorded terms. |
+| **Original or unresolved terms** | Third-party, externally governed, or uncertain-rights material keeps its own terms. Repository presence does not relicense it. |
+
+The main [Warpkeep software license](https://github.com/ael-dev3/Warpkeep/blob/main/LICENSE)
+is Apache-2.0. That license also covers project-authored software in this
+repository, as described by the root license map; it does **not** apply to 3D
+models, images, audio, previews, release attachments, or other creative assets
+by default. The main [licensing policy](https://github.com/ael-dev3/Warpkeep/blob/main/LICENSING.md)
+uses CC BY 4.0 for authorized project-owned creative work beginning with
+Warpkeep v0.3.0, but only an explicit per-set grant below makes a deposited
+asset open content. Existing archive-only and externally governed boundaries
+remain unchanged.
+
+## Openly licensed sets
+
+- **Stone-letter title set** — CC BY 4.0.
+- **Hegemony Mark currency reference** — CC BY 4.0.
+
+All other entries retain the exact status stated in their section. This index
+is a convenience, not a replacement for those scopes and attribution notes.
+
 ## Stone-letter title set
 
 - **Set:** six unique W, A, R, P, K, and E source GLBs; optimized high/compact WARPKEEP assemblies; layouts; checksums; and supplied previews

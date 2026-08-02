@@ -1,0 +1,55 @@
+Warpkeep Assets — licensing map
+
+Copyright 2026 Warpkeep contributors
+
+Warpkeep-Assets is a mixed-license repository. No single license covers every
+file or release attachment, and public availability does not by itself grant
+permission to reuse an asset.
+
+## Quick reference
+
+| Material | License or status |
+| --- | --- |
+| Project-authored repository software in `scripts/`, `tests/`, and `.github/`, plus project-authored root configuration | Apache License 2.0 |
+| Project-authored prose in `README.md`, this file, and `ASSET-LICENSES.md` | Creative Commons Attribution 4.0 International (CC BY 4.0) |
+| Models, images, audio, video, previews, source packages, release attachments, manifests, provenance records, and reports | The exact per-set entry in `ASSET-LICENSES.md` and its dated provenance record |
+| Third-party or externally governed material | Its original terms; no Warpkeep license is implied |
+| Warpkeep names, logos, Hegemony identity, official domains, accounts, and canonical deployment identity | No trademark or endorsement rights granted |
+
+The Apache-2.0 license for repository software matches the active software
+license in the main Warpkeep repository. Its complete text is in
+`LICENSES/Apache-2.0.txt`.
+
+CC BY 4.0 applies only where Warpkeep controls the relevant copyright and this
+repository expressly identifies the material as CC-BY-4.0. It allows sharing
+and adaptation, including commercially, with attribution, a license link, and
+an indication of changes. Its complete text is in `LICENSES/CC-BY-4.0.txt`.
+
+An entry marked “public archival and repository/release distribution
+authorized; no separate open-license grant asserted” is not CC BY 4.0 or
+Apache-2.0. It records Warpkeep's authority to preserve and publish that named
+deposit, but it does not grant the public a general right to redistribute,
+adapt, sublicense, or use the material outside the recorded terms.
+
+## How to determine the terms for an asset
+
+1. Find the named set or release in `ASSET-LICENSES.md`.
+2. Read its linked manifest and dated provenance record.
+3. Follow the most specific recorded license boundary and preserve required
+   attribution and notices.
+4. If no open-license grant is explicit, do not infer one from a filename,
+   repository path, runtime use, release attachment, or project association.
+
+This map aligns with the main Warpkeep repository's forward-looking policy:
+project-authored software uses Apache-2.0, and authorized project-owned
+creative work may use CC BY 4.0. It does not convert unresolved, third-party,
+externally governed, or archive-only material into open content.
+
+Main policy:
+
+- https://github.com/ael-dev3/Warpkeep/blob/main/LICENSE
+- https://github.com/ael-dev3/Warpkeep/blob/main/LICENSING.md
+- https://github.com/ael-dev3/Warpkeep/blob/main/ASSETS-LICENSE.md
+
+Nothing in this licensing map grants trademark rights or implies endorsement.
+This document is a repository license notice, not individualized legal advice.
