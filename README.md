@@ -48,6 +48,8 @@ to the Ward Peacekeeper shield at close LODs for visual clarity.
 
 *Both exact-render review images are included in this patch: a 2400×960 release overview and a 2600×1700 full lineup.*
 
+The category overview mirrors the Unit Corps presentation while preserving the current citizen renders exactly.
+
 [![Warpkeep Hegemony Unit Corps](previews/hegemony-unit-corps-2026-08-03/00-corps-overview.jpg)](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-unit-corps-2026-08-03)
 
 ## Hegemony unit corps
