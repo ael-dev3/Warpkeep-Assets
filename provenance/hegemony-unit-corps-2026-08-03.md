@@ -48,7 +48,7 @@ fingerprint as its private source.
 Extended attributes were removed, files and directories were normalized to
 portable modes, all 39 PNGs and 18 JSON documents parsed successfully, all 48
 GLBs retained valid embedded glTF 2.0 payloads with no external URI, and all
-123 package checksum entries passed after sanitization. No credential,
+126 package checksum entries passed after sanitization. No credential,
 private path, symlink, executable, or hidden operating-system metadata remains
 in the public packages. The detailed audit is recorded in
 [`reports/hegemony-unit-corps-2026-08-03/public-sanitization.json`](../reports/hegemony-unit-corps-2026-08-03/public-sanitization.json).
@@ -67,6 +67,10 @@ images, manifests, provenance, license boundaries, sanitization results, and
 verification metadata are tracked directly in Git. Large Blend and GLB files
 are intentionally excluded from normal Git history under this repository's
 archive policy.
+
+Each detached ZIP also carries `PACKAGE-NOTICE.md` at its package root. The
+notice preserves the no-separate-open-license, trademark, and runtime-status
+boundaries when an archive is downloaded without the surrounding repository.
 
 ## License boundary
 

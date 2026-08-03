@@ -35,7 +35,7 @@
   },
   "packages": [
     {
-      "bytes": 19000926,
+      "bytes": 19001934,
       "category": "Units/Infantry",
       "clips": [
         "Attack",
@@ -43,7 +43,7 @@
         "Walk"
       ],
       "editableBlends": 5,
-      "files": 42,
+      "files": 43,
       "jointCounts": [
         21
       ],
@@ -51,7 +51,7 @@
       "key": "infantry",
       "lodsPerUnit": 4,
       "package": "Warpkeep_HegemonyInfantry_GameReady",
-      "packageChecksums": 41,
+      "packageChecksums": 42,
       "pngs": 13,
       "productionGLBs": 16,
       "qaChecksPassed": 87,
@@ -87,7 +87,7 @@
       "version": "1.2.0"
     },
     {
-      "bytes": 18433162,
+      "bytes": 18434170,
       "category": "Units/Ranged",
       "clips": [
         "Attack",
@@ -96,7 +96,7 @@
         "Walk"
       ],
       "editableBlends": 5,
-      "files": 42,
+      "files": 43,
       "jointCounts": [
         21
       ],
@@ -104,7 +104,7 @@
       "key": "ranged",
       "lodsPerUnit": 4,
       "package": "Warpkeep_HegemonyRanged_GameReady",
-      "packageChecksums": 41,
+      "packageChecksums": 42,
       "pngs": 13,
       "productionGLBs": 16,
       "qaChecksPassed": 39,
@@ -140,7 +140,7 @@
       "version": "1.0.0"
     },
     {
-      "bytes": 24289221,
+      "bytes": 24290229,
       "category": "Units/Cavalry",
       "clips": [
         "Attack",
@@ -149,7 +149,7 @@
         "Walk"
       ],
       "editableBlends": 5,
-      "files": 42,
+      "files": 43,
       "jointCounts": [
         49
       ],
@@ -157,7 +157,7 @@
       "key": "cavalry",
       "lodsPerUnit": 4,
       "package": "Warpkeep_HegemonyCavalry_GameReady",
-      "packageChecksums": 41,
+      "packageChecksums": 42,
       "pngs": 13,
       "productionGLBs": 16,
       "qaChecksPassed": 47,

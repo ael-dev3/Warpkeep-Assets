@@ -248,13 +248,13 @@
     "directoryMode": "0755",
     "fileMode": "0644",
     "normalizedDirectories": 45,
-    "normalizedFiles": 126,
-    "removedExtendedAttributes": 126
+    "normalizedFiles": 129,
+    "removedExtendedAttributes": 129
   },
   "inventory": {
     "blends": 15,
-    "bytes": 61723309,
-    "files": 126,
+    "bytes": 61726333,
+    "files": 129,
     "glbs": 48,
     "json": 18,
     "pngs": 39
@@ -272,16 +272,16 @@
   "passed": true,
   "privatePathHits": [],
   "refreshedChecksumSidecars": {
-    "Warpkeep_HegemonyCavalry_GameReady": 41,
-    "Warpkeep_HegemonyInfantry_GameReady": 41,
-    "Warpkeep_HegemonyRanged_GameReady": 41
+    "Warpkeep_HegemonyCavalry_GameReady": 42,
+    "Warpkeep_HegemonyInfantry_GameReady": 42,
+    "Warpkeep_HegemonyRanged_GameReady": 42
   },
   "runtimeGLBsByteExact": true,
   "schema": "warpkeep.public-unit-sanitization.v1",
   "snapshotDate": "2026-08-03",
   "verifiedChecksumEntries": {
-    "Warpkeep_HegemonyCavalry_GameReady": 41,
-    "Warpkeep_HegemonyInfantry_GameReady": 41,
-    "Warpkeep_HegemonyRanged_GameReady": 41
+    "Warpkeep_HegemonyCavalry_GameReady": 42,
+    "Warpkeep_HegemonyInfantry_GameReady": 42,
+    "Warpkeep_HegemonyRanged_GameReady": 42
   }
 }

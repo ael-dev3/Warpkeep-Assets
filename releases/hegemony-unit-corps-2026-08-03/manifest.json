@@ -1,8 +1,15 @@
 {
   "attachments": [
     {
-      "bytes": 16876738,
+      "bytes": 16877451,
       "entries": [
+        {
+          "bytes": 924,
+          "compressedBytes": 497,
+          "mediaType": "text/markdown",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/PACKAGE-NOTICE.md",
+          "sha256": "7d5d1b67e58cd9d5207a1e536bd5e6e6e86393152d77653c004bfaf7a6e4628d"
+        },
         {
           "bytes": 706680,
           "compressedBytes": 702152,
@@ -228,11 +235,11 @@
           "sha256": "65916d394f1e30121dad43e787be3a0f07fdf67389a1933b62f6e66d027061fa"
         },
         {
-          "bytes": 5607,
-          "compressedBytes": 2065,
+          "bytes": 5691,
+          "compressedBytes": 2119,
           "mediaType": "text/plain",
           "path": "Warpkeep_HegemonyInfantry_GameReady/SHA256SUMS.txt",
-          "sha256": "11a516351382d7cb0c3a4ad655991e5a78a76d5cc34d05cc2c1c5e8f13ed0339"
+          "sha256": "acd81b3433edac52b4191fcf92e76f4a0a8d6a4f17730c4438961a6559fad719"
         },
         {
           "bytes": 311101,
@@ -326,12 +333,19 @@
       "mediaType": "application/zip",
       "name": "warpkeep-hegemony-infantry-game-ready-2026-08-03-v1.zip",
       "packageRoot": "Warpkeep_HegemonyInfantry_GameReady",
-      "sha256": "b18c6f8cdc998324d4c3a3dfaf1f9d8edadaafd8272feb08587d40a53c8b1717",
+      "sha256": "953fcca256324f2a73b3f13e2ca04911349a0f69934337e6ac7161041a2d4ba0",
       "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-unit-corps-2026-08-03/warpkeep-hegemony-infantry-game-ready-2026-08-03-v1.zip"
     },
     {
-      "bytes": 16349246,
+      "bytes": 16349955,
       "entries": [
+        {
+          "bytes": 924,
+          "compressedBytes": 497,
+          "mediaType": "text/markdown",
+          "path": "Warpkeep_HegemonyRanged_GameReady/PACKAGE-NOTICE.md",
+          "sha256": "7d5d1b67e58cd9d5207a1e536bd5e6e6e86393152d77653c004bfaf7a6e4628d"
+        },
         {
           "bytes": 771182,
           "compressedBytes": 767102,
@@ -557,11 +571,11 @@
           "sha256": "06144d0313ac07d5d79a111065f7aa12ee6c1b2f99d28c69e468901396725b65"
         },
         {
-          "bytes": 5761,
-          "compressedBytes": 2088,
+          "bytes": 5845,
+          "compressedBytes": 2142,
           "mediaType": "text/plain",
           "path": "Warpkeep_HegemonyRanged_GameReady/SHA256SUMS.txt",
-          "sha256": "8cf1e4665ba6b9ba3c1db01cb4cf1242764bf1ec7ea4dfcf55482c480d6813f4"
+          "sha256": "90ad6c248646b58ca96360d5c9bb385a4f4d91c068444e565600e5683378759c"
         },
         {
           "bytes": 349524,
@@ -655,12 +669,19 @@
       "mediaType": "application/zip",
       "name": "warpkeep-hegemony-ranged-game-ready-2026-08-03-v1.zip",
       "packageRoot": "Warpkeep_HegemonyRanged_GameReady",
-      "sha256": "410898d44311bc84547d0e5a64ed75b87e5d0dea71b85672cf5bb79701b286b7",
+      "sha256": "310b0feaf21f0619f1d10f154facd64f98ce3ad1658cf80bb4dd68f5847a0391",
       "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-unit-corps-2026-08-03/warpkeep-hegemony-ranged-game-ready-2026-08-03-v1.zip"
     },
     {
-      "bytes": 19650338,
+      "bytes": 19651045,
       "entries": [
+        {
+          "bytes": 924,
+          "compressedBytes": 497,
+          "mediaType": "text/markdown",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/PACKAGE-NOTICE.md",
+          "sha256": "7d5d1b67e58cd9d5207a1e536bd5e6e6e86393152d77653c004bfaf7a6e4628d"
+        },
         {
           "bytes": 842107,
           "compressedBytes": 838228,
@@ -886,11 +907,11 @@
           "sha256": "17923aca73f423a77465bf22d14bccb321e23a2de38d8618d2263726a29f47d5"
         },
         {
-          "bytes": 5798,
-          "compressedBytes": 2093,
+          "bytes": 5882,
+          "compressedBytes": 2143,
           "mediaType": "text/plain",
           "path": "Warpkeep_HegemonyCavalry_GameReady/SHA256SUMS.txt",
-          "sha256": "e39bff23d3d9d58ec4d082454540b437b1a135766e17077fe92589bc54b71574"
+          "sha256": "0aa70f03023d5d1e102a53b51f44788c08e93e53ea94314290ad0ac0ccbd5780"
         },
         {
           "bytes": 555149,
@@ -984,7 +1005,7 @@
       "mediaType": "application/zip",
       "name": "warpkeep-hegemony-cavalry-game-ready-2026-08-03-v1.zip",
       "packageRoot": "Warpkeep_HegemonyCavalry_GameReady",
-      "sha256": "624c1525d77583fd334b382d228a4df6baca46faee0fd676011330ab5b1bafb3",
+      "sha256": "9d411ee308abacfd7ca93b1e96594cc4f9e8af613f6d18aca3128b49dfb9a48b",
       "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-unit-corps-2026-08-03/warpkeep-hegemony-cavalry-game-ready-2026-08-03-v1.zip"
     }
   ],
@@ -996,7 +1017,7 @@
     "editableBlends": 15,
     "families": [
       {
-        "bytes": 19000926,
+        "bytes": 19001934,
         "category": "Units/Infantry",
         "clips": [
           "Attack",
@@ -1004,7 +1025,7 @@
           "Walk"
         ],
         "editableBlends": 5,
-        "files": 42,
+        "files": 43,
         "jointCounts": [
           21
         ],
@@ -1012,7 +1033,7 @@
         "key": "infantry",
         "lodsPerUnit": 4,
         "package": "Warpkeep_HegemonyInfantry_GameReady",
-        "packageChecksums": 41,
+        "packageChecksums": 42,
         "pngs": 13,
         "productionGLBs": 16,
         "qaChecksPassed": 87,
@@ -1048,7 +1069,7 @@
         "version": "1.2.0"
       },
       {
-        "bytes": 18433162,
+        "bytes": 18434170,
         "category": "Units/Ranged",
         "clips": [
           "Attack",
@@ -1057,7 +1078,7 @@
           "Walk"
         ],
         "editableBlends": 5,
-        "files": 42,
+        "files": 43,
         "jointCounts": [
           21
         ],
@@ -1065,7 +1086,7 @@
         "key": "ranged",
         "lodsPerUnit": 4,
         "package": "Warpkeep_HegemonyRanged_GameReady",
-        "packageChecksums": 41,
+        "packageChecksums": 42,
         "pngs": 13,
         "productionGLBs": 16,
         "qaChecksPassed": 39,
@@ -1101,7 +1122,7 @@
         "version": "1.0.0"
       },
       {
-        "bytes": 24289221,
+        "bytes": 24290229,
         "category": "Units/Cavalry",
         "clips": [
           "Attack",
@@ -1110,7 +1131,7 @@
           "Walk"
         ],
         "editableBlends": 5,
-        "files": 42,
+        "files": 43,
         "jointCounts": [
           49
         ],
@@ -1118,7 +1139,7 @@
         "key": "cavalry",
         "lodsPerUnit": 4,
         "package": "Warpkeep_HegemonyCavalry_GameReady",
-        "packageChecksums": 41,
+        "packageChecksums": 42,
         "pngs": 13,
         "productionGLBs": 16,
         "qaChecksPassed": 47,
@@ -1155,12 +1176,12 @@
       }
     ],
     "json": 18,
-    "packageChecksumEntries": 123,
+    "packageChecksumEntries": 126,
     "packages": 3,
     "pngs": 39,
     "productionGLBs": 48,
-    "publicBytes": 61723309,
-    "publicFiles": 126,
+    "publicBytes": 61726333,
+    "publicFiles": 129,
     "qaChecksPassed": 173,
     "qaChecksTotal": 173,
     "units": 12
@@ -1187,7 +1208,7 @@
   "verification": {
     "archives": "Three deterministic safe-path ZIPs; entry inventories, byte counts, SHA-256 values, compression ratios, GLB headers, and nested Blender containers verified.",
     "blender": "All 15 editable Blender sources had absolute render paths normalized, retained matching path-insensitive semantic fingerprints, and reopened in Blender 5.2 after serialized path neutralization.",
-    "checksums": "All 123 package checksum entries passed after sanitization.",
+    "checksums": "All 126 package checksum entries passed after sanitization.",
     "images": "All 39 PNG files parse successfully; no private path or credential metadata was found.",
     "privacy": "No private local path, credential, symlink, extended attribute, executable, hidden OS metadata, or unsafe archive path remains in the public distributions.",
     "qa": "The supplied runtime QA reports record 173/173 checks passed.",
