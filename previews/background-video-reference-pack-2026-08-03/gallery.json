@@ -1,0 +1,28 @@
+{
+  "schema": "warpkeep.preview-gallery.v1",
+  "releaseTag": "background-video-reference-pack-2026-08-03",
+  "images": [
+    {
+      "file": "00-background-video-reference-overview.jpg",
+      "title": "Warpkeep background-video reference overview",
+      "source": "deterministic composite of all supplied references and a source-video frame",
+      "bytes": 416359,
+      "sha256": "eafed58c9a1a6debaf681b56b0334ad7a186e96cab2f309c5692b37854bd9ec0",
+      "dimensions": [
+        2400,
+        1500
+      ]
+    },
+    {
+      "file": "01-source-video-contact-sheet.jpg",
+      "title": "Source video contact sheet",
+      "source": "six deterministic time samples from the supplied MP4",
+      "bytes": 405485,
+      "sha256": "6115fb49d9b2be3229ecdefc23af2f78f56da1c81a04d38192360b34d9ef2374",
+      "dimensions": [
+        1800,
+        1500
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "tag": "background-video-reference-pack-2026-08-03",
+  "source": {
+    "suppliedBy": "Ael",
+    "authorization": "Ael explicitly requested packaging and public upload to Warpkeep-Assets.",
+    "privateWorkflowMetadata": "intentionally omitted"
+  },
+  "designation": {
+    "name": "Warpkeep background-video creation reference pack",
+    "role": "future menu-background and cinematic video visual development",
+    "runtimeIntegration": "reference-only; current integration not asserted"
+  },
+  "license": {
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license",
+    "scope": "Public archival and GitHub Release distribution are authorized for this named reference pack. No separate open-license, trademark, or canonical-identity grant is asserted."
+  },
+  "attachments": [
+    {
+      "name": "warpkeep-background-video-reference-pack-2026-08-03-v1.zip",
+      "variant": "complete-byte-exact-reference-pack",
+      "bytes": 18005477,
+      "sha256": "e2b834f7016c7b08d4f37cdd366c2db859eb4b98f698f813ce52176581a32b24",
+      "mediaType": "application/zip",
+      "packageRoot": "Warpkeep_Background_Video_Reference_2026-08-03",
+      "entries": [
+        {
+          "path": "Warpkeep_Background_Video_Reference_2026-08-03/README.md",
+          "bytes": 1197,
+          "sha256": "1c3edaf2ffb9ffb5b10d970222b357506052b266e184709709d42d3e3f31965c",
+          "mediaType": "application/octet-stream",
+          "compressedBytes": 681
+        },
+        {
+          "path": "Warpkeep_Background_Video_Reference_2026-08-03/SHA256SUMS.txt",
+          "bytes": 986,
+          "sha256": "a77ff3efe26bd2c9bc1ea8d98e2c9fcbcaad81e64ce3e674b6f3df693a92ef2e",
+          "mediaType": "text/plain",
+          "compressedBytes": 564
+        },
+        {
+          "path": "Warpkeep_Background_Video_Reference_2026-08-03/manifest.json",
+          "bytes": 4232,
+          "sha256": "b18ac34b0aa6144b246be1a175e43a4ca496744feb5c77882d10a7923ca46f66",
+          "mediaType": "application/json",
+          "compressedBytes": 1546
+        },
+        {
+          "path": "Warpkeep_Background_Video_Reference_2026-08-03/previews/background-video-reference-overview-2400x1500.jpg",
+          "bytes": 416359,
+          "sha256": "eafed58c9a1a6debaf681b56b0334ad7a186e96cab2f309c5692b37854bd9ec0",
+          "mediaType": "image/jpeg",
+          "compressedBytes": 388673
+        },
+        {
+          "path": "Warpkeep_Background_Video_Reference_2026-08-03/previews/source-video-contact-sheet-1800x1500.jpg",
+          "bytes": 405485,
+          "sha256": "6115fb49d9b2be3229ecdefc23af2f78f56da1c81a04d38192360b34d9ef2374",
+          "mediaType": "image/jpeg",
+          "compressedBytes": 380453
+        },
+        {
+          "path": "Warpkeep_Background_Video_Reference_2026-08-03/source/images/core-crest-dark-reference.png",
+          "bytes": 2598550,
+          "sha256": "aee6f1193bfc23e99e4ee4adccb538fb0d72c36a10e1f0723248bd6a6fd6b438",
+          "mediaType": "image/png",
+          "compressedBytes": 2592795
+        },
+        {
+          "path": "Warpkeep_Background_Video_Reference_2026-08-03/source/images/core-crest-green-screen-reference.png",
+          "bytes": 2926322,
+          "sha256": "1a35c7eca7c20f6935d975705be215d457fb1a8b5040b79a661a52ee9a48500d",
+          "mediaType": "image/png",
+          "compressedBytes": 2927117
+        },
+        {
+          "path": "Warpkeep_Background_Video_Reference_2026-08-03/source/images/core-spire-low-poly-reference.png",
+          "bytes": 826486,
+          "sha256": "4189749ab815e7316ea67be0d922684d26fe6c7eea5a960876beb0cc8b5d47a1",
+          "mediaType": "image/png",
+          "compressedBytes": 826454
+        },
+        {
+          "path": "Warpkeep_Background_Video_Reference_2026-08-03/source/images/warpkeep-menu-castle-reference.png",
+          "bytes": 6408550,
+          "sha256": "bb83aa18e8ad8d43351c81755fe53ffc19b0139e84f1e4b59d35ab9d7b94f0e8",
+          "mediaType": "image/png",
+          "compressedBytes": 6404878
+        },
+        {
+          "path": "Warpkeep_Background_Video_Reference_2026-08-03/source/video/warpkeep-castle-core-background-concept-vertical.mp4",
+          "bytes": 4490052,
+          "sha256": "37677f9b872687336f54f76b126ccfe6570a208c974c6f2240ad028e8c4b592f",
+          "mediaType": "video/mp4",
+          "compressedBytes": 4479800
+        }
+      ],
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/background-video-reference-pack-2026-08-03/warpkeep-background-video-reference-pack-2026-08-03-v1.zip"
+    }
+  ],
+  "verification": {
+    "sourceCount": 5,
+    "sourcePreservation": "Every supplied source file is present byte-exact inside the ZIP.",
+    "checksums": "The release attachment and every ZIP entry are SHA-256 addressed.",
+    "videoAudit": "The supplied MP4 decodes as a 10.08-second 834\u00d71112 H.264 60 fps video with stereo AAC audio."
+  }
+}
