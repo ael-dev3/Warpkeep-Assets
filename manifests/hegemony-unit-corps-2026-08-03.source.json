@@ -1,0 +1,218 @@
+{
+  "attachments": [
+    {
+      "bytes": 16877451,
+      "entryCount": 43,
+      "mediaType": "application/zip",
+      "name": "warpkeep-hegemony-infantry-game-ready-2026-08-03-v1.zip",
+      "packageRoot": "Warpkeep_HegemonyInfantry_GameReady",
+      "sha256": "953fcca256324f2a73b3f13e2ca04911349a0f69934337e6ac7161041a2d4ba0",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-unit-corps-2026-08-03/warpkeep-hegemony-infantry-game-ready-2026-08-03-v1.zip"
+    },
+    {
+      "bytes": 16349955,
+      "entryCount": 43,
+      "mediaType": "application/zip",
+      "name": "warpkeep-hegemony-ranged-game-ready-2026-08-03-v1.zip",
+      "packageRoot": "Warpkeep_HegemonyRanged_GameReady",
+      "sha256": "310b0feaf21f0619f1d10f154facd64f98ce3ad1658cf80bb4dd68f5847a0391",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-unit-corps-2026-08-03/warpkeep-hegemony-ranged-game-ready-2026-08-03-v1.zip"
+    },
+    {
+      "bytes": 19651045,
+      "entryCount": 43,
+      "mediaType": "application/zip",
+      "name": "warpkeep-hegemony-cavalry-game-ready-2026-08-03-v1.zip",
+      "packageRoot": "Warpkeep_HegemonyCavalry_GameReady",
+      "sha256": "9d411ee308abacfd7ca93b1e96594cc4f9e8af613f6d18aca3128b49dfb9a48b",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-unit-corps-2026-08-03/warpkeep-hegemony-cavalry-game-ready-2026-08-03-v1.zip"
+    }
+  ],
+  "authorization": "Ael explicitly authorized public archival and release upload of all unit packages.",
+  "gallery": {
+    "directory": "previews/hegemony-unit-corps-2026-08-03",
+    "images": 4
+  },
+  "packages": [
+    {
+      "bytes": 19001934,
+      "category": "Units/Infantry",
+      "clips": [
+        "Attack",
+        "Idle",
+        "Walk"
+      ],
+      "editableBlends": 5,
+      "files": 43,
+      "jointCounts": [
+        21
+      ],
+      "json": 6,
+      "key": "infantry",
+      "lodsPerUnit": 4,
+      "package": "Warpkeep_HegemonyInfantry_GameReady",
+      "packageChecksums": 42,
+      "pngs": 13,
+      "productionGLBs": 16,
+      "qaChecksPassed": 87,
+      "qaChecksTotal": 87,
+      "riggedLods": [
+        "LOD0_High",
+        "LOD1_Balanced"
+      ],
+      "roles": [
+        "Bulwark",
+        "Legionary",
+        "Vanguard",
+        "HonorGuard"
+      ],
+      "staticLods": [
+        "LOD2_Compact",
+        "LOD3_Map"
+      ],
+      "title": "Hegemony Infantry \u2014 Shieldwall Cohort",
+      "triangleTotals": {
+        "LOD0_High": 14272,
+        "LOD1_Balanced": 9760,
+        "LOD2_Compact": 6832,
+        "LOD3_Map": 3728
+      },
+      "unitNames": [
+        "Hegemony Bulwark",
+        "Hegemony Legionary",
+        "Hegemony Vanguard",
+        "Hegemony Honor Guard"
+      ],
+      "units": 4,
+      "version": "1.2.0"
+    },
+    {
+      "bytes": 18434170,
+      "category": "Units/Ranged",
+      "clips": [
+        "Attack",
+        "Idle",
+        "Special",
+        "Walk"
+      ],
+      "editableBlends": 5,
+      "files": 43,
+      "jointCounts": [
+        21
+      ],
+      "json": 6,
+      "key": "ranged",
+      "lodsPerUnit": 4,
+      "package": "Warpkeep_HegemonyRanged_GameReady",
+      "packageChecksums": 42,
+      "pngs": 13,
+      "productionGLBs": 16,
+      "qaChecksPassed": 39,
+      "qaChecksTotal": 39,
+      "riggedLods": [
+        "LOD0_High",
+        "LOD1_Balanced"
+      ],
+      "roles": [
+        "LongbowWarden",
+        "DuskRanger",
+        "AstralMagister",
+        "RiftBattlemage"
+      ],
+      "staticLods": [
+        "LOD2_Compact",
+        "LOD3_Map"
+      ],
+      "title": "Hegemony Ranged \u2014 Astral Cohort",
+      "triangleTotals": {
+        "LOD0_High": 14152,
+        "LOD1_Balanced": 9584,
+        "LOD2_Compact": 6408,
+        "LOD3_Map": 3700
+      },
+      "unitNames": [
+        "Hegemony Longbow Warden",
+        "Hegemony Dusk Ranger",
+        "Hegemony Astral Magister",
+        "Hegemony Rift Battlemage"
+      ],
+      "units": 4,
+      "version": "1.0.0"
+    },
+    {
+      "bytes": 24290229,
+      "category": "Units/Cavalry",
+      "clips": [
+        "Attack",
+        "Idle",
+        "Special",
+        "Walk"
+      ],
+      "editableBlends": 5,
+      "files": 43,
+      "jointCounts": [
+        49
+      ],
+      "json": 6,
+      "key": "cavalry",
+      "lodsPerUnit": 4,
+      "package": "Warpkeep_HegemonyCavalry_GameReady",
+      "packageChecksums": 42,
+      "pngs": 13,
+      "productionGLBs": 16,
+      "qaChecksPassed": 47,
+      "qaChecksTotal": 47,
+      "riggedLods": [
+        "LOD0_High",
+        "LOD1_Balanced"
+      ],
+      "roles": [
+        "DuskOutrider",
+        "AstralLancer",
+        "Horseguard",
+        "ImperialCataphract"
+      ],
+      "staticLods": [
+        "LOD2_Compact",
+        "LOD3_Map"
+      ],
+      "title": "Hegemony Astral Cavalry",
+      "triangleTotals": {
+        "LOD0_High": 35822,
+        "LOD1_Balanced": 23854,
+        "LOD2_Compact": 15102,
+        "LOD3_Map": 8506
+      },
+      "unitNames": [
+        "Hegemony Dusk Outrider",
+        "Hegemony Astral Lancer",
+        "Hegemony Horseguard",
+        "Hegemony Imperial Cataphract"
+      ],
+      "units": 4,
+      "version": "1.0.0"
+    }
+  ],
+  "publicInventory": {
+    "bytes": 61726333,
+    "files": 129,
+    "packages": 3
+  },
+  "sanitization": {
+    "blendSemanticFingerprintsPreserved": true,
+    "blenderFilesReopened": 15,
+    "credentialsFound": false,
+    "localPathsRemoved": true,
+    "report": "reports/hegemony-unit-corps-2026-08-03/public-sanitization.json",
+    "runtimeGLBsByteExact": true
+  },
+  "schemaVersion": 1,
+  "snapshotDate": "2026-08-03",
+  "source": "Ael-directed Warpkeep Hegemony infantry, ranged, and cavalry production packages",
+  "sourceInventory": {
+    "bytes": 64060229,
+    "files": 126,
+    "packages": 3
+  },
+  "tag": "hegemony-unit-corps-2026-08-03"
+}

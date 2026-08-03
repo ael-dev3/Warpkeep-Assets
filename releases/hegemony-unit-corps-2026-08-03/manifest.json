@@ -1,0 +1,1218 @@
+{
+  "attachments": [
+    {
+      "bytes": 16877451,
+      "entries": [
+        {
+          "bytes": 924,
+          "compressedBytes": 497,
+          "mediaType": "text/markdown",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/PACKAGE-NOTICE.md",
+          "sha256": "7d5d1b67e58cd9d5207a1e536bd5e6e6e86393152d77653c004bfaf7a6e4628d"
+        },
+        {
+          "bytes": 706680,
+          "compressedBytes": 702152,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Previews/Individual/Warpkeep_Hegemony_Bulwark_Transparent_1200.png",
+          "sha256": "d228fb14b8e79c5a55d8f451e133efec74dad7de47eeea324c076b47a6c6308c"
+        },
+        {
+          "bytes": 729623,
+          "compressedBytes": 724749,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Previews/Individual/Warpkeep_Hegemony_HonorGuard_Transparent_1200.png",
+          "sha256": "f67e3a8a64c2e938b21beaccade3b80fd0eeeec3a41ec631f080ec60024a3b6c"
+        },
+        {
+          "bytes": 712203,
+          "compressedBytes": 707409,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Previews/Individual/Warpkeep_Hegemony_Legionary_Transparent_1200.png",
+          "sha256": "ad8ee8ba96a316d3eb680abe6e3e9b696e676144e62d6e33c2c91cfb28e8bd79"
+        },
+        {
+          "bytes": 710928,
+          "compressedBytes": 706129,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Previews/Individual/Warpkeep_Hegemony_Vanguard_Transparent_1200.png",
+          "sha256": "4aa34b99d92c3b2e8e66be800c124301c013fc5350fb1577582ab5f7e1afa5ec"
+        },
+        {
+          "bytes": 40458,
+          "compressedBytes": 40378,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Previews/Mobile/Warpkeep_Hegemony_Bulwark_Map_256.png",
+          "sha256": "04c71d1149ad2c6af32c6611199bc76bd3dce3b2dd9cef43bd5b793bd80592ac"
+        },
+        {
+          "bytes": 40795,
+          "compressedBytes": 40724,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Previews/Mobile/Warpkeep_Hegemony_HonorGuard_Map_256.png",
+          "sha256": "4014348e56f91770572fb3131f1999f6cb243ad8430af028497704e00c4ff63b"
+        },
+        {
+          "bytes": 39993,
+          "compressedBytes": 39910,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Previews/Mobile/Warpkeep_Hegemony_Legionary_Map_256.png",
+          "sha256": "be75fbbec5cd7c6d2de0444a21a1b747cda4a5d31a44d56bda695356b7aad21b"
+        },
+        {
+          "bytes": 40049,
+          "compressedBytes": 39975,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Previews/Mobile/Warpkeep_Hegemony_Vanguard_Map_256.png",
+          "sha256": "fcc3f82e8f3db7087c29f970cc591b56aaf3d662a4458647f49979a01bbded66"
+        },
+        {
+          "bytes": 3339038,
+          "compressedBytes": 3339505,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Previews/Warpkeep_HegemonyInfantry_Lineup.png",
+          "sha256": "c70be2a7cc44033ab97e353436df75507299a61d050d2c3d32f0fcb3d94fbe98"
+        },
+        {
+          "bytes": 1903760,
+          "compressedBytes": 1896161,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Previews/Warpkeep_HegemonyInfantry_Lineup_Transparent.png",
+          "sha256": "650d00910a4e1c355dd695a5be376fcb3f807eda9779632e2f7d66c338bb03f2"
+        },
+        {
+          "bytes": 8784,
+          "compressedBytes": 1096,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/QA/Warpkeep_HegemonyInfantry_RuntimeQA.json",
+          "sha256": "7f17996686b489a6cfcd26cdc8bf145eee568d9d4f220efe758bfff329f6053b"
+        },
+        {
+          "bytes": 2094,
+          "compressedBytes": 1170,
+          "mediaType": "text/markdown",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/README.md",
+          "sha256": "d1381f15789b16a8ed8de551bb65c641e389e040a74a9671914122c73c53a7d4"
+        },
+        {
+          "bytes": 354932,
+          "compressedBytes": 144706,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/Bulwark/Warpkeep_Hegemony_Bulwark_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "607d504e48c5a51fb0c74c55a81751de2fa3733553b18e728e9cfb7eec8832d0"
+        },
+        {
+          "bytes": 303004,
+          "compressedBytes": 130968,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/Bulwark/Warpkeep_Hegemony_Bulwark_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "4a0e1fd2470259ea60f4428c7ad2e5f7f1469c7272ccdfa65fc4b04acda669d4"
+        },
+        {
+          "bytes": 188336,
+          "compressedBytes": 111487,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/Bulwark/Warpkeep_Hegemony_Bulwark_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "1cc92a6d96a4ffc2a8b8b9651419517662aaa56244513521c870ff527e4a601e"
+        },
+        {
+          "bytes": 138776,
+          "compressedBytes": 98575,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/Bulwark/Warpkeep_Hegemony_Bulwark_LOD3_Map_Static_Runtime.glb",
+          "sha256": "fe25a17b178b4b77c7f24f7ccba3075ffe425e7bbc1cccc5bbc6c67e22ac0ffe"
+        },
+        {
+          "bytes": 5783,
+          "compressedBytes": 1788,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/Bulwark/runtime-manifest.json",
+          "sha256": "56b28598c07b6e29dc6aa9d939dc9c667bc8fab86159d83c6d7201cdad85f0dc"
+        },
+        {
+          "bytes": 376216,
+          "compressedBytes": 148863,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/HonorGuard/Warpkeep_Hegemony_HonorGuard_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "5cc320d525a73e8cfb4f6d21070c23fd26d28c2daadb0a9338a0eeb1ab844f27"
+        },
+        {
+          "bytes": 320440,
+          "compressedBytes": 133674,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/HonorGuard/Warpkeep_Hegemony_HonorGuard_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "66f157c4dc9bcd4ffaec17081f5019a168f9b69009293518f89eb366864a7c67"
+        },
+        {
+          "bytes": 194620,
+          "compressedBytes": 112325,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/HonorGuard/Warpkeep_Hegemony_HonorGuard_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "105926a9ac1be2fac529109367cecbfcdc409f5812b2d7eea2f4925c8e63156f"
+        },
+        {
+          "bytes": 140056,
+          "compressedBytes": 98809,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/HonorGuard/Warpkeep_Hegemony_HonorGuard_LOD3_Map_Static_Runtime.glb",
+          "sha256": "61435f872a5d8d4fcdc527e028a83c5e83f9054c0a045be503a92e4cf116a4ea"
+        },
+        {
+          "bytes": 5823,
+          "compressedBytes": 1799,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/HonorGuard/runtime-manifest.json",
+          "sha256": "68fd38e7599dc528b31450d596831945b64df066d4a2ce372f6b208dfbe195a7"
+        },
+        {
+          "bytes": 359288,
+          "compressedBytes": 145719,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/Legionary/Warpkeep_Hegemony_Legionary_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "86d7360d89e35d56d486f2f00d71e719e0dbc956a97972fba006e474ee48327e"
+        },
+        {
+          "bytes": 306080,
+          "compressedBytes": 131625,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/Legionary/Warpkeep_Hegemony_Legionary_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "e7361bc20051055d40b90e6415ddee117883dda5d7b1b38317a76e99bb704faa"
+        },
+        {
+          "bytes": 188676,
+          "compressedBytes": 111687,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/Legionary/Warpkeep_Hegemony_Legionary_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "abb4a2ef93b80cb05212906860911ee9d54eb0cbe11a92a812b8510753e8a03a"
+        },
+        {
+          "bytes": 138784,
+          "compressedBytes": 98521,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/Legionary/Warpkeep_Hegemony_Legionary_LOD3_Map_Static_Runtime.glb",
+          "sha256": "f2d278acd8c1b6209865d7cd5a613e65d425d81d4596388bbab5cccf87c9c3ed"
+        },
+        {
+          "bytes": 5786,
+          "compressedBytes": 1770,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/Legionary/runtime-manifest.json",
+          "sha256": "bc2949de95c9fbf06aef3880b942741f9ff8902d103007a347a9d6098b3122c2"
+        },
+        {
+          "bytes": 359136,
+          "compressedBytes": 146389,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/Vanguard/Warpkeep_Hegemony_Vanguard_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "78e08e2d5fca135c5d330687a6336c2dbc439e52dbe10390316d05a8e801f6ac"
+        },
+        {
+          "bytes": 305928,
+          "compressedBytes": 132159,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/Vanguard/Warpkeep_Hegemony_Vanguard_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "e62df99856c02f9964ac4303600abcf7c9f40879bd52bbabbce75a6330538176"
+        },
+        {
+          "bytes": 188192,
+          "compressedBytes": 111833,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/Vanguard/Warpkeep_Hegemony_Vanguard_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "ee76a1bc2cbb528576cd6706a18c169fa8af0783cc5bb81e0b8f9294ac19b266"
+        },
+        {
+          "bytes": 138368,
+          "compressedBytes": 98594,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/Vanguard/Warpkeep_Hegemony_Vanguard_LOD3_Map_Static_Runtime.glb",
+          "sha256": "292225f1fe9b2565115139fca229492355203e67cb9d5c43c81f969cfb6bc8ca"
+        },
+        {
+          "bytes": 5810,
+          "compressedBytes": 1786,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Runtime/Units/Hegemony/Infantry/Vanguard/runtime-manifest.json",
+          "sha256": "65916d394f1e30121dad43e787be3a0f07fdf67389a1933b62f6e66d027061fa"
+        },
+        {
+          "bytes": 5691,
+          "compressedBytes": 2119,
+          "mediaType": "text/plain",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/SHA256SUMS.txt",
+          "sha256": "acd81b3433edac52b4191fcf92e76f4a0a8d6a4f17730c4438961a6559fad719"
+        },
+        {
+          "bytes": 311101,
+          "compressedBytes": 300454,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 2602028,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Source/Warpkeep_HegemonyInfantry_Lineup_Editable.blend",
+          "sha256": "cefb5c9c19bcece60ffda627647131e99ce9ab26f3b4f609b490dc62f8ced831"
+        },
+        {
+          "bytes": 383189,
+          "compressedBytes": 377596,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 2772238,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Source/Warpkeep_Hegemony_Bulwark_Editable.blend",
+          "sha256": "31aa3f56e582408371c7f885ea91ef96c980be8bcbf00506ca8be77cab731465"
+        },
+        {
+          "bytes": 396622,
+          "compressedBytes": 390416,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 2903225,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Source/Warpkeep_Hegemony_HonorGuard_Editable.blend",
+          "sha256": "62f78b8a3d548fa3f4b13ef9ad1bbf08091eeb52ec263a2f632c8a03b7155a9a"
+        },
+        {
+          "bytes": 386094,
+          "compressedBytes": 380429,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 2800499,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Source/Warpkeep_Hegemony_Legionary_Editable.blend",
+          "sha256": "920c09770719744d8d300744ad9fd04a24bf77d6cca038d09d314895179d01c1"
+        },
+        {
+          "bytes": 388558,
+          "compressedBytes": 382480,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 2804541,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Source/Warpkeep_Hegemony_Vanguard_Editable.blend",
+          "sha256": "88ade47163b69b137ec392c2efef63a0a290b94d0bada8e0f920dd1ee44518bc"
+        },
+        {
+          "bytes": 1403506,
+          "compressedBytes": 1403936,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Textures/Hegemony_Banner_Logo_Exact_1254.png",
+          "sha256": "43147b1ac02d7b982ae78bb7a613c74b4a26d348a36008f3bf1db4541e9c6721"
+        },
+        {
+          "bytes": 83346,
+          "compressedBytes": 83210,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Textures/Hegemony_Banner_Logo_Runtime_256.png",
+          "sha256": "314798f792a31395c09a94b094b5ff4d95fd7f9ed75b55e8dfeecc6caf358f8d"
+        },
+        {
+          "bytes": 3339038,
+          "compressedBytes": 3339505,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/Warpkeep_HegemonyInfantry_Lineup.png",
+          "sha256": "c70be2a7cc44033ab97e353436df75507299a61d050d2c3d32f0fcb3d94fbe98"
+        },
+        {
+          "bytes": 5426,
+          "compressedBytes": 1386,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyInfantry_GameReady/asset-manifest.json",
+          "sha256": "b6f016e69e58c30bfc8161a93edf05541ead73ddb4f43dceb4e723985816f22f"
+        }
+      ],
+      "mediaType": "application/zip",
+      "name": "warpkeep-hegemony-infantry-game-ready-2026-08-03-v1.zip",
+      "packageRoot": "Warpkeep_HegemonyInfantry_GameReady",
+      "sha256": "953fcca256324f2a73b3f13e2ca04911349a0f69934337e6ac7161041a2d4ba0",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-unit-corps-2026-08-03/warpkeep-hegemony-infantry-game-ready-2026-08-03-v1.zip"
+    },
+    {
+      "bytes": 16349955,
+      "entries": [
+        {
+          "bytes": 924,
+          "compressedBytes": 497,
+          "mediaType": "text/markdown",
+          "path": "Warpkeep_HegemonyRanged_GameReady/PACKAGE-NOTICE.md",
+          "sha256": "7d5d1b67e58cd9d5207a1e536bd5e6e6e86393152d77653c004bfaf7a6e4628d"
+        },
+        {
+          "bytes": 771182,
+          "compressedBytes": 767102,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Previews/Individual/Warpkeep_Hegemony_AstralMagister_Transparent_1200.png",
+          "sha256": "9414f19526584e79904cb8638951e797935a4c727ce3df37f868bf83693e891b"
+        },
+        {
+          "bytes": 692049,
+          "compressedBytes": 687344,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Previews/Individual/Warpkeep_Hegemony_DuskRanger_Transparent_1200.png",
+          "sha256": "12a4714b8ee6984ace07090a23f420e15c62fd5d4ef6e7d3ad1c9293d05ab2b6"
+        },
+        {
+          "bytes": 733931,
+          "compressedBytes": 728733,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Previews/Individual/Warpkeep_Hegemony_LongbowWarden_Transparent_1200.png",
+          "sha256": "424806600ce028e73db8b719b2605a2142e462d55c66cec277521620befb5c4d"
+        },
+        {
+          "bytes": 728733,
+          "compressedBytes": 723928,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Previews/Individual/Warpkeep_Hegemony_RiftBattlemage_Transparent_1200.png",
+          "sha256": "6e2b75607750dd9db38887b8ee5a70675a581181fb9bd8f33fd1e5538e36dacb"
+        },
+        {
+          "bytes": 43562,
+          "compressedBytes": 43494,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Previews/Mobile/Warpkeep_Hegemony_AstralMagister_Map_256.png",
+          "sha256": "8e1597de0538549fe38059ab7f5c60160faa1cc969e146fa1cee35400caf3a53"
+        },
+        {
+          "bytes": 39643,
+          "compressedBytes": 39554,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Previews/Mobile/Warpkeep_Hegemony_DuskRanger_Map_256.png",
+          "sha256": "fe0403e962947ed588dba5d31c61f0d3950c47c73f298fdc28f9641c0edf90e1"
+        },
+        {
+          "bytes": 40667,
+          "compressedBytes": 40575,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Previews/Mobile/Warpkeep_Hegemony_LongbowWarden_Map_256.png",
+          "sha256": "1804b493907a4d9d17401c907e2ed2f5a31c5dd92a9bde2d7cbd4673270ffe5d"
+        },
+        {
+          "bytes": 40183,
+          "compressedBytes": 40097,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Previews/Mobile/Warpkeep_Hegemony_RiftBattlemage_Map_256.png",
+          "sha256": "32c7397e6a866ffb44f664f8b9647260c0568cfa4263c1e3528fda4c4833a1ee"
+        },
+        {
+          "bytes": 3337754,
+          "compressedBytes": 3338291,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Previews/Warpkeep_HegemonyRanged_Lineup.png",
+          "sha256": "e581c183426b8f4b5289cc77613329efd964d12d3f2c89bcf66dd8e35be20486"
+        },
+        {
+          "bytes": 1850573,
+          "compressedBytes": 1842249,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Previews/Warpkeep_HegemonyRanged_Lineup_Transparent.png",
+          "sha256": "baa1c830a24c878a28b295c260a6de1e7e29160bb0da74640596ff20c8bc158b"
+        },
+        {
+          "bytes": 4070,
+          "compressedBytes": 807,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyRanged_GameReady/QA/Warpkeep_HegemonyRanged_RuntimeQA.json",
+          "sha256": "5841062854442fb4e6254c8dfe71ed681e047aeb7e406f209fb75c289ab6c0e7"
+        },
+        {
+          "bytes": 1798,
+          "compressedBytes": 1056,
+          "mediaType": "text/markdown",
+          "path": "Warpkeep_HegemonyRanged_GameReady/README.md",
+          "sha256": "2d4d7005de085f07216d03d84aca80c81c63e68f056304d17317b48baafcc337"
+        },
+        {
+          "bytes": 317420,
+          "compressedBytes": 139704,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/AstralMagister/Warpkeep_Hegemony_AstralMagister_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "9553ef488d83bc177292b41ed9b6a1eb95622e2cab6578bfe37e68dfdcc019b8"
+        },
+        {
+          "bytes": 277348,
+          "compressedBytes": 129422,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/AstralMagister/Warpkeep_Hegemony_AstralMagister_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "f7ebf6dd805946574838b64c2c886f959ea4309a296fce6b66ec8d9a804f3a1f"
+        },
+        {
+          "bytes": 79828,
+          "compressedBytes": 21372,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/AstralMagister/Warpkeep_Hegemony_AstralMagister_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "2b1b9985793ec5435678fcaefef68770da54fff084d5e5af2b6c55a3658c4a20"
+        },
+        {
+          "bytes": 48428,
+          "compressedBytes": 13503,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/AstralMagister/Warpkeep_Hegemony_AstralMagister_LOD3_Map_Static_Runtime.glb",
+          "sha256": "f27e4ac9530ad96f04a8b4a2347c514213786ff6a37836f7cab12dbea65921f0"
+        },
+        {
+          "bytes": 6459,
+          "compressedBytes": 1991,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/AstralMagister/runtime-manifest.json",
+          "sha256": "aa9f069c8c1fb05c24bd6155aa6032bdc2cb63a9e70ae1cfb4126ef5048f5cff"
+        },
+        {
+          "bytes": 368928,
+          "compressedBytes": 150685,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/DuskRanger/Warpkeep_Hegemony_DuskRanger_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "c0347439820cd8720fa1e47c87be882870aec89bb39fceeea67667ff47f644a8"
+        },
+        {
+          "bytes": 310084,
+          "compressedBytes": 135716,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/DuskRanger/Warpkeep_Hegemony_DuskRanger_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "24020097cc18b2488c65219485b7386773c9781ae619f6ebf27f1b2a8ea246ea"
+        },
+        {
+          "bytes": 92004,
+          "compressedBytes": 25668,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/DuskRanger/Warpkeep_Hegemony_DuskRanger_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "c707df9a6fcf23a1dbd9560e759b4cf494bc27b8f3e0ec6621c240a179522d85"
+        },
+        {
+          "bytes": 49908,
+          "compressedBytes": 14341,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/DuskRanger/Warpkeep_Hegemony_DuskRanger_LOD3_Map_Static_Runtime.glb",
+          "sha256": "e1e2579a28e26338493591715dda18c32a78b6c81bd693d7b84b98b8225c57e2"
+        },
+        {
+          "bytes": 6335,
+          "compressedBytes": 1966,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/DuskRanger/runtime-manifest.json",
+          "sha256": "d2f851723da013dcd9efd15fd627e3138336f86b0d49545612deb5c70b098cc1"
+        },
+        {
+          "bytes": 395868,
+          "compressedBytes": 155632,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/LongbowWarden/Warpkeep_Hegemony_LongbowWarden_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "ff2fc96a87173ec1fcecd598562db839d4b0e7ad6986622de8d6294f751c4464"
+        },
+        {
+          "bytes": 331228,
+          "compressedBytes": 138935,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/LongbowWarden/Warpkeep_Hegemony_LongbowWarden_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "496ac58752dfd060239a8687a2efe2bee50340f948a1c0221f3e6b750bea4f9c"
+        },
+        {
+          "bytes": 104560,
+          "compressedBytes": 28135,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/LongbowWarden/Warpkeep_Hegemony_LongbowWarden_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "63d2d79b4b1f573663aac88ff343dbee1bd985755888d4ef1fb579180e7861c6"
+        },
+        {
+          "bytes": 56628,
+          "compressedBytes": 15850,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/LongbowWarden/Warpkeep_Hegemony_LongbowWarden_LOD3_Map_Static_Runtime.glb",
+          "sha256": "63b8c25ed1d4f3d295ee59e61b17d7ed699b0932c4d800319a899c1a01377c55"
+        },
+        {
+          "bytes": 6345,
+          "compressedBytes": 1945,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/LongbowWarden/runtime-manifest.json",
+          "sha256": "a1e55d9ce54d358e86b64fcada90af99193f17f5cdbd4e240e11bc646bd4db13"
+        },
+        {
+          "bytes": 384748,
+          "compressedBytes": 151624,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/RiftBattlemage/Warpkeep_Hegemony_RiftBattlemage_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "b86f0f6b75eb4a4dcc66f82613d56f8c11a6f13f4df89f7e2497a99cc90d16d9"
+        },
+        {
+          "bytes": 327152,
+          "compressedBytes": 136602,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/RiftBattlemage/Warpkeep_Hegemony_RiftBattlemage_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "91061c1f8a40d4b109eb4dd3554120c3222ec44f7189856417a34bfa211f4cac"
+        },
+        {
+          "bytes": 103836,
+          "compressedBytes": 26881,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/RiftBattlemage/Warpkeep_Hegemony_RiftBattlemage_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "5a90ae4a8def1909ca52443395b16ea0808a1068f540d6308a9852160ae83e97"
+        },
+        {
+          "bytes": 58040,
+          "compressedBytes": 15418,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/RiftBattlemage/Warpkeep_Hegemony_RiftBattlemage_LOD3_Map_Static_Runtime.glb",
+          "sha256": "adf4ae72fd614a2b230154c126823ba3a0353d3b38044a5d77c51dbe33e96830"
+        },
+        {
+          "bytes": 6426,
+          "compressedBytes": 1980,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Runtime/Units/Hegemony/Ranged/RiftBattlemage/runtime-manifest.json",
+          "sha256": "06144d0313ac07d5d79a111065f7aa12ee6c1b2f99d28c69e468901396725b65"
+        },
+        {
+          "bytes": 5845,
+          "compressedBytes": 2142,
+          "mediaType": "text/plain",
+          "path": "Warpkeep_HegemonyRanged_GameReady/SHA256SUMS.txt",
+          "sha256": "90ad6c248646b58ca96360d5c9bb385a4f4d91c068444e565600e5683378759c"
+        },
+        {
+          "bytes": 349524,
+          "compressedBytes": 339286,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 2730671,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Source/Warpkeep_HegemonyRanged_Lineup_Editable.blend",
+          "sha256": "7425fcc59cc13be189247438b2336027748b4f048512e75a01e3d356b313e73e"
+        },
+        {
+          "bytes": 380994,
+          "compressedBytes": 376379,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 2794886,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Source/Warpkeep_Hegemony_AstralMagister_Editable.blend",
+          "sha256": "2eab943fa7dfb7d801680c2bb7ca1e2d3233780e27f8bf953a96ae06de0244ae"
+        },
+        {
+          "bytes": 407325,
+          "compressedBytes": 401103,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 3007528,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Source/Warpkeep_Hegemony_DuskRanger_Editable.blend",
+          "sha256": "2d3032a41bc9c5ca03e9a25349020aac905ce8a64ffbf61cf16436c304a59a08"
+        },
+        {
+          "bytes": 425651,
+          "compressedBytes": 418139,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 3199681,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Source/Warpkeep_Hegemony_LongbowWarden_Editable.blend",
+          "sha256": "2480eb0cff1275e49eb9f397a235a28676e854c6e06f36a9c6519cb4572fb842"
+        },
+        {
+          "bytes": 417812,
+          "compressedBytes": 411760,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 3150744,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Source/Warpkeep_Hegemony_RiftBattlemage_Editable.blend",
+          "sha256": "c022e0f29bba08a55aa780943333b3b398ad014a7163214c765c8342cc8b9352"
+        },
+        {
+          "bytes": 1403506,
+          "compressedBytes": 1403936,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Textures/Hegemony_Banner_Logo_Exact_1254.png",
+          "sha256": "43147b1ac02d7b982ae78bb7a613c74b4a26d348a36008f3bf1db4541e9c6721"
+        },
+        {
+          "bytes": 83346,
+          "compressedBytes": 83210,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Textures/Hegemony_Banner_Logo_Runtime_256.png",
+          "sha256": "314798f792a31395c09a94b094b5ff4d95fd7f9ed75b55e8dfeecc6caf358f8d"
+        },
+        {
+          "bytes": 3337754,
+          "compressedBytes": 3338291,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyRanged_GameReady/Warpkeep_HegemonyRanged_Lineup.png",
+          "sha256": "e581c183426b8f4b5289cc77613329efd964d12d3f2c89bcf66dd8e35be20486"
+        },
+        {
+          "bytes": 5771,
+          "compressedBytes": 1488,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyRanged_GameReady/asset-manifest.json",
+          "sha256": "ffbfd1bc22d82cc241ce5908b541d60d4fbec885514b15ba9e9fa3d083057eea"
+        }
+      ],
+      "mediaType": "application/zip",
+      "name": "warpkeep-hegemony-ranged-game-ready-2026-08-03-v1.zip",
+      "packageRoot": "Warpkeep_HegemonyRanged_GameReady",
+      "sha256": "310b0feaf21f0619f1d10f154facd64f98ce3ad1658cf80bb4dd68f5847a0391",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-unit-corps-2026-08-03/warpkeep-hegemony-ranged-game-ready-2026-08-03-v1.zip"
+    },
+    {
+      "bytes": 19651045,
+      "entries": [
+        {
+          "bytes": 924,
+          "compressedBytes": 497,
+          "mediaType": "text/markdown",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/PACKAGE-NOTICE.md",
+          "sha256": "7d5d1b67e58cd9d5207a1e536bd5e6e6e86393152d77653c004bfaf7a6e4628d"
+        },
+        {
+          "bytes": 842107,
+          "compressedBytes": 838228,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Previews/Individual/Warpkeep_Hegemony_AstralLancer_Transparent_1200.png",
+          "sha256": "021cd140f709881a0770d70e364fcf27538d477e02363fee5c5b376149474d2e"
+        },
+        {
+          "bytes": 803709,
+          "compressedBytes": 799506,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Previews/Individual/Warpkeep_Hegemony_DuskOutrider_Transparent_1200.png",
+          "sha256": "a2f58daad903eb11afbbb5957df81630aac7657ffb08b543ad2bbdf05dafa39d"
+        },
+        {
+          "bytes": 789356,
+          "compressedBytes": 785168,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Previews/Individual/Warpkeep_Hegemony_Horseguard_Transparent_1200.png",
+          "sha256": "0bdfbdea6d5cd8b6cb9c2d42e371a3a43944c350e8610b3a777d888cd57b77ec"
+        },
+        {
+          "bytes": 841496,
+          "compressedBytes": 837218,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Previews/Individual/Warpkeep_Hegemony_ImperialCataphract_Transparent_1200.png",
+          "sha256": "9849a48ed9dcc415a325fb754ee30676ba74208ea774da95216486e64179660c"
+        },
+        {
+          "bytes": 62210,
+          "compressedBytes": 62168,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Previews/Mobile/Warpkeep_Hegemony_AstralLancer_Map_256.png",
+          "sha256": "0fe5cf68ccc33bdc68f3d84ee8d52762ad747ea4bc8389ed2834c3227cfe11cd"
+        },
+        {
+          "bytes": 59907,
+          "compressedBytes": 59854,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Previews/Mobile/Warpkeep_Hegemony_DuskOutrider_Map_256.png",
+          "sha256": "a8479ca81dea350d0a677960255cf8e43864c4ae6dbc9a21a8b58b6ab97bca45"
+        },
+        {
+          "bytes": 57003,
+          "compressedBytes": 56963,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Previews/Mobile/Warpkeep_Hegemony_Horseguard_Map_256.png",
+          "sha256": "97242e3f20f909485f257d204026c9e02f92db35142f25ec30e4d1a81f3f042f"
+        },
+        {
+          "bytes": 60284,
+          "compressedBytes": 60246,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Previews/Mobile/Warpkeep_Hegemony_ImperialCataphract_Map_256.png",
+          "sha256": "bc0429962edfa93ff900bdced58adcb99b21a14fc082f18e6706c896a6d58aad"
+        },
+        {
+          "bytes": 3763058,
+          "compressedBytes": 3763705,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Previews/Warpkeep_HegemonyCavalry_Lineup.png",
+          "sha256": "4a533d13d18de840b8f90c475556780ba908858d1a30dea336e0674ab9dd81db"
+        },
+        {
+          "bytes": 2117679,
+          "compressedBytes": 2111663,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Previews/Warpkeep_HegemonyCavalry_Lineup_Transparent.png",
+          "sha256": "d9a986b69095c1641cdf2e4a4a3522e38a617a56c474fe21a14d7777512b6d7a"
+        },
+        {
+          "bytes": 6488,
+          "compressedBytes": 1147,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/QA/Warpkeep_HegemonyCavalry_RuntimeQA.json",
+          "sha256": "64be6aa57c5d18c5faf39895685f720c0895e79301eb22150b2395bb1cddf25e"
+        },
+        {
+          "bytes": 1314,
+          "compressedBytes": 792,
+          "mediaType": "text/markdown",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/README.md",
+          "sha256": "7919e21c89090e2065078da74501a16dd9fd9ab3e9f14571a3aa139165e75568"
+        },
+        {
+          "bytes": 702160,
+          "compressedBytes": 219812,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/AstralLancer/Warpkeep_Hegemony_AstralLancer_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "ea71e35f448fd07c760486dae7239cf3fe889aa44f03725012c1807708f49d66"
+        },
+        {
+          "bytes": 566296,
+          "compressedBytes": 185183,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/AstralLancer/Warpkeep_Hegemony_AstralLancer_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "bff3bd13e876cce8023ee856800ba392c65d04ed840efcb00f1dc3d429b669b4"
+        },
+        {
+          "bytes": 202664,
+          "compressedBytes": 52454,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/AstralLancer/Warpkeep_Hegemony_AstralLancer_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "fea4558e4365cba0e5c984393519c25ed1beedced55cc88eeb384e76c02957ff"
+        },
+        {
+          "bytes": 110200,
+          "compressedBytes": 28625,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/AstralLancer/Warpkeep_Hegemony_AstralLancer_LOD3_Map_Static_Runtime.glb",
+          "sha256": "71b078aa46bcebdd5b1317afe9ba19f4e5ca19e111ae257c29066ccb54543778"
+        },
+        {
+          "bytes": 8404,
+          "compressedBytes": 2215,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/AstralLancer/runtime-manifest.json",
+          "sha256": "b60ad2798759a93b2273519f62f2ebc31d99d5e22c7a0ca47458d34e7a272aa7"
+        },
+        {
+          "bytes": 660980,
+          "compressedBytes": 213504,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/DuskOutrider/Warpkeep_Hegemony_DuskOutrider_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "0291e8aac8be79b6271ab5b296db0a6b55435efd62e67df769b14c5acf1366fa"
+        },
+        {
+          "bytes": 529884,
+          "compressedBytes": 180567,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/DuskOutrider/Warpkeep_Hegemony_DuskOutrider_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "b956a70d9c99541e9ab94e4a61edb3b8747297d478295c3128e05031259cb47f"
+        },
+        {
+          "bytes": 183164,
+          "compressedBytes": 48598,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/DuskOutrider/Warpkeep_Hegemony_DuskOutrider_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "f9233e5018551a5aab51a95b8a8b081f7622e4484d6800733cdc67deb6eaf11a"
+        },
+        {
+          "bytes": 107584,
+          "compressedBytes": 28073,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/DuskOutrider/Warpkeep_Hegemony_DuskOutrider_LOD3_Map_Static_Runtime.glb",
+          "sha256": "b52380a79826bd8f03871471b4e7a119c3d959dd4ba4b9e08fe42ae44249e0f5"
+        },
+        {
+          "bytes": 8388,
+          "compressedBytes": 2222,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/DuskOutrider/runtime-manifest.json",
+          "sha256": "c7375e85a7d5ebb1c58a6a718ccd98db15ae4bdbf6a086253bd9f68466f22901"
+        },
+        {
+          "bytes": 721804,
+          "compressedBytes": 220916,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/Horseguard/Warpkeep_Hegemony_Horseguard_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "39da1aa82339db01c6d78f82f20299e809391d4184b7cabd8eaeda3f53ce8b8e"
+        },
+        {
+          "bytes": 587332,
+          "compressedBytes": 186768,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/Horseguard/Warpkeep_Hegemony_Horseguard_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "2e15034a96229eb543c6528c9abee1140dbc78cf4acd173c074051309142e2bf"
+        },
+        {
+          "bytes": 215128,
+          "compressedBytes": 53913,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/Horseguard/Warpkeep_Hegemony_Horseguard_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "26ec537f8a0dc677a40ad102c5073ff43c661c3e94fe1ccffee366867cb16866"
+        },
+        {
+          "bytes": 114252,
+          "compressedBytes": 28926,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/Horseguard/Warpkeep_Hegemony_Horseguard_LOD3_Map_Static_Runtime.glb",
+          "sha256": "6c0b2ac006ad887b915edb6b9b1b9d3426d12715d2f1f44d68c291e097743a63"
+        },
+        {
+          "bytes": 8447,
+          "compressedBytes": 2215,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/Horseguard/runtime-manifest.json",
+          "sha256": "805ff45fe4c8bba4a06f1e5b3b8772bc0a9a8c0bf80d7ad9b75021cb3f7fd9d2"
+        },
+        {
+          "bytes": 761228,
+          "compressedBytes": 226561,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/ImperialCataphract/Warpkeep_Hegemony_ImperialCataphract_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "2fb4a2b3daa4a5e576537de947cefba4a86c4447d0af1b7c2c06911576f40f78"
+        },
+        {
+          "bytes": 622796,
+          "compressedBytes": 192253,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/ImperialCataphract/Warpkeep_Hegemony_ImperialCataphract_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "9f2f98369c4d7af8c237ea8d8d742cf5b320b7e1f9731a57209ba5928e14da45"
+        },
+        {
+          "bytes": 232544,
+          "compressedBytes": 57014,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/ImperialCataphract/Warpkeep_Hegemony_ImperialCataphract_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "6f892da1bec76a66d06469a14e16e132694612ae686deb5803c8847931db9c1c"
+        },
+        {
+          "bytes": 119496,
+          "compressedBytes": 30047,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/ImperialCataphract/Warpkeep_Hegemony_ImperialCataphract_LOD3_Map_Static_Runtime.glb",
+          "sha256": "4148e77079f79f2b0d249a3945d067bbec9dadc7a81e9ef73f3773996e854d58"
+        },
+        {
+          "bytes": 8433,
+          "compressedBytes": 2229,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Runtime/Units/Hegemony/Cavalry/ImperialCataphract/runtime-manifest.json",
+          "sha256": "17923aca73f423a77465bf22d14bccb321e23a2de38d8618d2263726a29f47d5"
+        },
+        {
+          "bytes": 5882,
+          "compressedBytes": 2143,
+          "mediaType": "text/plain",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/SHA256SUMS.txt",
+          "sha256": "0aa70f03023d5d1e102a53b51f44788c08e93e53ea94314290ad0ac0ccbd5780"
+        },
+        {
+          "bytes": 555149,
+          "compressedBytes": 529239,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 5280362,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Source/Warpkeep_HegemonyCavalry_Lineup_Editable.blend",
+          "sha256": "0b0c9fda825f6814ef7c2a24ad1bf139d9c48cf01122ff941f808fc8055527b3"
+        },
+        {
+          "bytes": 645470,
+          "compressedBytes": 625713,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 5576155,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Source/Warpkeep_Hegemony_AstralLancer_Editable.blend",
+          "sha256": "5e592a37a5d54349ee402bbe11b3ed26593c99182360df79617b27029bb840da"
+        },
+        {
+          "bytes": 623847,
+          "compressedBytes": 604659,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 5310864,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Source/Warpkeep_Hegemony_DuskOutrider_Editable.blend",
+          "sha256": "405c8cf9ca6eeba8643bfe287b197554fffb8bf0da04f741f6c1af6a27e429eb"
+        },
+        {
+          "bytes": 653768,
+          "compressedBytes": 631995,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 5665846,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Source/Warpkeep_Hegemony_Horseguard_Editable.blend",
+          "sha256": "e5192bdcaa2309ebc10329a83e32bb9c45c4d1a9478da914696ec3b86937b8c7"
+        },
+        {
+          "bytes": 672478,
+          "compressedBytes": 652187,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 5917937,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Source/Warpkeep_Hegemony_ImperialCataphract_Editable.blend",
+          "sha256": "aae2bbc36ff119a4bb1ec26ef4dcdcd25a74fcf61fe18fc92130bd43a5606d30"
+        },
+        {
+          "bytes": 1403506,
+          "compressedBytes": 1403936,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Textures/Hegemony_Banner_Logo_Exact_1254.png",
+          "sha256": "43147b1ac02d7b982ae78bb7a613c74b4a26d348a36008f3bf1db4541e9c6721"
+        },
+        {
+          "bytes": 83346,
+          "compressedBytes": 83210,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Textures/Hegemony_Banner_Logo_Runtime_256.png",
+          "sha256": "314798f792a31395c09a94b094b5ff4d95fd7f9ed75b55e8dfeecc6caf358f8d"
+        },
+        {
+          "bytes": 3763058,
+          "compressedBytes": 3763705,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/Warpkeep_HegemonyCavalry_Lineup.png",
+          "sha256": "4a533d13d18de840b8f90c475556780ba908858d1a30dea336e0674ab9dd81db"
+        },
+        {
+          "bytes": 7006,
+          "compressedBytes": 1724,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyCavalry_GameReady/asset-manifest.json",
+          "sha256": "60525e5ff8bb19f02ed426a91939c8bd414017c76a6d8f3c1467cd481e1e9fe0"
+        }
+      ],
+      "mediaType": "application/zip",
+      "name": "warpkeep-hegemony-cavalry-game-ready-2026-08-03-v1.zip",
+      "packageRoot": "Warpkeep_HegemonyCavalry_GameReady",
+      "sha256": "9d411ee308abacfd7ca93b1e96594cc4f9e8af613f6d18aca3128b49dfb9a48b",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-unit-corps-2026-08-03/warpkeep-hegemony-cavalry-game-ready-2026-08-03-v1.zip"
+    }
+  ],
+  "designation": {
+    "name": "Warpkeep Hegemony Unit Corps",
+    "status": "game-ready production asset archive and runtime handoff; current live-game integration is not asserted"
+  },
+  "inventory": {
+    "editableBlends": 15,
+    "families": [
+      {
+        "bytes": 19001934,
+        "category": "Units/Infantry",
+        "clips": [
+          "Attack",
+          "Idle",
+          "Walk"
+        ],
+        "editableBlends": 5,
+        "files": 43,
+        "jointCounts": [
+          21
+        ],
+        "json": 6,
+        "key": "infantry",
+        "lodsPerUnit": 4,
+        "package": "Warpkeep_HegemonyInfantry_GameReady",
+        "packageChecksums": 42,
+        "pngs": 13,
+        "productionGLBs": 16,
+        "qaChecksPassed": 87,
+        "qaChecksTotal": 87,
+        "riggedLods": [
+          "LOD0_High",
+          "LOD1_Balanced"
+        ],
+        "roles": [
+          "Bulwark",
+          "Legionary",
+          "Vanguard",
+          "HonorGuard"
+        ],
+        "staticLods": [
+          "LOD2_Compact",
+          "LOD3_Map"
+        ],
+        "title": "Hegemony Infantry \u2014 Shieldwall Cohort",
+        "triangleTotals": {
+          "LOD0_High": 14272,
+          "LOD1_Balanced": 9760,
+          "LOD2_Compact": 6832,
+          "LOD3_Map": 3728
+        },
+        "unitNames": [
+          "Hegemony Bulwark",
+          "Hegemony Legionary",
+          "Hegemony Vanguard",
+          "Hegemony Honor Guard"
+        ],
+        "units": 4,
+        "version": "1.2.0"
+      },
+      {
+        "bytes": 18434170,
+        "category": "Units/Ranged",
+        "clips": [
+          "Attack",
+          "Idle",
+          "Special",
+          "Walk"
+        ],
+        "editableBlends": 5,
+        "files": 43,
+        "jointCounts": [
+          21
+        ],
+        "json": 6,
+        "key": "ranged",
+        "lodsPerUnit": 4,
+        "package": "Warpkeep_HegemonyRanged_GameReady",
+        "packageChecksums": 42,
+        "pngs": 13,
+        "productionGLBs": 16,
+        "qaChecksPassed": 39,
+        "qaChecksTotal": 39,
+        "riggedLods": [
+          "LOD0_High",
+          "LOD1_Balanced"
+        ],
+        "roles": [
+          "LongbowWarden",
+          "DuskRanger",
+          "AstralMagister",
+          "RiftBattlemage"
+        ],
+        "staticLods": [
+          "LOD2_Compact",
+          "LOD3_Map"
+        ],
+        "title": "Hegemony Ranged \u2014 Astral Cohort",
+        "triangleTotals": {
+          "LOD0_High": 14152,
+          "LOD1_Balanced": 9584,
+          "LOD2_Compact": 6408,
+          "LOD3_Map": 3700
+        },
+        "unitNames": [
+          "Hegemony Longbow Warden",
+          "Hegemony Dusk Ranger",
+          "Hegemony Astral Magister",
+          "Hegemony Rift Battlemage"
+        ],
+        "units": 4,
+        "version": "1.0.0"
+      },
+      {
+        "bytes": 24290229,
+        "category": "Units/Cavalry",
+        "clips": [
+          "Attack",
+          "Idle",
+          "Special",
+          "Walk"
+        ],
+        "editableBlends": 5,
+        "files": 43,
+        "jointCounts": [
+          49
+        ],
+        "json": 6,
+        "key": "cavalry",
+        "lodsPerUnit": 4,
+        "package": "Warpkeep_HegemonyCavalry_GameReady",
+        "packageChecksums": 42,
+        "pngs": 13,
+        "productionGLBs": 16,
+        "qaChecksPassed": 47,
+        "qaChecksTotal": 47,
+        "riggedLods": [
+          "LOD0_High",
+          "LOD1_Balanced"
+        ],
+        "roles": [
+          "DuskOutrider",
+          "AstralLancer",
+          "Horseguard",
+          "ImperialCataphract"
+        ],
+        "staticLods": [
+          "LOD2_Compact",
+          "LOD3_Map"
+        ],
+        "title": "Hegemony Astral Cavalry",
+        "triangleTotals": {
+          "LOD0_High": 35822,
+          "LOD1_Balanced": 23854,
+          "LOD2_Compact": 15102,
+          "LOD3_Map": 8506
+        },
+        "unitNames": [
+          "Hegemony Dusk Outrider",
+          "Hegemony Astral Lancer",
+          "Hegemony Horseguard",
+          "Hegemony Imperial Cataphract"
+        ],
+        "units": 4,
+        "version": "1.0.0"
+      }
+    ],
+    "json": 18,
+    "packageChecksumEntries": 126,
+    "packages": 3,
+    "pngs": 39,
+    "productionGLBs": 48,
+    "publicBytes": 61726333,
+    "publicFiles": 129,
+    "qaChecksPassed": 173,
+    "qaChecksTotal": 173,
+    "units": 12
+  },
+  "knownMetadataNotices": [
+    "The 16 ranged GLBs preserve their validated source bytes, including a harmless asset.copyright label that says infantry instead of ranged.",
+    "The 256px runtime crest PNG preserves inherited XMP dimensions from its 1254px source; decoded image dimensions are correctly 256x256.",
+    "Blender-rendered preview PNG timestamp and render-context metadata is retained because it contains no private paths or credentials."
+  ],
+  "license": {
+    "scope": "Public archival and GitHub Release distribution are authorized for this named unit set; no separate open-license grant is asserted.",
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license"
+  },
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "schemaVersion": 1,
+  "source": {
+    "authorization": "Ael explicitly authorized publishing all three Hegemony unit packages to Warpkeep-Assets.",
+    "creationDisclosure": "The assets were substantially authored, prepared, or refined with Codex under Ael's direction and review; this disclosure does not alter license scope.",
+    "privateWorkflowMetadata": "removed from the public distribution copies",
+    "suppliedBy": "Ael"
+  },
+  "tag": "hegemony-unit-corps-2026-08-03",
+  "verification": {
+    "archives": "Three deterministic safe-path ZIPs; entry inventories, byte counts, SHA-256 values, compression ratios, GLB headers, and nested Blender containers verified.",
+    "blender": "All 15 editable Blender sources had absolute render paths normalized, retained matching path-insensitive semantic fingerprints, and reopened in Blender 5.2 after serialized path neutralization.",
+    "checksums": "All 126 package checksum entries passed after sanitization.",
+    "images": "All 39 PNG files parse successfully; no private path or credential metadata was found.",
+    "privacy": "No private local path, credential, symlink, extended attribute, executable, hidden OS metadata, or unsafe archive path remains in the public distributions.",
+    "qa": "The supplied runtime QA reports record 173/173 checks passed.",
+    "runtime": "All 48 runtime GLBs preserve the validated source bytes and valid glTF 2.0 headers with no external URIs.",
+    "runtimeIntegration": "Current in-game integration is not asserted by this archive deposit."
+  }
+}

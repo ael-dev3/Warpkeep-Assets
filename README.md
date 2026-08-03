@@ -12,6 +12,30 @@ Integration notes below describe what each asset release itself authorized or
 asserted when it was published. See the [Warpkeep repository](https://github.com/ael-dev3/Warpkeep)
 for the current live runtime.
 
+[![Warpkeep Hegemony Unit Corps](previews/hegemony-unit-corps-2026-08-03/00-corps-overview.jpg)](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-unit-corps-2026-08-03)
+
+## Hegemony unit corps
+
+The 2026-08-03 unit release adds a complete first Hegemony field force: **12
+game-ready units** across infantry, ranged, and cavalry families. Every unit
+ships with four mobile-first LODs, close LOD rigging, editable Blender source,
+runtime manifests, previews, and package checksums. The supplied QA reports
+record **173/173 checks passed**.
+
+| Corps | Units | Production GLBs | Rig and actions |
+| --- | ---: | ---: | --- |
+| Infantry — Bulwark, Legionary, Vanguard, Honor Guard | 4 | 16 | 21 joints; Idle, Walk, Attack |
+| Ranged — Longbow Warden, Dusk Ranger, Astral Magister, Rift Battlemage | 4 | 16 | 21 joints; Idle, Walk, Attack, Special |
+| Cavalry — Dusk Outrider, Astral Lancer, Horseguard, Imperial Cataphract | 4 | 16 | 49 joints; Idle, Walk, Attack, Special |
+
+**[Download the Hegemony unit corps](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-unit-corps-2026-08-03)** · [manifest](releases/hegemony-unit-corps-2026-08-03/manifest.json) · [provenance](provenance/hegemony-unit-corps-2026-08-03.md) · [sanitization audit](reports/hegemony-unit-corps-2026-08-03/public-sanitization.json)
+
+### Unit gallery
+
+| Infantry | Ranged | Cavalry |
+| --- | --- | --- |
+| ![Hegemony infantry lineup](previews/hegemony-unit-corps-2026-08-03/01-infantry-lineup.jpg) | ![Hegemony ranged lineup](previews/hegemony-unit-corps-2026-08-03/02-ranged-lineup.jpg) | ![Hegemony cavalry lineup](previews/hegemony-unit-corps-2026-08-03/03-cavalry-lineup.jpg) |
+
 [![Warpkeep 3D Asset Library](previews/inner-keep-3d-library-2026-08-02/00-library-overview.jpg)](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/inner-keep-3d-asset-library-2026-08-02)
 
 ## Current 3D production library
@@ -81,6 +105,7 @@ Large masters do not live in normal Git history. They are published as immutable
 
 ## Asset releases
 
+- [`hegemony-unit-corps-2026-08-03`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-unit-corps-2026-08-03) — twelve game-ready Hegemony infantry, ranged, and cavalry units with 48 four-LOD runtime GLBs, 15 privacy-sanitized editable Blender sources, 39 PNGs, package manifests, nested checksums and license notices, [public provenance](provenance/hegemony-unit-corps-2026-08-03.md), and a Git-tracked four-image gallery
 - [`inner-keep-3d-asset-library-2026-08-02`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/inner-keep-3d-asset-library-2026-08-02) — complete privacy-sanitized inner-keep production snapshot: 152 assets, 610 total GLBs, 74 Blender containers, 364 PNGs, checksums, [public provenance](provenance/inner-keep-3d-asset-library-2026-08-02.md), and a 12-image Git-tracked production gallery
 - [`title-stone-letters-2026-07-12`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/title-stone-letters-2026-07-12) — six source stone-letter GLBs and the optimized high/compact WARPKEEP title assemblies
 - [`hegemony-mark-2026-07-13`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-mark-2026-07-13) — **A Mark — the Hegemony’s main in-game currency.** Includes presentation and transparent source PNGs, Git-tracked previews, checksums, [public provenance](provenance/hegemony-mark-2026-07-13.md), and CC BY 4.0 licensing effective from Warpkeep v0.3.0.
