@@ -244,3 +244,18 @@ archive metadata. It does not grant rights in third-party settings or names,
 generation services, Warpkeep trademarks or canonical identity, or unrelated
 Warpkeep material by implication. The release describes The Core only as a
 Warpkeep faction and does not include outside reference imagery or branding.
+
+## Warpkeep background-video creation reference pack
+
+- **Set:** exact supplied 10.08-second castle/Core concept MP4, low-poly Core spire PNG, two Core crest-treatment PNGs, Warpkeep title-menu castle PNG, deterministic previews, manifests, and checksums
+- **Release:** `background-video-reference-pack-2026-08-03`
+- **Snapshot date:** 2026-08-03
+- **Deposit authority:** Ael explicitly requested packaging and public upload to Warpkeep-Assets for future background-video creation reference.
+- **License status:** public archival and GitHub Release distribution authorized; no separate open-license grant asserted
+
+This authorization covers publication and distribution of the named
+byte-exact reference package, its deterministic Git-tracked previews, and its
+archive metadata. It does not grant rights in third-party tools or services,
+Warpkeep or faction trademarks and canonical identity, or unrelated Warpkeep
+material by implication. Reference designation and repository presence do not
+by themselves assert current live-game integration or final production status.

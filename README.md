@@ -12,6 +12,29 @@ Integration notes below describe what each asset release itself authorized or
 asserted when it was published. See the [Warpkeep repository](https://github.com/ael-dev3/Warpkeep)
 for the current live runtime.
 
+[![Warpkeep background-video reference pack](previews/background-video-reference-pack-2026-08-03/00-background-video-reference-overview.jpg)](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/background-video-reference-pack-2026-08-03)
+
+## Background-video creation references
+
+The 2026-08-03 reference release preserves **five supplied source files** for
+future Warpkeep menu-background and cinematic-video work: a 10.08-second
+vertical castle-and-Core concept clip, a low-poly Core spire render, two Core
+crest treatments, and the current Warpkeep title-menu castle composition.
+Every source is retained byte-for-byte inside one checksum-addressed ZIP; only
+its archive path is made descriptive.
+
+| Source | Technical read | Intended reference |
+| --- | --- | --- |
+| Animated concept | 834×1112, 60 fps H.264, stereo AAC | Castle foreground, sunset realm, distant Core animation |
+| Core spire render | 1920×1080 PNG | Low-poly structure and emissive-violet language |
+| Core crest treatments | 1600×1600 and 1254×1254 PNG | Dark presentation and green-screen compositing options |
+| Warpkeep menu castle | 2548×1474 PNG | Current title/menu layout and atmosphere |
+
+**[Download the background-video reference pack](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/background-video-reference-pack-2026-08-03)** · [manifest](releases/background-video-reference-pack-2026-08-03/manifest.json) · [provenance](provenance/background-video-reference-pack-2026-08-03.md) · [video contact sheet](previews/background-video-reference-pack-2026-08-03/01-source-video-contact-sheet.jpg)
+
+This is a visual-development archive rather than a runtime bundle or final
+compositing contract. Current live-game integration is not asserted.
+
 [![Warpkeep — The Core faction crest](previews/the-core-faction-crest-2026-08-03/00-the-core-faction-crest-showcase.jpg)](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/the-core-faction-crest-2026-08-03)
 
 ## The Core faction crest
@@ -163,6 +186,7 @@ Large masters do not live in normal Git history. They are published as immutable
 
 ## Asset releases
 
+- [`background-video-reference-pack-2026-08-03`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/background-video-reference-pack-2026-08-03) — one verified reference ZIP preserving the supplied 10.08-second castle/Core MP4 and four PNG references byte-for-byte, with internal and release-level checksums, [public provenance](provenance/background-video-reference-pack-2026-08-03.md), a visual overview, and a six-frame video contact sheet
 - [`the-core-faction-crest-2026-08-03`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/the-core-faction-crest-2026-08-03) — exact supplied 1024px transparent master for The Core faction, three individually downloadable safe-padded runtime PNGs, a complete 15-file source/runtime kit, checksums, [public provenance](provenance/the-core-faction-crest-2026-08-03.md), and a two-image Git-tracked gallery
 - [`hegemony-citizens-keep-services-2026-08-03`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-citizens-keep-services-2026-08-03) — eight game-ready Hegemony keep citizens, including two civic orders and two exotic mounted roles, with 32 four-LOD runtime GLBs, 9 privacy-sanitized editable Blender sources, 21 PNGs, 73/73 QA checks, package manifests, nested checksums, [public provenance](provenance/hegemony-citizens-keep-services-2026-08-03.md), and a Git-tracked two-image release gallery
 - [`hegemony-unit-corps-2026-08-03`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-unit-corps-2026-08-03) — twelve game-ready Hegemony infantry, ranged, and cavalry units with 48 four-LOD runtime GLBs, 15 privacy-sanitized editable Blender sources, 39 PNGs, package manifests, nested checksums and license notices, [public provenance](provenance/hegemony-unit-corps-2026-08-03.md), and a Git-tracked four-image gallery
