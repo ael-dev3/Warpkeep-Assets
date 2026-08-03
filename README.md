@@ -12,7 +12,7 @@ Integration notes below describe what each asset release itself authorized or
 asserted when it was published. See the [Warpkeep repository](https://github.com/ael-dev3/Warpkeep)
 for the current live runtime.
 
-[![Warpkeep Hegemony Citizens — Keep Services & Orders](previews/hegemony-citizens-keep-services-2026-08-03/00-citizens-set2-lineup-high-res.jpg)](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-citizens-keep-services-2026-08-03)
+[![Warpkeep Hegemony Citizens — Keep Services & Orders](previews/hegemony-citizens-keep-services-2026-08-03/00-citizens-overview.jpg)](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-citizens-keep-services-2026-08-03)
 
 ## Hegemony keep citizens
 
@@ -42,9 +42,11 @@ to the Ward Peacekeeper shield at close LODs for visual clarity.
 
 ### Citizen gallery
 
-[![All eight Hegemony keep citizens](previews/hegemony-citizens-keep-services-2026-08-03/00-citizens-set2-lineup-high-res.jpg)](previews/hegemony-citizens-keep-services-2026-08-03/00-citizens-set2-lineup-high-res.jpg)
+| Release overview | Full high-resolution lineup |
+| --- | --- |
+| [![Hegemony keep citizens overview](previews/hegemony-citizens-keep-services-2026-08-03/00-citizens-overview.jpg)](previews/hegemony-citizens-keep-services-2026-08-03/00-citizens-overview.jpg) | [![All eight Hegemony keep citizens](previews/hegemony-citizens-keep-services-2026-08-03/00-citizens-set2-lineup-high-res.jpg)](previews/hegemony-citizens-keep-services-2026-08-03/00-citizens-set2-lineup-high-res.jpg) |
 
-*Click the 2600×1700 lineup to inspect the full-resolution image included in this patch.*
+*Both exact-render review images are included in this patch: a 2400×960 release overview and a 2600×1700 full lineup.*
 
 [![Warpkeep Hegemony Unit Corps](previews/hegemony-unit-corps-2026-08-03/00-corps-overview.jpg)](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-unit-corps-2026-08-03)
 
@@ -139,7 +141,7 @@ Large masters do not live in normal Git history. They are published as immutable
 
 ## Asset releases
 
-- [`hegemony-citizens-keep-services-2026-08-03`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-citizens-keep-services-2026-08-03) — eight game-ready Hegemony keep citizens, including two civic orders and two exotic mounted roles, with 32 four-LOD runtime GLBs, 9 privacy-sanitized editable Blender sources, 21 PNGs, 73/73 QA checks, package manifests, nested checksums, [public provenance](provenance/hegemony-citizens-keep-services-2026-08-03.md), and a Git-tracked 2600×1700 all-asset lineup
+- [`hegemony-citizens-keep-services-2026-08-03`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-citizens-keep-services-2026-08-03) — eight game-ready Hegemony keep citizens, including two civic orders and two exotic mounted roles, with 32 four-LOD runtime GLBs, 9 privacy-sanitized editable Blender sources, 21 PNGs, 73/73 QA checks, package manifests, nested checksums, [public provenance](provenance/hegemony-citizens-keep-services-2026-08-03.md), and a Git-tracked two-image release gallery
 - [`hegemony-unit-corps-2026-08-03`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-unit-corps-2026-08-03) — twelve game-ready Hegemony infantry, ranged, and cavalry units with 48 four-LOD runtime GLBs, 15 privacy-sanitized editable Blender sources, 39 PNGs, package manifests, nested checksums and license notices, [public provenance](provenance/hegemony-unit-corps-2026-08-03.md), and a Git-tracked four-image gallery
 - [`inner-keep-3d-asset-library-2026-08-02`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/inner-keep-3d-asset-library-2026-08-02) — complete privacy-sanitized inner-keep production snapshot: 152 assets, 610 total GLBs, 74 Blender containers, 364 PNGs, checksums, [public provenance](provenance/inner-keep-3d-asset-library-2026-08-02.md), and a 12-image Git-tracked production gallery
 - [`title-stone-letters-2026-07-12`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/title-stone-letters-2026-07-12) — six source stone-letter GLBs and the optimized high/compact WARPKEEP title assemblies

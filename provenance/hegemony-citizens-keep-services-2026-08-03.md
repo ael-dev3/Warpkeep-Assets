@@ -67,10 +67,12 @@ archive build produced the same SHA-256, confirming deterministic packaging.
 The binary hierarchy is published as one deterministic GitHub Release ZIP.
 The package preserves editable sources, runtime LODs, textures, manifests,
 previews, QA, the nested checksum sidecar, and an archive-only package notice.
-The 2600×1700 all-citizen lineup, release manifest, provenance, license
-boundary, and sanitization result are tracked directly in Git. Large Blend,
-GLB, and source PNG files are intentionally excluded from normal Git history
-under this repository's archive policy.
+The 2400×960 category overview and 2600×1700 all-citizen lineup, release
+manifest, provenance, license boundary, and sanitization result are tracked
+directly in Git. Both review images composite the exact supplied citizen
+renders without generative alteration. Large Blend, GLB, and source PNG files
+are intentionally excluded from normal Git history under this repository's
+archive policy.
 
 ## License boundary
 

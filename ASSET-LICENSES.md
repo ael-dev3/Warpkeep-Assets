@@ -223,7 +223,7 @@ integration.
 - **License status:** public archival and GitHub Release distribution authorized; no separate open-license grant asserted
 
 This authorization covers publication and distribution of the named
-privacy-sanitized citizen package, its high-resolution Git-tracked lineup, and
+privacy-sanitized citizen package, its high-resolution Git-tracked gallery, and
 its archive metadata. It does not license third-party tools or services,
 third-party reference material, Warpkeep or Hegemony trademarks and canonical
 identity, or unrelated Warpkeep material by implication. Runtime designation
