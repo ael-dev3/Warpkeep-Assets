@@ -12,6 +12,40 @@ Integration notes below describe what each asset release itself authorized or
 asserted when it was published. See the [Warpkeep repository](https://github.com/ael-dev3/Warpkeep)
 for the current live runtime.
 
+[![Warpkeep Hegemony Citizens — Keep Services & Orders](previews/hegemony-citizens-keep-services-2026-08-03/00-citizens-set2-lineup-high-res.jpg)](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-citizens-keep-services-2026-08-03)
+
+## Hegemony keep citizens
+
+The 2026-08-03 citizen release adds **eight game-ready keep inhabitants** with
+clear professions, civic-order roles, and two exotic mounts. Every citizen
+ships with four mobile-first LODs, close-LOD rigging, editable Blender source,
+runtime manifests, portraits, map previews, and package checksums. The
+supplied QA report records **73/73 checks passed**.
+
+| Keep role | Type | Distinctive read |
+| --- | --- | --- |
+| Ember Lamplighter | Civilian | Tall lantern pole and ember workwear |
+| Cistern Warden | Civilian | Broad water carrier with bucket yoke |
+| Chirurgeon-Apothecary | Civilian | Herb frame and practical apron |
+| Bell Herald | Civilian | Lean town messenger with handbell |
+| Ward Peacekeeper | Civic order | Baton, close-LOD crest shield, and dark armor |
+| Basilica Warden | Church order | Mitre, formal robes, and crozier |
+| Emberfoot Courier | Mounted civilian | Dispatch rider on a giant jackrabbit |
+| Shellback Shrine Tender | Mounted civilian | Shrine keeper on a giant tortoise |
+
+The package contains **32 runtime GLBs**, **9 editable Blender sources**, four
+LODs per citizen, Idle/Walk/Work/Greet actions, and 21- or 29-joint rigs for
+walking and mounted roles. The official Hegemony crest is deliberately limited
+to the Ward Peacekeeper shield at close LODs for visual clarity.
+
+**[Download the Hegemony keep citizens](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-citizens-keep-services-2026-08-03)** · [manifest](releases/hegemony-citizens-keep-services-2026-08-03/manifest.json) · [provenance](provenance/hegemony-citizens-keep-services-2026-08-03.md) · [sanitization audit](reports/hegemony-citizens-keep-services-2026-08-03/public-sanitization.json)
+
+### Citizen gallery
+
+[![All eight Hegemony keep citizens](previews/hegemony-citizens-keep-services-2026-08-03/00-citizens-set2-lineup-high-res.jpg)](previews/hegemony-citizens-keep-services-2026-08-03/00-citizens-set2-lineup-high-res.jpg)
+
+*Click the 2600×1700 lineup to inspect the full-resolution image included in this patch.*
+
 [![Warpkeep Hegemony Unit Corps](previews/hegemony-unit-corps-2026-08-03/00-corps-overview.jpg)](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-unit-corps-2026-08-03)
 
 ## Hegemony unit corps
@@ -105,6 +139,7 @@ Large masters do not live in normal Git history. They are published as immutable
 
 ## Asset releases
 
+- [`hegemony-citizens-keep-services-2026-08-03`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-citizens-keep-services-2026-08-03) — eight game-ready Hegemony keep citizens, including two civic orders and two exotic mounted roles, with 32 four-LOD runtime GLBs, 9 privacy-sanitized editable Blender sources, 21 PNGs, 73/73 QA checks, package manifests, nested checksums, [public provenance](provenance/hegemony-citizens-keep-services-2026-08-03.md), and a Git-tracked 2600×1700 all-asset lineup
 - [`hegemony-unit-corps-2026-08-03`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-unit-corps-2026-08-03) — twelve game-ready Hegemony infantry, ranged, and cavalry units with 48 four-LOD runtime GLBs, 15 privacy-sanitized editable Blender sources, 39 PNGs, package manifests, nested checksums and license notices, [public provenance](provenance/hegemony-unit-corps-2026-08-03.md), and a Git-tracked four-image gallery
 - [`inner-keep-3d-asset-library-2026-08-02`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/inner-keep-3d-asset-library-2026-08-02) — complete privacy-sanitized inner-keep production snapshot: 152 assets, 610 total GLBs, 74 Blender containers, 364 PNGs, checksums, [public provenance](provenance/inner-keep-3d-asset-library-2026-08-02.md), and a 12-image Git-tracked production gallery
 - [`title-stone-letters-2026-07-12`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/title-stone-letters-2026-07-12) — six source stone-letter GLBs and the optimized high/compact WARPKEEP title assemblies

@@ -1,0 +1,104 @@
+{
+  "attachments": [
+    {
+      "bytes": 24825077,
+      "entryCount": 75,
+      "mediaType": "application/zip",
+      "name": "warpkeep-hegemony-citizens-keep-services-game-ready-2026-08-03-v1.zip",
+      "packageRoot": "Warpkeep_HegemonyCitizens_Set2_GameReady",
+      "sha256": "14a8bda3848ede5b398a7fc4ec10e56d98ae06584c42f4683cb2635c5bbb6aeb",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-citizens-keep-services-2026-08-03/warpkeep-hegemony-citizens-keep-services-game-ready-2026-08-03-v1.zip"
+    }
+  ],
+  "authorization": "Ael explicitly authorized public archival and release upload of the complete keep-citizens package.",
+  "gallery": {
+    "directory": "previews/hegemony-citizens-keep-services-2026-08-03",
+    "images": 1
+  },
+  "packages": [
+    {
+      "bytes": 27948507,
+      "category": "Units/Citizens/KeepServices",
+      "citizens": 8,
+      "clips": [
+        "Idle",
+        "Walk",
+        "Work",
+        "Greet"
+      ],
+      "editableBlends": 9,
+      "files": 75,
+      "jointCounts": [
+        21,
+        29
+      ],
+      "lodsPerCitizen": 4,
+      "mountedCitizens": 2,
+      "package": "Warpkeep_HegemonyCitizens_Set2_GameReady",
+      "packageChecksums": 74,
+      "pngs": 21,
+      "productionGLBs": 32,
+      "qaChecksPassed": 73,
+      "qaChecksTotal": 73,
+      "riggedLods": [
+        "LOD0_High",
+        "LOD1_Balanced"
+      ],
+      "roles": [
+        "EmberLamplighter",
+        "CisternWarden",
+        "ChirurgeonApothecary",
+        "BellHerald",
+        "WardPeacekeeper",
+        "BasilicaWarden",
+        "EmberfootCourier",
+        "ShellbackShrineTender"
+      ],
+      "staticLods": [
+        "LOD2_Compact",
+        "LOD3_Map"
+      ],
+      "title": "Hegemony Citizens Set 2 \u2014 Keep Services & Orders",
+      "triangleTotals": {
+        "LOD0_High": 24506,
+        "LOD1_Balanced": 15594,
+        "LOD2_Compact": 9164,
+        "LOD3_Map": 5756
+      },
+      "unitNames": [
+        "Hegemony Ember Lamplighter",
+        "Hegemony Cistern Warden",
+        "Hegemony Chirurgeon-Apothecary",
+        "Hegemony Bell Herald",
+        "Hegemony Ward Peacekeeper",
+        "Hegemony Basilica Warden",
+        "Hegemony Emberfoot Courier",
+        "Hegemony Shellback Shrine Tender"
+      ],
+      "version": "1.0.0",
+      "walkingCitizens": 6
+    }
+  ],
+  "publicInventory": {
+    "bytes": 27948507,
+    "files": 75,
+    "packages": 1
+  },
+  "sanitization": {
+    "blendSemanticFingerprintsPreserved": true,
+    "blenderFilesReopened": 9,
+    "credentialsFound": false,
+    "localPathsRemoved": true,
+    "report": "reports/hegemony-citizens-keep-services-2026-08-03/public-sanitization.json",
+    "runtimeGLBsByteExact": true
+  },
+  "schemaVersion": 1,
+  "snapshotDate": "2026-08-03",
+  "source": "Ael-directed Warpkeep Hegemony keep-services and civic-orders production package",
+  "sourceInventory": {
+    "bytes": 28919060,
+    "files": 74,
+    "packages": 1
+  },
+  "tag": "hegemony-citizens-keep-services-2026-08-03"
+}

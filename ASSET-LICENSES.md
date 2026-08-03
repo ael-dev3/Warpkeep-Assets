@@ -212,3 +212,20 @@ third-party reference material, Warpkeep or Hegemony trademarks and canonical
 identity, or unrelated Warpkeep material by implication. Runtime designation
 and repository presence do not by themselves assert current live-game
 integration.
+
+## Warpkeep Hegemony Citizens — Keep Services & Orders
+
+- **Set:** eight Hegemony keep citizens; 32 four-LOD runtime GLBs; 9 editable Blender sources; official crest textures; individual and lineup previews; manifests; QA; and checksums
+- **Release:** `hegemony-citizens-keep-services-2026-08-03`
+- **Snapshot date:** 2026-08-03
+- **Deposit authority:** Ael explicitly authorized publishing the complete citizen package to Warpkeep-Assets.
+- **Creation disclosure:** the assets were substantially authored, prepared, or refined with Codex under Ael's direction and review; supplied comparison sheets informed broad profession and silhouette study only and are not part of the release
+- **License status:** public archival and GitHub Release distribution authorized; no separate open-license grant asserted
+
+This authorization covers publication and distribution of the named
+privacy-sanitized citizen package, its high-resolution Git-tracked lineup, and
+its archive metadata. It does not license third-party tools or services,
+third-party reference material, Warpkeep or Hegemony trademarks and canonical
+identity, or unrelated Warpkeep material by implication. Runtime designation
+and repository presence do not by themselves assert current live-game
+integration.

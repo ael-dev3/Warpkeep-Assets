@@ -1,0 +1,626 @@
+{
+  "archive": {
+    "bytes": 24825077,
+    "compression": "DEFLATE level 9",
+    "entries": 75,
+    "entryMode": "0644",
+    "fixedTimestamp": "2026-08-03T12:00:00",
+    "name": "warpkeep-hegemony-citizens-keep-services-game-ready-2026-08-03-v1.zip",
+    "path": "artifacts/warpkeep-hegemony-citizens-keep-services-game-ready-2026-08-03-v1.zip",
+    "sha256": "14a8bda3848ede5b398a7fc4ec10e56d98ae06584c42f4683cb2635c5bbb6aeb"
+  },
+  "authorization": {
+    "archiveOnlyNotice": "Warpkeep_HegemonyCitizens_Set2_GameReady/PACKAGE-NOTICE.md",
+    "creationDisclosure": "Substantially authored, prepared, or refined with Codex under Ael's direction and review.",
+    "license": "Public archive authorized; no separate open-license grant is asserted.",
+    "publicArchive": "Authorized by Ael for this named asset package.",
+    "runtimeIntegration": "No current live-game integration or deployment is asserted."
+  },
+  "blendAudits": [
+    {
+      "auditTool": "inspect_blend_paths.py",
+      "path": "Source/Warpkeep_HegemonyCitizens_Set2_Lineup_Editable.blend",
+      "publicInspection": {
+        "file": "Warpkeep_HegemonyCitizens_Set2_Lineup_Editable.blend",
+        "fonts": [],
+        "images": [
+          {
+            "filepath": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "filepath_raw": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "name": "Hegemony_Banner_Logo_Runtime_256.png",
+            "packed": true,
+            "source": "FILE"
+          },
+          {
+            "filepath": "",
+            "filepath_raw": "",
+            "name": "Render Result",
+            "packed": false,
+            "source": "VIEWER"
+          }
+        ],
+        "libraries": [],
+        "movieclips": [],
+        "private_rna_strings": [],
+        "sounds": [],
+        "texts": [
+          {
+            "filepath": "",
+            "name": "WK_HegemonyCitizens_Set2_README"
+          }
+        ]
+      },
+      "publicSha256": "c0924ba4da5f2d60b537092001968e1fc282d4f10954966fd8b24dbf25a6b57c",
+      "reopenedInBlender": true,
+      "semanticFingerprintPreserved": true,
+      "semanticFingerprintSha256": "795cb3d4245cf3224c7603b988ec75563d4501eb49e23f42ddb01cf19cdb2e3f",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceInspection": {
+        "file": "Warpkeep_HegemonyCitizens_Set2_Lineup_Editable.blend",
+        "fonts": [],
+        "images": [
+          {
+            "filepath": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "filepath_raw": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "name": "Hegemony_Banner_Logo_Runtime_256.png",
+            "packed": true,
+            "source": "FILE"
+          },
+          {
+            "filepath": "",
+            "filepath_raw": "",
+            "name": "Render Result",
+            "packed": false,
+            "source": "VIEWER"
+          }
+        ],
+        "libraries": [],
+        "movieclips": [],
+        "private_rna_strings": [],
+        "sounds": [],
+        "texts": [
+          {
+            "filepath": "",
+            "name": "WK_HegemonyCitizens_Set2_README"
+          }
+        ]
+      },
+      "sourceSha256": "4dcca08e90d3b4f186b71081541ac0fe1fb5ab5bad7fa53f432199211c446514"
+    },
+    {
+      "auditTool": "inspect_blend_paths.py",
+      "path": "Source/Warpkeep_Hegemony_BasilicaWarden_Editable.blend",
+      "publicInspection": {
+        "file": "Warpkeep_Hegemony_BasilicaWarden_Editable.blend",
+        "fonts": [],
+        "images": [
+          {
+            "filepath": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "filepath_raw": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "name": "Hegemony_Banner_Logo_Runtime_256.png",
+            "packed": true,
+            "source": "FILE"
+          },
+          {
+            "filepath": "",
+            "filepath_raw": "",
+            "name": "Render Result",
+            "packed": false,
+            "source": "VIEWER"
+          }
+        ],
+        "libraries": [],
+        "movieclips": [],
+        "private_rna_strings": [],
+        "sounds": [],
+        "texts": []
+      },
+      "publicSha256": "caad8012afa693232009924b1018f1f0a45271eee9c68263e49a4089b9050160",
+      "reopenedInBlender": true,
+      "semanticFingerprintPreserved": true,
+      "semanticFingerprintSha256": "edad9d7fb68fe0e6def1e2b8755338047af599b0a0978810bf9e45419a017da0",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceInspection": {
+        "file": "Warpkeep_Hegemony_BasilicaWarden_Editable.blend",
+        "fonts": [],
+        "images": [
+          {
+            "filepath": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "filepath_raw": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "name": "Hegemony_Banner_Logo_Runtime_256.png",
+            "packed": true,
+            "source": "FILE"
+          },
+          {
+            "filepath": "",
+            "filepath_raw": "",
+            "name": "Render Result",
+            "packed": false,
+            "source": "VIEWER"
+          }
+        ],
+        "libraries": [],
+        "movieclips": [],
+        "private_rna_strings": [],
+        "sounds": [],
+        "texts": []
+      },
+      "sourceSha256": "fe4f1dc523bb56eb2a6ab67e1e85fea543a4a6b3a19b961787c25d3b6750e02c"
+    },
+    {
+      "auditTool": "inspect_blend_paths.py",
+      "path": "Source/Warpkeep_Hegemony_BellHerald_Editable.blend",
+      "publicInspection": {
+        "file": "Warpkeep_Hegemony_BellHerald_Editable.blend",
+        "fonts": [],
+        "images": [
+          {
+            "filepath": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "filepath_raw": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "name": "Hegemony_Banner_Logo_Runtime_256.png",
+            "packed": true,
+            "source": "FILE"
+          },
+          {
+            "filepath": "",
+            "filepath_raw": "",
+            "name": "Render Result",
+            "packed": false,
+            "source": "VIEWER"
+          }
+        ],
+        "libraries": [],
+        "movieclips": [],
+        "private_rna_strings": [],
+        "sounds": [],
+        "texts": []
+      },
+      "publicSha256": "501f380c200a250e57ae314475af7259d7249c1d87d6e30f1c0c96e8f89d7bf8",
+      "reopenedInBlender": true,
+      "semanticFingerprintPreserved": true,
+      "semanticFingerprintSha256": "7fb20b1d8babf1b6d871d7fe6332b5228b3977dc5a12956f5e48f4777dbbb6d8",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceInspection": {
+        "file": "Warpkeep_Hegemony_BellHerald_Editable.blend",
+        "fonts": [],
+        "images": [
+          {
+            "filepath": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "filepath_raw": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "name": "Hegemony_Banner_Logo_Runtime_256.png",
+            "packed": true,
+            "source": "FILE"
+          },
+          {
+            "filepath": "",
+            "filepath_raw": "",
+            "name": "Render Result",
+            "packed": false,
+            "source": "VIEWER"
+          }
+        ],
+        "libraries": [],
+        "movieclips": [],
+        "private_rna_strings": [],
+        "sounds": [],
+        "texts": []
+      },
+      "sourceSha256": "acfc5c20deafaa25b2ad642cdad116252a1929424801f83a1439ae507388ccdc"
+    },
+    {
+      "auditTool": "inspect_blend_paths.py",
+      "path": "Source/Warpkeep_Hegemony_ChirurgeonApothecary_Editable.blend",
+      "publicInspection": {
+        "file": "Warpkeep_Hegemony_ChirurgeonApothecary_Editable.blend",
+        "fonts": [],
+        "images": [
+          {
+            "filepath": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "filepath_raw": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "name": "Hegemony_Banner_Logo_Runtime_256.png",
+            "packed": true,
+            "source": "FILE"
+          },
+          {
+            "filepath": "",
+            "filepath_raw": "",
+            "name": "Render Result",
+            "packed": false,
+            "source": "VIEWER"
+          }
+        ],
+        "libraries": [],
+        "movieclips": [],
+        "private_rna_strings": [],
+        "sounds": [],
+        "texts": []
+      },
+      "publicSha256": "99c5f9284832b29e00680fd7bbb1a826b157051b6cf916ff824398ef7d8a1364",
+      "reopenedInBlender": true,
+      "semanticFingerprintPreserved": true,
+      "semanticFingerprintSha256": "ead598cc6f39208fd5147bf3abe1530546b4f1c4629a8a27efa4f0f1d985b773",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceInspection": {
+        "file": "Warpkeep_Hegemony_ChirurgeonApothecary_Editable.blend",
+        "fonts": [],
+        "images": [
+          {
+            "filepath": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "filepath_raw": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "name": "Hegemony_Banner_Logo_Runtime_256.png",
+            "packed": true,
+            "source": "FILE"
+          },
+          {
+            "filepath": "",
+            "filepath_raw": "",
+            "name": "Render Result",
+            "packed": false,
+            "source": "VIEWER"
+          }
+        ],
+        "libraries": [],
+        "movieclips": [],
+        "private_rna_strings": [],
+        "sounds": [],
+        "texts": []
+      },
+      "sourceSha256": "b43377ff035b2191b2a6365c76c93507eda35c9c401d6a8e338463118c3e9567"
+    },
+    {
+      "auditTool": "inspect_blend_paths.py",
+      "path": "Source/Warpkeep_Hegemony_CisternWarden_Editable.blend",
+      "publicInspection": {
+        "file": "Warpkeep_Hegemony_CisternWarden_Editable.blend",
+        "fonts": [],
+        "images": [
+          {
+            "filepath": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "filepath_raw": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "name": "Hegemony_Banner_Logo_Runtime_256.png",
+            "packed": true,
+            "source": "FILE"
+          },
+          {
+            "filepath": "",
+            "filepath_raw": "",
+            "name": "Render Result",
+            "packed": false,
+            "source": "VIEWER"
+          }
+        ],
+        "libraries": [],
+        "movieclips": [],
+        "private_rna_strings": [],
+        "sounds": [],
+        "texts": []
+      },
+      "publicSha256": "599684ce16ef1861267c8e366df2170274f4008cd536906f8283dbb01cd3262e",
+      "reopenedInBlender": true,
+      "semanticFingerprintPreserved": true,
+      "semanticFingerprintSha256": "e6e9f61e472843049545b5af41af0f9a905c970191c116038a8390ea05751c94",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceInspection": {
+        "file": "Warpkeep_Hegemony_CisternWarden_Editable.blend",
+        "fonts": [],
+        "images": [
+          {
+            "filepath": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "filepath_raw": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "name": "Hegemony_Banner_Logo_Runtime_256.png",
+            "packed": true,
+            "source": "FILE"
+          },
+          {
+            "filepath": "",
+            "filepath_raw": "",
+            "name": "Render Result",
+            "packed": false,
+            "source": "VIEWER"
+          }
+        ],
+        "libraries": [],
+        "movieclips": [],
+        "private_rna_strings": [],
+        "sounds": [],
+        "texts": []
+      },
+      "sourceSha256": "0d94eabbf4216100201fd45c0a9696fc03d35fb84e92abbf77786f133d40a4b5"
+    },
+    {
+      "auditTool": "inspect_blend_paths.py",
+      "path": "Source/Warpkeep_Hegemony_EmberLamplighter_Editable.blend",
+      "publicInspection": {
+        "file": "Warpkeep_Hegemony_EmberLamplighter_Editable.blend",
+        "fonts": [],
+        "images": [
+          {
+            "filepath": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "filepath_raw": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "name": "Hegemony_Banner_Logo_Runtime_256.png",
+            "packed": true,
+            "source": "FILE"
+          },
+          {
+            "filepath": "",
+            "filepath_raw": "",
+            "name": "Render Result",
+            "packed": false,
+            "source": "VIEWER"
+          }
+        ],
+        "libraries": [],
+        "movieclips": [],
+        "private_rna_strings": [],
+        "sounds": [],
+        "texts": []
+      },
+      "publicSha256": "7d7de13a00ac0a09132e2ef94d92f28211951cba04a8c07ea245d3eb01adf2c9",
+      "reopenedInBlender": true,
+      "semanticFingerprintPreserved": true,
+      "semanticFingerprintSha256": "125893095476824c1bea3f439f9c2365046715a4b57b33ded4e85e29a972b2f2",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceInspection": {
+        "file": "Warpkeep_Hegemony_EmberLamplighter_Editable.blend",
+        "fonts": [],
+        "images": [
+          {
+            "filepath": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "filepath_raw": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "name": "Hegemony_Banner_Logo_Runtime_256.png",
+            "packed": true,
+            "source": "FILE"
+          },
+          {
+            "filepath": "",
+            "filepath_raw": "",
+            "name": "Render Result",
+            "packed": false,
+            "source": "VIEWER"
+          }
+        ],
+        "libraries": [],
+        "movieclips": [],
+        "private_rna_strings": [],
+        "sounds": [],
+        "texts": []
+      },
+      "sourceSha256": "24f3080dc3b1c9303c7a8c6edc2e7941470cca26d6de1169ef88d4c45abe1651"
+    },
+    {
+      "auditTool": "inspect_blend_paths.py",
+      "path": "Source/Warpkeep_Hegemony_EmberfootCourier_Editable.blend",
+      "publicInspection": {
+        "file": "Warpkeep_Hegemony_EmberfootCourier_Editable.blend",
+        "fonts": [],
+        "images": [
+          {
+            "filepath": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "filepath_raw": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "name": "Hegemony_Banner_Logo_Runtime_256.png",
+            "packed": true,
+            "source": "FILE"
+          },
+          {
+            "filepath": "",
+            "filepath_raw": "",
+            "name": "Render Result",
+            "packed": false,
+            "source": "VIEWER"
+          }
+        ],
+        "libraries": [],
+        "movieclips": [],
+        "private_rna_strings": [],
+        "sounds": [],
+        "texts": []
+      },
+      "publicSha256": "f0de7f395ea1157638d09f3d78c779c2992b5392d7f0947b78eb2470c4b164e0",
+      "reopenedInBlender": true,
+      "semanticFingerprintPreserved": true,
+      "semanticFingerprintSha256": "751b95a558d207c50714b8ea418c8b61a70c32c40873140c251ba2ac61911ccc",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceInspection": {
+        "file": "Warpkeep_Hegemony_EmberfootCourier_Editable.blend",
+        "fonts": [],
+        "images": [
+          {
+            "filepath": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "filepath_raw": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "name": "Hegemony_Banner_Logo_Runtime_256.png",
+            "packed": true,
+            "source": "FILE"
+          },
+          {
+            "filepath": "",
+            "filepath_raw": "",
+            "name": "Render Result",
+            "packed": false,
+            "source": "VIEWER"
+          }
+        ],
+        "libraries": [],
+        "movieclips": [],
+        "private_rna_strings": [],
+        "sounds": [],
+        "texts": []
+      },
+      "sourceSha256": "626b373fa1a55cd3a2e15389d02a56e54ed2fc6ec7ca6019c19d6589e36b33dc"
+    },
+    {
+      "auditTool": "inspect_blend_paths.py",
+      "path": "Source/Warpkeep_Hegemony_ShellbackShrineTender_Editable.blend",
+      "publicInspection": {
+        "file": "Warpkeep_Hegemony_ShellbackShrineTender_Editable.blend",
+        "fonts": [],
+        "images": [
+          {
+            "filepath": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "filepath_raw": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "name": "Hegemony_Banner_Logo_Runtime_256.png",
+            "packed": true,
+            "source": "FILE"
+          },
+          {
+            "filepath": "",
+            "filepath_raw": "",
+            "name": "Render Result",
+            "packed": false,
+            "source": "VIEWER"
+          }
+        ],
+        "libraries": [],
+        "movieclips": [],
+        "private_rna_strings": [],
+        "sounds": [],
+        "texts": []
+      },
+      "publicSha256": "0bb664670530df893bfdc4608860fd95eeb27defd0cc7f4b9026d11d27389ab2",
+      "reopenedInBlender": true,
+      "semanticFingerprintPreserved": true,
+      "semanticFingerprintSha256": "a48949d6afaf0458fed39278f97f4f83c7fc0a9024e4d9c6b7cbbe6690671014",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceInspection": {
+        "file": "Warpkeep_Hegemony_ShellbackShrineTender_Editable.blend",
+        "fonts": [],
+        "images": [
+          {
+            "filepath": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "filepath_raw": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "name": "Hegemony_Banner_Logo_Runtime_256.png",
+            "packed": true,
+            "source": "FILE"
+          },
+          {
+            "filepath": "",
+            "filepath_raw": "",
+            "name": "Render Result",
+            "packed": false,
+            "source": "VIEWER"
+          }
+        ],
+        "libraries": [],
+        "movieclips": [],
+        "private_rna_strings": [],
+        "sounds": [],
+        "texts": []
+      },
+      "sourceSha256": "3086e663e2a1230b7f7fb8e863e2bf92aee086e03b2d72027cf9f816997fca23"
+    },
+    {
+      "auditTool": "inspect_blend_paths.py",
+      "path": "Source/Warpkeep_Hegemony_WardPeacekeeper_Editable.blend",
+      "publicInspection": {
+        "file": "Warpkeep_Hegemony_WardPeacekeeper_Editable.blend",
+        "fonts": [],
+        "images": [
+          {
+            "filepath": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "filepath_raw": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "name": "Hegemony_Banner_Logo_Runtime_256.png",
+            "packed": true,
+            "source": "FILE"
+          },
+          {
+            "filepath": "",
+            "filepath_raw": "",
+            "name": "Render Result",
+            "packed": false,
+            "source": "VIEWER"
+          }
+        ],
+        "libraries": [],
+        "movieclips": [],
+        "private_rna_strings": [],
+        "sounds": [],
+        "texts": []
+      },
+      "publicSha256": "cde732078e55a33b529bfe51e0d32b869ad55bc474bccf03a65f2e75612f6fe7",
+      "reopenedInBlender": true,
+      "semanticFingerprintPreserved": true,
+      "semanticFingerprintSha256": "32e508770be525551016b25bb4f90fc034ed9172894ab94729673e927ae0b763",
+      "serializedPathFragmentsNeutralized": 2,
+      "sourceInspection": {
+        "file": "Warpkeep_Hegemony_WardPeacekeeper_Editable.blend",
+        "fonts": [],
+        "images": [
+          {
+            "filepath": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "filepath_raw": "//../Textures/Hegemony_Banner_Logo_Runtime_256.png",
+            "name": "Hegemony_Banner_Logo_Runtime_256.png",
+            "packed": true,
+            "source": "FILE"
+          },
+          {
+            "filepath": "",
+            "filepath_raw": "",
+            "name": "Render Result",
+            "packed": false,
+            "source": "VIEWER"
+          }
+        ],
+        "libraries": [],
+        "movieclips": [],
+        "private_rna_strings": [],
+        "sounds": [],
+        "texts": []
+      },
+      "sourceSha256": "aa7f1499e1d4deadb39ca6453cc5890747bec6b191d04d0fec4bd5caf619e46a"
+    }
+  ],
+  "blendSemanticFingerprintsPreserved": true,
+  "blenderFilesReopened": 9,
+  "designation": "Hegemony Citizens Set 2 \u2014 Keep Services & Orders",
+  "filesystemNormalization": {
+    "directoryMode": "0755",
+    "fileMode": "0644",
+    "normalizedDirectories": 19,
+    "normalizedFiles": 75,
+    "removedExtendedAttributes": 94
+  },
+  "inventory": {
+    "blend": 9,
+    "bytes": 27948507,
+    "credentialHits": [],
+    "files": 75,
+    "glb": 32,
+    "json": 10,
+    "markdown": 2,
+    "osMetadata": [],
+    "png": 21,
+    "privatePathHits": [],
+    "text": 1,
+    "unsafePaths": []
+  },
+  "passed": true,
+  "refreshedChecksumEntries": 74,
+  "repositoryModified": false,
+  "runtimeGLBsByteExact": true,
+  "schema": "warpkeep.public-asset-sanitization.v1",
+  "snapshotDate": "2026-08-03",
+  "sourcePackage": "Warpkeep_HegemonyCitizens_Set2_GameReady",
+  "stagingRoot": "staging/Warpkeep_HegemonyCitizens_Set2_GameReady",
+  "verification": {
+    "allGLBsValidGltf2NoExternalUris": true,
+    "allJSONParsed": true,
+    "allNineBlendsAuditedWithInspectBlendPaths": true,
+    "allPNGsDecoded": true,
+    "archiveExtendedAttributesEmbedded": false,
+    "deterministicRebuildSha256Matched": true,
+    "deterministicZipMetadataVerified": true,
+    "expectedCounts": {
+      "blend": 9,
+      "glb": 32,
+      "json": 10,
+      "png": 21
+    },
+    "nestedChecksumsPassed": true,
+    "noCredentials": true,
+    "noExecutables": true,
+    "noOSMetadata": true,
+    "noPrivateLocalPaths": true,
+    "noSymlinks": true,
+    "noUnsafePaths": true
+  },
+  "verifiedChecksumEntries": 74
+}

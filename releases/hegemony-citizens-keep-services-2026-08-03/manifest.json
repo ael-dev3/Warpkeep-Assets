@@ -1,0 +1,688 @@
+{
+  "attachments": [
+    {
+      "bytes": 24825077,
+      "entries": [
+        {
+          "bytes": 648,
+          "compressedBytes": 380,
+          "mediaType": "text/markdown",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/PACKAGE-NOTICE.md",
+          "sha256": "00a2b019c93a835c4d205ba7e48a6231b4570e6fbe5eb0b6f01696056cbafbb0"
+        },
+        {
+          "bytes": 772531,
+          "compressedBytes": 768524,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Individual/Warpkeep_Hegemony_BasilicaWarden_Transparent_1200.png",
+          "sha256": "5a39f8b32a5de2e9dff8ccc4755737fd69a095785e683a28b9dc163dd0991756"
+        },
+        {
+          "bytes": 709222,
+          "compressedBytes": 704677,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Individual/Warpkeep_Hegemony_BellHerald_Transparent_1200.png",
+          "sha256": "4ef213138e15826e8653f605d36de4bcfbfdfd3ed29a89346b1514cdcb757f19"
+        },
+        {
+          "bytes": 724893,
+          "compressedBytes": 720042,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Individual/Warpkeep_Hegemony_ChirurgeonApothecary_Transparent_1200.png",
+          "sha256": "53906ffe4d9f1945d6f72ed782c7aa3577dffaa2cd7eba383b05d79172b7cf24"
+        },
+        {
+          "bytes": 785216,
+          "compressedBytes": 781461,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Individual/Warpkeep_Hegemony_CisternWarden_Transparent_1200.png",
+          "sha256": "7d191754af45441d75c7b59628fb204a5b546479aa37193d6f4d7015989f42bd"
+        },
+        {
+          "bytes": 740167,
+          "compressedBytes": 735554,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Individual/Warpkeep_Hegemony_EmberLamplighter_Transparent_1200.png",
+          "sha256": "d985f72bbf5e89b2de0e16961599100132c4ca5936cab4c2c674350ccb1a3fde"
+        },
+        {
+          "bytes": 669018,
+          "compressedBytes": 664137,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Individual/Warpkeep_Hegemony_EmberfootCourier_Transparent_1200.png",
+          "sha256": "db381604b953163b3619debdde4e27db6560f0671249e31beadcfb5e41ba41eb"
+        },
+        {
+          "bytes": 767511,
+          "compressedBytes": 763526,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Individual/Warpkeep_Hegemony_ShellbackShrineTender_Transparent_1200.png",
+          "sha256": "63e4a9c74eda14fd6b0c30aa3beda8fad374e4862193b3c9875d6ae6ffd6f065"
+        },
+        {
+          "bytes": 761297,
+          "compressedBytes": 757098,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Individual/Warpkeep_Hegemony_WardPeacekeeper_Transparent_1200.png",
+          "sha256": "3ade328fb7f0a03ae05da41e6084be0c137f1bf6262379efb34af67c5c67d6cf"
+        },
+        {
+          "bytes": 45512,
+          "compressedBytes": 45407,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Mobile/Warpkeep_Hegemony_BasilicaWarden_Map_256.png",
+          "sha256": "f98cae2443969ae463cfdb255a25cc72199a60a03c7aa821a4e0d1c313d0f1b3"
+        },
+        {
+          "bytes": 43422,
+          "compressedBytes": 43337,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Mobile/Warpkeep_Hegemony_BellHerald_Map_256.png",
+          "sha256": "18d5590adff2cbdc1ea8147bf7dc6feacf4912ced73394f0b1cc38f5fc77ae41"
+        },
+        {
+          "bytes": 41968,
+          "compressedBytes": 41869,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Mobile/Warpkeep_Hegemony_ChirurgeonApothecary_Map_256.png",
+          "sha256": "17ef287fc8b6eda42549f52b829b454433130147d3357f19c5551e2b4311e4d7"
+        },
+        {
+          "bytes": 48967,
+          "compressedBytes": 48855,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Mobile/Warpkeep_Hegemony_CisternWarden_Map_256.png",
+          "sha256": "605b97373cbbe9f5fbf66c3c6d270c6bbb962f78f87d94428bd4300d9735255d"
+        },
+        {
+          "bytes": 45079,
+          "compressedBytes": 44992,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Mobile/Warpkeep_Hegemony_EmberLamplighter_Map_256.png",
+          "sha256": "86f4c850ce3ddec1fbca7c6169491cd8e628bab758efc949363dee2fb39a58a8"
+        },
+        {
+          "bytes": 41679,
+          "compressedBytes": 41609,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Mobile/Warpkeep_Hegemony_EmberfootCourier_Map_256.png",
+          "sha256": "0c4c2709f093b54b68bb8dd9823d26b1b6261c767d52126094806644a5e8b115"
+        },
+        {
+          "bytes": 48742,
+          "compressedBytes": 48688,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Mobile/Warpkeep_Hegemony_ShellbackShrineTender_Map_256.png",
+          "sha256": "3a5fffc12e75c09f0629807650e524c655736ad0888dbcacc6b674a752079b7a"
+        },
+        {
+          "bytes": 44360,
+          "compressedBytes": 44289,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Mobile/Warpkeep_Hegemony_WardPeacekeeper_Map_256.png",
+          "sha256": "b6bcc2400f4936f9b24d00646e52e11f3ada0f36a8e1cec8de870305db844148"
+        },
+        {
+          "bytes": 5046112,
+          "compressedBytes": 5046311,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Warpkeep_HegemonyCitizens_Set2_Lineup.png",
+          "sha256": "05f0fee2dfc6b82b90b78038b975dd3401814469f978807224032e393228fa45"
+        },
+        {
+          "bytes": 2446091,
+          "compressedBytes": 2430342,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Warpkeep_HegemonyCitizens_Set2_Lineup_Transparent.png",
+          "sha256": "43d7972c370492c0eea755e1824d98896fe99edc5f3604dd2cb67f1459d36651"
+        },
+        {
+          "bytes": 8077,
+          "compressedBytes": 1083,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/QA/Warpkeep_HegemonyCitizens_Set2_RuntimeQA.json",
+          "sha256": "55af56d36b82df8abf020cd81c7b0c6f7918a3a836c814aabf9f7225c35d757d"
+        },
+        {
+          "bytes": 2034,
+          "compressedBytes": 1165,
+          "mediaType": "text/markdown",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/README.md",
+          "sha256": "b2132e6be5312c4fc3fd87a1e48f4c738454ab63d539af715304eda853eae80e"
+        },
+        {
+          "bytes": 172164,
+          "compressedBytes": 43065,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/BasilicaWarden/Warpkeep_Hegemony_BasilicaWarden_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "cdac73a672c5d4f0085ff77bd6010c1ffb570394f6ad245284923383d3d7c8cd"
+        },
+        {
+          "bytes": 137068,
+          "compressedBytes": 33806,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/BasilicaWarden/Warpkeep_Hegemony_BasilicaWarden_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "797df2ac1595c1caf02178660944276773fe06e4314b1564d7b070aba9ac5502"
+        },
+        {
+          "bytes": 46684,
+          "compressedBytes": 13627,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/BasilicaWarden/Warpkeep_Hegemony_BasilicaWarden_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "901fcf144078ea310c11f9c6491ac455a112d3c8d02aebd1f5f9574b306a5a62"
+        },
+        {
+          "bytes": 32556,
+          "compressedBytes": 9668,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/BasilicaWarden/Warpkeep_Hegemony_BasilicaWarden_LOD3_Map_Static_Runtime.glb",
+          "sha256": "f461c28b3f7e9d764d20c4af73722ba64468684faa68e73e08817295455011d4"
+        },
+        {
+          "bytes": 6564,
+          "compressedBytes": 2066,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/BasilicaWarden/runtime-manifest.json",
+          "sha256": "c524bf7df16cfc3d67b79fad48a4de13a628884786555b251cd690976860338a"
+        },
+        {
+          "bytes": 175384,
+          "compressedBytes": 44601,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/BellHerald/Warpkeep_Hegemony_BellHerald_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "be46b744542c736f14f320049764cd23e360343462a252a4d0e2e88153c4e7e4"
+        },
+        {
+          "bytes": 139012,
+          "compressedBytes": 35235,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/BellHerald/Warpkeep_Hegemony_BellHerald_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "9db372f360e5567474612c3c57564a34ac98dbe5f062e1fb3529c3787118d94f"
+        },
+        {
+          "bytes": 47484,
+          "compressedBytes": 13905,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/BellHerald/Warpkeep_Hegemony_BellHerald_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "8906c8b6513dbe24cca09a1e8653af425fbee22eb3591910b5f4ff937026a88b"
+        },
+        {
+          "bytes": 34040,
+          "compressedBytes": 10137,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/BellHerald/Warpkeep_Hegemony_BellHerald_LOD3_Map_Static_Runtime.glb",
+          "sha256": "6afc6cf548ab25951ec2c2b39489db2736527f6c3d61ab10457801cbbbbb7e04"
+        },
+        {
+          "bytes": 6489,
+          "compressedBytes": 2038,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/BellHerald/runtime-manifest.json",
+          "sha256": "84d49853485092e89db7c0c3dcab25a67d542def523e39299b66046e08488f8d"
+        },
+        {
+          "bytes": 206988,
+          "compressedBytes": 50700,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/ChirurgeonApothecary/Warpkeep_Hegemony_ChirurgeonApothecary_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "c25b16026666f1d696c0eb71d996d4d71942766235db0371b0ffbbddfe0e90ad"
+        },
+        {
+          "bytes": 161932,
+          "compressedBytes": 38494,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/ChirurgeonApothecary/Warpkeep_Hegemony_ChirurgeonApothecary_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "68c52942e9673098a510f4e02efd596479716341bc3ad7046d58d90c6ceb45c7"
+        },
+        {
+          "bytes": 54348,
+          "compressedBytes": 14922,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/ChirurgeonApothecary/Warpkeep_Hegemony_ChirurgeonApothecary_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "5060e336435c66e2a9895f17b852e8f58bee8154b30f7738f73b14cbedef79bf"
+        },
+        {
+          "bytes": 37964,
+          "compressedBytes": 10764,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/ChirurgeonApothecary/Warpkeep_Hegemony_ChirurgeonApothecary_LOD3_Map_Static_Runtime.glb",
+          "sha256": "103b485393a4836912871fae447f149a428d352d32f0afb8718de5aedffa6439"
+        },
+        {
+          "bytes": 6598,
+          "compressedBytes": 2053,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/ChirurgeonApothecary/runtime-manifest.json",
+          "sha256": "dff1e406a6f1d01eabd6a118a8338f146c6915180173fd1bd0d96f1d2cbd0079"
+        },
+        {
+          "bytes": 183604,
+          "compressedBytes": 45195,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/CisternWarden/Warpkeep_Hegemony_CisternWarden_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "2a084a689133b3f927c5cc9c88cb7393b880b75aa73af1b7fdeff07513a5773a"
+        },
+        {
+          "bytes": 143716,
+          "compressedBytes": 34846,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/CisternWarden/Warpkeep_Hegemony_CisternWarden_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "e6baa9401689e30a285615889d91c76aeba23efcc0e7cb9b9e6eaffa88958c75"
+        },
+        {
+          "bytes": 50548,
+          "compressedBytes": 14150,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/CisternWarden/Warpkeep_Hegemony_CisternWarden_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "78dfc68d6f10e194e558bd17103395735393e8b6dec7ba8da5b54e153b0312ff"
+        },
+        {
+          "bytes": 36680,
+          "compressedBytes": 10657,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/CisternWarden/Warpkeep_Hegemony_CisternWarden_LOD3_Map_Static_Runtime.glb",
+          "sha256": "041d19f1b16f4037c5114bb41995678994cb054b3f4b43eb322c448eec9b4b29"
+        },
+        {
+          "bytes": 6514,
+          "compressedBytes": 2020,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/CisternWarden/runtime-manifest.json",
+          "sha256": "d74f2bc3a2b1b693771161c2670d82a4b35faef202b38914f0f2cb8374f46c3d"
+        },
+        {
+          "bytes": 198904,
+          "compressedBytes": 47062,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/EmberLamplighter/Warpkeep_Hegemony_EmberLamplighter_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "4de619214051f56f537f7c2919ae8082eafc3b970733dd014567fae895f47966"
+        },
+        {
+          "bytes": 157472,
+          "compressedBytes": 36750,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/EmberLamplighter/Warpkeep_Hegemony_EmberLamplighter_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "599200017f3e3a3d992d9b848ee90e789157e6c8770bfc16b93dbe54184c4535"
+        },
+        {
+          "bytes": 58524,
+          "compressedBytes": 15404,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/EmberLamplighter/Warpkeep_Hegemony_EmberLamplighter_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "1bb943eba0ec8114ecf1c17ec66adc797bea4f0b96d69d400ef71460a75aab2c"
+        },
+        {
+          "bytes": 41712,
+          "compressedBytes": 10996,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/EmberLamplighter/Warpkeep_Hegemony_EmberLamplighter_LOD3_Map_Static_Runtime.glb",
+          "sha256": "5f77f663414c7b8fb7f5b5ef217db80a7c9272fdcbabe96cfc6ff8ea498c3fe8"
+        },
+        {
+          "bytes": 6572,
+          "compressedBytes": 2021,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/EmberLamplighter/runtime-manifest.json",
+          "sha256": "00ed670f00b360f0b6b98941e1703cf8acb0bca3ba8cf51101e2ad54b4dd5b3b"
+        },
+        {
+          "bytes": 323388,
+          "compressedBytes": 74548,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/EmberfootCourier/Warpkeep_Hegemony_EmberfootCourier_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "df3534a26fffd38ceb89613eaa417ed513f1d74af7aa956861a4ba0d45603ca2"
+        },
+        {
+          "bytes": 248820,
+          "compressedBytes": 54362,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/EmberfootCourier/Warpkeep_Hegemony_EmberfootCourier_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "f7d399621be2dbd2c57104b8d95e6cbdb83586474e8bfd3c2d29c6a3c18ae0a1"
+        },
+        {
+          "bytes": 95168,
+          "compressedBytes": 23154,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/EmberfootCourier/Warpkeep_Hegemony_EmberfootCourier_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "ff89e129ad744cdf95a7f6a3b4bc234aa94c9e9d69efb193c9645d22744e23b1"
+        },
+        {
+          "bytes": 59668,
+          "compressedBytes": 14932,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/EmberfootCourier/Warpkeep_Hegemony_EmberfootCourier_LOD3_Map_Static_Runtime.glb",
+          "sha256": "6284b5ca2a49fc503a0a5e11e153a68df0e51483b67a7891e9a480f9a6bae0e4"
+        },
+        {
+          "bytes": 6719,
+          "compressedBytes": 2074,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/EmberfootCourier/runtime-manifest.json",
+          "sha256": "eba95466103537910d3ede7aba810d79a46bebc4cf73918f657928dc18fc2c51"
+        },
+        {
+          "bytes": 304400,
+          "compressedBytes": 70402,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/ShellbackShrineTender/Warpkeep_Hegemony_ShellbackShrineTender_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "0b1275250d460a9e80373963d2f29cabbcc5c61d8b0b348f2d44b6e13cfc5593"
+        },
+        {
+          "bytes": 231248,
+          "compressedBytes": 51697,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/ShellbackShrineTender/Warpkeep_Hegemony_ShellbackShrineTender_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "65f276dfe3947f94b9b5cd14242f69d9cf3f25f23ee3eb738d0a1c2a480abe26"
+        },
+        {
+          "bytes": 82084,
+          "compressedBytes": 21125,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/ShellbackShrineTender/Warpkeep_Hegemony_ShellbackShrineTender_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "8c0c01a5bb0ea918ebe32369fcc145e7c1af5745598f8b99d07e6e5a43200e21"
+        },
+        {
+          "bytes": 58396,
+          "compressedBytes": 15384,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/ShellbackShrineTender/Warpkeep_Hegemony_ShellbackShrineTender_LOD3_Map_Static_Runtime.glb",
+          "sha256": "006c3cd577f5b2ad5b2a25b6197d70f2ce3f52f79a93259df6fec656807424f3"
+        },
+        {
+          "bytes": 6766,
+          "compressedBytes": 2088,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/ShellbackShrineTender/runtime-manifest.json",
+          "sha256": "9c038a0bc1ec5ab467b1a88468eb84b1dcadb777ff589add273808a21791198d"
+        },
+        {
+          "bytes": 269880,
+          "compressedBytes": 129023,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/WardPeacekeeper/Warpkeep_Hegemony_WardPeacekeeper_LOD0_High_Rigged_Runtime.glb",
+          "sha256": "dd71b8903292cf36e7f04301b7398781fb349abffa5875388da433e46c09c461"
+        },
+        {
+          "bytes": 234140,
+          "compressedBytes": 119144,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/WardPeacekeeper/Warpkeep_Hegemony_WardPeacekeeper_LOD1_Balanced_Rigged_Runtime.glb",
+          "sha256": "78f3dde74069cdfcf8c844716da454981303bf4f88292151d0508da5ba0698b0"
+        },
+        {
+          "bytes": 56256,
+          "compressedBytes": 15347,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/WardPeacekeeper/Warpkeep_Hegemony_WardPeacekeeper_LOD2_Compact_Static_Runtime.glb",
+          "sha256": "d6d867fad68548c1259b3aa64ad78a24a8ae9a594b9e54c3abd2f6241b0fd0df"
+        },
+        {
+          "bytes": 35984,
+          "compressedBytes": 10387,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/WardPeacekeeper/Warpkeep_Hegemony_WardPeacekeeper_LOD3_Map_Static_Runtime.glb",
+          "sha256": "2823bf1dfe6cf0ed2b4e6a28644138bf035449e544ed733cfa67ffd627d89cee"
+        },
+        {
+          "bytes": 6567,
+          "compressedBytes": 2024,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Runtime/Units/Hegemony/CitizensSet2/WardPeacekeeper/runtime-manifest.json",
+          "sha256": "abe268a83bffe565a88c2e2529690164c3f34126cebb66d36632085e02c22f48"
+        },
+        {
+          "bytes": 11212,
+          "compressedBytes": 3673,
+          "mediaType": "text/plain",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/SHA256SUMS.txt",
+          "sha256": "7d6323b605ab4280fb43bd703d5afc6d269ff73784bca345a07f53a5effb9e18"
+        },
+        {
+          "bytes": 482565,
+          "compressedBytes": 469591,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 4553262,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Source/Warpkeep_HegemonyCitizens_Set2_Lineup_Editable.blend",
+          "sha256": "c0924ba4da5f2d60b537092001968e1fc282d4f10954966fd8b24dbf25a6b57c"
+        },
+        {
+          "bytes": 337605,
+          "compressedBytes": 334173,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 2363838,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Source/Warpkeep_Hegemony_BasilicaWarden_Editable.blend",
+          "sha256": "caad8012afa693232009924b1018f1f0a45271eee9c68263e49a4089b9050160"
+        },
+        {
+          "bytes": 339683,
+          "compressedBytes": 336397,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 2350494,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Source/Warpkeep_Hegemony_BellHerald_Editable.blend",
+          "sha256": "501f380c200a250e57ae314475af7259d7249c1d87d6e30f1c0c96e8f89d7bf8"
+        },
+        {
+          "bytes": 358791,
+          "compressedBytes": 354456,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 2618433,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Source/Warpkeep_Hegemony_ChirurgeonApothecary_Editable.blend",
+          "sha256": "99c5f9284832b29e00680fd7bbb1a826b157051b6cf916ff824398ef7d8a1364"
+        },
+        {
+          "bytes": 345414,
+          "compressedBytes": 341417,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 2474860,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Source/Warpkeep_Hegemony_CisternWarden_Editable.blend",
+          "sha256": "599684ce16ef1861267c8e366df2170274f4008cd536906f8283dbb01cd3262e"
+        },
+        {
+          "bytes": 354234,
+          "compressedBytes": 350126,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 2560389,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Source/Warpkeep_Hegemony_EmberLamplighter_Editable.blend",
+          "sha256": "7d7de13a00ac0a09132e2ef94d92f28211951cba04a8c07ea245d3eb01adf2c9"
+        },
+        {
+          "bytes": 440539,
+          "compressedBytes": 432041,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 3548792,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Source/Warpkeep_Hegemony_EmberfootCourier_Editable.blend",
+          "sha256": "f0de7f395ea1157638d09f3d78c779c2992b5392d7f0947b78eb2470c4b164e0"
+        },
+        {
+          "bytes": 433889,
+          "compressedBytes": 424578,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 3486660,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Source/Warpkeep_Hegemony_ShellbackShrineTender_Editable.blend",
+          "sha256": "0bb664670530df893bfdc4608860fd95eeb27defd0cc7f4b9026d11d27389ab2"
+        },
+        {
+          "bytes": 337144,
+          "compressedBytes": 333708,
+          "container": {
+            "compression": "zstd",
+            "uncompressedBytes": 2381236,
+            "uncompressedHeader": "BLENDER17-01v0502"
+          },
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Source/Warpkeep_Hegemony_WardPeacekeeper_Editable.blend",
+          "sha256": "cde732078e55a33b529bfe51e0d32b869ad55bc474bccf03a65f2e75612f6fe7"
+        },
+        {
+          "bytes": 1403506,
+          "compressedBytes": 1403936,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Textures/Hegemony_Banner_Logo_Exact_1254.png",
+          "sha256": "43147b1ac02d7b982ae78bb7a613c74b4a26d348a36008f3bf1db4541e9c6721"
+        },
+        {
+          "bytes": 83346,
+          "compressedBytes": 83210,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Textures/Hegemony_Banner_Logo_Runtime_256.png",
+          "sha256": "314798f792a31395c09a94b094b5ff4d95fd7f9ed75b55e8dfeecc6caf358f8d"
+        },
+        {
+          "bytes": 5046112,
+          "compressedBytes": 5046311,
+          "mediaType": "image/png",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/Warpkeep_HegemonyCitizens_Set2_Lineup.png",
+          "sha256": "05f0fee2dfc6b82b90b78038b975dd3401814469f978807224032e393228fa45"
+        },
+        {
+          "bytes": 12916,
+          "compressedBytes": 2333,
+          "mediaType": "application/json",
+          "path": "Warpkeep_HegemonyCitizens_Set2_GameReady/asset-manifest.json",
+          "sha256": "09a5ce5cc1636900e70f5c8f480529e6a3f51243757318ecdb15c29d5109da0b"
+        }
+      ],
+      "mediaType": "application/zip",
+      "name": "warpkeep-hegemony-citizens-keep-services-game-ready-2026-08-03-v1.zip",
+      "packageRoot": "Warpkeep_HegemonyCitizens_Set2_GameReady",
+      "sha256": "14a8bda3848ede5b398a7fc4ec10e56d98ae06584c42f4683cb2635c5bbb6aeb",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-citizens-keep-services-2026-08-03/warpkeep-hegemony-citizens-keep-services-game-ready-2026-08-03-v1.zip"
+    }
+  ],
+  "designation": {
+    "name": "Warpkeep Hegemony Citizens \u2014 Keep Services & Orders",
+    "status": "game-ready production asset archive and runtime handoff; current live-game integration is not asserted"
+  },
+  "inventory": {
+    "editableBlends": 9,
+    "families": [
+      {
+        "bytes": 27948507,
+        "category": "Units/Citizens/KeepServices",
+        "citizens": 8,
+        "clips": [
+          "Idle",
+          "Walk",
+          "Work",
+          "Greet"
+        ],
+        "editableBlends": 9,
+        "files": 75,
+        "jointCounts": [
+          21,
+          29
+        ],
+        "lodsPerCitizen": 4,
+        "mountedCitizens": 2,
+        "package": "Warpkeep_HegemonyCitizens_Set2_GameReady",
+        "packageChecksums": 74,
+        "pngs": 21,
+        "productionGLBs": 32,
+        "qaChecksPassed": 73,
+        "qaChecksTotal": 73,
+        "riggedLods": [
+          "LOD0_High",
+          "LOD1_Balanced"
+        ],
+        "roles": [
+          "EmberLamplighter",
+          "CisternWarden",
+          "ChirurgeonApothecary",
+          "BellHerald",
+          "WardPeacekeeper",
+          "BasilicaWarden",
+          "EmberfootCourier",
+          "ShellbackShrineTender"
+        ],
+        "staticLods": [
+          "LOD2_Compact",
+          "LOD3_Map"
+        ],
+        "title": "Hegemony Citizens Set 2 \u2014 Keep Services & Orders",
+        "triangleTotals": {
+          "LOD0_High": 24506,
+          "LOD1_Balanced": 15594,
+          "LOD2_Compact": 9164,
+          "LOD3_Map": 5756
+        },
+        "unitNames": [
+          "Hegemony Ember Lamplighter",
+          "Hegemony Cistern Warden",
+          "Hegemony Chirurgeon-Apothecary",
+          "Hegemony Bell Herald",
+          "Hegemony Ward Peacekeeper",
+          "Hegemony Basilica Warden",
+          "Hegemony Emberfoot Courier",
+          "Hegemony Shellback Shrine Tender"
+        ],
+        "version": "1.0.0",
+        "walkingCitizens": 6
+      }
+    ],
+    "packageChecksumEntries": 74,
+    "packages": 1,
+    "pngs": 21,
+    "productionGLBs": 32,
+    "publicBytes": 27948507,
+    "publicFiles": 75,
+    "qaChecksPassed": 73,
+    "qaChecksTotal": 73,
+    "units": 8
+  },
+  "license": {
+    "scope": "Public archival and GitHub Release distribution are authorized for this named citizen set; no separate open-license grant is asserted.",
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license"
+  },
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "schemaVersion": 1,
+  "source": {
+    "authorization": "Ael explicitly authorized publishing the complete Hegemony keep-citizens package to Warpkeep-Assets.",
+    "creationDisclosure": "The assets were substantially authored, prepared, or refined with Codex under Ael's direction and review; this disclosure does not alter license scope.",
+    "privateWorkflowMetadata": "removed from the public distribution copy",
+    "suppliedBy": "Ael"
+  },
+  "tag": "hegemony-citizens-keep-services-2026-08-03",
+  "verification": {
+    "archives": "One deterministic safe-path ZIP; entry inventory, byte counts, SHA-256 values, compression ratios, GLB headers, and nested Blender containers verified.",
+    "blender": "All 9 editable Blender sources were audited, reopened in Blender 5.2, and retained matching path-insensitive semantic fingerprints after public-copy preparation.",
+    "checksums": "All 74 nested package checksum entries passed after sanitization.",
+    "images": "All 21 PNG files decode successfully and contain no private-path or credential metadata.",
+    "privacy": "No private local path, credential, symlink, extended attribute, executable, hidden OS metadata, or unsafe archive path remains in the public distribution.",
+    "qa": "The supplied runtime QA report records 73/73 checks passed.",
+    "runtime": "All 32 runtime GLBs preserve the validated source bytes, valid glTF 2.0 headers, and no external URIs.",
+    "runtimeIntegration": "Current in-game integration is not asserted by this archive deposit."
+  }
+}
