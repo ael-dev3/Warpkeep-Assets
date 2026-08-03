@@ -1,0 +1,108 @@
+{
+  "archive": {
+    "bytes": 1405757,
+    "entryCount": 15,
+    "fileMode": "0644",
+    "fixedTimestamp": "2026-08-03T12:00:00",
+    "name": "warpkeep-core-watcher-level1-game-ready-2026-08-03-v1.zip",
+    "sha256": "34c8a80186642659acea893c06199a8e7b615ac0f9685f2c58c4a27641f56a33"
+  },
+  "authorization": {
+    "archiveOnlyNotice": "present inside package",
+    "creationDisclosure": "Codex-assisted original modeling and package preparation under Ael direction; Blender 5.2; preview metadata stripping with Pillow 11.3.0",
+    "license": "no separate open-license grant asserted",
+    "publicArchive": "draft PR review authorized; public release publication pending owner approval",
+    "runtimeIntegration": "not asserted"
+  },
+  "blendAudits": [
+    {
+      "fragmentsNeutralized": 1,
+      "path": "Source/Warpkeep_CoreWatcher_Level1_Editable.blend",
+      "privateStringsFound": [],
+      "publicSha256": "3989b9899c5c2522ecf8686646008c87beb168eefc3aaeab1b3f9bbeb7c0933d",
+      "reopened": true,
+      "semanticFingerprintPreserved": true,
+      "semanticFingerprintSha256": "a51eae5665ee3e7c59191b36dd1abfbbc1fa3ddd76405bee52c6c5fb3dad344c"
+    }
+  ],
+  "designation": "Warpkeep Core Watcher Level 1 GameReady release candidate",
+  "filesystemNormalization": {
+    "directoryMode": "0755",
+    "fileMode": "0644",
+    "normalizedDirectories": 8,
+    "normalizedFiles": 15,
+    "removedExtendedAttributes": 0
+  },
+  "imageAudits": [
+    {
+      "bytes": 170456,
+      "metadataFieldsFound": [],
+      "path": "Previews/Mobile/Warpkeep_CoreWatcher_Level1_Map_512.png",
+      "privateStringsFound": [],
+      "sanitizer": "Pillow 11.3.0 metadata-free re-encode",
+      "sha256": "64ae797aece8aa9594872b1265950f6a227baf0edface14b13217f749b0db774"
+    },
+    {
+      "bytes": 278733,
+      "metadataFieldsFound": [],
+      "path": "Previews/Warpkeep_CoreWatcher_Level1_LOD_Lineup_2400.jpg",
+      "privateStringsFound": [],
+      "sanitizer": "Pillow 11.3.0 metadata-free re-encode",
+      "sha256": "d60510764ca2c57ae2bb67419e835cff3c7c4986bfe5f04156bd17687808e595"
+    },
+    {
+      "bytes": 193978,
+      "metadataFieldsFound": [],
+      "path": "Previews/Warpkeep_CoreWatcher_Level1_Presentation_1920.jpg",
+      "privateStringsFound": [],
+      "sanitizer": "Pillow 11.3.0 metadata-free re-encode",
+      "sha256": "d1e01453c620d22695148f89c18e9e5330c38508b1d984faae4037cb6d1dbcaa"
+    },
+    {
+      "bytes": 580483,
+      "metadataFieldsFound": [],
+      "path": "Previews/Warpkeep_CoreWatcher_Level1_Transparent_1600.png",
+      "privateStringsFound": [],
+      "sanitizer": "Pillow 11.3.0 metadata-free re-encode",
+      "sha256": "bc20fa28239d8008b79f182509363a81b2bef6705fdf8436786ca70567e2cf9a"
+    }
+  ],
+  "inventory": {
+    "bytes": 2323903,
+    "credentialHits": [],
+    "files": 15,
+    "mediaCounts": {
+      ".blend": 1,
+      ".glb": 4,
+      ".jpg": 2,
+      ".json": 3,
+      ".md": 2,
+      ".png": 2,
+      ".txt": 1
+    },
+    "osMetadata": [],
+    "privatePathHits": [],
+    "unsafePaths": []
+  },
+  "passed": true,
+  "schema": "warpkeep.public-asset-sanitization.v1",
+  "snapshotDate": "2026-08-03",
+  "sourcePackage": "Warpkeep_CoreWatcher_Level1_GameReady",
+  "stagingRoot": "sanitized-build/core-watcher-level1",
+  "verification": {
+    "allGlbsSelfContained": true,
+    "allGlbsValidGltf2": true,
+    "allJsonParsed": true,
+    "allPreviewsRenderedByBlender": true,
+    "blendAuditedAndReopened": true,
+    "deterministicZipMetadata": true,
+    "nestedChecksumsPassed": true,
+    "noCredentials": true,
+    "noExecutables": true,
+    "noOsMetadata": true,
+    "noPrivatePaths": true,
+    "noSymlinks": true,
+    "noUnsafePaths": true,
+    "previewMetadataStripped": true
+  }
+}

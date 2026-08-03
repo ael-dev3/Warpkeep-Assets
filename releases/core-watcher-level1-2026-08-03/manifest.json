@@ -1,0 +1,156 @@
+{
+  "attachments": [
+    {
+      "bytes": 1405757,
+      "entries": [
+        {
+          "bytes": 901,
+          "compressedBytes": 522,
+          "mediaType": "text/markdown",
+          "path": "Warpkeep_CoreWatcher_Level1_GameReady/PACKAGE-NOTICE.md",
+          "sha256": "393e9b31e13a1afbf1f841003a0fbd16bec573480e0dc8a9a7c972784e933ad8"
+        },
+        {
+          "bytes": 170456,
+          "compressedBytes": 170511,
+          "mediaType": "image/png",
+          "path": "Warpkeep_CoreWatcher_Level1_GameReady/Previews/Mobile/Warpkeep_CoreWatcher_Level1_Map_512.png",
+          "sha256": "64ae797aece8aa9594872b1265950f6a227baf0edface14b13217f749b0db774"
+        },
+        {
+          "bytes": 278733,
+          "compressedBytes": 271292,
+          "mediaType": "image/jpeg",
+          "path": "Warpkeep_CoreWatcher_Level1_GameReady/Previews/Warpkeep_CoreWatcher_Level1_LOD_Lineup_2400.jpg",
+          "sha256": "d60510764ca2c57ae2bb67419e835cff3c7c4986bfe5f04156bd17687808e595"
+        },
+        {
+          "bytes": 193978,
+          "compressedBytes": 190285,
+          "mediaType": "image/jpeg",
+          "path": "Warpkeep_CoreWatcher_Level1_GameReady/Previews/Warpkeep_CoreWatcher_Level1_Presentation_1920.jpg",
+          "sha256": "d1e01453c620d22695148f89c18e9e5330c38508b1d984faae4037cb6d1dbcaa"
+        },
+        {
+          "bytes": 580483,
+          "compressedBytes": 580454,
+          "mediaType": "image/png",
+          "path": "Warpkeep_CoreWatcher_Level1_GameReady/Previews/Warpkeep_CoreWatcher_Level1_Transparent_1600.png",
+          "sha256": "bc20fa28239d8008b79f182509363a81b2bef6705fdf8436786ca70567e2cf9a"
+        },
+        {
+          "bytes": 5429,
+          "compressedBytes": 788,
+          "mediaType": "application/json",
+          "path": "Warpkeep_CoreWatcher_Level1_GameReady/QA/Warpkeep_CoreWatcher_Level1_RuntimeQA.json",
+          "sha256": "4ba14d252674c31f6fb3f2f84654fc0bc661a734abb58b2640f9d1006211e139"
+        },
+        {
+          "bytes": 1500,
+          "compressedBytes": 875,
+          "mediaType": "text/markdown",
+          "path": "Warpkeep_CoreWatcher_Level1_GameReady/README.md",
+          "sha256": "fdcebb4aa3c87b9a51a6f741963039d9ebe62947a3304b944fdc316350bd5826"
+        },
+        {
+          "bytes": 129520,
+          "compressedBytes": 25223,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_CoreWatcher_Level1_GameReady/Runtime/Encounters/Core/WatcherLevel1/Warpkeep_CoreWatcher_Level1_LOD0_High_Runtime.glb",
+          "sha256": "64218fe3082466ae5864885e7c7bd623e2c233d8f1e5231ca5e75979b9a045db"
+        },
+        {
+          "bytes": 67968,
+          "compressedBytes": 12502,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_CoreWatcher_Level1_GameReady/Runtime/Encounters/Core/WatcherLevel1/Warpkeep_CoreWatcher_Level1_LOD1_Balanced_Runtime.glb",
+          "sha256": "f6112167a67d91db46e1e3dcabbea2e537b3f8c8bcb36de5caca1ec63170a1f6"
+        },
+        {
+          "bytes": 27636,
+          "compressedBytes": 5821,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_CoreWatcher_Level1_GameReady/Runtime/Encounters/Core/WatcherLevel1/Warpkeep_CoreWatcher_Level1_LOD2_Compact_Runtime.glb",
+          "sha256": "6e9434d4e4f8ba03bec96a5bd47422caae88e04b230f7f3daf3219e833bf13e1"
+        },
+        {
+          "bytes": 18748,
+          "compressedBytes": 4131,
+          "mediaType": "model/gltf-binary",
+          "path": "Warpkeep_CoreWatcher_Level1_GameReady/Runtime/Encounters/Core/WatcherLevel1/Warpkeep_CoreWatcher_Level1_LOD3_Map_Runtime.glb",
+          "sha256": "2f2e30bdd7593440cba8a5bd7a676d812c0b0a5910ece5174c8af434a72f146b"
+        },
+        {
+          "bytes": 7462,
+          "compressedBytes": 2018,
+          "mediaType": "application/json",
+          "path": "Warpkeep_CoreWatcher_Level1_GameReady/Runtime/Encounters/Core/WatcherLevel1/runtime-manifest.json",
+          "sha256": "0339dc9abe5c6a9340ef9be1d0ad908a5130eb9339a7ace4fafdb25a7548d1fd"
+        },
+        {
+          "bytes": 1716,
+          "compressedBytes": 822,
+          "mediaType": "text/plain",
+          "path": "Warpkeep_CoreWatcher_Level1_GameReady/SHA256SUMS.txt",
+          "sha256": "dc5b32a82f9025a84516a738eaa3a509738991e3d295705eb5ecb488205fef3f"
+        },
+        {
+          "bytes": 837223,
+          "compressedBytes": 135631,
+          "mediaType": "application/x-blender",
+          "path": "Warpkeep_CoreWatcher_Level1_GameReady/Source/Warpkeep_CoreWatcher_Level1_Editable.blend",
+          "sha256": "3989b9899c5c2522ecf8686646008c87beb168eefc3aaeab1b3f9bbeb7c0933d"
+        },
+        {
+          "bytes": 2150,
+          "compressedBytes": 996,
+          "mediaType": "application/json",
+          "path": "Warpkeep_CoreWatcher_Level1_GameReady/asset-manifest.json",
+          "sha256": "700ad4f03c09490a532be26c7b8f468bbc983c7ed89db63dfc73a3370f670622"
+        }
+      ],
+      "mediaType": "application/zip",
+      "name": "warpkeep-core-watcher-level1-game-ready-2026-08-03-v1.zip",
+      "packageRoot": "Warpkeep_CoreWatcher_Level1_GameReady",
+      "sha256": "34c8a80186642659acea893c06199a8e7b615ac0f9685f2c58c4a27641f56a33",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/core-watcher-level1-2026-08-03/warpkeep-core-watcher-level1-game-ready-2026-08-03-v1.zip"
+    }
+  ],
+  "designation": {
+    "name": "Warpkeep Core Watcher Level 1 GameReady",
+    "status": "release-candidate; not published or integrated"
+  },
+  "inventory": {
+    "bytes": 2323903,
+    "editableBlends": 1,
+    "files": 15,
+    "jsonDocuments": 3,
+    "packageRoot": "Warpkeep_CoreWatcher_Level1_GameReady",
+    "previews": 4,
+    "runtimeGLBs": 4
+  },
+  "license": {
+    "scope": "Named Core Watcher candidate package only; release, runtime, trademark, and canonical identity remain separately gated.",
+    "spdx": null,
+    "status": "public-draft-review-authorized-no-separate-open-license"
+  },
+  "repository": "ael-dev3/Warpkeep-Assets",
+  "schemaVersion": 1,
+  "source": {
+    "authorization": "Preparation and public draft-PR review authorized; release publication remains owner-gated.",
+    "creationDisclosure": "Substantially authored and prepared with Codex under Ael direction using Blender 5.2; preview metadata stripped with Pillow 11.3.0.",
+    "privateWorkflowMetadata": "excluded",
+    "suppliedBy": "Ael-directed original Warpkeep production"
+  },
+  "tag": "core-watcher-level1-2026-08-03",
+  "verification": {
+    "archives": "One deterministic safe-path ZIP; exact entry order, timestamps, modes, byte counts, SHA-256 values, and compression ratios verified.",
+    "blender": "The editable Blender source reopened in Blender 5.2 with a matching topology, coordinate, transform, material, and authority-boundary fingerprint.",
+    "checksums": "Every nested package checksum passed before deterministic packaging.",
+    "images": "All previews were rendered by Blender, decoded and re-encoded with Pillow 11.3.0 without metadata, and contain no external source dependency.",
+    "privacy": "No credential, private author path, symlink, executable, unsafe path, external library, image texture, or remote dependency is present.",
+    "qa": "The supplied runtime QA report records 58/58 checks passed.",
+    "runtime": "All four GLBs passed deep header/chunk/buffer/URI/geometry/material/extension/bounds validation.",
+    "runtimeIntegration": "No current in-game integration, release, deployment, combat, or activation is asserted."
+  }
+}
