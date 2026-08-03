@@ -1,0 +1,20 @@
+{
+  "schema": "warpkeep.preview-gallery.v1",
+  "releaseTag": "the-core-faction-crest-2026-08-03",
+  "images": [
+    {
+      "file": "00-the-core-faction-crest-showcase.jpg",
+      "title": "The Core faction crest",
+      "source": "presentation composite of the exact supplied transparent master",
+      "bytes": 549896,
+      "sha256": "024a73c11fca9f5b20e24f6e89e8cae329a3071bb484a0dbf48e8b12060bfd7f"
+    },
+    {
+      "file": "01-the-core-faction-crest-transparent-512.png",
+      "title": "The Core crest \u2014 transparent runtime framing",
+      "source": "safe-padded 512px derivative of the exact supplied master",
+      "bytes": 285047,
+      "sha256": "c1398d4e13218b7c499522a3efe49c333a23208a910888a93c4300014eda0ad0"
+    }
+  ]
+}

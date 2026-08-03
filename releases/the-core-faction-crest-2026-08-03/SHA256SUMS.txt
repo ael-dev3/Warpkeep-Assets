@@ -1,0 +1,5 @@
+849318a927ce70143cf3a9eb2e4170426da6cbb2fcf009826e37d9c7820b6120  warpkeep-the-core-faction-crest-master-transparent-1024.png
+866fe02fad1c9b45f1db0124d89b96e773e7b67851ff5529cfdf850e804b485b  warpkeep-the-core-faction-crest-runtime-1024.png
+c1398d4e13218b7c499522a3efe49c333a23208a910888a93c4300014eda0ad0  warpkeep-the-core-faction-crest-runtime-512.png
+fd71f1220aace0af5a452955aa749e46edc7658691196b33f5e72cf268d3eebf  warpkeep-the-core-faction-crest-runtime-256.png
+41a5e97fdb2a063c4e5a57038ea02cdf8314df5d43bbc40d80e519633ccf7569  warpkeep-the-core-faction-crest-2026-08-03-v1.zip
