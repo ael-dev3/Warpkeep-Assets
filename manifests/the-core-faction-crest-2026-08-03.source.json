@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "assetId": "warpkeep.factions.the-core.crest",
+  "archivePurpose": "Canonical and runtime-ready visual identity for Warpkeep's The Core faction.",
+  "snapshotDate": "2026-08-03",
+  "designation": {
+    "name": "The Core faction crest",
+    "faction": "The Core",
+    "role": "faction heraldry and UI identity",
+    "runtimeIntegration": "current integration not asserted by this asset release"
+  },
+  "source": {
+    "suppliedBy": "Ael",
+    "authorization": "Ael explicitly requested public upload to Warpkeep-Assets.",
+    "privateWorkflowMetadata": "intentionally omitted",
+    "canonicalBytes": 1518753,
+    "canonicalSha256": "849318a927ce70143cf3a9eb2e4170426da6cbb2fcf009826e37d9c7820b6120",
+    "canonicalDimensions": [
+      1024,
+      1024
+    ],
+    "preparation": "Exact source bytes preserved; only deterministic padding/resizing and presentation compositing were applied to derivatives.",
+    "inspirationDisclosure": "Ael described the concept as heavily inspired by the TechnoCore in Hyperion. No outside reference imagery, logos, or text are included in the release."
+  },
+  "licensePolicy": {
+    "spdx": null,
+    "status": "public-archive-authorized-no-separate-open-license",
+    "scope": "Public archival and release distribution are authorized for this named crest package. No separate open-license, trademark, or canonical-identity grant is asserted."
+  },
+  "visualSummary": {
+    "description": "Dark machine-gothic circular crest with metallic circuitry, radial spines, violet nodes, and a luminous central core.",
+    "readableText": false,
+    "peopleOrPersonalIdentifiersObserved": false
+  },
+  "runtimeGuidance": {
+    "preferred": "runtime/warpkeep-the-core-faction-crest-runtime-512.png",
+    "highDensity": "runtime/warpkeep-the-core-faction-crest-runtime-1024.png",
+    "minimumRecommended": "runtime/warpkeep-the-core-faction-crest-runtime-64.png",
+    "masterIsRuntimeAsset": false,
+    "canonicalMaster": "source/warpkeep-the-core-faction-crest-master-transparent-1024.png"
+  },
+  "derivedFiles": [
+    {
+      "path": "source/warpkeep-the-core-faction-crest-master-transparent-1024.png",
+      "bytes": 1518753,
+      "sha256": "849318a927ce70143cf3a9eb2e4170426da6cbb2fcf009826e37d9c7820b6120",
+      "width": 1024,
+      "height": 1024,
+      "format": "PNG",
+      "alpha": true,
+      "role": "canonical-byte-exact-master"
+    },
+    {
+      "path": "runtime/warpkeep-the-core-faction-crest-runtime-1024.png",
+      "bytes": 1192721,
+      "sha256": "866fe02fad1c9b45f1db0124d89b96e773e7b67851ff5529cfdf850e804b485b",
+      "width": 1024,
+      "height": 1024,
+      "format": "PNG",
+      "alpha": true
+    },
+    {
+      "path": "runtime/warpkeep-the-core-faction-crest-runtime-512.png",
+      "bytes": 285047,
+      "sha256": "c1398d4e13218b7c499522a3efe49c333a23208a910888a93c4300014eda0ad0",
+      "width": 512,
+      "height": 512,
+      "format": "PNG",
+      "alpha": true
+    },
+    {
+      "path": "runtime/warpkeep-the-core-faction-crest-runtime-256.png",
+      "bytes": 75117,
+      "sha256": "fd71f1220aace0af5a452955aa749e46edc7658691196b33f5e72cf268d3eebf",
+      "width": 256,
+      "height": 256,
+      "format": "PNG",
+      "alpha": true
+    },
+    {
+      "path": "runtime/warpkeep-the-core-faction-crest-runtime-128.png",
+      "bytes": 20781,
+      "sha256": "cc46aaf11b2331666faf127b6cb164fa6ea743f1bdbf89391cb8607c1b66ee93",
+      "width": 128,
+      "height": 128,
+      "format": "PNG",
+      "alpha": true
+    },
+    {
+      "path": "runtime/warpkeep-the-core-faction-crest-runtime-64.png",
+      "bytes": 5798,
+      "sha256": "7ccdedeb9ca4416b53040441ba4ab6e7b8303a2a67a92bfcdc96b5c8ef23dd2c",
+      "width": 64,
+      "height": 64,
+      "format": "PNG",
+      "alpha": true
+    },
+    {
+      "path": "runtime/warpkeep-the-core-faction-crest-runtime-1024.webp",
+      "bytes": 747592,
+      "sha256": "52b1ba6dc1c910ebc25bfb27898c94db579cab4bf6e1bb0842451179b09a969f",
+      "width": 1024,
+      "height": 1024,
+      "format": "WebP",
+      "alpha": true
+    },
+    {
+      "path": "runtime/warpkeep-the-core-faction-crest-runtime-512.webp",
+      "bytes": 172050,
+      "sha256": "769ecd67fd99332a45fcbf4c0513cdf3923a618d573db058162bbcfa8c556cec",
+      "width": 512,
+      "height": 512,
+      "format": "WebP",
+      "alpha": true
+    },
+    {
+      "path": "runtime/warpkeep-the-core-faction-crest-runtime-256.webp",
+      "bytes": 44626,
+      "sha256": "cde06e804195ff3e4e8faca4237f4bafcd41d94054a7ddf8f1e1be39cd6de99a",
+      "width": 256,
+      "height": 256,
+      "format": "WebP",
+      "alpha": true
+    },
+    {
+      "path": "runtime/warpkeep-the-core-faction-crest-alpha-mask-1024.png",
+      "bytes": 89414,
+      "sha256": "f7d969cc36b18c090ff6e403fa2b87c7b29648c2ce489beea9c781a2fe354a5f",
+      "width": 1024,
+      "height": 1024,
+      "format": "PNG",
+      "alpha": false,
+      "role": "selection-outline-mask"
+    },
+    {
+      "path": "previews/the-core-faction-crest-showcase-1600.jpg",
+      "bytes": 549896,
+      "sha256": "024a73c11fca9f5b20e24f6e89e8cae329a3071bb484a0dbf48e8b12060bfd7f",
+      "width": 1600,
+      "height": 1600,
+      "format": "JPEG",
+      "alpha": false,
+      "role": "showcase"
+    },
+    {
+      "path": "previews/the-core-faction-crest-transparent-preview-1024.png",
+      "bytes": 1192721,
+      "sha256": "866fe02fad1c9b45f1db0124d89b96e773e7b67851ff5529cfdf850e804b485b",
+      "width": 1024,
+      "height": 1024,
+      "format": "PNG",
+      "alpha": true,
+      "role": "transparent-preview"
+    },
+    {
+      "path": "runtime/README.md",
+      "bytes": 732,
+      "sha256": "999cb5618b82084ca153cb8eaaec621f905989c6033695cde9f821d4d7890e78",
+      "format": "Markdown"
+    }
+  ],
+  "release": {
+    "tag": "the-core-faction-crest-2026-08-03",
+    "attachments": [
+      {
+        "name": "warpkeep-the-core-faction-crest-master-transparent-1024.png",
+        "bytes": 1518753,
+        "sha256": "849318a927ce70143cf3a9eb2e4170426da6cbb2fcf009826e37d9c7820b6120"
+      },
+      {
+        "name": "warpkeep-the-core-faction-crest-runtime-1024.png",
+        "bytes": 1192721,
+        "sha256": "866fe02fad1c9b45f1db0124d89b96e773e7b67851ff5529cfdf850e804b485b"
+      },
+      {
+        "name": "warpkeep-the-core-faction-crest-runtime-512.png",
+        "bytes": 285047,
+        "sha256": "c1398d4e13218b7c499522a3efe49c333a23208a910888a93c4300014eda0ad0"
+      },
+      {
+        "name": "warpkeep-the-core-faction-crest-runtime-256.png",
+        "bytes": 75117,
+        "sha256": "fd71f1220aace0af5a452955aa749e46edc7658691196b33f5e72cf268d3eebf"
+      },
+      {
+        "name": "warpkeep-the-core-faction-crest-2026-08-03-v1.zip",
+        "bytes": 5885196,
+        "sha256": "41a5e97fdb2a063c4e5a57038ea02cdf8314df5d43bbc40d80e519633ccf7569"
+      }
+    ]
+  },
+  "previews": [
+    {
+      "file": "00-the-core-faction-crest-showcase.jpg",
+      "title": "The Core faction crest",
+      "source": "presentation composite of the exact supplied transparent master",
+      "bytes": 549896,
+      "sha256": "024a73c11fca9f5b20e24f6e89e8cae329a3071bb484a0dbf48e8b12060bfd7f"
+    },
+    {
+      "file": "01-the-core-faction-crest-transparent-512.png",
+      "title": "The Core crest \u2014 transparent runtime framing",
+      "source": "safe-padded 512px derivative of the exact supplied master",
+      "bytes": 285047,
+      "sha256": "c1398d4e13218b7c499522a3efe49c333a23208a910888a93c4300014eda0ad0"
+    }
+  ]
+}

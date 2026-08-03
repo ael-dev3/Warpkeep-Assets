@@ -12,6 +12,26 @@ Integration notes below describe what each asset release itself authorized or
 asserted when it was published. See the [Warpkeep repository](https://github.com/ael-dev3/Warpkeep)
 for the current live runtime.
 
+[![Warpkeep — The Core faction crest](previews/the-core-faction-crest-2026-08-03/00-the-core-faction-crest-showcase.jpg)](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/the-core-faction-crest-2026-08-03)
+
+## The Core faction crest
+
+The 2026-08-03 identity release establishes the first visual mark for **The
+Core**, Warpkeep's machine-intelligence faction. The supplied
+1024×1024 transparent PNG is preserved byte-for-byte as the canonical master.
+Safe-padded 1024, 512, and 256px runtime PNGs prevent edge clipping under UI
+filtering, while the complete kit also carries 128/64px PNGs, lossless WebP
+derivatives, an alpha mask, checksums, and presentation previews.
+
+| Canonical source | Recommended runtime | Mobile variants |
+| --- | --- | --- |
+| Exact 1024px RGBA master | Safe-padded 512px PNG | 256, 128, and 64px PNGs |
+
+**[Download The Core faction crest](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/the-core-faction-crest-2026-08-03)** · [manifest](releases/the-core-faction-crest-2026-08-03/manifest.json) · [provenance](provenance/the-core-faction-crest-2026-08-03.md) · [transparent preview](previews/the-core-faction-crest-2026-08-03/01-the-core-faction-crest-transparent-512.png)
+
+This asset release records visual identity and runtime candidates; it does not
+by itself assert current integration in Warpkeep.
+
 [![Warpkeep Hegemony Citizens — Keep Services & Orders](previews/hegemony-citizens-keep-services-2026-08-03/00-citizens-overview.jpg)](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-citizens-keep-services-2026-08-03)
 
 ## Hegemony keep citizens
@@ -143,6 +163,7 @@ Large masters do not live in normal Git history. They are published as immutable
 
 ## Asset releases
 
+- [`the-core-faction-crest-2026-08-03`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/the-core-faction-crest-2026-08-03) — exact supplied 1024px transparent master for The Core faction, three individually downloadable safe-padded runtime PNGs, a complete 15-file source/runtime kit, checksums, [public provenance](provenance/the-core-faction-crest-2026-08-03.md), and a two-image Git-tracked gallery
 - [`hegemony-citizens-keep-services-2026-08-03`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-citizens-keep-services-2026-08-03) — eight game-ready Hegemony keep citizens, including two civic orders and two exotic mounted roles, with 32 four-LOD runtime GLBs, 9 privacy-sanitized editable Blender sources, 21 PNGs, 73/73 QA checks, package manifests, nested checksums, [public provenance](provenance/hegemony-citizens-keep-services-2026-08-03.md), and a Git-tracked two-image release gallery
 - [`hegemony-unit-corps-2026-08-03`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/hegemony-unit-corps-2026-08-03) — twelve game-ready Hegemony infantry, ranged, and cavalry units with 48 four-LOD runtime GLBs, 15 privacy-sanitized editable Blender sources, 39 PNGs, package manifests, nested checksums and license notices, [public provenance](provenance/hegemony-unit-corps-2026-08-03.md), and a Git-tracked four-image gallery
 - [`inner-keep-3d-asset-library-2026-08-02`](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/inner-keep-3d-asset-library-2026-08-02) — complete privacy-sanitized inner-keep production snapshot: 152 assets, 610 total GLBs, 74 Blender containers, 364 PNGs, checksums, [public provenance](provenance/inner-keep-3d-asset-library-2026-08-02.md), and a 12-image Git-tracked production gallery

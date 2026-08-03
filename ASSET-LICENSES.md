@@ -229,3 +229,18 @@ third-party reference material, Warpkeep or Hegemony trademarks and canonical
 identity, or unrelated Warpkeep material by implication. Runtime designation
 and repository presence do not by themselves assert current live-game
 integration.
+
+## Warpkeep — The Core faction crest
+
+- **Set:** exact supplied 1024×1024 transparent Core crest master, safe-padded runtime PNG/WebP derivatives, alpha mask, previews, manifests, and checksums
+- **Release:** `the-core-faction-crest-2026-08-03`
+- **Snapshot date:** 2026-08-03
+- **Deposit authority:** Ael explicitly requested public upload to Warpkeep-Assets.
+- **License status:** public archival and GitHub Release distribution authorized; no separate open-license grant asserted
+
+This authorization covers publication and distribution of the named crest
+package, its deterministic runtime derivatives, Git-tracked previews, and
+archive metadata. It does not grant rights in third-party settings or names,
+generation services, Warpkeep trademarks or canonical identity, or unrelated
+Warpkeep material by implication. The release describes The Core only as a
+Warpkeep faction and does not include outside reference imagery or branding.
