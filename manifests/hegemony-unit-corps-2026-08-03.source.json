@@ -1,30 +1,30 @@
 {
   "attachments": [
     {
-      "bytes": 16876738,
-      "entryCount": 42,
+      "bytes": 16877451,
+      "entryCount": 43,
       "mediaType": "application/zip",
       "name": "warpkeep-hegemony-infantry-game-ready-2026-08-03-v1.zip",
       "packageRoot": "Warpkeep_HegemonyInfantry_GameReady",
-      "sha256": "b18c6f8cdc998324d4c3a3dfaf1f9d8edadaafd8272feb08587d40a53c8b1717",
+      "sha256": "953fcca256324f2a73b3f13e2ca04911349a0f69934337e6ac7161041a2d4ba0",
       "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-unit-corps-2026-08-03/warpkeep-hegemony-infantry-game-ready-2026-08-03-v1.zip"
     },
     {
-      "bytes": 16349246,
-      "entryCount": 42,
+      "bytes": 16349955,
+      "entryCount": 43,
       "mediaType": "application/zip",
       "name": "warpkeep-hegemony-ranged-game-ready-2026-08-03-v1.zip",
       "packageRoot": "Warpkeep_HegemonyRanged_GameReady",
-      "sha256": "410898d44311bc84547d0e5a64ed75b87e5d0dea71b85672cf5bb79701b286b7",
+      "sha256": "310b0feaf21f0619f1d10f154facd64f98ce3ad1658cf80bb4dd68f5847a0391",
       "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-unit-corps-2026-08-03/warpkeep-hegemony-ranged-game-ready-2026-08-03-v1.zip"
     },
     {
-      "bytes": 19650338,
-      "entryCount": 42,
+      "bytes": 19651045,
+      "entryCount": 43,
       "mediaType": "application/zip",
       "name": "warpkeep-hegemony-cavalry-game-ready-2026-08-03-v1.zip",
       "packageRoot": "Warpkeep_HegemonyCavalry_GameReady",
-      "sha256": "624c1525d77583fd334b382d228a4df6baca46faee0fd676011330ab5b1bafb3",
+      "sha256": "9d411ee308abacfd7ca93b1e96594cc4f9e8af613f6d18aca3128b49dfb9a48b",
       "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/hegemony-unit-corps-2026-08-03/warpkeep-hegemony-cavalry-game-ready-2026-08-03-v1.zip"
     }
   ],
@@ -194,8 +194,8 @@
     }
   ],
   "publicInventory": {
-    "bytes": 61723309,
-    "files": 126,
+    "bytes": 61726333,
+    "files": 129,
     "packages": 3
   },
   "sanitization": {
