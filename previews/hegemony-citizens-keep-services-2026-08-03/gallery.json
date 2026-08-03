@@ -1,0 +1,22 @@
+{
+  "images": [
+    {
+      "bytes": 363356,
+      "dimensions": "2400x960",
+      "file": "00-citizens-overview.jpg",
+      "sha256": "56384bb3087cc892677f7963b63ff7b026c9c5bc67a7ebcea0f7f3a0df2969c9",
+      "source": "composite of the eight exact transparent citizen renders",
+      "title": "Hegemony Keep Citizens overview"
+    },
+    {
+      "bytes": 474245,
+      "dimensions": "2600x1700",
+      "file": "00-citizens-set2-lineup-high-res.jpg",
+      "sha256": "a23ed2bf4311cdab529abf987e723f6f09d4010d1baec84f492056b49f647466",
+      "source": "Warpkeep_HegemonyCitizens_Set2_GameReady/Previews/Warpkeep_HegemonyCitizens_Set2_Lineup.png",
+      "title": "Hegemony Citizens \u2014 complete lineup"
+    }
+  ],
+  "releaseTag": "hegemony-citizens-keep-services-2026-08-03",
+  "schema": "warpkeep.preview-gallery.v1"
+}
