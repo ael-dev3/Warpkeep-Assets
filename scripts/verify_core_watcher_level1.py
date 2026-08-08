@@ -215,6 +215,17 @@ MAX_ENTRY_BYTES = 16 * MEBIBYTE
 MAX_TEXT_BYTES = 2 * MEBIBYTE
 MAX_COMPRESSION_RATIO = 200
 MAX_ARCHIVE_ENTRIES = 64
+MAX_JSON_BYTES = 256 * 1024
+MAX_JSON_DEPTH = 64
+MAX_JSON_VALUES = 50_000
+MAX_JSON_NUMBER_CHARS = 128
+MAX_GLB_NODES = 64
+MAX_GLB_MESHES = 64
+MAX_GLB_BUFFER_VIEWS = 256
+MAX_GLB_ACCESSORS = 256
+MAX_ACCESSOR_ELEMENTS = 20_000
+MAX_DECODED_ACCESSOR_ELEMENTS = 100_000
+MAX_PNG_DECOMPRESSED_BYTES = 32 * MEBIBYTE
 MAX_AUTHORING_BOUND_MARGIN_METERS = 0.08
 BOUND_TOLERANCE_METERS = 1e-5
 NORMAL_LENGTH_TOLERANCE = 1e-4
@@ -257,6 +268,14 @@ COMPONENTS = {
     5126: (4, "f"),
 }
 TYPE_COMPONENTS = {"SCALAR": 1, "VEC2": 2, "VEC3": 3, "VEC4": 4}
+
+EXPECTED_DIRECTORIES = frozenset(
+    parent.as_posix()
+    for name in EXPECTED_FILES
+    for parent in PurePosixPath(name).parents
+    if parent != PurePosixPath(".")
+)
+QA_GENERATED_AT = "2026-08-03T12:00:00+00:00"
 
 
 @dataclass(frozen=True)
@@ -328,6 +347,21 @@ def _reject_json_constant(value: str) -> None:
     raise ValueError(f"non-finite JSON number: {value}")
 
 
+def _parse_json_int(value: str) -> int:
+    if len(value) > MAX_JSON_NUMBER_CHARS:
+        raise ValueError("JSON integer token exceeds size limit")
+    return int(value)
+
+
+def _parse_json_float(value: str) -> float:
+    if len(value) > MAX_JSON_NUMBER_CHARS:
+        raise ValueError("JSON number token exceeds size limit")
+    number = float(value)
+    if not math.isfinite(number):
+        raise ValueError(f"non-finite JSON number: {value}")
+    return number
+
+
 def _unique_object(pairs: list[tuple[str, object]]) -> dict[str, object]:
     result: dict[str, object] = {}
     for key, value in pairs:
@@ -338,30 +372,43 @@ def _unique_object(pairs: list[tuple[str, object]]) -> dict[str, object]:
 
 
 def load_json(payload: bytes, label: str) -> dict:
-    if len(payload) > MAX_TEXT_BYTES:
+    if len(payload) > MAX_JSON_BYTES:
         raise ValueError(f"JSON file exceeds size limit: {label}")
     try:
         document = json.loads(
             payload.decode("utf-8"),
             object_pairs_hook=_unique_object,
             parse_constant=_reject_json_constant,
+            parse_float=_parse_json_float,
+            parse_int=_parse_json_int,
         )
+    except RecursionError as exc:
+        raise ValueError(f"JSON nesting exceeds depth limit: {label}") from exc
     except (UnicodeDecodeError, json.JSONDecodeError) as exc:
         raise ValueError(f"invalid UTF-8 JSON: {label}") from exc
     if not isinstance(document, dict):
         raise ValueError(f"JSON root must be an object: {label}")
 
-    def require_finite(value: object) -> None:
-        if isinstance(value, float) and not math.isfinite(value):
-            raise ValueError(f"non-finite JSON number: {label}")
+    values_seen = 0
+    stack: list[tuple[object, int]] = [(document, 1)]
+    while stack:
+        value, depth = stack.pop()
+        values_seen += 1
+        if values_seen > MAX_JSON_VALUES:
+            raise ValueError(f"JSON value count exceeds limit: {label}")
+        if depth > MAX_JSON_DEPTH:
+            raise ValueError(f"JSON nesting exceeds depth limit: {label}")
         if isinstance(value, dict):
-            for child in value.values():
-                require_finite(child)
+            stack.extend((child, depth + 1) for child in value.values())
         elif isinstance(value, list):
-            for child in value:
-                require_finite(child)
-
-    require_finite(document)
+            stack.extend((child, depth + 1) for child in value)
+        elif isinstance(value, (int, float)) and not isinstance(value, bool):
+            try:
+                finite = math.isfinite(float(value))
+            except (OverflowError, ValueError) as exc:
+                raise ValueError(f"non-finite JSON number: {label}") from exc
+            if not finite:
+                raise ValueError(f"non-finite JSON number: {label}")
     return document
 
 
@@ -390,21 +437,91 @@ def _zip_mode(info: ZipInfo) -> int:
     return (info.external_attr >> 16) & 0xFFFF
 
 
+def _open_flags(*, directory: bool = False) -> int:
+    flags = os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_CLOEXEC", 0)
+    flags |= getattr(os, "O_NOFOLLOW", 0)
+    if directory:
+        flags |= getattr(os, "O_DIRECTORY", 0)
+    else:
+        flags |= getattr(os, "O_NONBLOCK", 0)
+    return flags
+
+
+def _same_identity(left: os.stat_result, right: os.stat_result) -> bool:
+    return (
+        left.st_dev,
+        left.st_ino,
+        stat.S_IFMT(left.st_mode),
+    ) == (
+        right.st_dev,
+        right.st_ino,
+        stat.S_IFMT(right.st_mode),
+    )
+
+
+def _same_contents(left: os.stat_result, right: os.stat_result) -> bool:
+    return _same_identity(left, right) and (
+        left.st_size,
+        left.st_mtime_ns,
+        left.st_ctime_ns,
+    ) == (
+        right.st_size,
+        right.st_mtime_ns,
+        right.st_ctime_ns,
+    )
+
+
+def _read_regular_path(path: Path, maximum_bytes: int, label: str) -> bytes:
+    """Read one stable regular file without following a final-component symlink."""
+
+    try:
+        linked = path.lstat()
+        if stat.S_ISLNK(linked.st_mode) or not stat.S_ISREG(linked.st_mode):
+            raise ValueError(f"{label} must be a regular non-symlink")
+        descriptor = os.open(path, _open_flags())
+    except OSError as exc:
+        raise ValueError(f"cannot open {label}") from exc
+    try:
+        opened = os.fstat(descriptor)
+        if not _same_identity(linked, opened) or not stat.S_ISREG(opened.st_mode):
+            raise ValueError(f"{label} changed while opening")
+        if opened.st_size > maximum_bytes:
+            raise ValueError(f"{label} exceeds size limit")
+        payload = bytearray()
+        remaining = opened.st_size + 1
+        while remaining:
+            chunk = os.read(descriptor, min(64 * 1024, remaining))
+            if not chunk:
+                break
+            payload.extend(chunk)
+            remaining -= len(chunk)
+        closed_over = os.fstat(descriptor)
+        if not _same_contents(opened, closed_over) or len(payload) != opened.st_size:
+            raise ValueError(f"{label} changed while reading")
+        return bytes(payload)
+    finally:
+        os.close(descriptor)
+
+
 def _read_zip(path: Path) -> dict[str, bytes]:
     try:
         linked = path.lstat()
+        if stat.S_ISLNK(linked.st_mode) or not stat.S_ISREG(linked.st_mode):
+            raise ValueError("package ZIP must be a regular, non-symlink file")
+        descriptor = os.open(path, _open_flags())
     except OSError as exc:
-        raise ValueError(f"unable to inspect ZIP: {path}") from exc
-    if stat.S_ISLNK(linked.st_mode) or not stat.S_ISREG(linked.st_mode):
-        raise ValueError("package ZIP must be a regular, non-symlink file")
-    if linked.st_size > MAX_ARCHIVE_BYTES:
-        raise ValueError("package ZIP exceeds size limit")
+        raise ValueError("unable to open package ZIP") from exc
 
     files: dict[str, bytes] = {}
     seen_archive_names: set[str] = set()
     total = 0
     try:
-        with ZipFile(path) as archive:
+        opened = os.fstat(descriptor)
+        if not _same_identity(linked, opened) or not stat.S_ISREG(opened.st_mode):
+            raise ValueError("package ZIP changed while opening")
+        if opened.st_size > MAX_ARCHIVE_BYTES:
+            raise ValueError("package ZIP exceeds size limit")
+        with os.fdopen(descriptor, "rb", closefd=False) as source, ZipFile(source) as archive:
             infos = archive.infolist()
             if len(infos) > MAX_ARCHIVE_ENTRIES:
                 raise ValueError("ZIP exceeds entry-count limit")
@@ -437,6 +554,14 @@ def _read_zip(path: Path) -> dict[str, bytes]:
                     and info.file_size > info.compress_size * MAX_COMPRESSION_RATIO
                 ):
                     raise ValueError(f"ZIP entry exceeds compression-ratio limit: {name!r}")
+                prefix = f"{PACKAGE_NAME}/"
+                if not name.startswith(prefix):
+                    raise ValueError(f"unexpected ZIP package root: {name!r}")
+                relative = name[len(prefix) :]
+                if not relative or relative in files:
+                    raise ValueError(f"duplicate or empty package path: {name!r}")
+                if relative not in EXPECTED_FILES:
+                    raise ValueError(f"unexpected package path: {relative!r}")
                 total += info.file_size
                 if total > MAX_TOTAL_BYTES:
                     raise ValueError("ZIP exceeds total uncompressed size limit")
@@ -444,57 +569,126 @@ def _read_zip(path: Path) -> dict[str, bytes]:
                     payload = stream.read(info.file_size + 1)
                 if len(payload) != info.file_size:
                     raise ValueError(f"ZIP entry byte-count mismatch: {name!r}")
-                prefix = f"{PACKAGE_NAME}/"
-                if not name.startswith(prefix):
-                    raise ValueError(f"unexpected ZIP package root: {name!r}")
-                relative = name[len(prefix) :]
-                if not relative or relative in files:
-                    raise ValueError(f"duplicate or empty package path: {name!r}")
                 files[relative] = payload
-    except BadZipFile as exc:
+        after = os.fstat(descriptor)
+        if not _same_contents(opened, after):
+            raise ValueError("package ZIP changed while reading")
+    except (BadZipFile, EOFError, RuntimeError, zlib.error) as exc:
         raise ValueError("invalid package ZIP") from exc
+    finally:
+        os.close(descriptor)
     return files
 
 
 def _read_directory(root: Path) -> dict[str, bytes]:
     try:
         linked = root.lstat()
+        if root.name != PACKAGE_NAME:
+            raise ValueError(f"unexpected extracted package root: {root.name!r}")
+        if stat.S_ISLNK(linked.st_mode) or not stat.S_ISDIR(linked.st_mode):
+            raise ValueError("package root must be a real directory")
+        root_descriptor = os.open(root, _open_flags(directory=True))
     except OSError as exc:
-        raise ValueError(f"unable to inspect package root: {root}") from exc
-    if root.name != PACKAGE_NAME:
-        raise ValueError(f"unexpected extracted package root: {root.name!r}")
-    if stat.S_ISLNK(linked.st_mode) or not stat.S_ISDIR(linked.st_mode):
-        raise ValueError("package root must be a real directory")
+        raise ValueError("unable to open package root") from exc
 
     files: dict[str, bytes] = {}
     total = 0
-    for current, directory_names, file_names in os.walk(root, followlinks=False):
-        current_path = Path(current)
-        for name in directory_names:
-            child = current_path / name
-            mode = child.lstat().st_mode
-            if stat.S_ISLNK(mode) or not stat.S_ISDIR(mode):
-                raise ValueError(f"non-directory or symlink in package: {child}")
-        for name in file_names:
-            child = current_path / name
-            mode = child.lstat().st_mode
-            relative = child.relative_to(root).as_posix()
-            if not safe_relative_path(relative):
-                raise ValueError(f"unsafe package path: {relative!r}")
-            if stat.S_ISLNK(mode) or not stat.S_ISREG(mode):
-                raise ValueError(f"package entry must be a regular file: {relative!r}")
-            if mode & 0o111:
-                raise ValueError(f"executable package entry is not allowed: {relative!r}")
-            size = os.stat(child, follow_symlinks=False).st_size
-            if size > MAX_ENTRY_BYTES:
-                raise ValueError(f"package entry exceeds size limit: {relative!r}")
-            total += size
-            if total > MAX_TOTAL_BYTES:
-                raise ValueError("package exceeds total size limit")
-            payload = child.read_bytes()
-            if len(payload) != size:
-                raise ValueError(f"package entry changed while reading: {relative!r}")
-            files[relative] = payload
+    entries_seen = 0
+
+    def walk(directory_descriptor: int, prefix: PurePosixPath | None = None) -> None:
+        nonlocal entries_seen, total
+        before = os.fstat(directory_descriptor)
+        with os.scandir(directory_descriptor) as entries:
+            for entry in entries:
+                entries_seen += 1
+                if entries_seen > MAX_ARCHIVE_ENTRIES:
+                    raise ValueError("package exceeds entry-count limit")
+                relative_path = (
+                    PurePosixPath(entry.name)
+                    if prefix is None
+                    else prefix / entry.name
+                )
+                relative = relative_path.as_posix()
+                if not safe_relative_path(relative):
+                    raise ValueError(f"unsafe package path: {relative!r}")
+                metadata = entry.stat(follow_symlinks=False)
+                if stat.S_ISDIR(metadata.st_mode):
+                    if relative not in EXPECTED_DIRECTORIES:
+                        raise ValueError(f"unexpected package directory: {relative!r}")
+                    child_descriptor = os.open(
+                        entry.name, _open_flags(directory=True), dir_fd=directory_descriptor
+                    )
+                    try:
+                        opened = os.fstat(child_descriptor)
+                        if not _same_identity(metadata, opened) or not stat.S_ISDIR(
+                            opened.st_mode
+                        ):
+                            raise ValueError(
+                                f"package directory changed while opening: {relative!r}"
+                            )
+                        walk(child_descriptor, relative_path)
+                    finally:
+                        os.close(child_descriptor)
+                    continue
+                if not stat.S_ISREG(metadata.st_mode):
+                    raise ValueError(
+                        f"package entry must be a regular file: {relative!r}"
+                    )
+                if relative not in EXPECTED_FILES:
+                    raise ValueError(f"unexpected package path: {relative!r}")
+                if metadata.st_mode & 0o111:
+                    raise ValueError(
+                        f"executable package entry is not allowed: {relative!r}"
+                    )
+                descriptor = os.open(
+                    entry.name, _open_flags(), dir_fd=directory_descriptor
+                )
+                try:
+                    opened = os.fstat(descriptor)
+                    if not _same_identity(metadata, opened) or not stat.S_ISREG(
+                        opened.st_mode
+                    ):
+                        raise ValueError(
+                            f"package entry changed while opening: {relative!r}"
+                        )
+                    if opened.st_size > MAX_ENTRY_BYTES:
+                        raise ValueError(
+                            f"package entry exceeds size limit: {relative!r}"
+                        )
+                    total += opened.st_size
+                    if total > MAX_TOTAL_BYTES:
+                        raise ValueError("package exceeds total size limit")
+                    payload = bytearray()
+                    remaining = opened.st_size + 1
+                    while remaining:
+                        chunk = os.read(descriptor, min(64 * 1024, remaining))
+                        if not chunk:
+                            break
+                        payload.extend(chunk)
+                        remaining -= len(chunk)
+                    after = os.fstat(descriptor)
+                    if not _same_contents(opened, after) or len(payload) != opened.st_size:
+                        raise ValueError(
+                            f"package entry changed while reading: {relative!r}"
+                        )
+                    files[relative] = bytes(payload)
+                finally:
+                    os.close(descriptor)
+        after = os.fstat(directory_descriptor)
+        if not _same_contents(before, after):
+            raise ValueError("package directory changed while reading")
+
+    try:
+        opened_root = os.fstat(root_descriptor)
+        if not _same_identity(linked, opened_root) or not stat.S_ISDIR(
+            opened_root.st_mode
+        ):
+            raise ValueError("package root changed while opening")
+        walk(root_descriptor)
+    except OSError as exc:
+        raise ValueError("package changed or became inaccessible while reading") from exc
+    finally:
+        os.close(root_descriptor)
     return files
 
 
@@ -574,21 +768,25 @@ def _nonnegative_int(value: object, label: str, *, positive: bool = False) -> in
 
 
 def _walk_extensions(value: object, found: set[str]) -> None:
-    if isinstance(value, dict):
-        for key, child in value.items():
-            if key == "extensions":
-                if not isinstance(child, dict):
-                    raise ValueError("GLB extensions value must be an object")
-                for extension_name in child:
-                    if extension_name not in ALLOWED_EXTENSIONS:
-                        raise ValueError(f"unsupported GLB extension: {extension_name}")
-                    found.add(extension_name)
-            _walk_extensions(child, found)
-    elif isinstance(value, list):
-        for child in value:
-            _walk_extensions(child, found)
-    elif isinstance(value, float) and not math.isfinite(value):
-        raise ValueError("non-finite GLB JSON number")
+    stack = [value]
+    while stack:
+        current = stack.pop()
+        if isinstance(current, dict):
+            for key, child in current.items():
+                if key == "extensions":
+                    if not isinstance(child, dict):
+                        raise ValueError("GLB extensions value must be an object")
+                    for extension_name in child:
+                        if extension_name not in ALLOWED_EXTENSIONS:
+                            raise ValueError(
+                                f"unsupported GLB extension: {extension_name}"
+                            )
+                        found.add(extension_name)
+                stack.append(child)
+        elif isinstance(current, list):
+            stack.extend(current)
+        elif isinstance(current, float) and not math.isfinite(current):
+            raise ValueError("non-finite GLB JSON number")
 
 
 def _parse_glb(payload: bytes, label: str) -> tuple[dict, bytes]:
@@ -647,6 +845,8 @@ def _decode_accessor(
     components = TYPE_COMPONENTS[accessor_type]
     element_bytes = component_bytes * components
     count = _nonnegative_int(accessor.get("count"), f"accessor count: {label}", positive=True)
+    if count > MAX_ACCESSOR_ELEMENTS:
+        raise ValueError(f"accessor count exceeds resource limit: {label}")
     normalized = accessor.get("normalized", False)
     if not isinstance(normalized, bool) or (
         normalized and component_type not in (5120, 5121, 5122, 5123)
@@ -697,8 +897,14 @@ def _validate_declared_bounds(accessor: dict, values: list[tuple], label: str) -
             expected = declared[component]
             if not isinstance(expected, (int, float)) or isinstance(expected, bool):
                 raise ValueError(f"invalid accessor {key}: {label}")
+            try:
+                expected_number = float(expected)
+            except (OverflowError, ValueError) as exc:
+                raise ValueError(f"invalid accessor {key}: {label}") from exc
+            if not math.isfinite(expected_number):
+                raise ValueError(f"invalid accessor {key}: {label}")
             tolerance = max(1e-6, abs(float(actual)) * 1e-6)
-            if not math.isclose(float(expected), float(actual), abs_tol=tolerance, rel_tol=1e-6):
+            if not math.isclose(expected_number, float(actual), abs_tol=tolerance, rel_tol=1e-6):
                 raise ValueError(f"incorrect accessor {key}: {label}")
 
 
@@ -709,13 +915,14 @@ def _finite_number(
     minimum: float | None = None,
     maximum: float | None = None,
 ) -> float:
-    if (
-        not isinstance(value, (int, float))
-        or isinstance(value, bool)
-        or not math.isfinite(float(value))
-    ):
+    if not isinstance(value, (int, float)) or isinstance(value, bool):
         raise ValueError(f"invalid finite number: {label}")
-    number = float(value)
+    try:
+        number = float(value)
+    except (OverflowError, ValueError) as exc:
+        raise ValueError(f"invalid finite number: {label}") from exc
+    if not math.isfinite(number):
+        raise ValueError(f"invalid finite number: {label}")
     if minimum is not None and number < minimum:
         raise ValueError(f"number below minimum: {label}")
     if maximum is not None and number > maximum:
@@ -754,13 +961,16 @@ IDENTITY_MATRIX: Matrix4 = (
 
 
 def _matrix_multiply(left: Matrix4, right: Matrix4) -> Matrix4:
-    return tuple(
+    result = tuple(
         tuple(
             sum(left[row][item] * right[item][column] for item in range(4))
             for column in range(4)
         )
         for row in range(4)
     )  # type: ignore[return-value]
+    if any(not math.isfinite(component) for row in result for component in row):
+        raise ValueError("node transform matrix overflowed finite bounds")
+    return result  # type: ignore[return-value]
 
 
 def _transform_point(matrix: Matrix4, point: tuple) -> tuple[float, float, float]:
@@ -769,6 +979,8 @@ def _transform_point(matrix: Matrix4, point: tuple) -> tuple[float, float, float
         sum(matrix[row][column] * homogeneous[column] for column in range(4))
         for row in range(4)
     )
+    if any(not math.isfinite(component) for component in result):
+        raise ValueError("node transform produced non-finite geometry")
     if not math.isclose(result[3], 1.0, rel_tol=0.0, abs_tol=1e-7):
         raise ValueError("node transform produced a non-affine geometry point")
     return result[0], result[1], result[2]
@@ -908,9 +1120,34 @@ def inspect_glb(
     semantic_contract: GlbSemanticContract | None = None,
 ) -> GlbMetrics:
     document, binary = _parse_glb(payload, label)
+    allowed_top_level = {
+        "accessors",
+        "asset",
+        "buffers",
+        "bufferViews",
+        "extensionsRequired",
+        "extensionsUsed",
+        "materials",
+        "meshes",
+        "nodes",
+        "scene",
+        "scenes",
+    }
+    if not set(document).issubset(allowed_top_level):
+        raise ValueError(f"unexpected GLB top-level field: {label}")
     asset = document.get("asset")
-    if not isinstance(asset, dict) or asset.get("version") != "2.0":
+    if (
+        not isinstance(asset, dict)
+        or not set(asset).issubset({"generator", "version"})
+        or asset.get("version") != "2.0"
+        or not isinstance(asset.get("generator"), str)
+        or not asset["generator"]
+    ):
         raise ValueError(f"GLB asset.version must be 2.0: {label}")
+    if semantic_contract is not None and asset.get("generator") != (
+        "Khronos glTF Blender I/O v5.2.39"
+    ):
+        raise ValueError(f"GLB exporter identity does not match contract: {label}")
 
     extensions_used = _require_list(document, "extensionsUsed", label)
     extensions_required = _require_list(document, "extensionsRequired", label)
@@ -934,19 +1171,27 @@ def inspect_glb(
             raise ValueError(f"GLB must not contain {key}: {label}")
 
     def reject_uri(value: object) -> None:
-        if isinstance(value, dict):
-            for key, child in value.items():
-                if key == "uri":
-                    raise ValueError(f"external or embedded URI is not allowed: {label}")
-                reject_uri(child)
-        elif isinstance(value, list):
-            for child in value:
-                reject_uri(child)
+        stack = [value]
+        while stack:
+            current = stack.pop()
+            if isinstance(current, dict):
+                for key, child in current.items():
+                    if key == "uri":
+                        raise ValueError(
+                            f"external or embedded URI is not allowed: {label}"
+                        )
+                    stack.append(child)
+            elif isinstance(current, list):
+                stack.extend(current)
 
     reject_uri(document)
 
     buffers = _require_list(document, "buffers", label)
-    if len(buffers) != 1 or not isinstance(buffers[0], dict):
+    if (
+        len(buffers) != 1
+        or not isinstance(buffers[0], dict)
+        or set(buffers[0]) != {"byteLength"}
+    ):
         raise ValueError(f"GLB must contain exactly one embedded buffer: {label}")
     embedded_bytes = _nonnegative_int(
         buffers[0].get("byteLength"), f"embedded buffer byteLength: {label}", positive=True
@@ -960,8 +1205,12 @@ def inspect_glb(
     accessors = _require_list(document, "accessors", label)
     if not buffer_views or not accessors:
         raise ValueError(f"GLB geometry tables must be non-empty: {label}")
+    if len(buffer_views) > MAX_GLB_BUFFER_VIEWS or len(accessors) > MAX_GLB_ACCESSORS:
+        raise ValueError(f"GLB geometry tables exceed resource limits: {label}")
     for index, view in enumerate(buffer_views):
-        if not isinstance(view, dict):
+        if not isinstance(view, dict) or not set(view).issubset(
+            {"buffer", "byteLength", "byteOffset", "byteStride", "target"}
+        ):
             raise ValueError(f"invalid bufferView buffer: {label} #{index}")
         _index(view.get("buffer"), 1, f"bufferView buffer: {label} #{index}")
         offset = _nonnegative_int(view.get("byteOffset", 0), f"bufferView offset: {label}")
@@ -973,11 +1222,31 @@ def inspect_glb(
         if "target" in view and view["target"] not in (34962, 34963):
             raise ValueError(f"invalid bufferView target: {label} #{index}")
 
+    for index, accessor in enumerate(accessors):
+        if not isinstance(accessor, dict) or not set(accessor).issubset(
+            {
+                "bufferView",
+                "byteOffset",
+                "componentType",
+                "count",
+                "max",
+                "min",
+                "normalized",
+                "type",
+            }
+        ):
+            raise ValueError(f"invalid accessor field set: {label} #{index}")
+
     decoded: dict[int, tuple[dict, list[tuple]]] = {}
+    decoded_elements = 0
 
     def decode(index: int) -> tuple[dict, list[tuple]]:
+        nonlocal decoded_elements
         if index not in decoded:
             decoded[index] = _decode_accessor(index, accessors, buffer_views, binary, label)
+            decoded_elements += len(decoded[index][1])
+            if decoded_elements > MAX_DECODED_ACCESSOR_ELEMENTS:
+                raise ValueError(f"decoded accessors exceed resource limit: {label}")
             _validate_declared_bounds(*decoded[index], f"{label} accessor {index}")
         return decoded[index]
 
@@ -985,8 +1254,44 @@ def inspect_glb(
     names: list[str] = []
     runtime_materials: list[RuntimeMaterial] = []
     for index, material in enumerate(materials):
-        if not isinstance(material, dict) or not isinstance(material.get("name"), str):
+        if (
+            not isinstance(material, dict)
+            or not set(material).issubset(
+                {
+                    "alphaMode",
+                    "doubleSided",
+                    "emissiveFactor",
+                    "extensions",
+                    "extras",
+                    "name",
+                    "pbrMetallicRoughness",
+                }
+            )
+            or not isinstance(material.get("name"), str)
+        ):
             raise ValueError(f"invalid material record: {label} #{index}")
+        pbr = material.get("pbrMetallicRoughness", {})
+        if not isinstance(pbr, dict) or not set(pbr).issubset(
+            {"baseColorFactor", "metallicFactor", "roughnessFactor"}
+        ):
+            raise ValueError(f"invalid material PBR field set: {label} #{index}")
+        extras = material.get("extras")
+        expected_extras = {"warpkeep_material_contract": material["name"]}
+        if extras is not None and not _strict_json_equal(extras, expected_extras):
+            raise ValueError(f"invalid material contract extras: {label} #{index}")
+        if semantic_contract is not None and extras is None:
+            raise ValueError(f"missing material contract extras: {label} #{index}")
+        extensions = material.get("extensions", {})
+        emissive_extension = (
+            extensions.get("KHR_materials_emissive_strength")
+            if isinstance(extensions, dict)
+            else None
+        )
+        if emissive_extension is not None and (
+            not isinstance(emissive_extension, dict)
+            or set(emissive_extension) != {"emissiveStrength"}
+        ):
+            raise ValueError(f"invalid emissive extension fields: {label} #{index}")
         if material.get("alphaMode", "OPAQUE") != "OPAQUE":
             raise ValueError(f"non-opaque material is not allowed: {label} #{index}")
         names.append(material["name"])
@@ -1004,13 +1309,19 @@ def inspect_glb(
         or not _strict_json_equal(document.get("scene"), 0)
     ):
         raise ValueError(f"GLB must have one populated default scene: {label}")
+    if len(meshes) > MAX_GLB_MESHES or len(nodes) > MAX_GLB_NODES:
+        raise ValueError(f"GLB scene tables exceed resource limits: {label}")
 
     primitive_count = 0
     triangle_count = 0
     uploaded_vertices = 0
     mesh_positions: list[list[tuple]] = [[] for _ in meshes]
     for mesh_index, mesh in enumerate(meshes):
-        if not isinstance(mesh, dict) or not isinstance(mesh.get("primitives"), list):
+        if (
+            not isinstance(mesh, dict)
+            or not set(mesh).issubset({"name", "primitives"})
+            or not isinstance(mesh.get("primitives"), list)
+        ):
             raise ValueError(f"invalid mesh: {label} #{mesh_index}")
         if len(mesh["primitives"]) != 1 or "weights" in mesh:
             raise ValueError(
@@ -1018,7 +1329,13 @@ def inspect_glb(
             )
         for primitive_index, primitive in enumerate(mesh["primitives"]):
             primitive_label = f"{label} mesh {mesh_index} primitive {primitive_index}"
-            if not isinstance(primitive, dict) or primitive.get("mode", 4) != 4:
+            if (
+                not isinstance(primitive, dict)
+                or not set(primitive).issubset(
+                    {"attributes", "indices", "material", "mode", "targets"}
+                )
+                or primitive.get("mode", 4) != 4
+            ):
                 raise ValueError(f"only triangle primitives are allowed: {primitive_label}")
             if "targets" in primitive:
                 raise ValueError(f"morph targets are not allowed: {primitive_label}")
@@ -1126,7 +1443,18 @@ def inspect_glb(
     local_matrices: list[Matrix4] = []
     mesh_references = [0] * len(meshes)
     for node_index, node in enumerate(nodes):
-        if not isinstance(node, dict):
+        if not isinstance(node, dict) or not set(node).issubset(
+            {
+                "children",
+                "extras",
+                "matrix",
+                "mesh",
+                "name",
+                "rotation",
+                "scale",
+                "translation",
+            }
+        ):
             raise ValueError(f"invalid node: {label} #{node_index}")
         if any(key in node for key in ("camera", "skin", "weights")):
             raise ValueError(f"non-rigid node is not allowed: {label} #{node_index}")
@@ -1169,8 +1497,14 @@ def inspect_glb(
         raise ValueError(f"every GLB mesh must be referenced exactly once: {label}")
 
     scene = scenes[0]
-    if not isinstance(scene, dict) or not isinstance(scene.get("nodes"), list):
+    if (
+        not isinstance(scene, dict)
+        or not set(scene).issubset({"name", "nodes"})
+        or not isinstance(scene.get("nodes"), list)
+    ):
         raise ValueError(f"invalid default scene: {label}")
+    if semantic_contract is not None and scene.get("name") != "Scene":
+        raise ValueError(f"default scene name does not match contract: {label}")
     roots = scene["nodes"]
     if (
         not roots
@@ -1295,17 +1629,9 @@ def load_integration_semantic_contracts(
 ) -> dict[str, GlbSemanticContract]:
     """Load the digest-bound semantic declarations used by the runtime GLBs."""
 
-    try:
-        metadata = path.lstat()
-        if stat.S_ISLNK(metadata.st_mode) or not stat.S_ISREG(metadata.st_mode):
-            raise ValueError("tracked integration profile must be a regular non-symlink")
-        if metadata.st_size > MAX_TEXT_BYTES:
-            raise ValueError("tracked integration profile exceeds size limit")
-        payload = path.read_bytes()
-    except OSError as exc:
-        raise ValueError(f"cannot read tracked integration profile: {path}") from exc
-    if len(payload) != metadata.st_size:
-        raise ValueError("tracked integration profile changed while reading")
+    payload = _read_regular_path(
+        path, MAX_JSON_BYTES, "tracked integration profile"
+    )
     profile = load_json(payload, str(path))
     if profile.get("schema") != "warpkeep.asset-integration-profile.v1":
         raise ValueError("unexpected integration profile schema")
@@ -2003,10 +2329,25 @@ def verify_asset_manifest(files: dict[str, bytes], metrics: tuple[GlbMetrics, ..
 
 def verify_qa(files: dict[str, bytes]) -> None:
     report = load_json(files[QA_REPORT], QA_REPORT)
+    _expect_exact_keys(
+        report,
+        {
+            "budgets",
+            "checks",
+            "checksPassed",
+            "checksTotal",
+            "generatedAt",
+            "revision",
+            "schema",
+            "status",
+        },
+        "runtime QA report",
+    )
     for key, expected in (
         ("schema", "warpkeep.runtime-qa.v1"),
         ("revision", REVISION),
         ("status", "passed"),
+        ("generatedAt", QA_GENERATED_AT),
         (
             "budgets",
             {
@@ -2033,8 +2374,10 @@ def _png_dimensions(payload: bytes, label: str) -> tuple[int, int]:
         raise ValueError(f"invalid PNG preview: {label}")
     offset = 8
     dimensions: tuple[int, int] | None = None
+    pixel_format: tuple[int, int] | None = None
     seen_idat = False
     idat_ended = False
+    idat_parts: list[bytes] = []
     while offset < len(payload):
         if offset + 12 > len(payload):
             raise ValueError(f"truncated PNG chunk: {label}")
@@ -2056,6 +2399,11 @@ def _png_dimensions(payload: bytes, label: str) -> tuple[int, int]:
             raise ValueError(
                 f"forbidden PNG metadata chunk {chunk_type.decode('ascii')}: {label}"
             )
+        if chunk_type not in {b"IHDR", b"IDAT", b"IEND"}:
+            raise ValueError(
+                f"unexpected PNG ancillary or critical chunk "
+                f"{chunk_type.decode('ascii')}: {label}"
+            )
 
         if dimensions is None and chunk_type != b"IHDR":
             raise ValueError(f"PNG IHDR must be first: {label}")
@@ -2068,7 +2416,6 @@ def _png_dimensions(payload: bytes, label: str) -> tuple[int, int]:
             valid_depths = {
                 0: {1, 2, 4, 8, 16},
                 2: {8, 16},
-                3: {1, 2, 4, 8},
                 4: {8, 16},
                 6: {8, 16},
             }
@@ -2078,20 +2425,48 @@ def _png_dimensions(payload: bytes, label: str) -> tuple[int, int]:
                 or bit_depth not in valid_depths.get(color_type, set())
                 or compression != 0
                 or filtering != 0
-                or interlace not in (0, 1)
+                or interlace != 0
             ):
                 raise ValueError(f"invalid PNG IHDR values: {label}")
             dimensions = (width, height)
+            pixel_format = (bit_depth, color_type)
         elif chunk_type == b"IDAT":
             if idat_ended:
                 raise ValueError(f"non-contiguous PNG IDAT chunks: {label}")
             seen_idat = True
+            idat_parts.append(data)
         elif seen_idat:
             idat_ended = True
 
         if chunk_type == b"IEND":
             if length != 0 or not seen_idat or end != len(payload) or dimensions is None:
                 raise ValueError(f"invalid PNG IEND or trailing data: {label}")
+            if pixel_format is None:
+                raise ValueError(f"PNG pixel format is missing: {label}")
+            width, height = dimensions
+            bit_depth, color_type = pixel_format
+            channels = {0: 1, 2: 3, 3: 1, 4: 2, 6: 4}[color_type]
+            row_bytes = (width * channels * bit_depth + 7) // 8
+            expected_bytes = height * (row_bytes + 1)
+            if expected_bytes > MAX_PNG_DECOMPRESSED_BYTES:
+                raise ValueError(f"PNG decoded pixels exceed resource limit: {label}")
+            compressed = b"".join(idat_parts)
+            try:
+                decompressor = zlib.decompressobj()
+                decoded = decompressor.decompress(compressed, expected_bytes + 1)
+            except zlib.error as exc:
+                raise ValueError(f"invalid PNG IDAT stream: {label}") from exc
+            if (
+                len(decoded) != expected_bytes
+                or decompressor.unconsumed_tail
+                or decompressor.unused_data
+                or not decompressor.eof
+            ):
+                raise ValueError(f"invalid or oversized PNG pixel stream: {label}")
+            if any(
+                decoded[row * (row_bytes + 1)] > 4 for row in range(height)
+            ):
+                raise ValueError(f"invalid PNG row filter: {label}")
             return dimensions
         offset = end
     raise ValueError(f"PNG IEND is missing: {label}")
@@ -2103,21 +2478,12 @@ def _jpeg_dimensions(payload: bytes, label: str) -> tuple[int, int]:
     offset = 2
     dimensions: tuple[int, int] | None = None
     seen_scan = False
-    frame_markers = {
-        0xC0,
-        0xC1,
-        0xC2,
-        0xC3,
-        0xC5,
-        0xC6,
-        0xC7,
-        0xC9,
-        0xCA,
-        0xCB,
-        0xCD,
-        0xCE,
-        0xCF,
-    }
+    seen_jfif = False
+    quantization_tables: set[int] = set()
+    dc_huffman_tables: set[int] = set()
+    ac_huffman_tables: set[int] = set()
+    frame_components: tuple[int, ...] = ()
+    allowed_segment_markers = {0xE0, 0xDB, 0xC0, 0xC4, 0xDA}
     while offset < len(payload):
         if payload[offset] != 0xFF:
             raise ValueError(f"invalid JPEG marker stream: {label}")
@@ -2128,42 +2494,178 @@ def _jpeg_dimensions(payload: bytes, label: str) -> tuple[int, int]:
         marker = payload[offset]
         offset += 1
         if marker == 0xD9:
-            if offset != len(payload) or dimensions is None or not seen_scan:
+            if (
+                offset != len(payload)
+                or dimensions is None
+                or not seen_scan
+                or not seen_jfif
+            ):
                 raise ValueError(f"invalid JPEG end marker or missing frame/scan: {label}")
             return dimensions
         if marker == 0xD8:
             raise ValueError(f"unexpected JPEG start marker: {label}")
         if marker == 0x00:
             raise ValueError(f"stuffed JPEG byte outside scan data: {label}")
-        if marker == 0x01 or 0xD0 <= marker <= 0xD7:
-            continue
-        if marker in FORBIDDEN_JPEG_MARKERS:
+        if seen_scan:
+            raise ValueError(f"unexpected JPEG marker after scan: {label}")
+        if marker == 0xFE or (0xE0 <= marker <= 0xEF and marker != 0xE0):
+            description = FORBIDDEN_JPEG_MARKERS.get(marker, f"APP{marker - 0xE0}")
             raise ValueError(
-                f"forbidden JPEG metadata marker {FORBIDDEN_JPEG_MARKERS[marker]}: {label}"
+                f"forbidden JPEG metadata marker {description}: {label}"
             )
+        if marker not in allowed_segment_markers:
+            raise ValueError(f"unexpected JPEG marker 0x{marker:02x}: {label}")
         if offset + 2 > len(payload):
             raise ValueError(f"truncated JPEG marker: {label}")
         segment_length = struct.unpack_from(">H", payload, offset)[0]
         if segment_length < 2 or offset + segment_length > len(payload):
             raise ValueError(f"invalid JPEG segment length: {label}")
-        if marker in frame_markers:
-            if segment_length < 7:
+        segment_data = payload[offset + 2 : offset + segment_length]
+        if marker == 0xE0:
+            jfif = b"JFIF\x00\x01\x01\x00\x00\x01\x00\x01\x00\x00"
+            if seen_jfif or segment_data != jfif:
+                raise ValueError(f"invalid or duplicate JPEG JFIF header: {label}")
+            seen_jfif = True
+        if marker == 0xDB:
+            cursor = 0
+            if not segment_data:
+                raise ValueError(f"empty JPEG quantization table segment: {label}")
+            while cursor < len(segment_data):
+                table_info = segment_data[cursor]
+                cursor += 1
+                precision, table_id = table_info >> 4, table_info & 0x0F
+                table_bytes = 64 * (precision + 1)
+                if (
+                    precision not in (0, 1)
+                    or table_id > 3
+                    or table_id in quantization_tables
+                    or cursor + table_bytes > len(segment_data)
+                ):
+                    raise ValueError(f"invalid JPEG quantization table: {label}")
+                table = segment_data[cursor : cursor + table_bytes]
+                values = (
+                    table
+                    if precision == 0
+                    else struct.unpack(">" + "H" * 64, table)
+                )
+                if any(value == 0 for value in values):
+                    raise ValueError(f"zero JPEG quantization value: {label}")
+                quantization_tables.add(table_id)
+                cursor += table_bytes
+            if cursor != len(segment_data):
+                raise ValueError(f"invalid JPEG quantization table length: {label}")
+        if marker == 0xC4:
+            cursor = 0
+            if not segment_data:
+                raise ValueError(f"empty JPEG Huffman table segment: {label}")
+            while cursor < len(segment_data):
+                if cursor + 17 > len(segment_data):
+                    raise ValueError(f"truncated JPEG Huffman table: {label}")
+                table_info = segment_data[cursor]
+                table_class, table_id = table_info >> 4, table_info & 0x0F
+                counts = segment_data[cursor + 1 : cursor + 17]
+                symbol_count = sum(counts)
+                available_codes = 1
+                for count in counts:
+                    available_codes = available_codes * 2 - count
+                    if available_codes < 0:
+                        raise ValueError(f"oversubscribed JPEG Huffman table: {label}")
+                cursor += 17
+                target = (
+                    dc_huffman_tables if table_class == 0 else ac_huffman_tables
+                )
+                if (
+                    table_class not in (0, 1)
+                    or table_id > 3
+                    or table_id in target
+                    or not 0 < symbol_count <= 256
+                    or cursor + symbol_count > len(segment_data)
+                ):
+                    raise ValueError(f"invalid JPEG Huffman table: {label}")
+                symbols = segment_data[cursor : cursor + symbol_count]
+                if (
+                    table_class == 0
+                    and any(symbol > 11 for symbol in symbols)
+                ) or (
+                    table_class == 1
+                    and any(
+                        (symbol & 0x0F) > 10
+                        or ((symbol & 0x0F) == 0 and (symbol >> 4) not in (0, 15))
+                        for symbol in symbols
+                    )
+                ):
+                    raise ValueError(f"invalid JPEG Huffman symbol: {label}")
+                target.add(table_id)
+                cursor += symbol_count
+            if cursor != len(segment_data):
+                raise ValueError(f"invalid JPEG Huffman table length: {label}")
+        if marker == 0xC0:
+            if segment_length < 8:
                 raise ValueError(f"invalid JPEG frame: {label}")
-            height, width = struct.unpack_from(">HH", payload, offset + 3)
-            if width == 0 or height == 0 or dimensions is not None:
+            precision = segment_data[0]
+            height, width = struct.unpack_from(">HH", segment_data, 1)
+            components = segment_data[5]
+            if (
+                precision != 8
+                or components not in (1, 3)
+                or segment_length != 8 + 3 * components
+                or width == 0
+                or height == 0
+                or dimensions is not None
+            ):
                 raise ValueError(f"invalid or duplicate JPEG frame: {label}")
+            component_records = [
+                segment_data[6 + index * 3 : 9 + index * 3]
+                for index in range(components)
+            ]
+            component_ids = tuple(record[0] for record in component_records)
+            if (
+                len(set(component_ids)) != components
+                or any(
+                    not (1 <= record[1] >> 4 <= 4)
+                    or not (1 <= record[1] & 0x0F <= 4)
+                    or record[2] not in quantization_tables
+                    for record in component_records
+                )
+            ):
+                raise ValueError(f"invalid JPEG frame components: {label}")
+            frame_components = component_ids
             dimensions = (width, height)
         segment_end = offset + segment_length
         if marker != 0xDA:
             offset = segment_end
             continue
 
+        if seen_scan or dimensions is None:
+            raise ValueError(f"invalid or duplicate JPEG scan: {label}")
+        if segment_length < 8:
+            raise ValueError(f"invalid JPEG scan header: {label}")
+        components = segment_data[0]
+        if components not in (1, 3) or segment_length != 6 + 2 * components:
+            raise ValueError(f"invalid JPEG scan header: {label}")
+        scan_records = [
+            segment_data[1 + index * 2 : 3 + index * 2]
+            for index in range(components)
+        ]
+        if (
+            tuple(record[0] for record in scan_records) != frame_components
+            or any(
+                record[1] >> 4 not in dc_huffman_tables
+                or record[1] & 0x0F not in ac_huffman_tables
+                for record in scan_records
+            )
+            or segment_data[-3:] != b"\x00\x3f\x00"
+        ):
+            raise ValueError(f"invalid JPEG baseline scan contract: {label}")
         seen_scan = True
         offset = segment_end
+        saw_entropy_data = False
         while offset < len(payload):
             marker_start = payload.find(b"\xff", offset)
             if marker_start < 0 or marker_start + 1 >= len(payload):
                 raise ValueError(f"unterminated JPEG scan data: {label}")
+            if marker_start > offset:
+                saw_entropy_data = True
             cursor = marker_start + 1
             while cursor < len(payload) and payload[cursor] == 0xFF:
                 cursor += 1
@@ -2171,8 +2673,12 @@ def _jpeg_dimensions(payload: bytes, label: str) -> tuple[int, int]:
                 raise ValueError(f"unterminated JPEG marker fill: {label}")
             escaped = payload[cursor]
             if escaped == 0x00 or 0xD0 <= escaped <= 0xD7:
+                if escaped == 0x00:
+                    saw_entropy_data = True
                 offset = cursor + 1
                 continue
+            if not saw_entropy_data:
+                raise ValueError(f"JPEG scan contains no entropy-coded data: {label}")
             offset = marker_start
             break
     raise ValueError(f"JPEG end marker is missing: {label}")

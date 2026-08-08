@@ -63,6 +63,17 @@
       }
     ],
     "sourceReopened": true,
+    "sourceSafetyAudit": {
+      "actions": 0,
+      "autoExecutionEnabled": false,
+      "embeddedTextBlocks": 0,
+      "externalFonts": 0,
+      "externalImages": 0,
+      "externalLibraries": 0,
+      "externalMovieClips": 0,
+      "externalSounds": 0,
+      "scriptedDrivers": 0
+    },
     "sourceSemanticFingerprintSha256": "a51eae5665ee3e7c59191b36dd1abfbbc1fa3ddd76405bee52c6c5fb3dad344c",
     "version": "5.2.0 LTS"
   },

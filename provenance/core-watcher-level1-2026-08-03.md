@@ -66,8 +66,10 @@ Every nested checksum passed. The generic release verifier accepted the exact
 1,405,757-byte candidate ZIP and its 15-entry manifest. The official Khronos
 glTF validator reported zero issues for all four GLBs, and each file imported
 cleanly into a separate factory Blender session. A second full build produced
-byte-identical GLBs and metadata-free previews plus the same editable-source
-semantic fingerprint. Exact results are recorded in the [external validation
+byte-identical GLBs and previews without descriptive or private metadata, plus
+the same editable-source semantic fingerprint. A disabled-autoexec source audit
+also found no embedded text scripts, scripted drivers, actions, or external
+libraries or media. Exact results are recorded in the [external validation
 report](../reports/core-watcher-level1-2026-08-03/external-validation.json).
 
 ## Distribution shape and gate

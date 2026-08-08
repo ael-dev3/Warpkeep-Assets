@@ -13,7 +13,7 @@ import sys
 import tempfile
 import unittest
 import zlib
-from zipfile import ZIP_STORED, ZipFile, ZipInfo
+from zipfile import ZIP_DEFLATED, ZIP_STORED, ZipFile, ZipInfo
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -143,6 +143,9 @@ def semantic_glb_document(
 ) -> tuple[dict, bytes]:
     document, binary = glb_document(triangles_per_mesh)
     contract = verify.load_integration_semantic_contracts()[tier]
+    document["asset"]["generator"] = "Khronos glTF Blender I/O v5.2.39"
+    for material in document["materials"]:
+        material["extras"] = {"warpkeep_material_contract": material["name"]}
 
     def role(node_name: str) -> str:
         if node_name.startswith("CoreWatcher_CoreCage_"):
@@ -206,7 +209,7 @@ def semantic_glb_document(
     )
     document["meshes"] = meshes
     document["nodes"] = nodes
-    document["scenes"] = [{"nodes": [len(contract.part_nodes)]}]
+    document["scenes"] = [{"name": "Scene", "nodes": [len(contract.part_nodes)]}]
     return document, binary
 
 
@@ -227,13 +230,16 @@ def png_chunk(chunk_type: bytes, data: bytes) -> bytes:
 def png_image(
     width: int, height: int, metadata: tuple[tuple[bytes, bytes], ...] = ()
 ) -> bytes:
-    ihdr = struct.pack(">IIBBBBB", width, height, 8, 6, 0, 0, 0)
+    # A compact but fully decodable one-bit grayscale image keeps hostile-image
+    # tests realistic without writing multi-megabyte RGBA fixtures repeatedly.
+    ihdr = struct.pack(">IIBBBBB", width, height, 1, 0, 0, 0, 0)
+    row = b"\x00" + b"\x00" * ((width + 7) // 8)
     return b"".join(
         (
             b"\x89PNG\r\n\x1a\n",
             png_chunk(b"IHDR", ihdr),
             *(png_chunk(chunk_type, data) for chunk_type, data in metadata),
-            png_chunk(b"IDAT", zlib.compress(b"")),
+            png_chunk(b"IDAT", zlib.compress(row * height)),
             png_chunk(b"IEND", b""),
         )
     )
@@ -242,11 +248,33 @@ def png_image(
 def jpeg_frame(width: int, height: int) -> bytes:
     frame = struct.pack(">BHHB", 8, height, width, 1) + b"\x01\x11\x00"
     scan = b"\x01\x01\x00\x00\x3f\x00"
+    jfif = b"JFIF\x00\x01\x01\x00\x00\x01\x00\x01\x00\x00"
+    quantization = b"\x00" + b"\x01" * 64
+    dc_huffman = b"\x00" + b"\x01" + b"\x00" * 15 + b"\x00"
+    ac_huffman = b"\x10" + b"\x01" + b"\x00" * 15 + b"\x00"
+    # One-bit DC-zero and AC-EOB codes make each constant 8x8 block two zero
+    # bits. Pad the final entropy byte with ones, as required by JPEG.
+    entropy_bits = 2 * (((width + 7) // 8) * ((height + 7) // 8))
+    entropy = b"\x00" * (entropy_bits // 8)
+    remainder = entropy_bits % 8
+    if remainder:
+        entropy += bytes(((1 << (8 - remainder)) - 1,))
     return b"".join(
         (
             b"\xff\xd8",
+            b"\xff\xe0" + struct.pack(">H", len(jfif) + 2) + jfif,
+            b"\xff\xdb"
+            + struct.pack(">H", len(quantization) + 2)
+            + quantization,
             b"\xff\xc0" + struct.pack(">H", len(frame) + 2) + frame,
+            b"\xff\xc4"
+            + struct.pack(">H", len(dc_huffman) + 2)
+            + dc_huffman,
+            b"\xff\xc4"
+            + struct.pack(">H", len(ac_huffman) + 2)
+            + ac_huffman,
             b"\xff\xda" + struct.pack(">H", len(scan) + 2) + scan,
+            entropy,
             b"\xff\xd9",
         )
     )
@@ -438,6 +466,7 @@ def make_package(parent: Path) -> Path:
         "schema": "warpkeep.runtime-qa.v1",
         "revision": verify.REVISION,
         "status": "passed",
+        "generatedAt": verify.QA_GENERATED_AT,
         "budgets": {
             tier: {"triangles": triangle_ceiling, "bytes": byte_ceiling}
             for tier, _, triangle_ceiling, byte_ceiling in verify.LOD_CONTRACT
@@ -563,6 +592,27 @@ class CoreWatcherHappyPathTests(unittest.TestCase):
 
 
 class PackageSafetyTests(unittest.TestCase):
+    def test_json_limits_fail_closed_without_recursion_or_numeric_crashes(self) -> None:
+        deeply_nested = b'{"value":' + b"[" * 1_100 + b"0" + b"]" * 1_100 + b"}"
+        with self.assertRaisesRegex(ValueError, "nesting exceeds depth limit"):
+            verify.load_json(deeply_nested, "nested.json")
+
+        bounded_but_too_deep = (
+            b'{"value":' + b"[" * (verify.MAX_JSON_DEPTH + 1)
+            + b"0" + b"]" * (verify.MAX_JSON_DEPTH + 1) + b"}"
+        )
+        with self.assertRaisesRegex(ValueError, "nesting exceeds depth limit"):
+            verify.load_json(bounded_but_too_deep, "deep.json")
+
+        long_number = b'{"value":' + b"1" * (verify.MAX_JSON_NUMBER_CHARS + 1) + b"}"
+        with self.assertRaisesRegex(ValueError, "token exceeds size limit"):
+            verify.load_json(long_number, "number.json")
+
+        too_many_values = b'{"values":[' + b"null," * verify.MAX_JSON_VALUES + b"null]}"
+        self.assertLess(len(too_many_values), verify.MAX_JSON_BYTES)
+        with self.assertRaisesRegex(ValueError, "value count exceeds limit"):
+            verify.load_json(too_many_values, "wide.json")
+
     def test_zip_rejects_traversal_and_duplicate_entries(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -589,6 +639,27 @@ class PackageSafetyTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "executable ZIP entry"):
                 verify.verify_package(archive)
 
+    def test_zip_wraps_malformed_deflate_as_a_verification_failure(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            archive_path = Path(directory) / "malformed.zip"
+            member = f"{verify.PACKAGE_NAME}/README.md"
+            payload = bytes(range(256)) * 40
+            with ZipFile(archive_path, "w", compression=ZIP_DEFLATED) as archive:
+                archive.writestr(member, payload)
+            with ZipFile(archive_path) as archive:
+                info = archive.getinfo(member)
+                malformed = bytearray(archive_path.read_bytes())
+                name_length, extra_length = struct.unpack_from(
+                    "<HH", malformed, info.header_offset + 26
+                )
+                data_offset = (
+                    info.header_offset + 30 + name_length + extra_length
+                )
+                malformed[data_offset] ^= 0xFF
+            archive_path.write_bytes(malformed)
+            with self.assertRaisesRegex(ValueError, "invalid package ZIP"):
+                verify.verify_package(archive_path)
+
     @unittest.skipUnless(hasattr(os, "symlink"), "symlinks unavailable")
     def test_extracted_package_rejects_symlink(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -598,6 +669,41 @@ class PackageSafetyTests(unittest.TestCase):
             readme.symlink_to(package / "PACKAGE-NOTICE.md")
             with self.assertRaisesRegex(ValueError, "regular file"):
                 verify.verify_package(package)
+
+    @unittest.skipUnless(hasattr(os, "mkfifo"), "FIFOs unavailable")
+    def test_extracted_package_rejects_fifo_without_opening_it(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            package = make_package(Path(directory))
+            readme = package / "README.md"
+            readme.unlink()
+            os.mkfifo(readme)
+            with self.assertRaisesRegex(ValueError, "regular file"):
+                verify.verify_package(package)
+            if hasattr(os, "O_NONBLOCK"):
+                self.assertTrue(verify._open_flags() & os.O_NONBLOCK)
+
+    def test_extracted_package_rejects_unexpected_tree_before_reading_files(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            package = make_package(Path(directory))
+            unexpected = package / "unexpected"
+            unexpected.mkdir()
+            # An unbounded walker would enumerate this entire hostile fanout.
+            for index in range(verify.MAX_ARCHIVE_ENTRIES + 20):
+                (unexpected / f"entry-{index}").touch()
+            with self.assertRaisesRegex(ValueError, "unexpected package directory"):
+                verify.verify_package(package)
+
+    @unittest.skipUnless(hasattr(os, "symlink"), "symlinks unavailable")
+    def test_zip_input_must_not_be_a_symlink(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            package = make_package(root)
+            archive = root / "candidate.zip"
+            write_archive(package, archive)
+            linked = root / "linked.zip"
+            linked.symlink_to(archive)
+            with self.assertRaisesRegex(ValueError, "regular, non-symlink"):
+                verify.verify_package(linked)
 
     def test_nested_checksums_require_exact_coverage_and_bytes(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -882,6 +988,26 @@ class RuntimeContractTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "exact 58 unique passed checks"):
                     verify.verify_package(package)
 
+    def test_qa_rejects_unknown_claims_and_timestamp_drift(self) -> None:
+        for label, mutate in (
+            ("claim", lambda report: report.__setitem__("productionReady", True)),
+            (
+                "timestamp",
+                lambda report: report.__setitem__(
+                    "generatedAt", "2099-01-01T00:00:00+00:00"
+                ),
+            ),
+        ):
+            with self.subTest(label=label), tempfile.TemporaryDirectory() as directory:
+                package = make_package(Path(directory))
+                path = package / verify.QA_REPORT
+                report = json.loads(path.read_text(encoding="utf-8"))
+                mutate(report)
+                write_json(path, report)
+                refresh_checksums(package)
+                with self.assertRaises(ValueError):
+                    verify.verify_package(package)
+
     def test_runtime_material_values_must_match_emitted_glbs(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             package = make_package(Path(directory))
@@ -912,6 +1038,37 @@ class PreviewStructureTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "CRC mismatch"):
             verify._png_dimensions(bytes(corrupt), "preview.png")
 
+    def test_png_rejects_custom_chunks_and_decompression_bombs(self) -> None:
+        custom = png_image(512, 512, ((b"vpAg", zlib.compress(b"private")),))
+        with self.assertRaisesRegex(ValueError, "unexpected PNG ancillary"):
+            verify._png_dimensions(custom, "preview.png")
+
+        width = height = 16
+        ihdr = struct.pack(">IIBBBBB", width, height, 1, 0, 0, 0, 0)
+        expected = height * (1 + (width + 7) // 8)
+        bomb = b"".join(
+            (
+                b"\x89PNG\r\n\x1a\n",
+                png_chunk(b"IHDR", ihdr),
+                png_chunk(b"IDAT", zlib.compress(b"\x00" * (expected + 1))),
+                png_chunk(b"IEND", b""),
+            )
+        )
+        with self.assertRaisesRegex(ValueError, "oversized PNG pixel stream"):
+            verify._png_dimensions(bomb, "bomb.png")
+
+        palette_ihdr = struct.pack(">IIBBBBB", 8, 8, 1, 3, 0, 0, 0)
+        palette = b"".join(
+            (
+                b"\x89PNG\r\n\x1a\n",
+                png_chunk(b"IHDR", palette_ihdr),
+                png_chunk(b"IDAT", zlib.compress((b"\x00\x00") * 8)),
+                png_chunk(b"IEND", b""),
+            )
+        )
+        with self.assertRaisesRegex(ValueError, "invalid PNG IHDR values"):
+            verify._png_dimensions(palette, "palette.png")
+
     def test_jpeg_rejects_comment_and_application_metadata(self) -> None:
         clean = jpeg_frame(1920, 1080)
         for marker in (0xFE, 0xE1, 0xE2, 0xED):
@@ -928,6 +1085,38 @@ class PreviewStructureTests(unittest.TestCase):
                 payload = clean[:scan_offset] + segment + clean[scan_offset:]
                 with self.assertRaisesRegex(ValueError, "forbidden JPEG metadata marker"):
                     verify._jpeg_dimensions(payload, "preview.jpg")
+
+        app15 = b"\xff\xef\x00\x09private"
+        payload = clean[:2] + app15 + clean[2:]
+        with self.assertRaisesRegex(ValueError, "APP15"):
+            verify._jpeg_dimensions(payload, "preview.jpg")
+
+        malformed_jfif = clean.replace(b"JFIF\x00", b"JFXX\x00", 1)
+        with self.assertRaisesRegex(ValueError, "JFIF header"):
+            verify._jpeg_dimensions(malformed_jfif, "preview.jpg")
+
+    def test_jpeg_requires_quantization_huffman_and_entropy_data(self) -> None:
+        clean = jpeg_frame(64, 64)
+
+        def without_segment(payload: bytes, marker: bytes) -> bytes:
+            start = payload.index(marker)
+            length = struct.unpack_from(">H", payload, start + 2)[0]
+            return payload[:start] + payload[start + 2 + length :]
+
+        without_quantization = without_segment(clean, b"\xff\xdb")
+        with self.assertRaisesRegex(ValueError, "frame components"):
+            verify._jpeg_dimensions(without_quantization, "preview.jpg")
+
+        without_dc = without_segment(clean, b"\xff\xc4")
+        with self.assertRaisesRegex(ValueError, "baseline scan contract"):
+            verify._jpeg_dimensions(without_dc, "preview.jpg")
+
+        scan = clean.index(b"\xff\xda")
+        scan_length = struct.unpack_from(">H", clean, scan + 2)[0]
+        entropy_start = scan + 2 + scan_length
+        no_entropy = clean[:entropy_start] + b"\xff\xd9"
+        with self.assertRaisesRegex(ValueError, "no entropy-coded data"):
+            verify._jpeg_dimensions(no_entropy, "preview.jpg")
 
 
 class IntegrationProfileTrustTests(unittest.TestCase):
@@ -1031,6 +1220,49 @@ class SemanticGlbContractTests(unittest.TestCase):
 
 
 class DeepGlbTests(unittest.TestCase):
+    def test_rejects_resource_expansion_and_claim_bearing_unknown_fields(self) -> None:
+        document, binary = glb_document(1)
+        document["accessors"][0]["count"] = verify.MAX_ACCESSOR_ELEMENTS + 1
+        with self.assertRaisesRegex(ValueError, "accessor count exceeds resource limit"):
+            verify.inspect_glb(encode_glb(document, binary))
+
+        for label, mutate in (
+            ("top", lambda value: value.__setitem__("combatAuthority", True)),
+            (
+                "material",
+                lambda value: value["materials"][0].__setitem__("health", 100),
+            ),
+            ("scene", lambda value: value["scenes"][0].__setitem__("rewards", 10)),
+            (
+                "accessor",
+                lambda value: value["accessors"][0].__setitem__("remoteUri", "x"),
+            ),
+        ):
+            with self.subTest(label=label):
+                document, binary = glb_document(1)
+                mutate(document)
+                with self.assertRaises(ValueError):
+                    verify.inspect_glb(encode_glb(document, binary))
+
+    def test_rejects_transform_overflow_and_hierarchy_cycles(self) -> None:
+        document, binary = glb_document(1)
+        document["nodes"] = [
+            {"children": [1], "scale": [1e308, 1e308, 1e308]},
+            {"mesh": 0, "scale": [1e308, 1e308, 1e308]},
+        ]
+        document["scenes"][0]["nodes"] = [0]
+        with self.assertRaisesRegex(ValueError, "transform matrix overflowed"):
+            verify.inspect_glb(encode_glb(document, binary))
+
+        document, binary = glb_document(1)
+        document["nodes"] = [
+            {"mesh": 0, "children": [1]},
+            {"children": [0]},
+        ]
+        document["scenes"][0]["nodes"] = [0]
+        with self.assertRaisesRegex(ValueError, "cycle in node hierarchy"):
+            verify.inspect_glb(encode_glb(document, binary))
+
     def test_rejects_external_uri_and_unsupported_extension(self) -> None:
         document, binary = glb_document(1)
         document["buffers"][0]["uri"] = "mesh.bin"

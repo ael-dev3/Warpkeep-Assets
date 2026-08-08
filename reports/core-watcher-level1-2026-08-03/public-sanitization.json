@@ -33,13 +33,14 @@
     "normalizedFiles": 15,
     "removedExtendedAttributes": 0
   },
+  "imageMetadataPolicy": "metadataFieldsFound records descriptive, private, or ancillary metadata; standard JPEG JFIF APP0 structure is reported separately and is not treated as descriptive metadata",
   "imageAudits": [
     {
       "bytes": 170456,
       "metadataFieldsFound": [],
       "path": "Previews/Mobile/Warpkeep_CoreWatcher_Level1_Map_512.png",
       "privateStringsFound": [],
-      "sanitizer": "Pillow 11.3.0 metadata-free re-encode",
+      "sanitizer": "Pillow 11.3.0 re-encode without ancillary, descriptive, or private metadata",
       "sha256": "64ae797aece8aa9594872b1265950f6a227baf0edface14b13217f749b0db774"
     },
     {
@@ -47,7 +48,15 @@
       "metadataFieldsFound": [],
       "path": "Previews/Warpkeep_CoreWatcher_Level1_LOD_Lineup_2400.jpg",
       "privateStringsFound": [],
-      "sanitizer": "Pillow 11.3.0 metadata-free re-encode",
+      "standardJfifStructure": {
+        "density": [
+          1,
+          1
+        ],
+        "unit": 0,
+        "version": "1.01"
+      },
+      "sanitizer": "Pillow 11.3.0 re-encode without descriptive or private metadata; standard JFIF APP0 retained",
       "sha256": "d60510764ca2c57ae2bb67419e835cff3c7c4986bfe5f04156bd17687808e595"
     },
     {
@@ -55,7 +64,15 @@
       "metadataFieldsFound": [],
       "path": "Previews/Warpkeep_CoreWatcher_Level1_Presentation_1920.jpg",
       "privateStringsFound": [],
-      "sanitizer": "Pillow 11.3.0 metadata-free re-encode",
+      "standardJfifStructure": {
+        "density": [
+          1,
+          1
+        ],
+        "unit": 0,
+        "version": "1.01"
+      },
+      "sanitizer": "Pillow 11.3.0 re-encode without descriptive or private metadata; standard JFIF APP0 retained",
       "sha256": "d1e01453c620d22695148f89c18e9e5330c38508b1d984faae4037cb6d1dbcaa"
     },
     {
@@ -63,7 +80,7 @@
       "metadataFieldsFound": [],
       "path": "Previews/Warpkeep_CoreWatcher_Level1_Transparent_1600.png",
       "privateStringsFound": [],
-      "sanitizer": "Pillow 11.3.0 metadata-free re-encode",
+      "sanitizer": "Pillow 11.3.0 re-encode without ancillary, descriptive, or private metadata",
       "sha256": "bc20fa28239d8008b79f182509363a81b2bef6705fdf8436786ca70567e2cf9a"
     }
   ],

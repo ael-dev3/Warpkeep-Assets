@@ -68,9 +68,10 @@ slices in the main Warpkeep repository.
 | --- | --- |
 | [![Core Watcher four-LOD comparison](previews/core-watcher-level1-2026-08-03/01-core-watcher-lod-lineup.jpg)](previews/core-watcher-level1-2026-08-03/01-core-watcher-lod-lineup.jpg) | [![Core Watcher far-map preview](previews/core-watcher-level1-2026-08-03/02-core-watcher-map-preview.png)](previews/core-watcher-level1-2026-08-03/02-core-watcher-map-preview.png) |
 
-*The tracked images are metadata-free encodes of the exact Blender-rendered
-frames in the candidate archive: a 1920×1080 presentation, a 2400×1200
-four-LOD sheet, and a 512×512 mobile map preview.*
+*The tracked images are re-encoded without descriptive or private metadata from
+the exact Blender-rendered frames in the candidate archive: a 1920×1080
+presentation, a 2400×1200 four-LOD sheet, and a 512×512 mobile map preview.
+The JPEGs retain only the standard JFIF container header recorded by the audit.*
 
 [![Warpkeep — The Core faction crest](previews/the-core-faction-crest-2026-08-03/00-the-core-faction-crest-showcase.jpg)](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/the-core-faction-crest-2026-08-03)
 

@@ -3,8 +3,9 @@
 
 This verifier needs no unpublished release binary. It binds the advisory
 renderer profile to the tracked release manifest, the byte-exact packaged
-runtime-manifest copy, and metadata-free review images. It does not authorize
-publication, integration, gameplay, or activation.
+runtime-manifest copy, and review images re-encoded without descriptive or
+private metadata. It does not authorize publication, integration, gameplay, or
+activation.
 """
 
 from __future__ import annotations
@@ -14,10 +15,12 @@ import hashlib
 import importlib.util
 import json
 import math
-from pathlib import Path, PurePosixPath
+import os
+from pathlib import Path, PurePosixPath, PureWindowsPath
 import re
 import stat
 import sys
+import unicodedata
 
 
 PROFILE_PATH = Path(
@@ -27,6 +30,9 @@ RUNTIME_PATH = Path(
     "contracts/core-watcher-level1-2026-08-03.runtime-manifest.json"
 )
 RELEASE_MANIFEST_PATH = Path("releases/core-watcher-level1-2026-08-03/manifest.json")
+CHECKSUM_SIDECAR_PATH = Path(
+    "releases/core-watcher-level1-2026-08-03/SHA256SUMS.txt"
+)
 GALLERY_PATH = Path("previews/core-watcher-level1-2026-08-03/gallery.json")
 PACKAGE_VERIFIER_PATH = Path("scripts/verify_core_watcher_level1.py")
 SHA256_RE = re.compile(r"[0-9a-f]{64}")
@@ -35,6 +41,10 @@ EXPECTED_PROFILE_DIGEST = "0a34614dfb42f754fd2524b23ef213c2db502768ad9230bd6a27a
 MAX_PROFILE_BYTES = 256 * 1024
 MAX_TRACKED_JSON_BYTES = 2 * 1024 * 1024
 MAX_PREVIEW_BYTES = 8 * 1024 * 1024
+MAX_JSON_DEPTH = 64
+MAX_JSON_NUMBER_CHARS = 128
+MAX_TRACKED_PATH_CHARS = 512
+MAX_TRACKED_PATH_COMPONENTS = 16
 CANONICALIZATION = (
     "exact tracked UTF-8 bytes with the 64 lowercase hexadecimal characters at "
     "$.contractDigest.sha256 replaced by 64 ASCII zeroes; no other transformation"
@@ -126,6 +136,10 @@ EXPECTED_RELEASE_BINDING = {
     "sha256": "60eaa17e477d37f42d25b446ab9a907c6d57b919007b3632c3e5f327283113f0",
     "trackedPath": "releases/core-watcher-level1-2026-08-03/manifest.json",
 }
+EXPECTED_CHECKSUM_SIDECAR_BYTES = 124
+EXPECTED_CHECKSUM_SIDECAR_SHA256 = (
+    "8196227e0cf7b4cc66d39ab14f2508c5f3d865b54222ab4293440bc818314f09"
+)
 EXPECTED_GALLERY_BINDING = {
     "bytes": 1255,
     "sha256": "90ec48066c69c6a4223dbc3911784c08c6dc86cad686d3581f4cfcfd15cab6bc",
@@ -392,38 +406,56 @@ def _reject_constant(value: str) -> None:
     raise ValueError(f"non-finite JSON number: {value}")
 
 
+def _bounded_int(value: str) -> int:
+    if len(value) > MAX_JSON_NUMBER_CHARS:
+        raise ValueError("JSON integer token exceeds size limit")
+    return int(value)
+
+
+def _bounded_float(value: str) -> float:
+    if len(value) > MAX_JSON_NUMBER_CHARS:
+        raise ValueError("JSON floating-point token exceeds size limit")
+    return float(value)
+
+
 def _unique_object(pairs: list[tuple[str, object]]) -> dict[str, object]:
     result: dict[str, object] = {}
     for key, value in pairs:
         if key in result:
-            raise ValueError(f"duplicate JSON key: {key!r}")
+            raise ValueError("duplicate JSON key")
         result[key] = value
     return result
 
 
 def _load_json(payload: bytes, label: str) -> dict:
+    if len(payload) > MAX_TRACKED_JSON_BYTES:
+        raise ValueError(f"JSON exceeds pre-parse size limit: {label}")
     try:
         document = json.loads(
             payload.decode("utf-8"),
             object_pairs_hook=_unique_object,
             parse_constant=_reject_constant,
+            parse_float=_bounded_float,
+            parse_int=_bounded_int,
         )
+    except RecursionError as exc:
+        raise ValueError(f"JSON exceeds nesting limit: {label}") from exc
     except (UnicodeDecodeError, json.JSONDecodeError) as exc:
         raise ValueError(f"invalid UTF-8 JSON: {label}") from exc
     if not isinstance(document, dict):
         raise ValueError(f"JSON root must be an object: {label}")
 
-    def finite(value: object) -> None:
+    pending: list[tuple[object, int]] = [(document, 1)]
+    while pending:
+        value, depth = pending.pop()
+        if depth > MAX_JSON_DEPTH:
+            raise ValueError(f"JSON exceeds nesting limit: {label}")
         if isinstance(value, float) and not math.isfinite(value):
             raise ValueError(f"non-finite JSON number: {label}")
         if isinstance(value, dict):
-            for child in value.values():
-                finite(child)
+            pending.extend((child, depth + 1) for child in value.values())
         elif isinstance(value, list):
-            for child in value:
-                finite(child)
-
-    finite(document)
+            pending.extend((child, depth + 1) for child in value)
     return document
 
 
@@ -453,10 +485,23 @@ def _exact_keys(value: object, keys: set[str], label: str) -> dict:
 
 
 def _safe_relative(value: object) -> Path:
-    if not isinstance(value, str) or not value or "\\" in value:
+    if (
+        not isinstance(value, str)
+        or not value
+        or len(value) > MAX_TRACKED_PATH_CHARS
+        or "\\" in value
+    ):
         raise ValueError("unsafe tracked path")
     path = PurePosixPath(value)
-    if path.is_absolute() or any(part in ("", ".", "..") for part in path.parts):
+    if (
+        path.is_absolute()
+        or PureWindowsPath(value).drive
+        or not value.isprintable()
+        or unicodedata.normalize("NFC", value) != value
+        or path.as_posix() != value
+        or len(path.parts) > MAX_TRACKED_PATH_COMPONENTS
+        or any(part in ("", ".", "..") for part in path.parts)
+    ):
         raise ValueError("unsafe tracked path")
     return Path(*path.parts)
 
@@ -469,24 +514,98 @@ def _regular_file_bytes(
     expected_bytes: int | None = None,
     max_bytes: int,
 ) -> bytes:
-    target = root / relative
+    if relative.is_absolute() or not relative.parts or any(
+        part in ("", ".", "..") for part in relative.parts
+    ):
+        raise ValueError(f"unsafe tracked path: {relative.as_posix()}")
+
+    # Resolve the repository once, then walk every untrusted path component
+    # relative to open directory descriptors. Path.resolve()/lstat()/read_bytes()
+    # would leave a race in which an attacker could replace a checked path (or
+    # one of its parent directories) with a symlink before the subsequent open.
+    # O_NONBLOCK also prevents a raced-in FIFO or device from blocking before
+    # fstat can reject it.
+    if (
+        os.open not in getattr(os, "supports_dir_fd", set())
+        or not all(
+            hasattr(os, flag_name)
+            for flag_name in ("O_DIRECTORY", "O_NOFOLLOW", "O_NONBLOCK")
+        )
+    ):
+        raise ValueError("platform cannot securely traverse tracked files")
+    directory_flags = os.O_RDONLY
+    file_flags = os.O_RDONLY
+    for flag_name in ("O_CLOEXEC", "O_NOFOLLOW"):
+        flag = getattr(os, flag_name, 0)
+        directory_flags |= flag
+        file_flags |= flag
+    directory_flags |= os.O_DIRECTORY
+    file_flags |= os.O_NONBLOCK
+
+    descriptors: list[int] = []
     try:
-        resolved = target.resolve(strict=True)
-        resolved.relative_to(root)
-        metadata = target.lstat()
-        mode = metadata.st_mode
-    except (OSError, ValueError) as exc:
-        raise ValueError(f"missing or escaping tracked file: {relative.as_posix()}") from exc
-    if stat.S_ISLNK(mode) or not stat.S_ISREG(mode):
-        raise ValueError(f"tracked file must be a regular non-symlink: {relative.as_posix()}")
-    if metadata.st_size > max_bytes:
-        raise ValueError(f"tracked file exceeds pre-read size limit: {label}")
-    if expected_bytes is not None and metadata.st_size != expected_bytes:
-        raise ValueError(f"tracked byte count mismatch: {label}")
-    payload = target.read_bytes()
-    if len(payload) != metadata.st_size:
-        raise ValueError(f"tracked file changed while reading: {label}")
-    return payload
+        directory_fd = os.open(root, directory_flags)
+        descriptors.append(directory_fd)
+        if not stat.S_ISDIR(os.fstat(directory_fd).st_mode):
+            raise ValueError("repository root must be a directory")
+
+        for component in relative.parts[:-1]:
+            directory_fd = os.open(
+                component,
+                directory_flags,
+                dir_fd=directory_fd,
+            )
+            descriptors.append(directory_fd)
+            if not stat.S_ISDIR(os.fstat(directory_fd).st_mode):
+                raise ValueError(
+                    f"tracked path contains a non-directory: {relative.as_posix()}"
+                )
+
+        file_fd = os.open(
+            relative.parts[-1],
+            file_flags,
+            dir_fd=directory_fd,
+        )
+        descriptors.append(file_fd)
+        before = os.fstat(file_fd)
+        if not stat.S_ISREG(before.st_mode):
+            raise ValueError(
+                "tracked path must end in a regular non-symlink file: "
+                f"{relative.as_posix()}"
+            )
+        if before.st_size > max_bytes:
+            raise ValueError(f"tracked file exceeds pre-read size limit: {label}")
+        if expected_bytes is not None and before.st_size != expected_bytes:
+            raise ValueError(f"tracked byte count mismatch: {label}")
+
+        chunks: list[bytes] = []
+        remaining = before.st_size + 1
+        while remaining:
+            chunk = os.read(file_fd, min(64 * 1024, remaining))
+            if not chunk:
+                break
+            chunks.append(chunk)
+            remaining -= len(chunk)
+        payload = b"".join(chunks)
+        after = os.fstat(file_fd)
+        stable_fields = ("st_dev", "st_ino", "st_size", "st_mtime_ns", "st_ctime_ns")
+        if (
+            len(payload) != before.st_size
+            or any(getattr(before, field) != getattr(after, field) for field in stable_fields)
+        ):
+            raise ValueError(f"tracked file changed while reading: {label}")
+        return payload
+    except OSError as exc:
+        raise ValueError(
+            "tracked path must end in a regular non-symlink file and contain "
+            f"no symlink directories: {relative.as_posix()}"
+        ) from exc
+    finally:
+        for descriptor in reversed(descriptors):
+            try:
+                os.close(descriptor)
+            except OSError:
+                pass
 
 
 def _tracked_bytes(root: Path, record: dict, label: str) -> bytes:
@@ -522,6 +641,123 @@ def _package_verifier():
     return module
 
 
+def _skip_json_whitespace(raw: bytes, offset: int, limit: int) -> int:
+    while offset < limit and raw[offset] in b" \t\r\n":
+        offset += 1
+    return offset
+
+
+def _json_string_end(raw: bytes, offset: int, limit: int) -> int:
+    if offset >= limit or raw[offset] != ord('"'):
+        raise ValueError("contract digest locator expected a JSON string")
+    offset += 1
+    while offset < limit:
+        byte = raw[offset]
+        if byte == ord('"'):
+            return offset + 1
+        if byte == ord("\\"):
+            offset += 2
+        else:
+            offset += 1
+    raise ValueError("unterminated JSON string while locating contract digest")
+
+
+def _json_value_end(raw: bytes, offset: int, limit: int) -> int:
+    offset = _skip_json_whitespace(raw, offset, limit)
+    if offset >= limit:
+        raise ValueError("missing JSON value while locating contract digest")
+    if raw[offset] == ord('"'):
+        return _json_string_end(raw, offset, limit)
+    if raw[offset] not in (ord("{"), ord("[")):
+        end = offset
+        while end < limit and raw[end] not in b" \t\r\n,]}":
+            end += 1
+        if end == offset:
+            raise ValueError("missing scalar JSON value while locating contract digest")
+        return end
+
+    closing_for = {ord("{"): ord("}"), ord("["): ord("]")}
+    stack = [closing_for[raw[offset]]]
+    offset += 1
+    while offset < limit and stack:
+        byte = raw[offset]
+        if byte == ord('"'):
+            offset = _json_string_end(raw, offset, limit)
+            continue
+        if byte in closing_for:
+            stack.append(closing_for[byte])
+        elif byte in (ord("}"), ord("]")):
+            if byte != stack.pop():
+                raise ValueError("mismatched JSON container while locating contract digest")
+        offset += 1
+    if stack:
+        raise ValueError("unterminated JSON container while locating contract digest")
+    return offset
+
+
+def _json_object_field_spans(
+    raw: bytes,
+    start: int,
+    end: int,
+) -> dict[str, tuple[int, int]]:
+    offset = _skip_json_whitespace(raw, start, end)
+    if offset >= end or raw[offset] != ord("{"):
+        raise ValueError("contract digest locator expected a JSON object")
+    offset += 1
+    fields: dict[str, tuple[int, int]] = {}
+    while True:
+        offset = _skip_json_whitespace(raw, offset, end)
+        if offset < end and raw[offset] == ord("}"):
+            return fields
+        key_start = offset
+        key_end = _json_string_end(raw, key_start, end)
+        try:
+            key = json.loads(raw[key_start:key_end].decode("utf-8"))
+        except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+            raise ValueError("invalid JSON key while locating contract digest") from exc
+        if not isinstance(key, str) or key in fields:
+            raise ValueError("invalid or duplicate JSON key while locating contract digest")
+        offset = _skip_json_whitespace(raw, key_end, end)
+        if offset >= end or raw[offset] != ord(":"):
+            raise ValueError("missing JSON member separator while locating contract digest")
+        value_start = _skip_json_whitespace(raw, offset + 1, end)
+        value_end = _json_value_end(raw, value_start, end)
+        fields[key] = (value_start, value_end)
+        offset = _skip_json_whitespace(raw, value_end, end)
+        if offset >= end:
+            raise ValueError("unterminated JSON object while locating contract digest")
+        if raw[offset] == ord(","):
+            offset += 1
+            continue
+        if raw[offset] == ord("}"):
+            return fields
+        raise ValueError("invalid JSON object separator while locating contract digest")
+
+
+def _zeroed_contract_digest_bytes(raw: bytes, declared: str) -> bytes:
+    document_start = _skip_json_whitespace(raw, 0, len(raw))
+    document_end = _json_value_end(raw, document_start, len(raw))
+    if _skip_json_whitespace(raw, document_end, len(raw)) != len(raw):
+        raise ValueError("trailing bytes while locating contract digest")
+    root_fields = _json_object_field_spans(raw, document_start, document_end)
+    try:
+        contract_start, contract_end = root_fields["contractDigest"]
+    except KeyError as exc:
+        raise ValueError("contract digest object is missing") from exc
+    contract_fields = _json_object_field_spans(raw, contract_start, contract_end)
+    try:
+        value_start, value_end = contract_fields["sha256"]
+    except KeyError as exc:
+        raise ValueError("contract digest SHA-256 field is missing") from exc
+    token = declared.encode("ascii")
+    if raw[value_start:value_end] != b'"' + token + b'"':
+        raise ValueError(
+            "contract digest must be 64 literal lowercase hexadecimal characters at "
+            "$.contractDigest.sha256"
+        )
+    return raw[: value_start + 1] + ZERO_DIGEST.encode("ascii") + raw[value_end - 1 :]
+
+
 def _verify_digest(raw: bytes, profile: dict) -> str:
     digest = _exact_keys(
         profile.get("contractDigest"),
@@ -533,10 +769,8 @@ def _verify_digest(raw: bytes, profile: dict) -> str:
     declared = digest["sha256"]
     if not isinstance(declared, str) or not SHA256_RE.fullmatch(declared):
         raise ValueError("invalid contract digest")
-    token = declared.encode("ascii")
-    if raw.count(token) != 1:
-        raise ValueError("contract digest must occur exactly once")
-    actual = hashlib.sha256(raw.replace(token, ZERO_DIGEST.encode("ascii"))).hexdigest()
+    zeroed = _zeroed_contract_digest_bytes(raw, declared)
+    actual = hashlib.sha256(zeroed).hexdigest()
     if actual != declared:
         raise ValueError("contract digest mismatch")
     if declared != EXPECTED_PROFILE_DIGEST:
@@ -577,6 +811,18 @@ def _verify_bindings(root: Path, profile: dict) -> tuple[dict, dict]:
     _expect(binding["sourceManifest"], EXPECTED_SOURCE_BINDING, "source manifest binding")
 
     release_payload = _tracked_bytes(root, binding["releaseManifest"], "release manifest binding")
+    sidecar_payload = _regular_file_bytes(
+        root,
+        CHECKSUM_SIDECAR_PATH,
+        "release checksum sidecar",
+        expected_bytes=EXPECTED_CHECKSUM_SIDECAR_BYTES,
+        max_bytes=MAX_TRACKED_JSON_BYTES,
+    )
+    if hashlib.sha256(sidecar_payload).hexdigest() != EXPECTED_CHECKSUM_SIDECAR_SHA256:
+        raise ValueError("release checksum sidecar SHA-256 mismatch")
+    expected_sidecar = f"{archive['sha256']}  {archive['name']}\n".encode("ascii")
+    if sidecar_payload != expected_sidecar:
+        raise ValueError("release checksum sidecar does not match archive binding")
     gallery_payload = _tracked_bytes(root, binding["gallery"], "gallery binding")
     source_payload = _tracked_bytes(root, binding["sourceManifest"], "source manifest binding")
     release = _load_json(release_payload, RELEASE_MANIFEST_PATH.as_posix())
@@ -848,7 +1094,10 @@ def _verify_policies(profile: dict, records: list[dict]) -> None:
 
 
 def verify(root: Path | str) -> str:
-    repository = Path(root).resolve()
+    try:
+        repository = Path(root).resolve(strict=True)
+    except (OSError, RuntimeError) as exc:
+        raise ValueError("repository root cannot be resolved safely") from exc
     raw = _regular_file_bytes(
         repository,
         PROFILE_PATH,
