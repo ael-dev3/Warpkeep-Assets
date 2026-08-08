@@ -35,6 +35,64 @@ ASSET_MANIFEST = "asset-manifest.json"
 CHECKSUMS = "SHA256SUMS.txt"
 REVISION = "genesis-001-core-watcher-level1-2026-08-03"
 ASSET_ID = "warpkeep.encounters.core.watcher.level1"
+SOURCE_SEMANTIC_FINGERPRINT_SHA256 = (
+    "a51eae5665ee3e7c59191b36dd1abfbbc1fa3ddd76405bee52c6c5fb3dad344c"
+)
+INTEGRATION_PROFILE_PATH = (
+    Path(__file__).resolve().parents[1]
+    / "contracts/core-watcher-level1-2026-08-03.integration-profile.json"
+)
+INTEGRATION_PROFILE_SHA256 = (
+    "0a34614dfb42f754fd2524b23ef213c2db502768ad9230bd6a27a9198a8251c0"
+)
+
+RUNTIME_LOD_GUIDANCE = {
+    "LOD0_High": "selected inspection and close Realm zoom",
+    "LOD1_Balanced": "nearby normal-quality Realm view",
+    "LOD2_Compact": "medium distance and reduced-quality selected view",
+    "LOD3_Map": "far map signal and static reduced-motion presentation",
+    "suggestedDistancesMeters": {
+        "LOD0_HighThrough": 8,
+        "LOD1_BalancedThrough": 18,
+        "LOD2_CompactThrough": 36,
+        "LOD3_MapThrough": 72,
+    },
+}
+RUNTIME_MOTION_CONTRACT = {
+    "animations": [],
+    "continuousMotionRequired": False,
+    "forbiddenClips": ["Attack", "Walk", "Death"],
+    "mode": "bounded-runtime-rigid-hierarchy",
+    "reducedMotion": "static",
+    "skins": 0,
+}
+RUNTIME_SELECTION_GUIDANCE = {
+    "presentationFootprintRadiusMeters": 0.9,
+    "renderGeometryIsAuthoritativeCollision": False,
+    "suggestedPickCylinderHeightMeters": 2.55,
+    "suggestedPickCylinderRadiusMeters": 0.72,
+}
+RUNTIME_DESIGN_INTENT = {
+    "camera": "three-quarter isometric 4X world map and selected encounter record",
+    "excluded": (
+        "human face, legs, weapon, gun, wings, banner, heraldry, spaceship, "
+        "modern robot"
+    ),
+    "identity": (
+        "ancient fantasy-machine infrastructure expressed through obsidian and cold "
+        "ultraviolet"
+    ),
+    "silhouette": "tall bifurcated monolith, suspended core, asymmetric floating shards",
+}
+RUNTIME_AUTHORING_CONTRACT = {
+    "animations": [],
+    "front": "+Z glTF / -Y Blender",
+    "lods": ["LOD0_High", "LOD1_Balanced", "LOD2_Compact", "LOD3_Map"],
+    "metersPerUnit": 1.0,
+    "motion": "optional bounded runtime rigid hierarchy; static under reduced motion",
+    "selfContained": True,
+    "textures": 0,
+}
 
 LOD_CONTRACT = (
     (
@@ -157,6 +215,10 @@ MAX_ENTRY_BYTES = 16 * MEBIBYTE
 MAX_TEXT_BYTES = 2 * MEBIBYTE
 MAX_COMPRESSION_RATIO = 200
 MAX_ARCHIVE_ENTRIES = 64
+MAX_AUTHORING_BOUND_MARGIN_METERS = 0.08
+BOUND_TOLERANCE_METERS = 1e-5
+NORMAL_LENGTH_TOLERANCE = 1e-4
+QUATERNION_LENGTH_TOLERANCE = 1e-5
 SHA256_RE = re.compile(r"[0-9a-f]{64}")
 CHECKSUM_LINE_RE = re.compile(r"([0-9a-f]{64})  ([^\r\n]+)")
 
@@ -211,6 +273,22 @@ class RuntimeMaterial:
 
 
 @dataclass(frozen=True)
+class GlbSemanticContract:
+    tier: str
+    profile_id: str
+    root_node: str
+    part_nodes: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class GlbSemanticEvidence:
+    root_node: str
+    part_nodes: tuple[str, ...]
+    semantic_roles: tuple[tuple[str, str], ...]
+    material_assignments: tuple[tuple[str, str], ...]
+
+
+@dataclass(frozen=True)
 class GlbMetrics:
     bytes: int
     sha256: str
@@ -230,6 +308,11 @@ class GlbMetrics:
     animations: int
     extensions_used: tuple[str, ...]
     runtime_materials: tuple[RuntimeMaterial, ...]
+    bounds_gltf_min: tuple[float, float, float]
+    bounds_gltf_max: tuple[float, float, float]
+    bounds_gltf_size: tuple[float, float, float]
+    footprint_radius: float
+    semantic: GlbSemanticEvidence
 
 
 @dataclass(frozen=True)
@@ -656,6 +739,100 @@ def _finite_vector(
     )
 
 
+Matrix4 = tuple[
+    tuple[float, float, float, float],
+    tuple[float, float, float, float],
+    tuple[float, float, float, float],
+    tuple[float, float, float, float],
+]
+IDENTITY_MATRIX: Matrix4 = (
+    (1.0, 0.0, 0.0, 0.0),
+    (0.0, 1.0, 0.0, 0.0),
+    (0.0, 0.0, 1.0, 0.0),
+    (0.0, 0.0, 0.0, 1.0),
+)
+
+
+def _matrix_multiply(left: Matrix4, right: Matrix4) -> Matrix4:
+    return tuple(
+        tuple(
+            sum(left[row][item] * right[item][column] for item in range(4))
+            for column in range(4)
+        )
+        for row in range(4)
+    )  # type: ignore[return-value]
+
+
+def _transform_point(matrix: Matrix4, point: tuple) -> tuple[float, float, float]:
+    homogeneous = tuple(float(component) for component in point) + (1.0,)
+    result = tuple(
+        sum(matrix[row][column] * homogeneous[column] for column in range(4))
+        for row in range(4)
+    )
+    if not math.isclose(result[3], 1.0, rel_tol=0.0, abs_tol=1e-7):
+        raise ValueError("node transform produced a non-affine geometry point")
+    return result[0], result[1], result[2]
+
+
+def _node_transform_matrix(node: dict, label: str) -> Matrix4:
+    if "matrix" in node:
+        values = _finite_vector(node["matrix"], 16, f"node matrix: {label}")
+        matrix: Matrix4 = tuple(
+            tuple(values[column * 4 + row] for column in range(4))
+            for row in range(4)
+        )  # type: ignore[assignment]
+        if any(
+            not math.isclose(matrix[3][column], expected, rel_tol=0.0, abs_tol=1e-7)
+            for column, expected in enumerate((0.0, 0.0, 0.0, 1.0))
+        ):
+            raise ValueError(f"node matrix must be affine: {label}")
+        return matrix
+
+    translation = _finite_vector(
+        node.get("translation", [0.0, 0.0, 0.0]), 3, f"node translation: {label}"
+    )
+    rotation = _finite_vector(
+        node.get("rotation", [0.0, 0.0, 0.0, 1.0]), 4, f"node rotation: {label}"
+    )
+    scale = _finite_vector(
+        node.get("scale", [1.0, 1.0, 1.0]), 3, f"node scale: {label}"
+    )
+    quaternion_length = math.sqrt(sum(component * component for component in rotation))
+    if not math.isclose(
+        quaternion_length,
+        1.0,
+        rel_tol=QUATERNION_LENGTH_TOLERANCE,
+        abs_tol=QUATERNION_LENGTH_TOLERANCE,
+    ):
+        raise ValueError(f"node rotation quaternion is not normalized: {label}")
+    if any(abs(component) <= 1e-8 for component in scale):
+        raise ValueError(f"node scale collapses geometry: {label}")
+
+    x, y, z, w = rotation
+    sx, sy, sz = scale
+    return (
+        (
+            (1.0 - 2.0 * (y * y + z * z)) * sx,
+            (2.0 * (x * y - z * w)) * sy,
+            (2.0 * (x * z + y * w)) * sz,
+            translation[0],
+        ),
+        (
+            (2.0 * (x * y + z * w)) * sx,
+            (1.0 - 2.0 * (x * x + z * z)) * sy,
+            (2.0 * (y * z - x * w)) * sz,
+            translation[1],
+        ),
+        (
+            (2.0 * (x * z - y * w)) * sx,
+            (2.0 * (y * z + x * w)) * sy,
+            (1.0 - 2.0 * (x * x + y * y)) * sz,
+            translation[2],
+        ),
+        (0.0, 0.0, 0.0, 1.0),
+    )
+
+
 def _glb_runtime_material(material: dict, label: str) -> RuntimeMaterial:
     alpha_mode = material.get("alphaMode", "OPAQUE")
     if alpha_mode not in ("OPAQUE", "MASK", "BLEND"):
@@ -725,7 +902,11 @@ def _glb_runtime_material(material: dict, label: str) -> RuntimeMaterial:
     )
 
 
-def inspect_glb(payload: bytes, label: str = "runtime GLB") -> GlbMetrics:
+def inspect_glb(
+    payload: bytes,
+    label: str = "runtime GLB",
+    semantic_contract: GlbSemanticContract | None = None,
+) -> GlbMetrics:
     document, binary = _parse_glb(payload, label)
     asset = document.get("asset")
     if not isinstance(asset, dict) or asset.get("version") != "2.0":
@@ -827,11 +1008,14 @@ def inspect_glb(payload: bytes, label: str = "runtime GLB") -> GlbMetrics:
     primitive_count = 0
     triangle_count = 0
     uploaded_vertices = 0
+    mesh_positions: list[list[tuple]] = [[] for _ in meshes]
     for mesh_index, mesh in enumerate(meshes):
         if not isinstance(mesh, dict) or not isinstance(mesh.get("primitives"), list):
             raise ValueError(f"invalid mesh: {label} #{mesh_index}")
-        if not mesh["primitives"] or "weights" in mesh:
-            raise ValueError(f"empty or morph-weighted mesh: {label} #{mesh_index}")
+        if len(mesh["primitives"]) != 1 or "weights" in mesh:
+            raise ValueError(
+                f"every GLB mesh must contain exactly one primitive: {label} #{mesh_index}"
+            )
         for primitive_index, primitive in enumerate(mesh["primitives"]):
             primitive_label = f"{label} mesh {mesh_index} primitive {primitive_index}"
             if not isinstance(primitive, dict) or primitive.get("mode", 4) != 4:
@@ -872,10 +1056,25 @@ def inspect_glb(payload: bytes, label: str = "runtime GLB") -> GlbMetrics:
                         raise ValueError(f"POSITION must declare bounds: {primitive_label}")
                     position_count = len(values)
                     position_values = values
+                    mesh_positions[mesh_index].extend(values)
                 elif semantic == "NORMAL" and (
                     accessor.get("componentType") != 5126 or accessor.get("type") != "VEC3"
                 ):
                     raise ValueError(f"NORMAL must be float VEC3: {primitive_label}")
+                elif semantic == "NORMAL":
+                    for normal in values:
+                        length = math.sqrt(
+                            sum(float(component) * float(component) for component in normal)
+                        )
+                        if not math.isclose(
+                            length,
+                            1.0,
+                            rel_tol=NORMAL_LENGTH_TOLERANCE,
+                            abs_tol=NORMAL_LENGTH_TOLERANCE,
+                        ):
+                            raise ValueError(
+                                f"NORMAL vector is not normalized: {primitive_label}"
+                            )
 
             indices_index = _index(
                 primitive.get("indices"), len(accessors), f"index accessor: {primitive_label}"
@@ -924,6 +1123,8 @@ def inspect_glb(payload: bytes, label: str = "runtime GLB") -> GlbMetrics:
             uploaded_vertices += position_count
 
     parents = [0] * len(nodes)
+    local_matrices: list[Matrix4] = []
+    mesh_references = [0] * len(meshes)
     for node_index, node in enumerate(nodes):
         if not isinstance(node, dict):
             raise ValueError(f"invalid node: {label} #{node_index}")
@@ -946,7 +1147,10 @@ def inspect_glb(payload: bytes, label: str = "runtime GLB") -> GlbMetrics:
             ):
                 raise ValueError(f"invalid node {transform}: {label} #{node_index}")
         if "mesh" in node:
-            _index(node["mesh"], len(meshes), f"node mesh: {label} #{node_index}")
+            mesh_index = _index(
+                node["mesh"], len(meshes), f"node mesh: {label} #{node_index}"
+            )
+            mesh_references[mesh_index] += 1
         children = node.get("children", [])
         if (
             not isinstance(children, list)
@@ -959,6 +1163,10 @@ def inspect_glb(payload: bytes, label: str = "runtime GLB") -> GlbMetrics:
             parents[child_index] += 1
             if parents[child_index] > 1:
                 raise ValueError(f"node has multiple parents: {label} #{child_index}")
+        local_matrices.append(_node_transform_matrix(node, f"{label} #{node_index}"))
+
+    if any(references != 1 for references in mesh_references):
+        raise ValueError(f"every GLB mesh must be referenced exactly once: {label}")
 
     scene = scenes[0]
     if not isinstance(scene, dict) or not isinstance(scene.get("nodes"), list):
@@ -972,27 +1180,63 @@ def inspect_glb(payload: bytes, label: str = "runtime GLB") -> GlbMetrics:
         raise ValueError(f"invalid default-scene roots: {label}")
     visited: set[int] = set()
     active: set[int] = set()
+    world_matrices: list[Matrix4 | None] = [None] * len(nodes)
 
-    def visit(node_index: int) -> None:
+    def visit(node_index: int, parent_matrix: Matrix4) -> None:
         _index(node_index, len(nodes), f"scene node: {label}")
         if node_index in active:
             raise ValueError(f"cycle in node hierarchy: {label}")
         if node_index in visited:
             raise ValueError(f"node appears more than once in scene: {label}")
         active.add(node_index)
+        world_matrix = _matrix_multiply(parent_matrix, local_matrices[node_index])
+        world_matrices[node_index] = world_matrix
         for child in nodes[node_index].get("children", []):
-            visit(child)
+            visit(child, world_matrix)
         active.remove(node_index)
         visited.add(node_index)
 
     for root in roots:
-        visit(root)
+        visit(root, IDENTITY_MATRIX)
     if len(visited) != len(nodes):
         raise ValueError(f"orphan node outside default scene: {label}")
+
+    semantic = _extract_semantic_evidence(document, roots)
+    if semantic_contract is not None:
+        _verify_glb_semantic_contract(document, roots, semantic_contract, label)
 
     # Decode every accessor, including any not reached through a primitive.
     for accessor_index in range(len(accessors)):
         decode(accessor_index)
+
+    world_positions: list[tuple[float, float, float]] = []
+    for node_index, node in enumerate(nodes):
+        if "mesh" not in node:
+            continue
+        world_matrix = world_matrices[node_index]
+        if world_matrix is None:
+            raise ValueError(f"missing world transform for rendered node: {label}")
+        mesh_index = node["mesh"]
+        world_positions.extend(
+            _transform_point(world_matrix, position)
+            for position in mesh_positions[mesh_index]
+        )
+    if not world_positions:
+        raise ValueError(f"GLB contains no rendered world-space geometry: {label}")
+    bounds_min = tuple(
+        min(position[axis] for position in world_positions) for axis in range(3)
+    )
+    bounds_max = tuple(
+        max(position[axis] for position in world_positions) for axis in range(3)
+    )
+    bounds_size = tuple(
+        bounds_max[axis] - bounds_min[axis] for axis in range(3)
+    )
+    if any(size <= 0.0 for size in bounds_size):
+        raise ValueError(f"GLB world-space bounds are degenerate: {label}")
+    footprint_radius = max(
+        math.hypot(position[0], position[2]) for position in world_positions
+    )
 
     return GlbMetrics(
         bytes=len(payload),
@@ -1013,6 +1257,11 @@ def inspect_glb(payload: bytes, label: str = "runtime GLB") -> GlbMetrics:
         animations=len(document.get("animations", [])),
         extensions_used=tuple(extensions_used),
         runtime_materials=tuple(runtime_materials),
+        bounds_gltf_min=bounds_min,
+        bounds_gltf_max=bounds_max,
+        bounds_gltf_size=bounds_size,
+        footprint_radius=footprint_radius,
+        semantic=semantic,
     )
 
 
@@ -1033,6 +1282,276 @@ def _strict_json_equal(actual: object, expected: object) -> bool:
 def _expect(document: dict, key: str, expected: object, label: str) -> None:
     if key not in document or not _strict_json_equal(document[key], expected):
         raise ValueError(f"unexpected {key} in {label}")
+
+
+def _expect_exact_keys(document: object, expected: set[str], label: str) -> dict:
+    if not isinstance(document, dict) or set(document) != expected:
+        raise ValueError(f"unexpected field set in {label}")
+    return document
+
+
+def load_integration_semantic_contracts(
+    path: Path = INTEGRATION_PROFILE_PATH,
+) -> dict[str, GlbSemanticContract]:
+    """Load the digest-bound semantic declarations used by the runtime GLBs."""
+
+    try:
+        metadata = path.lstat()
+        if stat.S_ISLNK(metadata.st_mode) or not stat.S_ISREG(metadata.st_mode):
+            raise ValueError("tracked integration profile must be a regular non-symlink")
+        if metadata.st_size > MAX_TEXT_BYTES:
+            raise ValueError("tracked integration profile exceeds size limit")
+        payload = path.read_bytes()
+    except OSError as exc:
+        raise ValueError(f"cannot read tracked integration profile: {path}") from exc
+    if len(payload) != metadata.st_size:
+        raise ValueError("tracked integration profile changed while reading")
+    profile = load_json(payload, str(path))
+    if profile.get("schema") != "warpkeep.asset-integration-profile.v1":
+        raise ValueError("unexpected integration profile schema")
+    identity = profile.get("identity")
+    if not isinstance(identity, dict) or identity.get("assetId") != ASSET_ID:
+        raise ValueError("integration profile asset identity does not match")
+
+    digest_record = _expect_exact_keys(
+        profile.get("contractDigest"),
+        {"algorithm", "canonicalization", "sha256"},
+        "integration profile contractDigest",
+    )
+    _expect(digest_record, "algorithm", "sha256", "integration profile contractDigest")
+    _expect(
+        digest_record,
+        "canonicalization",
+        (
+            "exact tracked UTF-8 bytes with the 64 lowercase hexadecimal characters "
+            "at $.contractDigest.sha256 replaced by 64 ASCII zeroes; no other "
+            "transformation"
+        ),
+        "integration profile contractDigest",
+    )
+    declared_digest = digest_record.get("sha256")
+    if not isinstance(declared_digest, str) or not SHA256_RE.fullmatch(declared_digest):
+        raise ValueError("invalid integration profile contract digest")
+    digest_bytes = declared_digest.encode("ascii")
+    if payload.count(digest_bytes) != 1:
+        raise ValueError("integration profile digest must occur exactly once")
+    canonical_payload = payload.replace(digest_bytes, b"0" * 64, 1)
+    if hashlib.sha256(canonical_payload).hexdigest() != declared_digest:
+        raise ValueError("integration profile contract digest mismatch")
+    if declared_digest != INTEGRATION_PROFILE_SHA256:
+        raise ValueError("integration profile digest is not the production-pinned digest")
+
+    records = profile.get("profiles")
+    if not isinstance(records, list) or len(records) != len(LOD_CONTRACT):
+        raise ValueError("integration profile must declare exactly four profiles")
+    profile_ids = ("high", "balanced", "compact", "map")
+    contracts: dict[str, GlbSemanticContract] = {}
+    for record, profile_id, (tier, _, _, _) in zip(
+        records, profile_ids, LOD_CONTRACT
+    ):
+        record = _expect_exact_keys(
+            record,
+            {
+                "boundsGltfMeters",
+                "bytes",
+                "drawCalls",
+                "embeddedBufferBytes",
+                "file",
+                "id",
+                "materials",
+                "meshes",
+                "nodes",
+                "onePrimitivePerMesh",
+                "partNodes",
+                "primitives",
+                "rootNode",
+                "sha256",
+                "tier",
+                "triangles",
+                "uploadedVertices",
+            },
+            f"integration profile {tier}",
+        )
+        _expect(record, "id", profile_id, f"integration profile {tier}")
+        _expect(record, "tier", tier, f"integration profile {tier}")
+        _expect(
+            record,
+            "rootNode",
+            f"Warpkeep_CoreWatcher_Level1_{tier}",
+            f"integration profile {tier}",
+        )
+        _expect(record, "onePrimitivePerMesh", True, f"integration profile {tier}")
+        part_nodes = record.get("partNodes")
+        if (
+            not isinstance(part_nodes, list)
+            or not part_nodes
+            or any(not isinstance(name, str) or not name for name in part_nodes)
+            or len(set(part_nodes)) != len(part_nodes)
+            or part_nodes != sorted(part_nodes)
+        ):
+            raise ValueError(f"integration profile {tier} partNodes must be sorted and unique")
+        for key, expected in (
+            ("nodes", len(part_nodes) + 1),
+            ("meshes", len(part_nodes)),
+            ("primitives", len(part_nodes)),
+            ("drawCalls", len(part_nodes)),
+        ):
+            _expect(record, key, expected, f"integration profile {tier}")
+        contracts[tier] = GlbSemanticContract(
+            tier=tier,
+            profile_id=profile_id,
+            root_node=record["rootNode"],
+            part_nodes=tuple(part_nodes),
+        )
+    return contracts
+
+
+def _expected_semantic_role(node_name: str) -> str:
+    if node_name.startswith("CoreWatcher_CoreCage_"):
+        return "core-cage"
+    if node_name.startswith(("CoreWatcher_FloatingShard_", "CoreWatcher_GroundShard_")):
+        return "floating-shard"
+    if node_name.startswith("CoreWatcher_GroundFracture_"):
+        return "ground-sigil"
+    if node_name == "CoreWatcher_SuspendedCore":
+        return "suspended-core"
+    if node_name in {
+        "CoreWatcher_BifurcatedBody_Left",
+        "CoreWatcher_BifurcatedBody_Right",
+        "CoreWatcher_CrownRib_Left",
+        "CoreWatcher_CrownRib_Right",
+        "CoreWatcher_Footprint",
+        "CoreWatcher_LowerPedestal",
+    }:
+        return node_name
+    raise ValueError(f"unknown Core Watcher semantic part: {node_name!r}")
+
+
+def _expected_part_material(node_name: str) -> str:
+    if node_name.startswith("CoreWatcher_GroundFracture_") or node_name in {
+        "CoreWatcher_CoreCage_2",
+        "CoreWatcher_SuspendedCore",
+    }:
+        return "WK_Core_Ultraviolet"
+    if node_name in {
+        "CoreWatcher_CoreCage_1",
+        "CoreWatcher_CrownRib_Left",
+        "CoreWatcher_CrownRib_Right",
+        "CoreWatcher_FloatingShard_1",
+        "CoreWatcher_FloatingShard_3",
+        "CoreWatcher_LowerPedestal",
+    }:
+        return "WK_Core_BlackenedMetal"
+    if node_name in {
+        "CoreWatcher_BifurcatedBody_Left",
+        "CoreWatcher_BifurcatedBody_Right",
+        "CoreWatcher_FloatingShard_2",
+        "CoreWatcher_Footprint",
+    } or node_name.startswith("CoreWatcher_GroundShard_"):
+        return "WK_Core_Obsidian"
+    raise ValueError(f"unknown Core Watcher material assignment: {node_name!r}")
+
+
+def _extract_semantic_evidence(
+    document: dict, roots: list[int]
+) -> GlbSemanticEvidence:
+    nodes = document["nodes"]
+    meshes = document["meshes"]
+    materials = document["materials"]
+    root_name = ""
+    if len(roots) == 1:
+        candidate = nodes[roots[0]].get("name")
+        if isinstance(candidate, str):
+            root_name = candidate
+    part_nodes: list[str] = []
+    roles: list[tuple[str, str]] = []
+    assignments: list[tuple[str, str]] = []
+    for node in nodes:
+        if "mesh" not in node:
+            continue
+        name = node.get("name") if isinstance(node.get("name"), str) else ""
+        extras = node.get("extras")
+        role = (
+            extras.get("warpkeep_semantic_role")
+            if isinstance(extras, dict)
+            and isinstance(extras.get("warpkeep_semantic_role"), str)
+            else ""
+        )
+        mesh = meshes[node["mesh"]]
+        material_index = mesh["primitives"][0]["material"]
+        material_name = materials[material_index]["name"]
+        part_nodes.append(name)
+        roles.append((name, role))
+        assignments.append((name, material_name))
+    return GlbSemanticEvidence(
+        root_node=root_name,
+        part_nodes=tuple(part_nodes),
+        semantic_roles=tuple(roles),
+        material_assignments=tuple(assignments),
+    )
+
+
+def _verify_glb_semantic_contract(
+    document: dict,
+    roots: list[int],
+    contract: GlbSemanticContract,
+    label: str,
+) -> None:
+    nodes = document["nodes"]
+    meshes = document["meshes"]
+    materials = document["materials"]
+    part_count = len(contract.part_nodes)
+    if len(nodes) != part_count + 1 or len(meshes) != part_count:
+        raise ValueError(f"semantic node and mesh counts do not match {contract.tier}: {label}")
+    if roots != [part_count]:
+        raise ValueError(f"{contract.tier} must have one exact semantic root: {label}")
+    root = nodes[part_count]
+    if set(root) != {"children", "extras", "name"}:
+        raise ValueError(f"{contract.tier} root node fields are not exact: {label}")
+    if root.get("name") != contract.root_node:
+        raise ValueError(f"{contract.tier} root node name does not match contract: {label}")
+    expected_root_extras = {
+        "warpkeep_asset_id": ASSET_ID,
+        "warpkeep_enemy_kind": "core-watcher",
+        "warpkeep_encounter_level": 1,
+        "warpkeep_state": "dormant-presence",
+        "warpkeep_combat_enabled": False,
+        "warpkeep_lod": contract.tier,
+    }
+    if not _strict_json_equal(root.get("extras"), expected_root_extras):
+        raise ValueError(f"{contract.tier} root extras do not match contract: {label}")
+    if root.get("children") != list(range(part_count)):
+        raise ValueError(f"{contract.tier} hierarchy must be flat root-to-parts: {label}")
+
+    rendered_names = tuple(node.get("name") for node in nodes[:part_count])
+    if rendered_names != contract.part_nodes or len(set(rendered_names)) != part_count:
+        raise ValueError(f"{contract.tier} part node list does not match contract: {label}")
+    for index, expected_name in enumerate(contract.part_nodes):
+        node = nodes[index]
+        if node.get("mesh") != index or "children" in node:
+            raise ValueError(f"{contract.tier} hierarchy must be flat root-to-parts: {label}")
+        expected_extras = {
+            "warpkeep_semantic_role": _expected_semantic_role(expected_name)
+        }
+        if not _strict_json_equal(node.get("extras"), expected_extras):
+            raise ValueError(
+                f"{contract.tier} semantic role does not match for {expected_name}: {label}"
+            )
+        mesh = meshes[index]
+        if set(mesh) != {"name", "primitives"}:
+            raise ValueError(f"{contract.tier} mesh fields are not exact: {label}")
+        if mesh.get("name") != f"{expected_name}_Mesh":
+            raise ValueError(
+                f"{contract.tier} mesh name does not match for {expected_name}: {label}"
+            )
+        primitive = mesh["primitives"][0]
+        material_index = primitive["material"]
+        material_name = materials[material_index]["name"]
+        if material_name != _expected_part_material(expected_name):
+            raise ValueError(
+                f"{contract.tier} material assignment does not match for "
+                f"{expected_name}: {label}"
+            )
 
 
 def _declared_runtime_material(record: object, label: str) -> RuntimeMaterial:
@@ -1134,9 +1653,19 @@ def _runtime_materials_close(
 def verify_material_contract(
     manifest: dict, metrics: tuple[GlbMetrics, ...]
 ) -> None:
-    contract = manifest.get("materialContract")
-    if not isinstance(contract, dict):
-        raise ValueError("runtime materialContract is missing")
+    contract = _expect_exact_keys(
+        manifest.get("materialContract"),
+        {
+            "alphaBlendMaterials",
+            "authoringNote",
+            "heraldry",
+            "images",
+            "materials",
+            "palette",
+            "textures",
+        },
+        "runtime materialContract",
+    )
     for key, expected in (
         ("alphaBlendMaterials", 0),
         ("heraldry", "none"),
@@ -1153,6 +1682,7 @@ def verify_material_contract(
                 "ultravioletNodeEmissionStrength": 3.5,
             },
         ),
+        ("palette", "obsidian, blackened metal, restrained cold ultraviolet"),
     ):
         _expect(contract, key, expected, "runtime materialContract")
 
@@ -1178,20 +1708,111 @@ def verify_material_contract(
                 )
 
 
+def _verify_bounds_blender(record: object, metric: GlbMetrics, tier: str) -> None:
+    bounds = _expect_exact_keys(
+        record, {"min", "max", "size"}, f"runtime LOD {tier} boundsBlender"
+    )
+    declared_min = _finite_vector(
+        bounds["min"], 3, f"runtime LOD {tier} boundsBlender min"
+    )
+    declared_max = _finite_vector(
+        bounds["max"], 3, f"runtime LOD {tier} boundsBlender max"
+    )
+    declared_size = _finite_vector(
+        bounds["size"],
+        3,
+        f"runtime LOD {tier} boundsBlender size",
+        minimum=0.0,
+    )
+    for axis in range(3):
+        if declared_max[axis] <= declared_min[axis]:
+            raise ValueError(f"runtime LOD {tier} boundsBlender is degenerate")
+        actual_size = declared_max[axis] - declared_min[axis]
+        if not math.isclose(
+            declared_size[axis], actual_size, rel_tol=1e-6, abs_tol=1e-6
+        ):
+            raise ValueError(f"runtime LOD {tier} boundsBlender size is inconsistent")
+
+    # glTF exports Blender (X, Y, Z) into runtime (X, Z, -Y). Convert the
+    # emitted, hierarchy-transformed geometry back to authoring axes before
+    # comparing it with the source-scene envelope recorded by the builder.
+    emitted_blender_min = (
+        metric.bounds_gltf_min[0],
+        -metric.bounds_gltf_max[2],
+        metric.bounds_gltf_min[1],
+    )
+    emitted_blender_max = (
+        metric.bounds_gltf_max[0],
+        -metric.bounds_gltf_min[2],
+        metric.bounds_gltf_max[1],
+    )
+    for axis in range(3):
+        lower_margin = emitted_blender_min[axis] - declared_min[axis]
+        upper_margin = declared_max[axis] - emitted_blender_max[axis]
+        if lower_margin < -BOUND_TOLERANCE_METERS or upper_margin < -BOUND_TOLERANCE_METERS:
+            raise ValueError(
+                f"runtime LOD {tier} boundsBlender does not contain emitted glTF geometry"
+            )
+        if (
+            lower_margin > MAX_AUTHORING_BOUND_MARGIN_METERS
+            or upper_margin > MAX_AUTHORING_BOUND_MARGIN_METERS
+        ):
+            raise ValueError(
+                f"runtime LOD {tier} boundsBlender is too loose for emitted glTF geometry"
+            )
+
+
 def verify_runtime_manifest(files: dict[str, bytes]) -> tuple[GlbMetrics, ...]:
     manifest = load_json(files[RUNTIME_MANIFEST], RUNTIME_MANIFEST)
+    _expect_exact_keys(
+        manifest,
+        {
+            "assetId",
+            "authoringCoordinateSystem",
+            "authorityBoundary",
+            "category",
+            "combatEnabled",
+            "coordinateSystem",
+            "encounterLevel",
+            "enemyKind",
+            "faction",
+            "frontFacing",
+            "lodGuidance",
+            "lods",
+            "materialContract",
+            "metersPerUnit",
+            "motion",
+            "name",
+            "pivot",
+            "revision",
+            "schema",
+            "selectionGuidance",
+            "state",
+            "version",
+        },
+        "runtime manifest",
+    )
     for key, expected in (
         ("schema", "warpkeep.runtime-encounter-asset.v1"),
         ("version", "1.0.0"),
         ("revision", REVISION),
         ("assetId", ASSET_ID),
+        ("authoringCoordinateSystem", "Blender, right-handed, +Z up, -Y front"),
         ("category", "Encounters/Core/WatcherLevel1"),
+        ("coordinateSystem", "glTF 2.0, right-handed, +Y up, +Z forward"),
         ("faction", "The Core"),
+        ("frontFacing", "+Z in glTF / -Y in Blender"),
         ("name", "Core Watcher"),
         ("enemyKind", "core-watcher"),
         ("encounterLevel", 1),
         ("combatEnabled", False),
         ("authorityBoundary", AUTHORITY_BOUNDARY),
+        ("lodGuidance", RUNTIME_LOD_GUIDANCE),
+        ("metersPerUnit", 1.0),
+        ("motion", RUNTIME_MOTION_CONTRACT),
+        ("pivot", "footprint center on Blender Z=0 / glTF Y=0"),
+        ("selectionGuidance", RUNTIME_SELECTION_GUIDANCE),
+        ("state", "dormant-presence"),
     ):
         _expect(manifest, key, expected, "runtime manifest")
 
@@ -1199,19 +1820,46 @@ def verify_runtime_manifest(files: dict[str, bytes]) -> tuple[GlbMetrics, ...]:
     if not isinstance(lod_records, list) or len(lod_records) != len(LOD_CONTRACT):
         raise ValueError("runtime manifest must contain exactly four LOD records")
 
+    semantic_contracts = load_integration_semantic_contracts()
     metrics: list[GlbMetrics] = []
     for record, (tier, filename, triangle_ceiling, byte_ceiling) in zip(
         lod_records, LOD_CONTRACT
     ):
-        if not isinstance(record, dict):
-            raise ValueError(f"invalid runtime LOD record: {tier}")
+        record = _expect_exact_keys(
+            record,
+            {
+                "animations",
+                "boundsBlender",
+                "bytes",
+                "cameras",
+                "embeddedBufferBytes",
+                "extensionsUsed",
+                "externalUris",
+                "file",
+                "images",
+                "materials",
+                "meshes",
+                "nodes",
+                "primitives",
+                "rigged",
+                "samplers",
+                "scenes",
+                "sha256",
+                "skins",
+                "textures",
+                "tier",
+                "triangles",
+                "uploadedVertices",
+            },
+            f"runtime LOD {tier}",
+        )
         _expect(record, "tier", tier, f"runtime LOD {tier}")
         _expect(record, "file", filename, f"runtime LOD {tier}")
         path = f"{RUNTIME_DIRECTORY}/{filename}"
         payload = files[path]
         if len(payload) > byte_ceiling:
             raise ValueError(f"{tier} exceeds byte ceiling {byte_ceiling}")
-        metric = inspect_glb(payload, path)
+        metric = inspect_glb(payload, path, semantic_contracts[tier])
         if not 0 < metric.triangles <= triangle_ceiling:
             raise ValueError(f"{tier} exceeds triangle ceiling {triangle_ceiling}")
         expected_fields = {
@@ -1237,6 +1885,7 @@ def verify_runtime_manifest(files: dict[str, bytes]) -> tuple[GlbMetrics, ...]:
         }
         for key, expected in expected_fields.items():
             _expect(record, key, expected, f"runtime LOD {tier}")
+        _verify_bounds_blender(record["boundsBlender"], metric, tier)
         metrics.append(metric)
 
     triangles = [metric.triangles for metric in metrics]
@@ -1246,32 +1895,94 @@ def verify_runtime_manifest(files: dict[str, bytes]) -> tuple[GlbMetrics, ...]:
     if any(left <= right for left, right in zip(byte_counts, byte_counts[1:])):
         raise ValueError("LOD bytes must be strictly descending")
     result = tuple(metrics)
+    for (tier, _, _, _), metric in zip(LOD_CONTRACT, result):
+        if not math.isclose(
+            metric.bounds_gltf_min[1],
+            0.0,
+            rel_tol=0.0,
+            abs_tol=BOUND_TOLERANCE_METERS,
+        ):
+            raise ValueError(f"{tier} emitted glTF geometry does not contact the ground")
+        if (
+            metric.footprint_radius
+            > RUNTIME_SELECTION_GUIDANCE["presentationFootprintRadiusMeters"]
+            + BOUND_TOLERANCE_METERS
+        ):
+            raise ValueError(f"{tier} exceeds the presentation footprint radius")
+        if (
+            metric.bounds_gltf_max[1]
+            > RUNTIME_SELECTION_GUIDANCE["suggestedPickCylinderHeightMeters"]
+            + BOUND_TOLERANCE_METERS
+        ):
+            raise ValueError(f"{tier} exceeds the suggested pick-cylinder height")
+    heights = [metric.bounds_gltf_size[1] for metric in result]
+    if max(heights) - min(heights) > 0.02:
+        raise ValueError("LOD emitted glTF heights are not stable")
     verify_material_contract(manifest, result)
     return result
 
 
 def verify_asset_manifest(files: dict[str, bytes], metrics: tuple[GlbMetrics, ...]) -> None:
     manifest = load_json(files[ASSET_MANIFEST], ASSET_MANIFEST)
+    _expect_exact_keys(
+        manifest,
+        {
+            "canonicalEditableSource",
+            "category",
+            "designIntent",
+            "faction",
+            "heroPreview",
+            "lodLineupPreview",
+            "mobilePreview",
+            "name",
+            "qaReport",
+            "revision",
+            "runtimeContracts",
+            "schema",
+            "sourceSemanticFingerprintSha256",
+            "status",
+            "transparentPreview",
+            "version",
+            "watcher",
+        },
+        "asset manifest",
+    )
     for key, expected in (
         ("schema", "warpkeep.authoring-package.v1"),
         ("version", "1.0.0"),
         ("revision", REVISION),
         ("category", "Encounters/Core/WatcherLevel1"),
         ("faction", "The Core"),
+        ("name", "Warpkeep Core Watcher — Level 1"),
         ("canonicalEditableSource", SOURCE_BLEND),
+        ("designIntent", RUNTIME_DESIGN_INTENT),
         ("heroPreview", "Previews/Warpkeep_CoreWatcher_Level1_Presentation_1920.jpg"),
         ("lodLineupPreview", "Previews/Warpkeep_CoreWatcher_Level1_LOD_Lineup_2400.jpg"),
         ("transparentPreview", "Previews/Warpkeep_CoreWatcher_Level1_Transparent_1600.png"),
         ("mobilePreview", "Previews/Mobile/Warpkeep_CoreWatcher_Level1_Map_512.png"),
         ("qaReport", QA_REPORT),
+        ("runtimeContracts", RUNTIME_AUTHORING_CONTRACT),
+        ("status", "editable-static-runtime-validated-release-candidate"),
     ):
         _expect(manifest, key, expected, "asset manifest")
     fingerprint = manifest.get("sourceSemanticFingerprintSha256")
-    if not isinstance(fingerprint, str) or SHA256_RE.fullmatch(fingerprint) is None:
-        raise ValueError("asset manifest source semantic fingerprint is invalid")
-    watcher = manifest.get("watcher")
-    if not isinstance(watcher, dict):
-        raise ValueError("asset manifest watcher record is missing")
+    if fingerprint != SOURCE_SEMANTIC_FINGERPRINT_SHA256:
+        raise ValueError("asset manifest source semantic fingerprint is not the pinned source")
+    watcher = _expect_exact_keys(
+        manifest.get("watcher"),
+        {
+            "assetId",
+            "combatEnabled",
+            "encounterLevel",
+            "enemyKind",
+            "name",
+            "runtimeManifest",
+            "source",
+            "state",
+            "triangles",
+        },
+        "asset manifest watcher record",
+    )
     for key, expected in (
         ("assetId", ASSET_ID),
         ("name", "Core Watcher"),
@@ -1280,6 +1991,7 @@ def verify_asset_manifest(files: dict[str, bytes], metrics: tuple[GlbMetrics, ..
         ("combatEnabled", False),
         ("runtimeManifest", RUNTIME_MANIFEST),
         ("source", SOURCE_BLEND),
+        ("state", "dormant-presence"),
     ):
         _expect(watcher, key, expected, "asset manifest watcher record")
     expected_triangles = {

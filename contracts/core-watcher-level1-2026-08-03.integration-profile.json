@@ -1,0 +1,579 @@
+{
+  "assetBinding": {
+    "archive": {
+      "bytes": 1405757,
+      "entries": 15,
+      "name": "warpkeep-core-watcher-level1-game-ready-2026-08-03-v1.zip",
+      "sha256": "34c8a80186642659acea893c06199a8e7b615ac0f9685f2c58c4a27641f56a33"
+    },
+    "gallery": {
+      "bytes": 1255,
+      "sha256": "90ec48066c69c6a4223dbc3911784c08c6dc86cad686d3581f4cfcfd15cab6bc",
+      "trackedPath": "previews/core-watcher-level1-2026-08-03/gallery.json"
+    },
+    "packageRoot": "Warpkeep_CoreWatcher_Level1_GameReady",
+    "releaseManifest": {
+      "bytes": 7520,
+      "sha256": "60eaa17e477d37f42d25b446ab9a907c6d57b919007b3632c3e5f327283113f0",
+      "trackedPath": "releases/core-watcher-level1-2026-08-03/manifest.json"
+    },
+    "runtimeManifest": {
+      "bytes": 7462,
+      "packagePath": "Warpkeep_CoreWatcher_Level1_GameReady/Runtime/Encounters/Core/WatcherLevel1/runtime-manifest.json",
+      "sha256": "0339dc9abe5c6a9340ef9be1d0ad908a5130eb9339a7ace4fafdb25a7548d1fd",
+      "trackedPath": "contracts/core-watcher-level1-2026-08-03.runtime-manifest.json"
+    },
+    "sourceManifest": {
+      "bytes": 2416,
+      "sha256": "2c52e4744914b27fad6ba6b1e28ae1a02363612080079ac62933fd16ce580b04",
+      "trackedPath": "manifests/core-watcher-level1-2026-08-03.source.json"
+    },
+    "sourceSemanticFingerprintSha256": "a51eae5665ee3e7c59191b36dd1abfbbc1fa3ddd76405bee52c6c5fb3dad344c"
+  },
+  "authorityBoundary": {
+    "actions": false,
+    "activation": false,
+    "ai": false,
+    "catalog": false,
+    "collision": false,
+    "combat": false,
+    "combatState": false,
+    "cooldowns": false,
+    "damage": false,
+    "encounterState": false,
+    "fogOfWar": false,
+    "health": false,
+    "loot": false,
+    "networking": false,
+    "ownership": false,
+    "pathing": false,
+    "persistence": false,
+    "picking": false,
+    "placement": false,
+    "placementEligibility": false,
+    "populationCount": false,
+    "respawn": false,
+    "rewards": false,
+    "routing": false,
+    "selection": false,
+    "siteIdentity": false,
+    "spacetimeDb": false,
+    "visibility": false,
+    "visualOnly": true,
+    "worldCoordinates": false
+  },
+  "contractDigest": {
+    "algorithm": "sha256",
+    "canonicalization": "exact tracked UTF-8 bytes with the 64 lowercase hexadecimal characters at $.contractDigest.sha256 replaced by 64 ASCII zeroes; no other transformation",
+    "sha256": "0a34614dfb42f754fd2524b23ef213c2db502768ad9230bd6a27a9198a8251c0"
+  },
+  "fallbackAndAccessibility": {
+    "accessibleName": "Level 1 Core Watcher",
+    "cameraNeutralInspect": true,
+    "completeSemanticExploreListAlwaysAvailable": true,
+    "engineGenerated": true,
+    "fallbackShape": "bifurcated-spire-marker",
+    "historyBackClosesInspectionBeforeLeavingRealm": true,
+    "locateIsTheOnlyCameraMovingAction": true,
+    "modelFailurePreservesPublicRecord": true,
+    "opaqueIdentifiersExcludedFromDomAndAltText": true,
+    "presentationArtDecorative": true,
+    "preserveSelection": true,
+    "required": true,
+    "retryPolicy": "client-owned-bounded-no-retry-storm",
+    "semanticDataSource": "engine-and-server-public-projection",
+    "testMatrix": {
+      "keyboardAndScreenReader": true,
+      "pageZoomPercent": 200,
+      "prefersReducedMotion": true,
+      "safariIphone": {
+        "pageScroll": true,
+        "pinchZoom": true,
+        "safeAreaInsets": true,
+        "visualViewportResize": true
+      },
+      "viewportCssPixels": [
+        390,
+        844
+      ]
+    }
+  },
+  "futureGameplaySlices": [
+    {
+      "implementedHere": false,
+      "owner": "Warpkeep public catalogue and server placement authority",
+      "slice": "B",
+      "surface": "public Core site identities, eligible cells, selected-world topology, hydrology, and visibility projection"
+    },
+    {
+      "implementedHere": false,
+      "owner": "Warpkeep Realm client",
+      "slice": "C",
+      "surface": "content-addressed loading, markers, LOD allocation, instancing, picking, mobile gestures, fallback, and accessibility"
+    },
+    {
+      "implementedHere": false,
+      "owner": "SpacetimeDB and authoritative Realm UI",
+      "slice": "D",
+      "surface": "encounter state, combat, health, damage, actions, rewards, cooldowns, and persistence"
+    },
+    {
+      "implementedHere": false,
+      "owner": "Warpkeep QA and operators",
+      "slice": "E",
+      "surface": "desktop and mobile budgets, migrations, observability, recovery, and rollout evidence"
+    },
+    {
+      "implementedHere": false,
+      "owner": "Warpkeep owner",
+      "slice": "F",
+      "surface": "fail-closed activation and staged rollout"
+    }
+  ],
+  "geometry": {
+    "frontAxis": "+Z",
+    "nativeScaleMetersPerUnit": 1.0,
+    "pivot": "footprint-center-ground",
+    "renderGeometryIsCollision": false,
+    "renderGeometryIsPicking": false,
+    "selectionHint": {
+      "centerYMeters": 1.275,
+      "engineOwned": true,
+      "heightMeters": 2.55,
+      "presentationFootprintRadiusMeters": 0.9,
+      "packageSuggestedRadiusMeters": 0.72,
+      "shape": "cylinder"
+    },
+    "units": "meters",
+    "upAxis": "+Y"
+  },
+  "identity": {
+    "accessibleName": "Level 1 Core Watcher",
+    "assetId": "warpkeep.encounters.core.watcher.level1",
+    "combatEnabled": false,
+    "displayName": "Core Watcher",
+    "encounterLevel": 1,
+    "enemyKind": "core-watcher",
+    "faction": "The Core",
+    "revision": "genesis-001-core-watcher-level1-2026-08-03",
+    "statePresentation": "dormant-presence"
+  },
+  "instancing": {
+    "capacityEvidence": {
+      "declaresPopulation": false,
+      "mapProfileInstancedDrawGroups": 12,
+      "mapProfileNaiveCloneDrawCalls": 864,
+      "mapProfileVisibleTriangles": 11376,
+      "nonAuthoritativeTestInstances": 72
+    },
+    "eligible": true,
+    "gameplayStatePerRenderInstance": false,
+    "onePrimitivePerMesh": true,
+    "selectedHighDetailMaxInstances": 1,
+    "staticRigid": true,
+    "strategy": "per-semantic-mesh"
+  },
+  "loading": {
+    "abortable": true,
+    "allowedExtensions": [
+      "KHR_materials_emissive_strength"
+    ],
+    "contentAddressFilenamePattern": "<role>-<sha256-first-16>.glb",
+    "contextRecoverySupported": true,
+    "credentials": "same-origin",
+    "embeddedOnly": true,
+    "exactBytesBeforeParse": true,
+    "exactSha256BeforeParse": true,
+    "idempotentDisposal": true,
+    "ordinaryBuildNetworkAccess": false,
+    "redirectsAllowed": false,
+    "releasePublicationRequiredBeforeUse": true,
+    "runtimeGitHubReleaseDependency": false,
+    "runtimeUseAuthorized": false,
+    "sameOriginOnly": true,
+    "timeoutCapMilliseconds": 60000,
+    "timeoutMilliseconds": 20000,
+    "transactionalInstall": true
+  },
+  "motion": {
+    "authoredAnimations": [],
+    "continuousMotionRequired": false,
+    "default": "static",
+    "forbiddenClips": [
+      "Attack",
+      "Walk",
+      "Death"
+    ],
+    "independentAnimationLoops": 0,
+    "mayEncodeGameplayState": false,
+    "phaseSource": "engine-supplied-public-instance-key",
+    "presentationOnly": true,
+    "reducedMotion": "static",
+    "scheduler": "existing-bounded-realm-scene-scheduler",
+    "staticWhen": [
+      "reduced-quality",
+      "prefers-reduced-motion",
+      "strategic-overview",
+      "offscreen"
+    ],
+    "targets": [
+      {
+        "maxVerticalMeters": 0.03,
+        "maxYawDegrees": 6,
+        "node": "CoreWatcher_SuspendedCore"
+      },
+      {
+        "maxVerticalMeters": 0.02,
+        "maxYawDegrees": 4,
+        "node": "CoreWatcher_FloatingShard_1"
+      },
+      {
+        "maxVerticalMeters": 0.02,
+        "maxYawDegrees": 4,
+        "node": "CoreWatcher_FloatingShard_2"
+      }
+    ]
+  },
+  "presentation": {
+    "description": "A dormant Core Watcher presentation. Realm state and actions remain server-authoritative.",
+    "levelLabel": "Level 1",
+    "packageReviewArt": {
+      "bytes": 580483,
+      "decorative": true,
+      "height": 1600,
+      "packagePath": "Warpkeep_CoreWatcher_Level1_GameReady/Previews/Warpkeep_CoreWatcher_Level1_Transparent_1600.png",
+      "runtimeUse": false,
+      "sha256": "bc20fa28239d8008b79f182509363a81b2bef6705fdf8436786ca70567e2cf9a",
+      "width": 1600
+    },
+    "previews": [
+      {
+        "bytes": 193978,
+        "decorative": true,
+        "height": 1080,
+        "path": "previews/core-watcher-level1-2026-08-03/00-core-watcher-presentation.jpg",
+        "runtimeUse": false,
+        "sha256": "d1e01453c620d22695148f89c18e9e5330c38508b1d984faae4037cb6d1dbcaa",
+        "width": 1920
+      },
+      {
+        "bytes": 278733,
+        "decorative": true,
+        "height": 1200,
+        "path": "previews/core-watcher-level1-2026-08-03/01-core-watcher-lod-lineup.jpg",
+        "runtimeUse": false,
+        "sha256": "d60510764ca2c57ae2bb67419e835cff3c7c4986bfe5f04156bd17687808e595",
+        "width": 2400
+      },
+      {
+        "bytes": 170456,
+        "decorative": true,
+        "height": 512,
+        "path": "previews/core-watcher-level1-2026-08-03/02-core-watcher-map-preview.png",
+        "runtimeUse": false,
+        "sha256": "64ae797aece8aa9594872b1265950f6a227baf0edface14b13217f749b0db774",
+        "width": 512
+      }
+    ],
+    "shortLabel": "Watcher",
+    "uiSemanticsComeFromEngine": true
+  },
+  "profiles": [
+    {
+      "boundsGltfMeters": {
+        "max": [
+          0.855703592300415,
+          2.14163864938768,
+          0.8585932850837708
+        ],
+        "min": [
+          -0.7993891586294642,
+          0.0,
+          -0.7494720541633232
+        ],
+        "size": [
+          1.6550927509298794,
+          2.14163864938768,
+          1.6080653392470938
+        ]
+      },
+      "bytes": 129520,
+      "drawCalls": 23,
+      "embeddedBufferBytes": 110388,
+      "file": "Warpkeep_CoreWatcher_Level1_LOD0_High_Runtime.glb",
+      "id": "high",
+      "materials": 3,
+      "meshes": 23,
+      "nodes": 24,
+      "onePrimitivePerMesh": true,
+      "partNodes": [
+        "CoreWatcher_BifurcatedBody_Left",
+        "CoreWatcher_BifurcatedBody_Right",
+        "CoreWatcher_CoreCage_1",
+        "CoreWatcher_CoreCage_2",
+        "CoreWatcher_CrownRib_Left",
+        "CoreWatcher_CrownRib_Right",
+        "CoreWatcher_FloatingShard_1",
+        "CoreWatcher_FloatingShard_2",
+        "CoreWatcher_FloatingShard_3",
+        "CoreWatcher_Footprint",
+        "CoreWatcher_GroundFracture_1",
+        "CoreWatcher_GroundFracture_2",
+        "CoreWatcher_GroundFracture_3",
+        "CoreWatcher_GroundFracture_4",
+        "CoreWatcher_GroundFracture_5",
+        "CoreWatcher_GroundFracture_6",
+        "CoreWatcher_GroundFracture_7",
+        "CoreWatcher_GroundShard_1",
+        "CoreWatcher_GroundShard_2",
+        "CoreWatcher_GroundShard_3",
+        "CoreWatcher_GroundShard_4",
+        "CoreWatcher_LowerPedestal",
+        "CoreWatcher_SuspendedCore"
+      ],
+      "primitives": 23,
+      "rootNode": "Warpkeep_CoreWatcher_Level1_LOD0_High",
+      "sha256": "64218fe3082466ae5864885e7c7bd623e2c233d8f1e5231ca5e75979b9a045db",
+      "tier": "LOD0_High",
+      "triangles": 2354,
+      "uploadedVertices": 4210
+    },
+    {
+      "boundsGltfMeters": {
+        "max": [
+          0.7317647502528593,
+          2.142855711951041,
+          0.7091407179832458
+        ],
+        "min": [
+          -0.7993891586294642,
+          0.0,
+          -0.7494720541633232
+        ],
+        "size": [
+          1.5311539088823234,
+          2.142855711951041,
+          1.458612772146569
+        ]
+      },
+      "bytes": 67968,
+      "drawCalls": 20,
+      "embeddedBufferBytes": 50904,
+      "file": "Warpkeep_CoreWatcher_Level1_LOD1_Balanced_Runtime.glb",
+      "id": "balanced",
+      "materials": 3,
+      "meshes": 20,
+      "nodes": 21,
+      "onePrimitivePerMesh": true,
+      "partNodes": [
+        "CoreWatcher_BifurcatedBody_Left",
+        "CoreWatcher_BifurcatedBody_Right",
+        "CoreWatcher_CoreCage_1",
+        "CoreWatcher_CoreCage_2",
+        "CoreWatcher_CrownRib_Left",
+        "CoreWatcher_CrownRib_Right",
+        "CoreWatcher_FloatingShard_1",
+        "CoreWatcher_FloatingShard_2",
+        "CoreWatcher_FloatingShard_3",
+        "CoreWatcher_Footprint",
+        "CoreWatcher_GroundFracture_1",
+        "CoreWatcher_GroundFracture_2",
+        "CoreWatcher_GroundFracture_3",
+        "CoreWatcher_GroundFracture_4",
+        "CoreWatcher_GroundFracture_5",
+        "CoreWatcher_GroundShard_1",
+        "CoreWatcher_GroundShard_2",
+        "CoreWatcher_GroundShard_3",
+        "CoreWatcher_LowerPedestal",
+        "CoreWatcher_SuspendedCore"
+      ],
+      "primitives": 20,
+      "rootNode": "Warpkeep_CoreWatcher_Level1_LOD1_Balanced",
+      "sha256": "f6112167a67d91db46e1e3dcabbea2e537b3f8c8bcb36de5caca1ec63170a1f6",
+      "tier": "LOD1_Balanced",
+      "triangles": 1000,
+      "uploadedVertices": 1972
+    },
+    {
+      "boundsGltfMeters": {
+        "max": [
+          0.7317647502528593,
+          2.1436644242985894,
+          0.7091407179832458
+        ],
+        "min": [
+          -0.7993891586294642,
+          0.0,
+          -0.6200000047683716
+        ],
+        "size": [
+          1.5311539088823234,
+          2.1436644242985894,
+          1.3291407227516174
+        ]
+      },
+      "bytes": 27636,
+      "drawCalls": 15,
+      "embeddedBufferBytes": 14340,
+      "file": "Warpkeep_CoreWatcher_Level1_LOD2_Compact_Runtime.glb",
+      "id": "compact",
+      "materials": 3,
+      "meshes": 15,
+      "nodes": 16,
+      "onePrimitivePerMesh": true,
+      "partNodes": [
+        "CoreWatcher_BifurcatedBody_Left",
+        "CoreWatcher_BifurcatedBody_Right",
+        "CoreWatcher_CoreCage_1",
+        "CoreWatcher_CrownRib_Left",
+        "CoreWatcher_CrownRib_Right",
+        "CoreWatcher_FloatingShard_1",
+        "CoreWatcher_FloatingShard_2",
+        "CoreWatcher_Footprint",
+        "CoreWatcher_GroundFracture_1",
+        "CoreWatcher_GroundFracture_2",
+        "CoreWatcher_GroundFracture_3",
+        "CoreWatcher_GroundShard_1",
+        "CoreWatcher_GroundShard_2",
+        "CoreWatcher_LowerPedestal",
+        "CoreWatcher_SuspendedCore"
+      ],
+      "primitives": 15,
+      "rootNode": "Warpkeep_CoreWatcher_Level1_LOD2_Compact",
+      "sha256": "6e9434d4e4f8ba03bec96a5bd47422caae88e04b230f7f3daf3219e833bf13e1",
+      "tier": "LOD2_Compact",
+      "triangles": 282,
+      "uploadedVertices": 552
+    },
+    {
+      "boundsGltfMeters": {
+        "max": [
+          0.6449754041834016,
+          2.1446314543004137,
+          0.7091407179832458
+        ],
+        "min": [
+          -0.7870411055325282,
+          0.0,
+          -0.6200000047683716
+        ],
+        "size": [
+          1.4320165097159299,
+          2.1446314543004137,
+          1.3291407227516174
+        ]
+      },
+      "bytes": 18748,
+      "drawCalls": 12,
+      "embeddedBufferBytes": 7740,
+      "file": "Warpkeep_CoreWatcher_Level1_LOD3_Map_Runtime.glb",
+      "id": "map",
+      "materials": 3,
+      "meshes": 12,
+      "nodes": 13,
+      "onePrimitivePerMesh": true,
+      "partNodes": [
+        "CoreWatcher_BifurcatedBody_Left",
+        "CoreWatcher_BifurcatedBody_Right",
+        "CoreWatcher_CrownRib_Left",
+        "CoreWatcher_CrownRib_Right",
+        "CoreWatcher_FloatingShard_1",
+        "CoreWatcher_FloatingShard_2",
+        "CoreWatcher_Footprint",
+        "CoreWatcher_GroundFracture_1",
+        "CoreWatcher_GroundFracture_2",
+        "CoreWatcher_GroundShard_1",
+        "CoreWatcher_LowerPedestal",
+        "CoreWatcher_SuspendedCore"
+      ],
+      "primitives": 12,
+      "rootNode": "Warpkeep_CoreWatcher_Level1_LOD3_Map",
+      "sha256": "2f2e30bdd7593440cba8a5bd7a676d812c0b0a5910ece5174c8af434a72f146b",
+      "tier": "LOD3_Map",
+      "triangles": 158,
+      "uploadedVertices": 300
+    }
+  ],
+  "qualityCamera": {
+    "allocatorOwnsFinalChoice": true,
+    "beyondFarBand": "engine-marker",
+    "distanceHintsMeters": {
+      "balancedThrough": 18,
+      "compactThrough": 36,
+      "highThrough": 8,
+      "mapThrough": 72
+    },
+    "hysteresisRequired": true,
+    "modelPresentationNeverGatesDiscoverability": true,
+    "packageReducedQualityHintDisposition": "superseded-here-by-no-optional-fetch; LOD2 remains available to non-reduced camera allocation",
+    "policies": {
+      "balanced": {
+        "closeSelected": "LOD1_Balanced",
+        "optionalAssetFetch": true,
+        "overview": "LOD3_Map",
+        "strategy": "LOD2_Compact"
+      },
+      "high": {
+        "closeSelected": "LOD0_High",
+        "optionalAssetFetch": true,
+        "overview": "LOD3_Map",
+        "strategy": "LOD2_Compact"
+      },
+      "reduced": {
+        "closeSelected": "engine-marker",
+        "optionalAssetFetch": false,
+        "overview": "engine-marker",
+        "strategy": "engine-marker"
+      }
+    },
+    "semanticMarkerAlwaysMountedForValidInFramePublicRecord": true,
+    "strategicOverviewPresentationPointerInert": true
+  },
+  "schema": "warpkeep.asset-integration-profile.v1",
+  "selectionAndGestures": {
+    "distantColliderCannotWin": true,
+    "engineOwnsPicking": true,
+    "focusRestoredAfterClose": true,
+    "mapZoomCadenceIndependent": true,
+    "mapZoomCumulativePerGesture": true,
+    "minimumControlCssPixels": 44,
+    "mustNotCaptureMapPanPinchOrWheel": true,
+    "presentationMeshesPointerInertInOverview": true,
+    "preferredControlCssPixels": 48,
+    "resetGestureStateOn": [
+      "pointer-up",
+      "pointer-cancel",
+      "lost-pointer-capture",
+      "viewport-change",
+      "visibility-change"
+    ],
+    "sharedPickArbitrationRequired": true
+  },
+  "status": {
+    "activationAuthorized": false,
+    "gameplayImplemented": false,
+    "integrated": false,
+    "releasePublished": false,
+    "reviewOnly": true,
+    "runtimeUseAuthorized": false
+  },
+  "telemetryAndPrivacy": {
+    "aggregateFields": [
+      "public-records-visible",
+      "semantic-markers-rendered",
+      "models-rendered-by-profile",
+      "instanced-draw-groups",
+      "visible-triangles",
+      "asset-bytes-loaded",
+      "fallback-count",
+      "context-loss-count",
+      "bounded-retry-count"
+    ],
+    "clientTelemetryImplementedHere": false,
+    "privateCoordinatesAllowed": false,
+    "privateIdentifiersAllowed": false,
+    "privateStateAllowedInAltTextOrDom": false,
+    "privateWorldAtlasAllowed": false
+  },
+  "version": "1.0.0"
+}

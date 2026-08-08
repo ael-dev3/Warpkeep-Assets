@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import copy
 import hashlib
 import importlib.util
 import json
@@ -30,12 +31,12 @@ def glb_document(triangle_count: int) -> tuple[dict, bytes]:
     positions: list[float] = []
     indices: list[int] = []
     for triangle in range(triangle_count):
-        x = float(triangle * 2)
+        x = float(triangle) * 0.01
         base = triangle * 3
-        positions.extend((x, 0.0, 0.0, x + 1.0, 0.0, 0.0, x, 1.0, 0.0))
+        positions.extend((x, 0.0, 0.0, x + 0.25, 0.0, 0.0, x, 0.5, 0.1))
         indices.extend((base, base + 1, base + 2))
     position_bytes = struct.pack("<" + "f" * len(positions), *positions)
-    normal_values = [0.0, 0.0, 1.0] * (triangle_count * 3)
+    normal_values = [0.0, -0.196116135, 0.980580676] * (triangle_count * 3)
     normal_bytes = struct.pack("<" + "f" * len(normal_values), *normal_values)
     index_bytes = struct.pack("<" + "H" * len(indices), *indices)
     binary = position_bytes + normal_bytes + index_bytes
@@ -95,7 +96,7 @@ def glb_document(triangle_count: int) -> tuple[dict, bytes]:
                 "count": triangle_count * 3,
                 "type": "VEC3",
                 "min": [0.0, 0.0, 0.0],
-                "max": [float((triangle_count - 1) * 2 + 1), 1.0, 0.0],
+                "max": [float((triangle_count - 1) * 0.01 + 0.25), 0.5, 0.1],
             },
             {
                 "bufferView": 1,
@@ -134,6 +135,83 @@ def encode_glb(document: dict, binary: bytes) -> bytes:
 
 def make_glb(triangle_count: int) -> bytes:
     document, binary = glb_document(triangle_count)
+    return encode_glb(document, binary)
+
+
+def semantic_glb_document(
+    tier: str, triangles_per_mesh: int = 1
+) -> tuple[dict, bytes]:
+    document, binary = glb_document(triangles_per_mesh)
+    contract = verify.load_integration_semantic_contracts()[tier]
+
+    def role(node_name: str) -> str:
+        if node_name.startswith("CoreWatcher_CoreCage_"):
+            return "core-cage"
+        if node_name.startswith(
+            ("CoreWatcher_FloatingShard_", "CoreWatcher_GroundShard_")
+        ):
+            return "floating-shard"
+        if node_name.startswith("CoreWatcher_GroundFracture_"):
+            return "ground-sigil"
+        if node_name == "CoreWatcher_SuspendedCore":
+            return "suspended-core"
+        return node_name
+
+    def material_index(node_name: str) -> int:
+        if node_name.startswith("CoreWatcher_GroundFracture_") or node_name in {
+            "CoreWatcher_CoreCage_2",
+            "CoreWatcher_SuspendedCore",
+        }:
+            return 2
+        if node_name in {
+            "CoreWatcher_CoreCage_1",
+            "CoreWatcher_CrownRib_Left",
+            "CoreWatcher_CrownRib_Right",
+            "CoreWatcher_FloatingShard_1",
+            "CoreWatcher_FloatingShard_3",
+            "CoreWatcher_LowerPedestal",
+        }:
+            return 1
+        return 0
+
+    template = document["meshes"][0]["primitives"][0]
+    meshes = []
+    nodes = []
+    for index, node_name in enumerate(contract.part_nodes):
+        primitive = copy.deepcopy(template)
+        primitive["material"] = material_index(node_name)
+        meshes.append(
+            {"name": f"{node_name}_Mesh", "primitives": [primitive]}
+        )
+        nodes.append(
+            {
+                "extras": {"warpkeep_semantic_role": role(node_name)},
+                "mesh": index,
+                "name": node_name,
+            }
+        )
+    nodes.append(
+        {
+            "children": list(range(len(contract.part_nodes))),
+            "extras": {
+                "warpkeep_asset_id": verify.ASSET_ID,
+                "warpkeep_enemy_kind": "core-watcher",
+                "warpkeep_encounter_level": 1,
+                "warpkeep_state": "dormant-presence",
+                "warpkeep_combat_enabled": False,
+                "warpkeep_lod": tier,
+            },
+            "name": contract.root_node,
+        }
+    )
+    document["meshes"] = meshes
+    document["nodes"] = nodes
+    document["scenes"] = [{"nodes": [len(contract.part_nodes)]}]
+    return document, binary
+
+
+def make_semantic_glb(tier: str, triangles_per_mesh: int = 1) -> bytes:
+    document, binary = semantic_glb_document(tier, triangles_per_mesh)
     return encode_glb(document, binary)
 
 
@@ -214,15 +292,23 @@ def make_package(parent: Path) -> Path:
 
     runtime_lods: list[dict] = []
     metrics = []
-    for triangle_count, (tier, filename, _, _) in zip(
-        (4, 3, 2, 1), verify.LOD_CONTRACT
-    ):
-        payload = make_glb(triangle_count)
+    for tier, filename, _, _ in verify.LOD_CONTRACT:
+        payload = make_semantic_glb(tier)
         path = package / verify.RUNTIME_DIRECTORY / filename
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(payload)
         metric = verify.inspect_glb(payload, filename)
         metrics.append(metric)
+        bounds_blender_min = [
+            metric.bounds_gltf_min[0],
+            -metric.bounds_gltf_max[2],
+            metric.bounds_gltf_min[1],
+        ]
+        bounds_blender_max = [
+            metric.bounds_gltf_max[0],
+            -metric.bounds_gltf_min[2],
+            metric.bounds_gltf_max[1],
+        ]
         runtime_lods.append(
             {
                 "tier": tier,
@@ -246,22 +332,39 @@ def make_package(parent: Path) -> Path:
                 "rigged": False,
                 "externalUris": [],
                 "extensionsUsed": list(metric.extensions_used),
+                "boundsBlender": {
+                    "min": bounds_blender_min,
+                    "max": bounds_blender_max,
+                    "size": [
+                        bounds_blender_max[axis] - bounds_blender_min[axis]
+                        for axis in range(3)
+                    ],
+                },
             }
         )
 
     runtime_manifest = {
-        "schema": "warpkeep.runtime-encounter-asset.v1",
-        "version": "1.0.0",
-        "revision": verify.REVISION,
         "assetId": verify.ASSET_ID,
-        "category": "Encounters/Core/WatcherLevel1",
-        "faction": "The Core",
-        "name": "Core Watcher",
-        "enemyKind": "core-watcher",
-        "encounterLevel": 1,
-        "combatEnabled": False,
+        "authoringCoordinateSystem": "Blender, right-handed, +Z up, -Y front",
         "authorityBoundary": verify.AUTHORITY_BOUNDARY,
+        "category": "Encounters/Core/WatcherLevel1",
+        "combatEnabled": False,
+        "coordinateSystem": "glTF 2.0, right-handed, +Y up, +Z forward",
+        "encounterLevel": 1,
+        "enemyKind": "core-watcher",
+        "faction": "The Core",
+        "frontFacing": "+Z in glTF / -Y in Blender",
+        "lodGuidance": verify.RUNTIME_LOD_GUIDANCE,
         "lods": runtime_lods,
+        "metersPerUnit": 1.0,
+        "motion": verify.RUNTIME_MOTION_CONTRACT,
+        "name": "Core Watcher",
+        "pivot": "footprint center on Blender Z=0 / glTF Y=0",
+        "revision": verify.REVISION,
+        "schema": "warpkeep.runtime-encounter-asset.v1",
+        "selectionGuidance": verify.RUNTIME_SELECTION_GUIDANCE,
+        "state": "dormant-presence",
+        "version": "1.0.0",
         "materialContract": {
             "alphaBlendMaterials": 0,
             "authoringNote": {
@@ -288,24 +391,29 @@ def make_package(parent: Path) -> Path:
                 }
                 for material in metrics[0].runtime_materials
             ],
+            "palette": "obsidian, blackened metal, restrained cold ultraviolet",
             "textures": 0,
         },
     }
     write_json(package / verify.RUNTIME_MANIFEST, runtime_manifest)
 
     asset_manifest = {
-        "schema": "warpkeep.authoring-package.v1",
-        "version": "1.0.0",
-        "revision": verify.REVISION,
-        "category": "Encounters/Core/WatcherLevel1",
-        "faction": "The Core",
         "canonicalEditableSource": verify.SOURCE_BLEND,
+        "category": "Encounters/Core/WatcherLevel1",
+        "designIntent": verify.RUNTIME_DESIGN_INTENT,
+        "faction": "The Core",
         "heroPreview": "Previews/Warpkeep_CoreWatcher_Level1_Presentation_1920.jpg",
         "lodLineupPreview": "Previews/Warpkeep_CoreWatcher_Level1_LOD_Lineup_2400.jpg",
-        "transparentPreview": "Previews/Warpkeep_CoreWatcher_Level1_Transparent_1600.png",
         "mobilePreview": "Previews/Mobile/Warpkeep_CoreWatcher_Level1_Map_512.png",
+        "name": "Warpkeep Core Watcher — Level 1",
         "qaReport": verify.QA_REPORT,
-        "sourceSemanticFingerprintSha256": "a" * 64,
+        "revision": verify.REVISION,
+        "runtimeContracts": verify.RUNTIME_AUTHORING_CONTRACT,
+        "schema": "warpkeep.authoring-package.v1",
+        "sourceSemanticFingerprintSha256": verify.SOURCE_SEMANTIC_FINGERPRINT_SHA256,
+        "status": "editable-static-runtime-validated-release-candidate",
+        "transparentPreview": "Previews/Warpkeep_CoreWatcher_Level1_Transparent_1600.png",
+        "version": "1.0.0",
         "watcher": {
             "assetId": verify.ASSET_ID,
             "name": "Core Watcher",
@@ -314,6 +422,7 @@ def make_package(parent: Path) -> Path:
             "combatEnabled": False,
             "runtimeManifest": verify.RUNTIME_MANIFEST,
             "source": verify.SOURCE_BLEND,
+            "state": "dormant-presence",
             "triangles": {
                 contract[0]: metric.triangles
                 for contract, metric in zip(verify.LOD_CONTRACT, metrics)
@@ -360,6 +469,16 @@ def update_runtime_lod(package: Path, tier: str, payload: bytes) -> None:
     target = package / verify.RUNTIME_DIRECTORY / record["file"]
     target.write_bytes(payload)
     metric = verify.inspect_glb(payload, record["file"])
+    bounds_blender_min = [
+        metric.bounds_gltf_min[0],
+        -metric.bounds_gltf_max[2],
+        metric.bounds_gltf_min[1],
+    ]
+    bounds_blender_max = [
+        metric.bounds_gltf_max[0],
+        -metric.bounds_gltf_min[2],
+        metric.bounds_gltf_max[1],
+    ]
     record.update(
         {
             "bytes": metric.bytes,
@@ -381,6 +500,14 @@ def update_runtime_lod(package: Path, tier: str, payload: bytes) -> None:
             "rigged": False,
             "externalUris": [],
             "extensionsUsed": list(metric.extensions_used),
+            "boundsBlender": {
+                "min": bounds_blender_min,
+                "max": bounds_blender_max,
+                "size": [
+                    bounds_blender_max[axis] - bounds_blender_min[axis]
+                    for axis in range(3)
+                ],
+            },
         }
     )
     write_json(runtime_path, manifest)
@@ -391,13 +518,26 @@ def update_runtime_lod(package: Path, tier: str, payload: bytes) -> None:
     refresh_checksums(package)
 
 
+def mutate_runtime_glb(package: Path, tier: str, mutate) -> None:
+    filename = next(
+        filename
+        for contract_tier, filename, _, _ in verify.LOD_CONTRACT
+        if contract_tier == tier
+    )
+    target = package / verify.RUNTIME_DIRECTORY / filename
+    document, binary = verify._parse_glb(target.read_bytes(), filename)
+    mutate(document)
+    target.write_bytes(encode_glb(document, binary))
+    refresh_checksums(package)
+
+
 class CoreWatcherHappyPathTests(unittest.TestCase):
     def test_extracted_package(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             package = make_package(Path(directory))
             result = verify.verify_package(package)
             self.assertEqual(result.files, 15)
-            self.assertEqual(result.triangles, (4, 3, 2, 1))
+            self.assertEqual(result.triangles, (23, 20, 15, 12))
 
     def test_zip_and_cli(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -488,6 +628,24 @@ class PackageSafetyTests(unittest.TestCase):
 
 
 class RuntimeContractTests(unittest.TestCase):
+    def _assert_json_mutation_rejected(
+        self, document_name: str, mutate, pattern: str | None = None
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            package = make_package(Path(directory))
+            path = package / document_name
+            document = json.loads(path.read_text(encoding="utf-8"))
+            mutate(document)
+            write_json(path, document)
+            refresh_checksums(package)
+            expectation = (
+                self.assertRaisesRegex(ValueError, pattern)
+                if pattern is not None
+                else self.assertRaises(ValueError)
+            )
+            with expectation:
+                verify.verify_package(package)
+
     def test_runtime_identity_and_visual_only_authority_are_exact(self) -> None:
         for key, value in (
             ("enemyKind", "other"),
@@ -514,15 +672,185 @@ class RuntimeContractTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "authorityBoundary"):
                 verify.verify_package(package)
 
+    def test_runtime_manifest_rejects_unknown_fields_recursively(self) -> None:
+        cases = (
+            (
+                "runtime top level",
+                verify.RUNTIME_MANIFEST,
+                lambda value: value.__setitem__("worldAuthority", True),
+            ),
+            (
+                "runtime LOD guidance",
+                verify.RUNTIME_MANIFEST,
+                lambda value: value["lodGuidance"].__setitem__("automaticCombat", True),
+            ),
+            (
+                "runtime LOD record",
+                verify.RUNTIME_MANIFEST,
+                lambda value: value["lods"][0].__setitem__("spawnAuthority", True),
+            ),
+            (
+                "runtime material contract",
+                verify.RUNTIME_MANIFEST,
+                lambda value: value["materialContract"].__setitem__("shaderCode", "remote"),
+            ),
+            (
+                "runtime motion contract",
+                verify.RUNTIME_MANIFEST,
+                lambda value: value["motion"].__setitem__("attack", True),
+            ),
+            (
+                "runtime selection guidance",
+                verify.RUNTIME_MANIFEST,
+                lambda value: value["selectionGuidance"].__setitem__("authoritative", True),
+            ),
+            (
+                "asset top level",
+                verify.ASSET_MANIFEST,
+                lambda value: value.__setitem__("productionActive", True),
+            ),
+            (
+                "asset design intent",
+                verify.ASSET_MANIFEST,
+                lambda value: value["designIntent"].__setitem__("combat", "enabled"),
+            ),
+            (
+                "asset runtime contract",
+                verify.ASSET_MANIFEST,
+                lambda value: value["runtimeContracts"].__setitem__("network", "required"),
+            ),
+            (
+                "asset Watcher record",
+                verify.ASSET_MANIFEST,
+                lambda value: value["watcher"].__setitem__("rewards", 100),
+            ),
+        )
+        for label, document_name, mutate in cases:
+            with self.subTest(label=label):
+                self._assert_json_mutation_rejected(
+                    document_name, mutate, "unexpected"
+                )
+
+    def test_runtime_coordinate_lod_motion_selection_and_state_are_exact(self) -> None:
+        cases = (
+            (
+                "authoring coordinate system",
+                lambda value: value.__setitem__("authoringCoordinateSystem", "left-handed"),
+            ),
+            (
+                "runtime coordinate system",
+                lambda value: value.__setitem__("coordinateSystem", "left-handed"),
+            ),
+            (
+                "front",
+                lambda value: value.__setitem__("frontFacing", "-Z"),
+            ),
+            (
+                "pivot",
+                lambda value: value.__setitem__("pivot", "object origin"),
+            ),
+            (
+                "meters per unit",
+                lambda value: value.__setitem__("metersPerUnit", 100.0),
+            ),
+            (
+                "state",
+                lambda value: value.__setitem__("state", "actively-attacking"),
+            ),
+            (
+                "LOD guidance",
+                lambda value: value["lodGuidance"]["suggestedDistancesMeters"].__setitem__(
+                    "LOD0_HighThrough", -1
+                ),
+            ),
+            (
+                "motion",
+                lambda value: value["motion"].__setitem__(
+                    "reducedMotion", "continuous"
+                ),
+            ),
+            (
+                "selection",
+                lambda value: value["selectionGuidance"].__setitem__(
+                    "suggestedPickCylinderRadiusMeters", -1.0
+                ),
+            ),
+            (
+                "material palette",
+                lambda value: value["materialContract"].__setitem__(
+                    "palette", "Hegemony gold"
+                ),
+            ),
+        )
+        for label, mutate in cases:
+            with self.subTest(label=label):
+                self._assert_json_mutation_rejected(verify.RUNTIME_MANIFEST, mutate)
+
+    def test_asset_design_runtime_status_state_and_fingerprint_are_exact(self) -> None:
+        cases = (
+            (
+                "name",
+                lambda value: value.__setitem__("name", "Different asset"),
+            ),
+            (
+                "design intent",
+                lambda value: value["designIntent"].__setitem__(
+                    "camera", "first-person combat"
+                ),
+            ),
+            (
+                "authoring runtime contract",
+                lambda value: value["runtimeContracts"].__setitem__(
+                    "motion", "always attack"
+                ),
+            ),
+            (
+                "status",
+                lambda value: value.__setitem__("status", "live-production"),
+            ),
+            (
+                "Watcher state",
+                lambda value: value["watcher"].__setitem__(
+                    "state", "actively-attacking"
+                ),
+            ),
+            (
+                "source fingerprint",
+                lambda value: value.__setitem__(
+                    "sourceSemanticFingerprintSha256", "a" * 64
+                ),
+            ),
+        )
+        for label, mutate in cases:
+            with self.subTest(label=label):
+                self._assert_json_mutation_rejected(verify.ASSET_MANIFEST, mutate)
+
+    def test_declared_authoring_bounds_must_match_emitted_gltf_geometry(self) -> None:
+        def exclude_geometry(value: dict) -> None:
+            bounds = value["lods"][0]["boundsBlender"]
+            bounds["max"][0] -= 0.1
+            bounds["size"][0] = bounds["max"][0] - bounds["min"][0]
+
+        self._assert_json_mutation_rejected(
+            verify.RUNTIME_MANIFEST, exclude_geometry, "does not contain emitted glTF"
+        )
+
+        def loosen_bounds(value: dict) -> None:
+            bounds = value["lods"][0]["boundsBlender"]
+            bounds["min"][0] -= 0.2
+            bounds["size"][0] = bounds["max"][0] - bounds["min"][0]
+
+        self._assert_json_mutation_rejected(
+            verify.RUNTIME_MANIFEST, loosen_bounds, "too loose"
+        )
+
     def test_lod_triangle_and_byte_counts_must_strictly_descend(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             package = make_package(Path(directory))
-            high = (
-                package
-                / verify.RUNTIME_DIRECTORY
-                / verify.LOD_CONTRACT[0][1]
-            ).read_bytes()
-            update_runtime_lod(package, "LOD1_Balanced", high)
+            oversized_balanced = make_semantic_glb(
+                "LOD1_Balanced", triangles_per_mesh=2
+            )
+            update_runtime_lod(package, "LOD1_Balanced", oversized_balanced)
             with self.assertRaisesRegex(ValueError, "strictly descending"):
                 verify.verify_package(package)
 
@@ -602,6 +930,106 @@ class PreviewStructureTests(unittest.TestCase):
                     verify._jpeg_dimensions(payload, "preview.jpg")
 
 
+class IntegrationProfileTrustTests(unittest.TestCase):
+    def test_self_consistent_profile_change_still_requires_pinned_digest(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "integration-profile.json"
+            document = json.loads(
+                verify.INTEGRATION_PROFILE_PATH.read_text(encoding="utf-8")
+            )
+            document["status"]["reviewOnly"] = False
+            document["contractDigest"]["sha256"] = "0" * 64
+            zeroed = (
+                json.dumps(document, indent=4, sort_keys=True, ensure_ascii=False) + "\n"
+            ).encode("utf-8")
+            document["contractDigest"]["sha256"] = hashlib.sha256(zeroed).hexdigest()
+            path.write_text(
+                json.dumps(document, indent=4, sort_keys=True, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(ValueError, "production-pinned digest"):
+                verify.load_integration_semantic_contracts(path)
+
+    @unittest.skipUnless(hasattr(os, "symlink"), "symlinks unavailable")
+    def test_profile_must_be_bounded_regular_non_symlink(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            target = root / "target.json"
+            target.write_text("{}\n", encoding="utf-8")
+            linked = root / "linked.json"
+            linked.symlink_to(target)
+            with self.assertRaisesRegex(ValueError, "regular non-symlink"):
+                verify.load_integration_semantic_contracts(linked)
+
+            oversized = root / "oversized.json"
+            oversized.write_bytes(b" " * (verify.MAX_TEXT_BYTES + 1))
+            with self.assertRaisesRegex(ValueError, "exceeds size limit"):
+                verify.load_integration_semantic_contracts(oversized)
+
+
+class SemanticGlbContractTests(unittest.TestCase):
+    def _assert_mutation_rejected(self, mutate, pattern: str) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            package = make_package(Path(directory))
+            mutate_runtime_glb(package, "LOD0_High", mutate)
+            with self.assertRaisesRegex(ValueError, pattern):
+                verify.verify_package(package)
+
+    def test_part_node_rename_is_rejected(self) -> None:
+        self._assert_mutation_rejected(
+            lambda document: document["nodes"][0].__setitem__(
+                "name", "CoreWatcher_RenamedPart"
+            ),
+            "part node list",
+        )
+
+    def test_mesh_rename_is_rejected(self) -> None:
+        self._assert_mutation_rejected(
+            lambda document: document["meshes"][0].__setitem__(
+                "name", "CoreWatcher_Wrong_Mesh"
+            ),
+            "mesh name",
+        )
+
+    def test_missing_semantic_role_is_rejected(self) -> None:
+        self._assert_mutation_rejected(
+            lambda document: document["nodes"][0]["extras"].pop(
+                "warpkeep_semantic_role"
+            ),
+            "semantic role",
+        )
+
+    def test_material_reassignment_is_rejected(self) -> None:
+        self._assert_mutation_rejected(
+            lambda document: document["meshes"][0]["primitives"][0].__setitem__(
+                "material", 1
+            ),
+            "material assignment",
+        )
+
+    def test_noncanonical_hierarchy_is_rejected(self) -> None:
+        def reorder_root_children(document: dict) -> None:
+            children = document["nodes"][-1]["children"]
+            children[0], children[1] = children[1], children[0]
+
+        self._assert_mutation_rejected(reorder_root_children, "flat root-to-parts")
+
+    def test_multiple_primitives_per_mesh_are_rejected(self) -> None:
+        def duplicate_primitive(document: dict) -> None:
+            primitives = document["meshes"][0]["primitives"]
+            primitives.append(copy.deepcopy(primitives[0]))
+
+        self._assert_mutation_rejected(duplicate_primitive, "exactly one primitive")
+
+    def test_root_extras_are_exact(self) -> None:
+        self._assert_mutation_rejected(
+            lambda document: document["nodes"][-1]["extras"].__setitem__(
+                "warpkeep_combat_enabled", True
+            ),
+            "root extras",
+        )
+
+
 class DeepGlbTests(unittest.TestCase):
     def test_rejects_external_uri_and_unsupported_extension(self) -> None:
         document, binary = glb_document(1)
@@ -635,8 +1063,8 @@ class DeepGlbTests(unittest.TestCase):
 
         malformed = bytearray(binary)
         # Keep distinct indices and declared bounds, but place all points on a line.
-        struct.pack_into("<fff", malformed, 12, 0.5, 0.5, 0.0)
-        struct.pack_into("<fff", malformed, 24, 1.0, 1.0, 0.0)
+        struct.pack_into("<fff", malformed, 12, 0.125, 0.25, 0.05)
+        struct.pack_into("<fff", malformed, 24, 0.25, 0.5, 0.1)
         with self.assertRaisesRegex(ValueError, "zero-area or collinear triangle"):
             verify.inspect_glb(encode_glb(document, bytes(malformed)))
 
@@ -657,6 +1085,32 @@ class DeepGlbTests(unittest.TestCase):
         document["accessors"][0]["count"] = 1000
         with self.assertRaisesRegex(ValueError, "accessor exceeds"):
             verify.inspect_glb(encode_glb(document, binary))
+
+    def test_rejects_non_normalized_normals_and_node_rotations(self) -> None:
+        document, binary = glb_document(1)
+        malformed = bytearray(binary)
+        normal_offset = document["bufferViews"][1]["byteOffset"]
+        struct.pack_into("<fff", malformed, normal_offset, 0.0, 0.0, 2.0)
+        with self.assertRaisesRegex(ValueError, "NORMAL vector is not normalized"):
+            verify.inspect_glb(encode_glb(document, bytes(malformed)))
+
+        document, binary = glb_document(1)
+        document["nodes"][0]["rotation"] = [0.0, 0.0, 0.0, 2.0]
+        with self.assertRaisesRegex(ValueError, "rotation quaternion is not normalized"):
+            verify.inspect_glb(encode_glb(document, binary))
+
+    def test_world_bounds_include_node_hierarchy_transforms(self) -> None:
+        document, binary = glb_document(1)
+        document["nodes"] = [
+            {"name": "CoreWatcher_Root", "children": [1], "translation": [0.1, 0.2, 0.3]},
+            {"name": "CoreWatcher_Mesh", "mesh": 0, "translation": [0.4, 0.5, 0.6]},
+        ]
+        document["scenes"][0]["nodes"] = [0]
+        metric = verify.inspect_glb(encode_glb(document, binary))
+        for actual, expected in zip(metric.bounds_gltf_min, (0.5, 0.7, 0.9)):
+            self.assertAlmostEqual(actual, expected, places=6)
+        for actual, expected in zip(metric.bounds_gltf_max, (0.75, 1.2, 1.0)):
+            self.assertAlmostEqual(actual, expected, places=6)
 
 
 if __name__ == "__main__":

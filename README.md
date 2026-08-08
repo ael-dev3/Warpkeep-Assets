@@ -42,6 +42,26 @@ The prepared ZIP remains local until an owner explicitly approves publication.
 
 [candidate manifest](releases/core-watcher-level1-2026-08-03/manifest.json) · [provenance](provenance/core-watcher-level1-2026-08-03.md) · [sanitization audit](reports/core-watcher-level1-2026-08-03/public-sanitization.json) · [external validation](reports/core-watcher-level1-2026-08-03/external-validation.json)
 
+### Integration-readiness contract
+
+Reviewers can inspect the package's [byte-exact runtime manifest](contracts/core-watcher-level1-2026-08-03.runtime-manifest.json)
+without possessing the unpublished ZIP. A separate, digest-bound [advisory
+integration profile](contracts/core-watcher-level1-2026-08-03.integration-profile.json)
+turns the current Realm's renderer expectations into a reviewable handoff:
+content-addressed and fail-closed loading, quality/camera LOD allocation,
+component-wise instancing, bounded presentation motion, mobile gesture
+coexistence, 44–48px controls, reduced-quality and reduced-motion behavior,
+fallback discoverability, accessibility, telemetry privacy, and exhaustive
+server-authority exclusions.
+
+The profile includes a **non-authoritative 72-instance capacity test** for the
+Map LOD: 11,376 visible triangles and 12 component-wise instanced draw groups,
+instead of 864 naive clone draws. It does not declare that 72 sites exist or
+supply any site ID, coordinate, seed, hidden state, catalogue, combat rule,
+database row, client loader, release permission, or activation permission.
+Those gameplay surfaces remain explicitly assigned to later owner-gated PR
+slices in the main Warpkeep repository.
+
 ### Candidate gallery
 
 | Four-LOD comparison | Far-map preview |
@@ -169,6 +189,7 @@ families, and the exact-texture Hegemony banner collection.
 
 - [`releases/`](releases/) — trusted attachment manifests and checksum sidecars
 - [`manifests/`](manifests/) — source inventories and preparation records
+- [`contracts/`](contracts/) — reviewable asset/runtime handoff contracts; never gameplay authority
 - [`provenance/`](provenance/) — authorization, history, and license boundaries
 - [`previews/`](previews/) — lightweight Git-tracked visual catalogues
 - [`scripts/`](scripts/) and [`tests/`](tests/) — fail-closed release verification
@@ -250,12 +271,16 @@ python3 scripts/verify_core_watcher_level1.py \
 python3 scripts/verify_release.py \
   --manifest releases/core-watcher-level1-2026-08-03/manifest.json \
   --asset-dir /path/to/candidate-directory
+python3 scripts/verify_core_watcher_integration_profile.py
 ```
 
 The focused verifier checks the internal model and package contract. The
 tracked release manifest and checksum sidecar are the separate trust anchor
 for the exact candidate ZIP bytes; use both checks for authenticity and
-structure.
+structure. The integration-profile verifier requires no unpublished binaries:
+it proves that the tracked review copy, candidate manifest, preview evidence,
+LOD facts, digest, fail-closed renderer guidance, and no-authority gates remain
+internally consistent.
 
 The verifier requires the release checksum sidecar and rejects unsupported
 media types, wrong bytes, non-regular files, malformed PNG metadata,

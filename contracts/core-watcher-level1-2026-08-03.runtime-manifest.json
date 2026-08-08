@@ -1,0 +1,307 @@
+{
+  "assetId": "warpkeep.encounters.core.watcher.level1",
+  "authoringCoordinateSystem": "Blender, right-handed, +Z up, -Y front",
+  "authorityBoundary": {
+    "ai": false,
+    "collision": false,
+    "combat": false,
+    "damage": false,
+    "health": false,
+    "ownership": false,
+    "picking": false,
+    "placement": false,
+    "respawn": false,
+    "rewards": false,
+    "routing": false,
+    "spacetimeDb": false,
+    "visualOnly": true
+  },
+  "category": "Encounters/Core/WatcherLevel1",
+  "combatEnabled": false,
+  "coordinateSystem": "glTF 2.0, right-handed, +Y up, +Z forward",
+  "encounterLevel": 1,
+  "enemyKind": "core-watcher",
+  "faction": "The Core",
+  "frontFacing": "+Z in glTF / -Y in Blender",
+  "lodGuidance": {
+    "LOD0_High": "selected inspection and close Realm zoom",
+    "LOD1_Balanced": "nearby normal-quality Realm view",
+    "LOD2_Compact": "medium distance and reduced-quality selected view",
+    "LOD3_Map": "far map signal and static reduced-motion presentation",
+    "suggestedDistancesMeters": {
+      "LOD0_HighThrough": 8,
+      "LOD1_BalancedThrough": 18,
+      "LOD2_CompactThrough": 36,
+      "LOD3_MapThrough": 72
+    }
+  },
+  "lods": [
+    {
+      "animations": [],
+      "boundsBlender": {
+        "max": [
+          0.855704,
+          0.795958,
+          2.178009
+        ],
+        "min": [
+          -0.842088,
+          -0.858593,
+          0.0
+        ],
+        "size": [
+          1.697791,
+          1.654551,
+          2.178009
+        ]
+      },
+      "bytes": 129520,
+      "cameras": 0,
+      "embeddedBufferBytes": 110388,
+      "extensionsUsed": [
+        "KHR_materials_emissive_strength"
+      ],
+      "externalUris": [],
+      "file": "Warpkeep_CoreWatcher_Level1_LOD0_High_Runtime.glb",
+      "images": 0,
+      "materials": 3,
+      "meshes": 23,
+      "nodes": 24,
+      "primitives": 23,
+      "rigged": false,
+      "samplers": 0,
+      "scenes": 1,
+      "sha256": "64218fe3082466ae5864885e7c7bd623e2c233d8f1e5231ca5e75979b9a045db",
+      "skins": 0,
+      "textures": 0,
+      "tier": "LOD0_High",
+      "triangles": 2354,
+      "uploadedVertices": 4210
+    },
+    {
+      "animations": [],
+      "boundsBlender": {
+        "max": [
+          0.792875,
+          0.795958,
+          2.178009
+        ],
+        "min": [
+          -0.842088,
+          -0.709141,
+          0.0
+        ],
+        "size": [
+          1.634963,
+          1.505098,
+          2.178009
+        ]
+      },
+      "bytes": 67968,
+      "cameras": 0,
+      "embeddedBufferBytes": 50904,
+      "extensionsUsed": [
+        "KHR_materials_emissive_strength"
+      ],
+      "externalUris": [],
+      "file": "Warpkeep_CoreWatcher_Level1_LOD1_Balanced_Runtime.glb",
+      "images": 0,
+      "materials": 3,
+      "meshes": 20,
+      "nodes": 21,
+      "primitives": 20,
+      "rigged": false,
+      "samplers": 0,
+      "scenes": 1,
+      "sha256": "f6112167a67d91db46e1e3dcabbea2e537b3f8c8bcb36de5caca1ec63170a1f6",
+      "skins": 0,
+      "textures": 0,
+      "tier": "LOD1_Balanced",
+      "triangles": 1000,
+      "uploadedVertices": 1972
+    },
+    {
+      "animations": [],
+      "boundsBlender": {
+        "max": [
+          0.792875,
+          0.62,
+          2.178009
+        ],
+        "min": [
+          -0.842088,
+          -0.709141,
+          0.0
+        ],
+        "size": [
+          1.634963,
+          1.329141,
+          2.178009
+        ]
+      },
+      "bytes": 27636,
+      "cameras": 0,
+      "embeddedBufferBytes": 14340,
+      "extensionsUsed": [
+        "KHR_materials_emissive_strength"
+      ],
+      "externalUris": [],
+      "file": "Warpkeep_CoreWatcher_Level1_LOD2_Compact_Runtime.glb",
+      "images": 0,
+      "materials": 3,
+      "meshes": 15,
+      "nodes": 16,
+      "primitives": 15,
+      "rigged": false,
+      "samplers": 0,
+      "scenes": 1,
+      "sha256": "6e9434d4e4f8ba03bec96a5bd47422caae88e04b230f7f3daf3219e833bf13e1",
+      "skins": 0,
+      "textures": 0,
+      "tier": "LOD2_Compact",
+      "triangles": 282,
+      "uploadedVertices": 552
+    },
+    {
+      "animations": [],
+      "boundsBlender": {
+        "max": [
+          0.711313,
+          0.62,
+          2.179044
+        ],
+        "min": [
+          -0.841894,
+          -0.709141,
+          0.0
+        ],
+        "size": [
+          1.553207,
+          1.329141,
+          2.179044
+        ]
+      },
+      "bytes": 18748,
+      "cameras": 0,
+      "embeddedBufferBytes": 7740,
+      "extensionsUsed": [
+        "KHR_materials_emissive_strength"
+      ],
+      "externalUris": [],
+      "file": "Warpkeep_CoreWatcher_Level1_LOD3_Map_Runtime.glb",
+      "images": 0,
+      "materials": 3,
+      "meshes": 12,
+      "nodes": 13,
+      "primitives": 12,
+      "rigged": false,
+      "samplers": 0,
+      "scenes": 1,
+      "sha256": "2f2e30bdd7593440cba8a5bd7a676d812c0b0a5910ece5174c8af434a72f146b",
+      "skins": 0,
+      "textures": 0,
+      "tier": "LOD3_Map",
+      "triangles": 158,
+      "uploadedVertices": 300
+    }
+  ],
+  "materialContract": {
+    "alphaBlendMaterials": 0,
+    "authoringNote": {
+      "note": "Blender glTF export normalizes emissive color and strength; the material records above are the emitted runtime values.",
+      "runtimeValuesDerivedFromExportedGlbs": true,
+      "ultravioletNodeEmissionStrength": 3.5
+    },
+    "heraldry": "none",
+    "images": 0,
+    "materials": [
+      {
+        "alphaMode": "OPAQUE",
+        "baseColorFactor": [
+          0.008,
+          0.01,
+          0.018,
+          1.0
+        ],
+        "doubleSided": false,
+        "emissiveFactor": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "emissiveStrength": 0.0,
+        "metallic": 0.28,
+        "name": "WK_Core_Obsidian",
+        "opaque": true,
+        "roughness": 0.26
+      },
+      {
+        "alphaMode": "OPAQUE",
+        "baseColorFactor": [
+          0.022,
+          0.025,
+          0.04,
+          1.0
+        ],
+        "doubleSided": false,
+        "emissiveFactor": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "emissiveStrength": 0.0,
+        "metallic": 0.82,
+        "name": "WK_Core_BlackenedMetal",
+        "opaque": true,
+        "roughness": 0.22
+      },
+      {
+        "alphaMode": "OPAQUE",
+        "baseColorFactor": [
+          0.065,
+          0.018,
+          0.22,
+          1.0
+        ],
+        "doubleSided": true,
+        "emissiveFactor": [
+          0.2564103,
+          0.0576923,
+          1.0
+        ],
+        "emissiveStrength": 2.7299999,
+        "metallic": 0.08,
+        "name": "WK_Core_Ultraviolet",
+        "opaque": true,
+        "roughness": 0.18
+      }
+    ],
+    "palette": "obsidian, blackened metal, restrained cold ultraviolet",
+    "textures": 0
+  },
+  "metersPerUnit": 1.0,
+  "motion": {
+    "animations": [],
+    "continuousMotionRequired": false,
+    "forbiddenClips": [
+      "Attack",
+      "Walk",
+      "Death"
+    ],
+    "mode": "bounded-runtime-rigid-hierarchy",
+    "reducedMotion": "static",
+    "skins": 0
+  },
+  "name": "Core Watcher",
+  "pivot": "footprint center on Blender Z=0 / glTF Y=0",
+  "revision": "genesis-001-core-watcher-level1-2026-08-03",
+  "schema": "warpkeep.runtime-encounter-asset.v1",
+  "selectionGuidance": {
+    "presentationFootprintRadiusMeters": 0.9,
+    "renderGeometryIsAuthoritativeCollision": false,
+    "suggestedPickCylinderHeightMeters": 2.55,
+    "suggestedPickCylinderRadiusMeters": 0.72
+  },
+  "state": "dormant-presence",
+  "version": "1.0.0"
+}

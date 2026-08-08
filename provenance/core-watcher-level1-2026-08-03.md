@@ -84,6 +84,33 @@ Publication, integration into the main Warpkeep repository, world placement,
 combat behavior, deployment, activation, merging, and all later PR slices
 remain separate owner-gated decisions.
 
+## Modern integration review — 2026-08-08
+
+The candidate was re-audited against Warpkeep `main` at
+`e8bd06553bc11cd50842edb4812492b050c02cdb` and the public shape of the
+outstanding Realm visual, Inner Keep, chat/admission, and continent-atlas draft
+work. That inspection was read-only. No code, art, coordinates, seeds, hidden
+sites, review images, or private atlas data were copied from another PR, and
+no review, edit, comment, merge, or other state-changing action was submitted
+to another PR. No outstanding PR was made a dependency of this candidate.
+
+The resulting tracked integration profile records only asset-facing
+constraints that a later implementation must honor: immutable bytes and full
+digests; same-origin, redirect-denied, abortable loading; embedded-only GLB
+validation; High/Balanced/Reduced behavior; shared-scheduler presentation
+motion; component-wise instancing; mobile pointer and cumulative-pinch
+coexistence; semantic 44–48px controls; history/back and focus restoration;
+procedural fallback; and aggregate-only telemetry. The byte-exact packaged
+runtime manifest is also tracked separately so reviewers can inspect it
+without access to the unpublished archive.
+
+The profile's 72-instance calculation is a renderer capacity exercise, not a
+population or placement assertion. It contains no world coordinate, site ID,
+seed, combat value, ownership record, route, action, or SpacetimeDB schema.
+Catalogue/placement, client rendering and selection, authoritative PvE state,
+operations, and activation remain later B–F slices, each marked unimplemented
+and unauthorized here.
+
 ## License boundary
 
 Public draft-PR review of this named candidate's lightweight metadata and
