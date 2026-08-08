@@ -9,6 +9,7 @@ entry and provenance record here for the asset or release you want to reuse.
 | Status | What it means |
 | --- | --- |
 | **CC-BY-4.0** | An open-content grant for the expressly named material. Sharing and adaptation, including commercial use, require attribution, a license link, and an indication of changes. |
+| **Public draft review authorized; release pending** | Warpkeep may expose the named candidate's lightweight metadata and previews in a draft PR. Binary release publication and any broader reuse grant remain pending. |
 | **Public archive authorized; no separate open-license grant** | Warpkeep may preserve and publish the named deposit. The entry does not give the public a general right to redistribute, adapt, sublicense, or reuse it outside the recorded terms. |
 | **Original or unresolved terms** | Third-party, externally governed, or uncertain-rights material keeps its own terms. Repository presence does not relicense it. |
 
@@ -244,3 +245,20 @@ archive metadata. It does not grant rights in third-party settings or names,
 generation services, Warpkeep trademarks or canonical identity, or unrelated
 Warpkeep material by implication. The release describes The Core only as a
 Warpkeep faction and does not include outside reference imagery or branding.
+
+## Warpkeep Core Watcher — Level 1 release candidate
+
+- **Set:** one original Core Watcher; four texture-free static runtime GLBs; one editable Blender source; exact previews; manifests; QA; and checksums
+- **Candidate tag:** `core-watcher-level1-2026-08-03`
+- **Snapshot date:** 2026-08-03
+- **Review authority:** Ael explicitly authorized preparing this new, isolated draft PR in Warpkeep-Assets.
+- **Creation disclosure:** the geometry, materials, LODs, renders, and package metadata were substantially authored and prepared with Codex under Ael's direction and review
+- **License status:** public draft review authorized; release pending; no separate open-license grant asserted
+
+This authorization covers the lightweight candidate metadata, exact rendered
+previews, provenance, and verification software in this draft PR. It does not
+authorize uploading the prepared binary ZIP, creating its intended tag or
+GitHub Release, integrating the asset into Warpkeep, or merging this PR. It
+does not license third-party tools or services, third-party reference material,
+Warpkeep trademarks or canonical identity, the separate Core faction crest release,
+or unrelated Warpkeep material by implication.

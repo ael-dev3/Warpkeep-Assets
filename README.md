@@ -12,6 +12,67 @@ Integration notes below describe what each asset release itself authorized or
 asserted when it was published. See the [Warpkeep repository](https://github.com/ael-dev3/Warpkeep)
 for the current live runtime.
 
+[![Warpkeep Core Watcher Level 1 release candidate](previews/core-watcher-level1-2026-08-03/00-core-watcher-presentation.jpg)](previews/core-watcher-level1-2026-08-03/00-core-watcher-presentation.jpg)
+
+## Core Watcher — Level 1 release candidate
+
+The Core Watcher is a new original encounter silhouette for the first slice of
+The Core Stirs: a tall bifurcated obsidian monolith, a suspended cold-violet
+core, and asymmetric floating shards. The candidate package contains one
+editable Blender source and four texture-free, self-contained static GLBs for
+close inspection through far-map presentation.
+
+| LOD | Intended view | Triangles | Size |
+| --- | --- | ---: | ---: |
+| LOD0 High | Selected inspection | 2,354 | 126.5 KiB |
+| LOD1 Balanced | Nearby Realm view | 1,000 | 66.4 KiB |
+| LOD2 Compact | Medium distance | 282 | 27.0 KiB |
+| LOD3 Map | Far-map signal | 158 | 18.3 KiB |
+
+All four runtime files pass the official glTF validator with zero issues and
+clean-import into Blender without cameras, lights, rigs, or actions. The
+package's own report records **58/58 checks passed**, including strict LOD and
+byte reduction, embedded-only data, bounded geometry, Level 1 identity, and a
+visual-only authority boundary.
+
+This is deliberately a **draft review candidate**, not a published release or
+live-game integration. No tag, GitHub Release attachment, catalogue entry,
+combat behavior, placement, deployment, or activation is created by this PR.
+The prepared ZIP remains local until an owner explicitly approves publication.
+
+[candidate manifest](releases/core-watcher-level1-2026-08-03/manifest.json) · [provenance](provenance/core-watcher-level1-2026-08-03.md) · [sanitization audit](reports/core-watcher-level1-2026-08-03/public-sanitization.json) · [external validation](reports/core-watcher-level1-2026-08-03/external-validation.json)
+
+### Integration-readiness contract
+
+Reviewers can inspect the package's [byte-exact runtime manifest](contracts/core-watcher-level1-2026-08-03.runtime-manifest.json)
+without possessing the unpublished ZIP. A separate, digest-bound [advisory
+integration profile](contracts/core-watcher-level1-2026-08-03.integration-profile.json)
+turns the current Realm's renderer expectations into a reviewable handoff:
+content-addressed and fail-closed loading, quality/camera LOD allocation,
+component-wise instancing, bounded presentation motion, mobile gesture
+coexistence, 44–48px controls, reduced-quality and reduced-motion behavior,
+fallback discoverability, accessibility, telemetry privacy, and exhaustive
+server-authority exclusions.
+
+The profile includes a **non-authoritative 72-instance capacity test** for the
+Map LOD: 11,376 visible triangles and 12 component-wise instanced draw groups,
+instead of 864 naive clone draws. It does not declare that 72 sites exist or
+supply any site ID, coordinate, seed, hidden state, catalogue, combat rule,
+database row, client loader, release permission, or activation permission.
+Those gameplay surfaces remain explicitly assigned to later owner-gated PR
+slices in the main Warpkeep repository.
+
+### Candidate gallery
+
+| Four-LOD comparison | Far-map preview |
+| --- | --- |
+| [![Core Watcher four-LOD comparison](previews/core-watcher-level1-2026-08-03/01-core-watcher-lod-lineup.jpg)](previews/core-watcher-level1-2026-08-03/01-core-watcher-lod-lineup.jpg) | [![Core Watcher far-map preview](previews/core-watcher-level1-2026-08-03/02-core-watcher-map-preview.png)](previews/core-watcher-level1-2026-08-03/02-core-watcher-map-preview.png) |
+
+*The tracked images are re-encoded without descriptive or private metadata from
+the exact Blender-rendered frames in the candidate archive: a 1920×1080
+presentation, a 2400×1200 four-LOD sheet, and a 512×512 mobile map preview.
+The JPEGs retain only the standard JFIF container header recorded by the audit.*
+
 [![Warpkeep — The Core faction crest](previews/the-core-faction-crest-2026-08-03/00-the-core-faction-crest-showcase.jpg)](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/the-core-faction-crest-2026-08-03)
 
 ## The Core faction crest
@@ -129,6 +190,7 @@ families, and the exact-texture Hegemony banner collection.
 
 - [`releases/`](releases/) — trusted attachment manifests and checksum sidecars
 - [`manifests/`](manifests/) — source inventories and preparation records
+- [`contracts/`](contracts/) — reviewable asset/runtime handoff contracts; never gameplay authority
 - [`provenance/`](provenance/) — authorization, history, and license boundaries
 - [`previews/`](previews/) — lightweight Git-tracked visual catalogues
 - [`scripts/`](scripts/) and [`tests/`](tests/) — fail-closed release verification
@@ -200,6 +262,26 @@ python3 scripts/verify_release.py \
 Use a manifest from a trusted repository commit. If its SHA-256 was obtained
 through a separate trusted channel, pin it with `--manifest-sha256`; checksums
 prove integrity against that manifest, not the identity of whoever supplied it.
+
+Reviewers holding the local Core Watcher candidate can additionally run its
+deep structural verifier:
+
+```sh
+python3 scripts/verify_core_watcher_level1.py \
+  /path/to/warpkeep-core-watcher-level1-game-ready-2026-08-03-v1.zip
+python3 scripts/verify_release.py \
+  --manifest releases/core-watcher-level1-2026-08-03/manifest.json \
+  --asset-dir /path/to/candidate-directory
+python3 scripts/verify_core_watcher_integration_profile.py
+```
+
+The focused verifier checks the internal model and package contract. The
+tracked release manifest and checksum sidecar are the separate trust anchor
+for the exact candidate ZIP bytes; use both checks for authenticity and
+structure. The integration-profile verifier requires no unpublished binaries:
+it proves that the tracked review copy, candidate manifest, preview evidence,
+LOD facts, digest, fail-closed renderer guidance, and no-authority gates remain
+internally consistent.
 
 The verifier requires the release checksum sidecar and rejects unsupported
 media types, wrong bytes, non-regular files, malformed PNG metadata,

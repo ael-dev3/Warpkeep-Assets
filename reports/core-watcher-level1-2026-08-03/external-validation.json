@@ -1,0 +1,141 @@
+{
+  "archive": {
+    "bytes": 1405757,
+    "entryCount": 15,
+    "genericReleaseVerifier": "passed",
+    "name": "warpkeep-core-watcher-level1-game-ready-2026-08-03-v1.zip",
+    "published": false,
+    "sha256": "34c8a80186642659acea893c06199a8e7b615ac0f9685f2c58c4a27641f56a33"
+  },
+  "blender": {
+    "cleanFactoryImports": [
+      {
+        "actions": 0,
+        "armatures": 0,
+        "cameras": 0,
+        "file": "Warpkeep_CoreWatcher_Level1_LOD0_High_Runtime.glb",
+        "lights": 0,
+        "materials": [
+          "WK_Core_BlackenedMetal",
+          "WK_Core_Obsidian",
+          "WK_Core_Ultraviolet"
+        ],
+        "meshObjects": 23
+      },
+      {
+        "actions": 0,
+        "armatures": 0,
+        "cameras": 0,
+        "file": "Warpkeep_CoreWatcher_Level1_LOD1_Balanced_Runtime.glb",
+        "lights": 0,
+        "materials": [
+          "WK_Core_BlackenedMetal",
+          "WK_Core_Obsidian",
+          "WK_Core_Ultraviolet"
+        ],
+        "meshObjects": 20
+      },
+      {
+        "actions": 0,
+        "armatures": 0,
+        "cameras": 0,
+        "file": "Warpkeep_CoreWatcher_Level1_LOD2_Compact_Runtime.glb",
+        "lights": 0,
+        "materials": [
+          "WK_Core_BlackenedMetal",
+          "WK_Core_Obsidian",
+          "WK_Core_Ultraviolet"
+        ],
+        "meshObjects": 15
+      },
+      {
+        "actions": 0,
+        "armatures": 0,
+        "cameras": 0,
+        "file": "Warpkeep_CoreWatcher_Level1_LOD3_Map_Runtime.glb",
+        "lights": 0,
+        "materials": [
+          "WK_Core_BlackenedMetal",
+          "WK_Core_Obsidian",
+          "WK_Core_Ultraviolet"
+        ],
+        "meshObjects": 12
+      }
+    ],
+    "sourceReopened": true,
+    "sourceSafetyAudit": {
+      "actions": 0,
+      "autoExecutionEnabled": false,
+      "embeddedTextBlocks": 0,
+      "externalFonts": 0,
+      "externalImages": 0,
+      "externalLibraries": 0,
+      "externalMovieClips": 0,
+      "externalSounds": 0,
+      "scriptedDrivers": 0
+    },
+    "sourceSemanticFingerprintSha256": "a51eae5665ee3e7c59191b36dd1abfbbc1fa3ddd76405bee52c6c5fb3dad344c",
+    "version": "5.2.0 LTS"
+  },
+  "candidateTag": "core-watcher-level1-2026-08-03",
+  "gltfValidator": {
+    "implementation": "Khronos glTF Validator through glTF Transform CLI",
+    "issuesByFile": {
+      "Warpkeep_CoreWatcher_Level1_LOD0_High_Runtime.glb": 0,
+      "Warpkeep_CoreWatcher_Level1_LOD1_Balanced_Runtime.glb": 0,
+      "Warpkeep_CoreWatcher_Level1_LOD2_Compact_Runtime.glb": 0,
+      "Warpkeep_CoreWatcher_Level1_LOD3_Map_Runtime.glb": 0
+    },
+    "status": "passed",
+    "cliVersion": "4.4.1",
+    "validatorVersion": "2.0.0-dev.3.10"
+  },
+  "lods": [
+    {
+      "bytes": 129520,
+      "file": "Warpkeep_CoreWatcher_Level1_LOD0_High_Runtime.glb",
+      "sha256": "64218fe3082466ae5864885e7c7bd623e2c233d8f1e5231ca5e75979b9a045db",
+      "tier": "LOD0_High",
+      "triangles": 2354,
+      "uploadedVertices": 4210
+    },
+    {
+      "bytes": 67968,
+      "file": "Warpkeep_CoreWatcher_Level1_LOD1_Balanced_Runtime.glb",
+      "sha256": "f6112167a67d91db46e1e3dcabbea2e537b3f8c8bcb36de5caca1ec63170a1f6",
+      "tier": "LOD1_Balanced",
+      "triangles": 1000,
+      "uploadedVertices": 1972
+    },
+    {
+      "bytes": 27636,
+      "file": "Warpkeep_CoreWatcher_Level1_LOD2_Compact_Runtime.glb",
+      "sha256": "6e9434d4e4f8ba03bec96a5bd47422caae88e04b230f7f3daf3219e833bf13e1",
+      "tier": "LOD2_Compact",
+      "triangles": 282,
+      "uploadedVertices": 552
+    },
+    {
+      "bytes": 18748,
+      "file": "Warpkeep_CoreWatcher_Level1_LOD3_Map_Runtime.glb",
+      "sha256": "2f2e30bdd7593440cba8a5bd7a676d812c0b0a5910ece5174c8af434a72f146b",
+      "tier": "LOD3_Map",
+      "triangles": 158,
+      "uploadedVertices": 300
+    }
+  ],
+  "packageQa": {
+    "checksPassed": 58,
+    "checksTotal": 58,
+    "status": "passed"
+  },
+  "rebuildComparison": {
+    "archiveByteIdentity": "not asserted; Blender container bytes are allowed to vary between clean authoring sessions",
+    "metadataFreePreviewsByteIdentical": true,
+    "runtimeGlbsByteIdentical": true,
+    "sourceSemanticFingerprintIdentical": true
+  },
+  "schema": "warpkeep.external-asset-validation.v1",
+  "snapshotDate": "2026-08-03",
+  "status": "passed"
+}

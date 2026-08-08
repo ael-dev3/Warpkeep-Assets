@@ -1,0 +1,31 @@
+{
+  "images": [
+    {
+      "bytes": 193978,
+      "dimensions": "1920x1080",
+      "file": "00-core-watcher-presentation.jpg",
+      "sha256": "d1e01453c620d22695148f89c18e9e5330c38508b1d984faae4037cb6d1dbcaa",
+      "source": "Warpkeep_CoreWatcher_Level1_GameReady/Previews/Warpkeep_CoreWatcher_Level1_Presentation_1920.jpg",
+      "title": "Core Watcher Level 1 presentation"
+    },
+    {
+      "bytes": 278733,
+      "dimensions": "2400x1200",
+      "file": "01-core-watcher-lod-lineup.jpg",
+      "sha256": "d60510764ca2c57ae2bb67419e835cff3c7c4986bfe5f04156bd17687808e595",
+      "source": "Warpkeep_CoreWatcher_Level1_GameReady/Previews/Warpkeep_CoreWatcher_Level1_LOD_Lineup_2400.jpg",
+      "title": "Core Watcher four-LOD comparison"
+    },
+    {
+      "bytes": 170456,
+      "dimensions": "512x512",
+      "file": "02-core-watcher-map-preview.png",
+      "sha256": "64ae797aece8aa9594872b1265950f6a227baf0edface14b13217f749b0db774",
+      "source": "Warpkeep_CoreWatcher_Level1_GameReady/Previews/Mobile/Warpkeep_CoreWatcher_Level1_Map_512.png",
+      "title": "Core Watcher far-map preview"
+    }
+  ],
+  "releaseTag": "core-watcher-level1-2026-08-03",
+  "schema": "warpkeep.preview-gallery.v1",
+  "status": "release-candidate-not-published"
+}

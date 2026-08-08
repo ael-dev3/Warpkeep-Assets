@@ -1,0 +1,76 @@
+{
+  "attachments": [
+    {
+      "bytes": 1405757,
+      "entryCount": 15,
+      "mediaType": "application/zip",
+      "name": "warpkeep-core-watcher-level1-game-ready-2026-08-03-v1.zip",
+      "packageRoot": "Warpkeep_CoreWatcher_Level1_GameReady",
+      "sha256": "34c8a80186642659acea893c06199a8e7b615ac0f9685f2c58c4a27641f56a33",
+      "url": "https://github.com/ael-dev3/Warpkeep-Assets/releases/download/core-watcher-level1-2026-08-03/warpkeep-core-watcher-level1-game-ready-2026-08-03-v1.zip"
+    }
+  ],
+  "authorization": "Preparation and public draft-PR review authorized; release attachment publication remains owner-gated.",
+  "gallery": {
+    "directory": "previews/core-watcher-level1-2026-08-03",
+    "images": 3
+  },
+  "packages": [
+    {
+      "bytes": 2323903,
+      "category": "Encounters/Core/WatcherLevel1",
+      "combatEnabled": false,
+      "editableBlends": 1,
+      "encounterLevel": 1,
+      "enemyKind": "core-watcher",
+      "files": 15,
+      "jpgs": 2,
+      "jsonDocuments": 3,
+      "lods": [
+        "LOD0_High",
+        "LOD1_Balanced",
+        "LOD2_Compact",
+        "LOD3_Map"
+      ],
+      "lodsPerWatcher": 4,
+      "motion": "static GLBs; optional bounded runtime rigid motion; reduced motion static",
+      "package": "Warpkeep_CoreWatcher_Level1_GameReady",
+      "pngs": 2,
+      "productionGLBs": 4,
+      "qaChecksPassed": 58,
+      "qaChecksTotal": 58,
+      "title": "Warpkeep Core Watcher \u2014 Level 1",
+      "triangleTotals": {
+        "LOD0_High": 2354,
+        "LOD1_Balanced": 1000,
+        "LOD2_Compact": 282,
+        "LOD3_Map": 158
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "publicInventory": {
+    "bytes": 2323903,
+    "files": 15,
+    "packages": 1
+  },
+  "sanitization": {
+    "blendSemanticFingerprintsPreserved": true,
+    "blenderFilesReopened": 1,
+    "credentialsFound": false,
+    "localPathsRemoved": true,
+    "previewMetadataStripped": true,
+    "report": "reports/core-watcher-level1-2026-08-03/public-sanitization.json",
+    "runtimeGLBsByteExact": true,
+    "sourceSemanticFingerprintSha256": "a51eae5665ee3e7c59191b36dd1abfbbc1fa3ddd76405bee52c6c5fb3dad344c"
+  },
+  "schemaVersion": 1,
+  "snapshotDate": "2026-08-03",
+  "source": "Ael-directed original Warpkeep Core Watcher Level 1 production package",
+  "sourceInventory": {
+    "bytes": 2323903,
+    "files": 15,
+    "packages": 1
+  },
+  "tag": "core-watcher-level1-2026-08-03"
+}
