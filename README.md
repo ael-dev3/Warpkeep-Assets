@@ -1,16 +1,42 @@
 # Warpkeep Assets
 
-Public, checksum-addressed source and archive material for [Warpkeep](https://warpkeep.com/).
+The visual source archive for [Warpkeep](https://warpkeep.com/), a persistent
+strategy game about a personal keep and a shared world worth returning to.
+Browse buildings, citizens, creatures, landscapes, identity and sound, with
+dated provenance, exact release manifests and tools for checking downloaded bytes.
 
-This archive traces Genesis 001 from solitary keeps toward a lived-in
-frontier: castle foundations, Hegemony Marks, caravans and supply lines, and
-the forests, farms, mines, and quarries that may one day sustain the Realm. A
-release here means preserved, provenance-tracked, and reviewable—not
-necessarily integrated or playable in Warpkeep.
+The game lives in the [Warpkeep repository](https://github.com/ael-dev3/Warpkeep).
+This repository preserves the material behind it. An archived release can be a
+source collection, a runtime candidate or a historical reference; its presence
+here does not establish current integration or playable features.
 
-Integration notes below describe what each asset release itself authorized or
-asserted when it was published. See the [Warpkeep repository](https://github.com/ael-dev3/Warpkeep)
-for the current live runtime.
+## Start here
+
+| Find | Read |
+| --- | --- |
+| Visual collections | [Keep buildings](#current-3d-production-library), [citizens](#hegemony-keep-citizens), [units](#hegemony-unit-corps), [faction identity](#the-core-faction-crest) |
+| Downloads and exact contents | [Asset releases](#asset-releases), [repository map](#repository-map) and each release's manifest |
+| Permission and attribution | [Licensing map](LICENSE), [per-set asset ledger](ASSET-LICENSES.md) and dated provenance |
+| Local integrity checks | [Verification](#verification) and [archive boundaries](#boundaries) |
+| Contributing and reporting | [Repository guidance](AGENTS.md) and [security policy](SECURITY.md) |
+
+## Supporting Warpkeep 0.4
+
+Warpkeep 0.4 is being developed around **gather → choose → build → benefit →
+return**: a journey supplies an improvement, and that improvement makes the next
+visit more rewarding. Its Verdant Citadel direction brings pale masonry, dark
+timber, teal roofs and layered natural surroundings into a readable keep diorama.
+The archive supplies preserved source material and candidates for that work;
+selection, composition, performance and gameplay integration belong to the game.
+
+See the [0.4 development source](https://github.com/ael-dev3/Warpkeep/tree/codex/prepared-keep-bindings-fix)
+for current work. Development source and a published asset package do not mean
+0.4 has shipped. Dated release descriptions below retain what each asset release
+authorized or asserted when it was published, including earlier Genesis 001 work.
+
+This is a **mixed-license archive**. Read the exact set's terms before reuse;
+public download does not itself grant adaptation or redistribution rights.
+New art direction does not change the authorship or terms of existing assets.
 
 [![Warpkeep — The Core faction crest](previews/the-core-faction-crest-2026-08-03/00-the-core-faction-crest-showcase.jpg)](https://github.com/ael-dev3/Warpkeep-Assets/releases/tag/the-core-faction-crest-2026-08-03)
 
